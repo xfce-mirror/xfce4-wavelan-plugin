@@ -1,4 +1,4 @@
-/* $Id: wavelan.c,v 1.5 2004/02/09 23:32:54 benny Exp $ */
+/* $Id: wavelan.c,v 1.6 2004/07/24 17:43:54 benny Exp $ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -157,6 +157,8 @@ wavelan_timer(gpointer data)
   char *tip = NULL;
   t_wavelan *wavelan = (t_wavelan *)data;
 
+  XFCE_PANEL_LOCK();
+
   if (wavelan->device != NULL) {
     int result;
 
@@ -202,6 +204,8 @@ wavelan_timer(gpointer data)
     gtk_tooltips_set_tip(wavelan->tooltips, wavelan->ebox, tip, NULL);
     g_free(tip);
   }
+
+  XFCE_PANEL_UNLOCK();
 
   /* keep the timeout running */
   return(TRUE);
