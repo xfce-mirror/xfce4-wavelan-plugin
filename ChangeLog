@@ -1,3 +1,14 @@
+2004-02-12 23:43  benny
+
+	* NEWS, README, configure, configure.ac, panel-plugin/wi_linux.c:
+	Improved Linux support by An-Cheng Huang.
+
+2004-02-11 18:02  benny
+
+	* AUTHORS, ChangeLog, NEWS, configure, configure.ac,
+	panel-plugin/wi_linux.c: Improved Linux support, thanks to An-Cheng
+	Huang
+
 2004-02-10 00:32  benny
 
 	* panel-plugin/wavelan.c: Added code to autohide the plugin if the
