@@ -1,4 +1,4 @@
-/* $Id: wi_linux.c,v 1.1 2004/02/09 21:20:54 benny Exp $ */
+/* $Id: wi_linux.c,v 1.2 2004/02/11 17:02:03 benny Exp $ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -51,6 +51,7 @@ wi_open(const char *interface)
     return(NULL);
 
   device = g_new0(struct wi_device, 1);
+  device->fp = fp;
   g_strlcpy(device->interface, interface, WI_MAXSTRLEN);
 
   return(device);
@@ -109,10 +110,10 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
 
   /* calculate link quality */
   if (link <= 0)
-    stats->quality = 0;
+    stats->ws_quality = 0;
   else {
     /* thanks to google for this hint */
-    stats->quality = (int)rint(log(link) / log(92.0) * 100.0);
+    stats->ws_quality = (int)rint(log(link) / log(92.0) * 100.0);
   }
  
   return(WI_OK);

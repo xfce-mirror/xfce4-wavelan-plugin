@@ -1,1 +1,61 @@
+2004-02-10 00:32  benny
+
+	* panel-plugin/wavelan.c: Added code to autohide the plugin if the
+	device is offline, that is the plugin is unable to detect a
+	"carrier signal". This saves space in the panel.
+
+2004-02-09 22:49  benny
+
+	* panel-plugin/icons.xcf: Keep this here, so we can change the
+	icons at any time.
+
+2004-02-09 22:20  benny
+
+	* AUTHORS, COPYING, Makefile.in, NEWS, README, aclocal.m4, compile,
+	config.guess, config.sub, configure, configure.ac, depcomp,
+	install-sh, ltmain.sh, missing, mkinstalldirs,
+	panel-plugin/Makefile.am, panel-plugin/Makefile.in,
+	panel-plugin/error.png, panel-plugin/inline-icons.h,
+	panel-plugin/link0.png, panel-plugin/link1.png,
+	panel-plugin/link2.png, panel-plugin/link3.png,
+	panel-plugin/link4.png, panel-plugin/link5.png,
+	panel-plugin/wavelan.c, panel-plugin/wi.h, panel-plugin/wi_bsd.c,
+	panel-plugin/wi_common.c, panel-plugin/wi_linux.c: More
+	eye-candy-ness, having nice graphics instead of the ugly progress
+	indicators. Linux support added, but currently untested.
+
+2004-01-13 21:21  benny
+
+	* panel-plugin/wavelan.c: Don't use deprecated functions! :-)
+
+2004-01-09 13:57  benny
+
+	* panel-plugin/wi_bsd.c: Added OpenBSD support, thanks to Jolan
+	Luff.
+
+2003-12-19 17:57  benny
+
+	* NEWS, configure, configure.ac, panel-plugin/wavelan.c,
+	panel-plugin/wi.h, panel-plugin/wi_bsd.c: Added FreeBSD support,
+	thanks to Sebastian Yepes F.
+
+2003-11-11 19:43  benny
+
+	* AUTHORS, COPYING, ChangeLog, INSTALL, Makefile.am, Makefile.in,
+	README, aclocal.m4, autogen.sh, compile, config.guess, config.h.in,
+	config.sub, configure, configure.ac, depcomp, install-sh, missing,
+	mkinstalldirs, NEWS, ltmain.sh, m4/debug.m4, m4/depends.m4,
+	m4/i18n.m4, panel-plugin/Makefile.am, panel-plugin/Makefile.in,
+	panel-plugin/wavelan.c, panel-plugin/wi.h, panel-plugin/wi_bsd.c:
+	Initial revision
+
+2003-11-11 19:43  benny
+
+	* AUTHORS, COPYING, ChangeLog, INSTALL, Makefile.am, Makefile.in,
+	README, aclocal.m4, autogen.sh, compile, config.guess, config.h.in,
+	config.sub, configure, configure.ac, depcomp, install-sh, missing,
+	mkinstalldirs, NEWS, ltmain.sh, m4/debug.m4, m4/depends.m4,
+	m4/i18n.m4, panel-plugin/Makefile.am, panel-plugin/Makefile.in,
+	panel-plugin/wavelan.c, panel-plugin/wi.h, panel-plugin/wi_bsd.c:
+	Initial import.
 
