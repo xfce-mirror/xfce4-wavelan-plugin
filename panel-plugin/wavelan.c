@@ -1,4 +1,4 @@
-/* $Id: wavelan.c,v 1.4 2004/02/09 21:20:54 benny Exp $ */
+/* $Id: wavelan.c,v 1.5 2004/02/09 23:32:54 benny Exp $ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -56,6 +56,8 @@ typedef struct
   guint timer_id;
 
   guint state;
+
+  gboolean autohide;
 
   int size;
   int orientation;
@@ -141,6 +143,11 @@ wavelan_set_state(t_wavelan *wavelan, guint state)
 
   wavelan->state = state;
   gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), wavelan->pb[state]);
+
+  if (wavelan->autohide && state == STATE_LINK0)
+    gtk_widget_hide(wavelan->ebox);
+  else
+    gtk_widget_show(wavelan->ebox);
 }
 
 static gboolean
@@ -207,6 +214,7 @@ wavelan_new(void)
 
 	wavelan = g_new0(t_wavelan, 1);
 
+  wavelan->autohide = FALSE;
   wavelan->size = 1;
   wavelan->orientation = HORIZONTAL;
 
@@ -320,6 +328,10 @@ wavelan_read_config(Control *ctrl, xmlNodePtr parent)
       wavelan->interface = g_strdup((const char *)value);
       xmlFree(value);
     }
+    if ((value = xmlGetProp(node, (const xmlChar*)"AutoHide")) != NULL) {
+      wavelan->autohide = (strcmp((const char *)value, "true") == 0);
+      xmlFree(value);
+    }
 
     break;
   }
@@ -337,6 +349,7 @@ wavelan_write_config(Control *ctrl, xmlNodePtr parent)
 
   if (wavelan->interface != NULL)
     xmlSetProp(root, "Interface", wavelan->interface);
+  xmlSetProp(root, "AutoHide", wavelan->autohide ? "true" : "false");
 }
 
 static void
@@ -370,13 +383,20 @@ wavelan_set_orientation(Control *ctrl, int orientation)
 
 /* interface changed callback */
 static void
-wavelan_interface_changed(GtkWidget *widget, gpointer data)
+wavelan_interface_changed(GtkEntry *entry, t_wavelan *wavelan)
 {
-  t_wavelan *wavelan = (t_wavelan *)data;
   if (wavelan->interface != NULL)
     g_free(wavelan->interface);
-  wavelan->interface = g_strdup(gtk_entry_get_text(GTK_ENTRY(widget)));
+  wavelan->interface = g_strdup(gtk_entry_get_text(entry));
   wavelan_configure(wavelan);
+}
+
+/* autohide toggled callback */
+static void
+wavelan_autohide_changed(GtkToggleButton *button, t_wavelan *wavelan)
+{
+  wavelan->autohide = gtk_toggle_button_get_active(button);
+  wavelan_set_state(wavelan, wavelan->state);
 }
 
 /* options dialog */
@@ -384,7 +404,11 @@ static void
 wavelan_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
 {
   t_wavelan *wavelan = (t_wavelan *)ctrl->data;
-  GtkWidget *hbox, *label, *interface;
+  GtkWidget *hbox, *label, *interface, *vbox, *autohide;
+
+  vbox = gtk_vbox_new(FALSE, 2);
+  gtk_widget_show(vbox);
+  gtk_container_add(GTK_CONTAINER(con), vbox);
 
   hbox = gtk_hbox_new(FALSE, 2);
   gtk_widget_show(hbox);
@@ -399,7 +423,17 @@ wavelan_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
   gtk_widget_show(interface);
   gtk_box_pack_start(GTK_BOX(hbox), label, TRUE, FALSE, 1);
   gtk_box_pack_start(GTK_BOX(hbox), interface, TRUE, FALSE, 1);
-  gtk_container_add(GTK_CONTAINER(con), hbox);
+  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
+
+  hbox = gtk_hbox_new(FALSE, 2);
+  gtk_widget_show(hbox);
+  autohide = gtk_check_button_new_with_mnemonic(_("_Autohide when offline"));
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(autohide), wavelan->autohide);
+  g_signal_connect(autohide, "toggled", G_CALLBACK(wavelan_autohide_changed),
+      wavelan);
+  gtk_widget_show(autohide);
+  gtk_box_pack_start(GTK_BOX(hbox), autohide, TRUE, TRUE, 1);
+  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
 }
 
 /* initialization */
