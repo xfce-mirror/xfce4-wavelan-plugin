@@ -281,12 +281,12 @@ wavelan_set_orientation(Control *ctrl, int orientation)
   }
 
   gtk_container_set_border_width(GTK_CONTAINER(box), border_width);
-  gtk_object_ref(GTK_OBJECT(wavelan->indicator));
+  g_object_ref(G_OBJECT(wavelan->indicator));
   gtk_container_remove(GTK_CONTAINER(wavelan->box), wavelan->indicator);
   gtk_container_add(GTK_CONTAINER(box), wavelan->indicator);
   gtk_container_remove(GTK_CONTAINER(wavelan->ebox), wavelan->box);
   gtk_container_add(GTK_CONTAINER(wavelan->ebox), box);
-  gtk_object_unref(GTK_OBJECT(wavelan->indicator));
+  g_object_unref(G_OBJECT(wavelan->indicator));
   gtk_widget_show(box);
   wavelan->box = box;
 }
