@@ -1,4 +1,4 @@
-/* $Id: wavelan.c,v 1.8 2004/08/03 13:21:01 benny Exp $ */
+/* $Id: wavelan.c,v 1.9 2004/08/03 16:46:39 benny Exp $ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -421,12 +421,8 @@ wavelan_query_interfaces (void)
           if (!isalpha (*line))
             continue;
 
-          for (n = 0; line[n] != '\0'; ++n)
-            if (line[n] == ':')
-              {
-                line[n] = '\0';
-                break;
-              }
+          for (n = 0; isalnum (line[n]); ++n);
+          line[n] = '\0';
 
           interfaces = g_list_append (interfaces, g_strdup (line));
         }
