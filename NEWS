@@ -1,3 +1,10 @@
+20040209:
+---------
+	* Version 0.3.0 with (initial) OpenBSD support and some more
+	  eye-candy.
+	* Added (untested) Linux support, requires /proc/net/wireless
+	  which should be provided by the so called "WireLess Extension".
+
 20031219:
 ---------
 	* Initial (tested) FreeBSD support, thanks to Sebastian Yepes F.

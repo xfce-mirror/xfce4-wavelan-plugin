@@ -1,4 +1,4 @@
-/* $Id: wi.h,v 1.3 2004/02/09 21:20:54 benny Exp $ */
+/* $Id: wi_common.c,v 1.1 2004/02/09 21:20:54 benny Exp $ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -24,34 +24,24 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __WI_H__
-#define __WI_H__
+#include <wi.h>
 
-#include <glib.h>
-
-#define WI_MAXSTRLEN  (512)
-
-struct wi_device;
-
-struct wi_stats
+const char *
+wi_strerror(int error)
 {
-  char  ws_netname[WI_MAXSTRLEN]; /* current SSID */
-  int   ws_quality;               /* current signal quality (percent) */
-  int   ws_rate;                  /* current rate (Mbps) */
-  char  ws_vendor[WI_MAXSTRLEN];  /* device vendor name */
-};
+  switch (error) {
+  case WI_NOCARRIER:
+    return("No carrier signal");
 
-enum
-{
-  WI_OK         =  0,  /* everything ok */
-  WI_NOCARRIER  = -1,  /* no carrier signal, some of the stats may be invalid */
-  WI_NOSUCHDEV  = -2,  /* device is currently not attached */
-  WI_INVAL      = -3,  /* invalid parameters given */
-};
+  case WI_NOSUCHDEV:
+    return("No such WaveLAN device");
 
-extern struct wi_device* wi_open(const char *);
-extern void wi_close(struct wi_device *);
-extern int wi_query(struct wi_device *, struct wi_stats *);
-extern const char *wi_strerror(int);
+  case WI_INVAL:
+    return("Invalid parameter");
 
-#endif  /* !__WI_H__ */
+  default:
+    return("Unknown error");
+  }
+}
+
+

@@ -1,5 +1,6 @@
-/*
- * Copyright (c) 2003 Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>
+/* $Id: wi_bsd.c,v 1.4 2004/02/09 21:20:54 benny Exp $ */
+/*-
+ * Copyright (c) 2003 Benedikt Meurer <benny@xfce.org>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -148,24 +149,6 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   }
 }
 
-const char *
-wi_strerror(int error)
-{
-  switch (error) {
-  case WI_NOCARRIER:
-    return("No carrier signal");
-
-  case WI_NOSUCHDEV:
-    return("No such WaveLAN device");
-
-  case WI_INVAL:
-    return("Invalid parameter");
-
-  default:
-    return("Unknown error");
-  }
-}
-
 static int
 _wi_carrier(const struct wi_device *device)
 {
@@ -226,11 +209,11 @@ _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
   wr.wi_type = WI_RID_STA_IDENTITY;
 
   if ((result = _wi_getval(device, &wr)) != WI_OK){
-    if (strcmp((char *)device,"ath")){	// For the Atheros, IDENTITY dus not work.
-    }else {
+    /* For the Atheros, IDENTITY does not work. */
+    if (strcmp(device->interface, "ath") != 0)
       return(result);
-    }
-  }else if (wr.wi_len < 4)
+  }
+  else if (wr.wi_len < 4)
     return(WI_NOSUCHDEV);
 
   switch (wr.wi_val[1]) {
@@ -287,11 +270,10 @@ _wi_quality(const struct wi_device *device, int *quality)
   if ((result = _wi_getval(device, &wr)) != WI_OK)
     return(result);
 
-  if (strcmp((char *)device,"ath") == 0) {	/* For the Atheros Cards */
+  if (strcmp(device->interface, "ath") == 0)	/* For the Atheros Cards */
     *quality = le16toh(wr.wi_val[1]);
-  }else{
+  else
     *quality = le16toh(wr.wi_val[0]);
-  }
 
   return(WI_OK);
 }

@@ -1,5 +1,6 @@
-/*
- * Copyright (c) 2003 Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>
+/* $Id: wavelan.c,v 1.4 2004/02/09 21:20:54 benny Exp $ */
+/*-
+ * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -35,17 +36,112 @@
 #include <panel/xfce.h>
 
 #include <wi.h>
+#include "inline-icons.h"
+
+enum
+{
+  STATE_ERROR = 0,
+  STATE_LINK0 = 1,
+  STATE_LINK1 = 2,
+  STATE_LINK2 = 3,
+  STATE_LINK3 = 4,
+  STATE_LINK4 = 5,
+  STATE_LINK5 = 6
+};
 
 typedef struct
 {
   gchar *interface;
   struct wi_device *device;
   guint timer_id;
+
+  guint state;
+
+  int size;
+  int orientation;
+
+  GdkPixbuf *pb[7];
+
 	GtkWidget	*ebox;
   GtkWidget *box;
-	GtkWidget	*indicator;
+	GtkWidget	*image;
+
   GtkTooltips *tooltips;
 } t_wavelan;
+
+static GdkPixbuf *
+load_and_scale(const guint8 *data, int dstw, int dsth)
+{
+  GdkPixbuf *pb, *pb_scaled;
+  int pb_w, pb_h;
+
+  pb = gdk_pixbuf_new_from_inline(-1, data, FALSE, NULL);
+  pb_w = gdk_pixbuf_get_width(pb);
+  pb_h = gdk_pixbuf_get_height(pb);
+
+  if (dstw == pb_w && dsth == pb_h)
+    return(pb);
+  else if (dstw < 0)
+    dstw = (dsth * pb_w) / pb_h;
+  else if (dsth < 0)
+    dsth = (dstw * pb_h) / pb_w;
+
+  pb_scaled = gdk_pixbuf_scale_simple(pb, dstw, dsth, GDK_INTERP_HYPER);
+  g_object_unref(G_OBJECT(pb));
+
+  return(pb_scaled);
+}
+
+static void
+wavelan_load_pixbufs(t_wavelan *wavelan)
+{
+  int n, w, h;
+
+  /*
+   * free old pixbufs first
+   */
+  for (n = 0; n < 7; ++n) {
+    if (wavelan->pb[n] != NULL)
+      g_object_unref(G_OBJECT(wavelan->pb[n]));
+  }
+
+  /*
+   * Determine dimension
+   */
+  if (wavelan->orientation == HORIZONTAL) {
+    w = -1;
+    h = icon_size[wavelan->size];
+  }
+  else {
+    w = icon_size[wavelan->size];
+    h = -1;
+  }
+
+  /*
+   * Load and scale pixbufs
+   */
+  wavelan->pb[0] = load_and_scale(error_icon_data, w, h);
+  wavelan->pb[1] = load_and_scale(link0_icon_data, w, h);
+  wavelan->pb[2] = load_and_scale(link1_icon_data, w, h);
+  wavelan->pb[3] = load_and_scale(link2_icon_data, w, h);
+  wavelan->pb[4] = load_and_scale(link3_icon_data, w, h);
+  wavelan->pb[5] = load_and_scale(link4_icon_data, w, h);
+  wavelan->pb[6] = load_and_scale(link5_icon_data, w, h);
+}
+
+static void
+wavelan_set_state(t_wavelan *wavelan, guint state)
+{
+  /* this is OK, happens if this function is called too early */
+  if (wavelan->pb[0] == NULL)
+    return;
+
+  if (state > STATE_LINK5)
+    state = STATE_LINK5;
+
+  wavelan->state = state;
+  gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), wavelan->pb[state]);
+}
 
 static gboolean
 wavelan_timer(gpointer data)
@@ -59,46 +155,39 @@ wavelan_timer(gpointer data)
 
     if ((result = wi_query(wavelan->device, &stats)) != WI_OK) {
       /* reset quality indicator */
-      gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->indicator), 0.0);
-      gtk_widget_set_sensitive(wavelan->indicator, FALSE);
-
       if (result == WI_NOCARRIER) {
-        tip = g_strdup_printf(_(
-              "Interface:\t%s\n"
-              "Vendor:\t%s\n"
-              "No carrier signal"),
-            wavelan->interface,
-            stats.ws_vendor);
+        tip = g_strdup_printf(_("No carrier signal"));
+        wavelan_set_state(wavelan, STATE_LINK0);
       }
       else {
         /* set error */
-        tip = g_strdup_printf(_(
-              "Interface:\t%s\n"
-              "%s"),
-            wavelan->interface,
-            wi_strerror(result));
+        tip = g_strdup_printf("%s", wi_strerror(result));
+        wavelan_set_state(wavelan, STATE_ERROR);
       }
     }
     else {
-      gtk_widget_set_sensitive(wavelan->indicator, TRUE);
-      gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->indicator),
-          (double)stats.ws_quality / 100.0);
+      if (stats.ws_quality >= 95)
+        wavelan_set_state(wavelan, STATE_LINK5);
+      else if (stats.ws_quality >= 73)
+        wavelan_set_state(wavelan, STATE_LINK4);
+      else if (stats.ws_quality >= 49)
+        wavelan_set_state(wavelan, STATE_LINK3);
+      else if (stats.ws_quality >= 25)
+        wavelan_set_state(wavelan, STATE_LINK2);
+      else if (stats.ws_quality >= 1)
+        wavelan_set_state(wavelan, STATE_LINK1);
+      else
+        wavelan_set_state(wavelan, STATE_LINK0);
 
-      tip = g_strdup_printf(_(
-            "Interface:\t%s\n"
-            "Vendor:\t%s\n"
-            "Quality:\t%d%%\n"
-            "Rate:\t%dMbps\n"
-            "Network:\t%s"),
-          wavelan->interface,
-          stats.ws_vendor,
-          stats.ws_quality,
-          stats.ws_rate,
-          stats.ws_netname);
+      if (strlen(stats.ws_netname) > 0)
+        tip = g_strdup_printf("%d%% (%s)", stats.ws_quality, stats.ws_netname);
+      else
+        tip = g_strdup_printf("%d%%", stats.ws_quality);
     }
   }
   else {
     tip = g_strdup(_("No device configured"));
+    wavelan_set_state(wavelan, STATE_ERROR);
   }
 
   /* activate new tooltip */
@@ -118,6 +207,9 @@ wavelan_new(void)
 
 	wavelan = g_new0(t_wavelan, 1);
 
+  wavelan->size = 1;
+  wavelan->orientation = HORIZONTAL;
+
 	wavelan->ebox = gtk_event_box_new();
 	gtk_widget_show(wavelan->ebox);
 
@@ -126,9 +218,9 @@ wavelan_new(void)
 	gtk_widget_show(wavelan->box);
 	gtk_container_add(GTK_CONTAINER(wavelan->ebox), wavelan->box);
 
-  wavelan->indicator = gtk_progress_bar_new();
-	gtk_widget_show(wavelan->indicator);
-	gtk_container_add(GTK_CONTAINER(wavelan->box), wavelan->indicator);
+  wavelan->image = gtk_image_new();
+	gtk_widget_show(wavelan->image);
+	gtk_container_add(GTK_CONTAINER(wavelan->box), wavelan->image);
 
   /* create tooltips */
   wavelan->tooltips = gtk_tooltips_new();
@@ -182,6 +274,7 @@ static void
 wavelan_free(Control *ctrl)
 {
 	t_wavelan *wavelan;
+  int n;
 
 	g_return_if_fail(ctrl != NULL);
 	g_return_if_fail(ctrl->data != NULL);
@@ -190,6 +283,11 @@ wavelan_free(Control *ctrl)
 
   /* free tooltips */
   g_object_unref(G_OBJECT(wavelan->tooltips));
+
+  /* free pixbufs */
+  for (n = 0; n < 7; ++n)
+    if (wavelan->pb[n] != NULL)
+      g_object_unref(G_OBJECT(wavelan->pb[n]));
 
   /* unregister the timer */
   if (wavelan->timer_id != 0)
@@ -253,14 +351,10 @@ static void
 wavelan_set_size(Control *ctrl, int size)
 {
 	t_wavelan *wavelan = (t_wavelan *)ctrl->data;
-  if (settings.orientation == HORIZONTAL) {
-    gtk_widget_set_size_request(GTK_WIDGET(wavelan->indicator),
-        6 + 2 * size, icon_size[size]);
-  }
-  else {
-    gtk_widget_set_size_request(GTK_WIDGET(wavelan->indicator),
-        icon_size[size], 6 + 2 * size);
-  }
+
+  wavelan->size = size;
+  wavelan_load_pixbufs(wavelan);
+  wavelan_set_state(wavelan, wavelan->state);
 }
 
 static void
@@ -269,26 +363,9 @@ wavelan_set_orientation(Control *ctrl, int orientation)
   t_wavelan *wavelan = (t_wavelan *)ctrl->data;
   GtkWidget *box;
 
-  if (orientation == HORIZONTAL) {
-    gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(wavelan->indicator),
-        GTK_PROGRESS_BOTTOM_TO_TOP);
-    box = gtk_hbox_new(FALSE, 0);
-  }
-  else {
-    gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(wavelan->indicator),
-        GTK_PROGRESS_LEFT_TO_RIGHT);
-    box = gtk_vbox_new(FALSE, 0);
-  }
-
-  gtk_container_set_border_width(GTK_CONTAINER(box), border_width);
-  g_object_ref(G_OBJECT(wavelan->indicator));
-  gtk_container_remove(GTK_CONTAINER(wavelan->box), wavelan->indicator);
-  gtk_container_add(GTK_CONTAINER(box), wavelan->indicator);
-  gtk_container_remove(GTK_CONTAINER(wavelan->ebox), wavelan->box);
-  gtk_container_add(GTK_CONTAINER(wavelan->ebox), box);
-  g_object_unref(G_OBJECT(wavelan->indicator));
-  gtk_widget_show(box);
-  wavelan->box = box;
+  wavelan->orientation = orientation;
+  wavelan_load_pixbufs(wavelan);
+  wavelan_set_state(wavelan, wavelan->state);
 }
 
 /* interface changed callback */

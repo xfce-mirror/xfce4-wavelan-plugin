@@ -9,7 +9,7 @@ AC_INIT([panel-plugin/wavelan.c])
 
 AM_CONFIG_HEADER([config.h])
 
-AM_INIT_AUTOMAKE([xfce4-wavelan-plugin], [0.2.0])
+AM_INIT_AUTOMAKE([xfce4-wavelan-plugin], [0.3.0])
 
 AM_MAINTAINER_MODE
 
