@@ -38,7 +38,10 @@
 #include <net/if_var.h>
 #include <net/ethernet.h>
 
-#include <machine/if_wavelan_ieee.h>
+#include <dev/wi/if_wavelan_ieee.h>
+#if __FreeBSD_version >= 500033
+#include <sys/endian.h>
+#endif
 #else
 #include <netinet/in.h>
 #include <netinet/if_ether.h>
@@ -72,6 +75,7 @@ static int _wi_getval(const struct wi_device *, struct wi_req *);
 static int _wi_vendor(const struct wi_device *, char *, size_t);
 static int _wi_netname(const struct wi_device *, char *, size_t);
 static int _wi_quality(const struct wi_device *, int *);
+static int _wi_rate(const struct wi_device *, int *);
 
 struct wi_device *
 wi_open(const char *interface)
@@ -126,6 +130,10 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
 
     /* check quality (depends on carrier state) */
     if ((result = _wi_quality(device, &stats->ws_quality)) != WI_OK)
+      return(result);
+
+    /* check rate (depends on carrier state) */
+    if ((result = _wi_rate(device, &stats->ws_rate)) != WI_OK)
       return(result);
 
     /* everything ok, stats are up-to-date */
@@ -210,9 +218,12 @@ _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
   wr.wi_len = WI_MAX_DATALEN;
   wr.wi_type = WI_RID_STA_IDENTITY;
 
-  if ((result = _wi_getval(device, &wr)) != WI_OK)
-    return(result);
-  else if (wr.wi_len < 4)
+  if ((result = _wi_getval(device, &wr)) != WI_OK){
+    if (strcmp((char *)device,"ath")){	// For the Atheros, IDENTITY dus not work.
+    }else {
+      return(result);
+    }
+  }else if (wr.wi_len < 4)
     return(WI_NOSUCHDEV);
 
   switch (wr.wi_val[1]) {
@@ -269,7 +280,29 @@ _wi_quality(const struct wi_device *device, int *quality)
   if ((result = _wi_getval(device, &wr)) != WI_OK)
     return(result);
 
-  *quality = le16toh(wr.wi_val[0]);
+  if (strcmp((char *)device,"ath") == 0) {	/* For the Atheros Cards */
+    *quality = le16toh(wr.wi_val[1]);
+  }else{
+    *quality = le16toh(wr.wi_val[0]);
+  }
+
+  return(WI_OK);
+}
+
+static int
+_wi_rate(const struct wi_device *device, int *rate)
+{
+  struct wi_req wr;
+  int result;
+
+  bzero((void *)&wr, sizeof(wr));
+  wr.wi_len = WI_MAX_DATALEN;
+  wr.wi_type = WI_RID_CUR_TX_RATE;
+
+  if ((result = _wi_getval(device, &wr)) != WI_OK)
+    return(result);
+
+  *rate = le16toh(wr.wi_val[0]);
 
   return(WI_OK);
 }

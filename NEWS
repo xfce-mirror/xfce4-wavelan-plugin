@@ -1,3 +1,9 @@
+20031219:
+---------
+	* Initial (tested) FreeBSD support, thanks to Sebastian Yepes F.
+	  <esn@x123.info>. In addition the current transfer rate selection
+	  is displayed. This is now version 0.2.0.
+
 20031111:
 ---------
 	* Version 0.1.0 with tested NetBSD support.

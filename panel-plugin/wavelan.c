@@ -64,8 +64,8 @@ wavelan_timer(gpointer data)
 
       if (result == WI_NOCARRIER) {
         tip = g_strdup_printf(_(
-              "Interface: %s\n"
-              "Vendor:    %s\n"
+              "Interface:\t%s\n"
+              "Vendor:\t%s\n"
               "No carrier signal"),
             wavelan->interface,
             stats.ws_vendor);
@@ -73,7 +73,7 @@ wavelan_timer(gpointer data)
       else {
         /* set error */
         tip = g_strdup_printf(_(
-              "Interface: %s\n"
+              "Interface:\t%s\n"
               "%s"),
             wavelan->interface,
             wi_strerror(result));
@@ -85,13 +85,15 @@ wavelan_timer(gpointer data)
           (double)stats.ws_quality / 100.0);
 
       tip = g_strdup_printf(_(
-            "Interface: %s\n"
-            "Vendor:    %s\n"
-            "Quality:   %d%%\n"
-            "Network:   %s"),
+            "Interface:\t%s\n"
+            "Vendor:\t%s\n"
+            "Quality:\t%d%%\n"
+            "Rate:\t%dMbps\n"
+            "Network:\t%s"),
           wavelan->interface,
           stats.ws_vendor,
           stats.ws_quality,
+          stats.ws_rate,
           stats.ws_netname);
     }
   }
