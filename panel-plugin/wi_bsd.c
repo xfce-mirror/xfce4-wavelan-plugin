@@ -23,7 +23,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#if defined(__NetBSD__) || defined(__FreeBSD__)
+#if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
 
 #include <sys/types.h>
 #include <sys/cdefs.h>
@@ -50,7 +50,14 @@
 #include <net80211/ieee80211_ioctl.h>
 #include <dev/ic/wi_ieee.h>
 #else
+#if !defined(__OpenBSD__)
 #include <dev/pcmcia/if_wavelan_ieee.h>
+#endif
+#endif
+#ifdef __OpenBSD__
+#include <net/if_ieee80211.h>
+#include <dev/ic/if_wi_ieee.h>
+#define le16toh(x) letoh16(x)
 #endif
 #endif
 
