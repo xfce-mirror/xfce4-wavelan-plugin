@@ -1,0 +1,15 @@
+WaveLAN plugin for the XFce4 panel.
+
+Displays various information about a WaveLAN device:
+
+* Vendor name (currently, only the wi* and awi* devices vendors are recognized)
+* Signal state (tells if a carrier signal was detected)
+* Signal quality (current quality of the carrier signal)
+* Network name (current SSID of the WaveLAN network)
+
+At the time of this writing only NetBSD and FreeBSD are supported, whereas
+only NetBSD is known to work. Tested with NetBSD 1.6ZE and 1.6U using a
+Lucent wi* device.
+
+Contributions for other plattforms such as Linux are very much welcome, as
+testers for NetBSD < 2.0 and FreeBSD are.
