@@ -1,4 +1,4 @@
-/* $Id: wi_linux.c,v 1.3 2004/02/12 22:43:46 benny Exp $ */
+/* $Id: wi_linux.c,v 1.4 2004/12/03 18:29:41 benny Exp $ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  * Copyright (c) 2004 An-Cheng Huang <pach@cs.cmu.edu>
@@ -105,6 +105,8 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   if ((result = ioctl(device->socket, SIOCGIWESSID, &wreq) < 0)) {
     g_strlcpy(stats->ws_netname, "", WI_MAXSTRLEN);
   } else {
+    /* ESSID is possibly NOT null terminated but we know its length */
+    essid[wreq.u.essid.length] = 0;
     g_strlcpy(stats->ws_netname, essid, WI_MAXSTRLEN);
   }
 

@@ -1,4 +1,4 @@
-/* $Id: wavelan.c,v 1.9 2004/08/03 16:46:39 benny Exp $ */
+/* $Id: wavelan.c,v 1.10 2004/12/03 18:29:41 benny Exp $ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -32,6 +32,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#undef GTK_DISABLE_DEPRECATED
 #include <gtk/gtk.h>
 
 #include <libxfce4util/i18n.h>
@@ -248,7 +249,7 @@ static void
 wavelan_configure(t_wavelan *wavelan)
 {
   if (wavelan->timer_id != 0) {
-    gtk_timeout_remove(wavelan->timer_id);
+    g_source_remove(wavelan->timer_id);
     wavelan->timer_id = 0;
   }
 
@@ -261,7 +262,7 @@ wavelan_configure(t_wavelan *wavelan)
     /* open the WaveLAN device */
     if ((wavelan->device = wi_open(wavelan->interface)) != NULL) {
       /* register the update timer */
-      wavelan->timer_id = gtk_timeout_add(250, wavelan_timer, wavelan);
+      wavelan->timer_id = g_timeout_add(250, wavelan_timer, wavelan);
     }
   }
 }
@@ -304,7 +305,7 @@ wavelan_free(Control *ctrl)
 
   /* unregister the timer */
   if (wavelan->timer_id != 0)
-    gtk_timeout_remove(wavelan->timer_id);
+    g_source_remove(wavelan->timer_id);
 
   /* free the device info */
   if (wavelan->device != NULL)
@@ -379,7 +380,6 @@ static void
 wavelan_set_orientation(Control *ctrl, int orientation)
 {
   t_wavelan *wavelan = (t_wavelan *)ctrl->data;
-  GtkWidget *box;
 
   wavelan->orientation = orientation;
   wavelan_load_pixbufs(wavelan);

@@ -1,3 +1,44 @@
+2004-08-03 18:46  benny
+
+	* panel-plugin/wavelan.c: Fix for Linux ifconfig.
+
+2004-08-03 15:21  benny
+
+	* NEWS, configure, configure.ac, panel-plugin/wavelan.c: Version
+	0.4.0 with support for threaded xfce4-panel.  Added combo for
+	interface selection.
+
+2004-07-29 22:42  benny
+
+	* panel-plugin/wavelan.c: Fix hanging panel with threading.
+
+2004-07-28 23:49  benny
+
+	* m4/depends.m4: Fix BM_DEPEND_CHECK().
+
+2004-07-24 19:43  benny
+
+	* Makefile.in, aclocal.m4, config.guess, config.sub, configure,
+	install-sh, ltmain.sh, mkinstalldirs, panel-plugin/Makefile.in,
+	panel-plugin/wavelan.c: Prepare this for threaded panel.
+
+2004-07-24 19:30  benny
+
+	* m4/depends.m4: Correct min. required panel version.
+
+2004-07-24 19:27  benny
+
+	* m4/depends.m4: Extended XFCE_PANEL_PLUGIN macro to honor the new
+	threaded panel.
+
+2004-07-21 11:00  benny
+
+	* m4/depends.m4: New panel plugin check
+
+2004-02-12 23:45  benny
+
+	* ChangeLog: Updated ChangeLog.
+
 2004-02-12 23:43  benny
 
 	* NEWS, README, configure, configure.ac, panel-plugin/wi_linux.c:

@@ -1,3 +1,10 @@
+20041203:
+---------
+	* Version 0.4.1.
+	* Applied patch from veser@gmx.net to ensure that ESSSID is always
+	  zero terminated on Linux.
+	* Don't use deprecated Gtk+ functions.
+
 20040803:
 ---------
 	* Version 0.4.0 with support for threaded xfce4-panel.

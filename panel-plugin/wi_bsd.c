@@ -1,4 +1,4 @@
-/* $Id: wi_bsd.c,v 1.4 2004/02/09 21:20:54 benny Exp $ */
+/* $Id: wi_bsd.c,v 1.5 2004/12/03 18:29:41 benny Exp $ */
 /*-
  * Copyright (c) 2003 Benedikt Meurer <benny@xfce.org>
  *
@@ -181,7 +181,6 @@ static int
 _wi_getval(const struct wi_device *device, struct wi_req *wr)
 {
   struct ifreq ifr;
-  int sd;
 
   bzero((void*)&ifr, sizeof(ifr));
   strlcpy(ifr.ifr_name, device->interface, sizeof(ifr.ifr_name));
