@@ -1,4 +1,4 @@
-/* $Id: wavelan.c,v 1.7 2004/07/29 20:42:41 benny Exp $ */
+/* $Id: wavelan.c,v 1.8 2004/08/03 13:21:01 benny Exp $ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -27,6 +27,10 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
+
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include <gtk/gtk.h>
 
@@ -400,12 +404,47 @@ wavelan_autohide_changed(GtkToggleButton *button, t_wavelan *wavelan)
   wavelan_set_state(wavelan, wavelan->state);
 }
 
+/* query installed devices */
+static GList*
+wavelan_query_interfaces (void)
+{
+  GList *interfaces = NULL;
+  gchar  line[1024];
+  FILE  *fp;
+  gint   n;
+
+  fp = popen ("/sbin/ifconfig -a", "r");
+  if (fp != NULL)
+    {
+      while (fgets (line, 1024, fp) != NULL)
+        {
+          if (!isalpha (*line))
+            continue;
+
+          for (n = 0; line[n] != '\0'; ++n)
+            if (line[n] == ':')
+              {
+                line[n] = '\0';
+                break;
+              }
+
+          interfaces = g_list_append (interfaces, g_strdup (line));
+        }
+
+      pclose (fp);
+    }
+
+  return interfaces;
+}
+
 /* options dialog */
 static void
 wavelan_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
 {
   t_wavelan *wavelan = (t_wavelan *)ctrl->data;
   GtkWidget *hbox, *label, *interface, *vbox, *autohide;
+  GtkWidget *combo;
+  GList     *interfaces, *lp;
 
   vbox = gtk_vbox_new(FALSE, 2);
   gtk_widget_show(vbox);
@@ -415,15 +454,22 @@ wavelan_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
   gtk_widget_show(hbox);
   label = gtk_label_new(_("Interface"));
   gtk_widget_show(label);
-  interface = gtk_entry_new();
-  gtk_entry_set_max_length(GTK_ENTRY(interface), 5);
+
+  interfaces = wavelan_query_interfaces ();
+  combo = gtk_combo_new ();
+  gtk_combo_set_popdown_strings (GTK_COMBO (combo), interfaces);
+  gtk_widget_show (combo);
+
+  interface = GTK_COMBO (combo)->entry;
+  gtk_entry_set_max_length(GTK_ENTRY(interface), 10);
   if (wavelan->interface != NULL)
     gtk_entry_set_text(GTK_ENTRY(interface), wavelan->interface);
   g_signal_connect(interface, "changed", G_CALLBACK(wavelan_interface_changed),
       wavelan);
   gtk_widget_show(interface);
+
   gtk_box_pack_start(GTK_BOX(hbox), label, TRUE, FALSE, 1);
-  gtk_box_pack_start(GTK_BOX(hbox), interface, TRUE, FALSE, 1);
+  gtk_box_pack_start(GTK_BOX(hbox), combo, TRUE, FALSE, 1);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
 
   hbox = gtk_hbox_new(FALSE, 2);
@@ -435,6 +481,10 @@ wavelan_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
   gtk_widget_show(autohide);
   gtk_box_pack_start(GTK_BOX(hbox), autohide, TRUE, TRUE, 1);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
+
+  for (lp = interfaces; lp != NULL; lp = lp ->next)
+    g_free (lp->data);
+  g_list_free (interfaces);
 }
 
 /* initialization */

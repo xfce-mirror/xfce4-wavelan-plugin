@@ -1807,7 +1807,7 @@ fi
 
 # Define the identity of the package.
  PACKAGE=xfce4-wavelan-plugin
- VERSION=0.3.2
+ VERSION=0.4.0
 
 
 cat >>confdefs.h <<_ACEOF

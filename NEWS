@@ -1,3 +1,8 @@
+20040803:
+---------
+	* Version 0.4.0 with support for threaded xfce4-panel.
+	* Added combo for interface selection.
+
 20040212:
 ---------
 	* Version 0.3.2 with improved Linux support from An-Cheng Huang
