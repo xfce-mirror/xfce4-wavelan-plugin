@@ -1,4 +1,4 @@
-/* $Id: wavelan.c,v 1.6 2004/07/24 17:43:54 benny Exp $ */
+/* $Id: wavelan.c,v 1.7 2004/07/29 20:42:41 benny Exp $ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -236,9 +236,6 @@ wavelan_new(void)
 
   /* create tooltips */
   wavelan->tooltips = gtk_tooltips_new();
-
-  /* update the gui */
-  wavelan_timer(wavelan);
 
 	return(wavelan);
 }
