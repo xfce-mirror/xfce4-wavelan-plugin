@@ -1,6 +1,7 @@
-/* $Id: wi_linux.c,v 1.2 2004/02/11 17:02:03 benny Exp $ */
+/* $Id: wi_linux.c,v 1.3 2004/02/12 22:43:46 benny Exp $ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2004 An-Cheng Huang <pach@cs.cmu.edu>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -30,28 +31,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/ioctl.h>
+
+/* Require wireless extensions */
+#include <linux/wireless.h> 
 
 #include <wi.h>
 
 struct wi_device
 {
   char interface[WI_MAXSTRLEN];
-  FILE *fp;
+  int socket;
 };
 
 struct wi_device *
 wi_open(const char *interface)
 {
   struct wi_device *device;
-  FILE *fp;
+  int sock;
 
   g_return_val_if_fail(interface != NULL, NULL);
 
-  if ((fp = fopen("/proc/net/wireless", "rt")) == NULL)
+  if ((sock = socket(PF_INET, SOCK_DGRAM, 0)) < 0) {
     return(NULL);
+  }
 
   device = g_new0(struct wi_device, 1);
-  device->fp = fp;
+  device->socket = sock;
   g_strlcpy(device->interface, interface, WI_MAXSTRLEN);
 
   return(device);
@@ -62,7 +70,7 @@ wi_close(struct wi_device *device)
 {
   g_return_if_fail(device != NULL);
 
-  fclose(device->fp);
+  close(device->socket);
   g_free(device);
 }
 
@@ -73,20 +81,58 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   char *bp;
   double link;
   long level;
+  int result;
+
+  struct iwreq wreq;
+  struct iw_statistics wstats;
+  char essid[IW_ESSID_MAX_SIZE + 1];
+
+  FILE *fp;
 
   g_return_val_if_fail(device != NULL, WI_INVAL);
   g_return_val_if_fail(stats != NULL, WI_INVAL);
 
   /* FIXME */
-  g_strlcpy(stats->ws_netname, "", WI_MAXSTRLEN);
-  stats->ws_rate = 0;
   g_strlcpy(stats->ws_vendor, "Unknown", WI_MAXSTRLEN);
 
-  /* rewind the /proc/net/wireless listing */
-  rewind(device->fp);
+  /* Set interface name */
+  strncpy(wreq.ifr_name, device->interface, IFNAMSIZ);
+
+  /* Get ESSID */
+  wreq.u.essid.pointer = (caddr_t) essid;
+  wreq.u.essid.length = IW_ESSID_MAX_SIZE + 1;
+  wreq.u.essid.flags = 0;
+  if ((result = ioctl(device->socket, SIOCGIWESSID, &wreq) < 0)) {
+    g_strlcpy(stats->ws_netname, "", WI_MAXSTRLEN);
+  } else {
+    g_strlcpy(stats->ws_netname, essid, WI_MAXSTRLEN);
+  }
+
+  /* Get bit rate */
+  if ((result = ioctl(device->socket, SIOCGIWRATE, &wreq) < 0)) {
+    stats->ws_rate = 0;
+  } else {
+    stats->ws_rate = wreq.u.bitrate.value;
+  }
+
+#if WIRELESS_EXT > 11
+  /* Get interface stats through ioctl */
+  wreq.u.data.pointer = (caddr_t) &wstats;
+  wreq.u.data.length = 0;
+  wreq.u.data.flags = 1;
+  if ((result = ioctl(device->socket, SIOCGIWSTATS, &wreq)) < 0) {
+    return(WI_NOSUCHDEV);
+  }
+  level = wstats.qual.level;
+  link = wstats.qual.qual;
+#else /* WIRELESS_EXT <= 11 */
+  /* Get interface stats through /proc/net/wireless */
+  if ((fp = fopen("/proc/net/wireless", "r")) == NULL) {
+    return(WI_NOSUCHDEV);
+  }
 
   for (;;) {
-    if (fgets(buffer, sizeof(buffer), device->fp) == NULL)
+    if (fgets(buffer, sizeof(buffer), fp) == NULL)
       return(WI_NOSUCHDEV);
 
     if (buffer[6] == ':') {
@@ -103,9 +149,12 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
       break;
     }
   }
+  fclose(fp);
+#endif
 
   /* check if we have a carrier signal */
-  if (level < 0)
+  /* FIXME: does 0 mean no carrier? */
+  if (level <= 0)
     return(WI_NOCARRIER);
 
   /* calculate link quality */
@@ -115,7 +164,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
     /* thanks to google for this hint */
     stats->ws_quality = (int)rint(log(link) / log(92.0) * 100.0);
   }
- 
+
   return(WI_OK);
 }
 

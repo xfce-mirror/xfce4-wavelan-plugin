@@ -2,14 +2,14 @@ dnl configure.ac
 dnl
 dnl xfce4-wavelan-plugin - WaveLAN plugin for xfce4-panel
 dnl
-dnl 2003 Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>
+dnl 2003,2004 Benedikt Meurer <benny@xfce.org>
 dnl
 
 AC_INIT([panel-plugin/wavelan.c])
 
 AM_CONFIG_HEADER([config.h])
 
-AM_INIT_AUTOMAKE([xfce4-wavelan-plugin], [0.3.1])
+AM_INIT_AUTOMAKE([xfce4-wavelan-plugin], [0.3.2])
 
 AM_MAINTAINER_MODE
 

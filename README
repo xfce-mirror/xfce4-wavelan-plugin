@@ -6,5 +6,4 @@ Displays various information about a WaveLAN device:
 * Signal quality (current quality of the carrier signal)
 * Network name (current SSID of the WaveLAN network)
 
-At the time of this writing NetBSD, OpenBSD and FreeBSD are supported.
-Support for Linux is present, but currently untested.
+At the time of this writing NetBSD, OpenBSD, FreeBSD and Linux are supported.

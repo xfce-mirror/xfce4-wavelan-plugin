@@ -1,3 +1,8 @@
+20040212:
+---------
+	* Version 0.3.2 with improved Linux support from An-Cheng Huang
+	  using the Linux Wireless Extensions ioctl()'s if available.
+
 20040211:
 ---------
 	* Version 0.3.1 with fixes from An-Cheng for linux. Linux
