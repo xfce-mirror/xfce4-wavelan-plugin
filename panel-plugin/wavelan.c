@@ -1,4 +1,4 @@
-/* $Id: wavelan.c,v 1.10 2004/12/03 18:29:41 benny Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
@@ -35,8 +35,7 @@
 #undef GTK_DISABLE_DEPRECATED
 #include <gtk/gtk.h>
 
-#include <libxfce4util/i18n.h>
-#include <libxfcegui4/dialogs.h>
+#include <libxfcegui4/libxfcegui4.h>
 #include <panel/plugins.h>
 #include <panel/xfce.h>
 
@@ -487,6 +486,8 @@ wavelan_create_options (Control *ctrl, GtkContainer *con, GtkWidget *done)
 G_MODULE_EXPORT void
 xfce_control_class_init(ControlClass *cc)
 {
+  xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
+
 	/* these are required */
 	cc->name		        = "wavelan";
 	cc->caption		      = _("WaveLAN plugin");
