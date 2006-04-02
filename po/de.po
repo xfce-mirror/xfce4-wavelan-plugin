@@ -1,5 +1,5 @@
 # German translations for the xfce4-wavelan-plugin package.
-# Copyright (C) 2005 Benedikt Meurer <benny@xfce.org>
+# Copyright (C) 2003-2005 Benedikt Meurer <benny@xfce.org>
 # This file is distributed under the same license as the xfce4-wavelan-plugin package.
 # Benedikt Meurer <benny@xfce.org>, 2005.
 #
