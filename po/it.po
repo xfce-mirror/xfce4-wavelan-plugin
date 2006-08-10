@@ -1,5 +1,5 @@
 # Italian translations for the xfce4-wavelan-plugin package.
-# Copyright (C) YEAR Bart Simpson <bart@simpson.org>
+# Copyright (C) 2003-2005 Benedikt Meurer.
 # This file is distributed under the same license as the xfce4-wavelan-plugin package.
 # Emanuele Rocca <ema@debian.org>, 2006
 #
