@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-11 16:17+0200\n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
 "PO-Revision-Date: 2005-07-11 16:09+0200\n"
 "Last-Translator: Benedikt Meurer <benny@xfce.org>\n"
 "Language-Team: German <de@li.org>\n"
@@ -15,22 +15,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: panel-plugin/wavelan.c:172
+#: ../panel-plugin/wavelan.c:172
 msgid "No carrier signal"
 msgstr "Kein Empfang"
 
-#: panel-plugin/wavelan.c:202
+#: ../panel-plugin/wavelan.c:202
 msgid "No device configured"
 msgstr "Kein Gerät konfiguriert"
 
-#: panel-plugin/wavelan.c:450
+#: ../panel-plugin/wavelan.c:450
 msgid "Interface"
 msgstr "Schnittstelle"
 
-#: panel-plugin/wavelan.c:472
+#: ../panel-plugin/wavelan.c:472
 msgid "_Autohide when offline"
 msgstr "_Automatisch verstecken wenn offline"
 
-#: panel-plugin/wavelan.c:493
+#: ../panel-plugin/wavelan.c:493
 msgid "WaveLAN plugin"
 msgstr "WaveLAN plugin"

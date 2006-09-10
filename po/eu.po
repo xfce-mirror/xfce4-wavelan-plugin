@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-11 16:17+0200\n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
 "PO-Revision-Date: 2006-02-14 11:00+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Librezale <librezale@librezale.org>\n"
@@ -16,22 +16,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Pootle 0.6.3.20060126\n"
 
-#: panel-plugin/wavelan.c:172
+#: ../panel-plugin/wavelan.c:172
 msgid "No carrier signal"
 msgstr "Ez dago eramaile seinalerik"
 
-#: panel-plugin/wavelan.c:202
+#: ../panel-plugin/wavelan.c:202
 msgid "No device configured"
 msgstr "Ez dago gailu konfiguraturik"
 
-#: panel-plugin/wavelan.c:450
+#: ../panel-plugin/wavelan.c:450
 msgid "Interface"
 msgstr "Interfazea"
 
-#: panel-plugin/wavelan.c:472
+#: ../panel-plugin/wavelan.c:472
 msgid "_Autohide when offline"
 msgstr "_Auto-ezkutatu sarez kanpo dagoenean"
 
-#: panel-plugin/wavelan.c:493
+#: ../panel-plugin/wavelan.c:493
 msgid "WaveLAN plugin"
 msgstr "WaveLAN plugin-a"

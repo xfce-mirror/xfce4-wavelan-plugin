@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn-01924\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-11 16:17+0200\n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
 "PO-Revision-Date: 2006-08-27 11:06+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <translation-team-cs@lists.sourceforge.net>\n"
@@ -16,23 +16,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: panel-plugin/wavelan.c:172
+#: ../panel-plugin/wavelan.c:172
 msgid "No carrier signal"
 msgstr "Žádný signál"
 
-#: panel-plugin/wavelan.c:202
+#: ../panel-plugin/wavelan.c:202
 msgid "No device configured"
 msgstr "Žádné nakonfigurované zařízení"
 
-#: panel-plugin/wavelan.c:450
+#: ../panel-plugin/wavelan.c:450
 msgid "Interface"
 msgstr "Rozhraní"
 
-#: panel-plugin/wavelan.c:472
+#: ../panel-plugin/wavelan.c:472
 msgid "_Autohide when offline"
 msgstr "_Automaticky skrývat v režimu offline"
 
-#: panel-plugin/wavelan.c:493
+#: ../panel-plugin/wavelan.c:493
 msgid "WaveLAN plugin"
 msgstr "Zásuvný modul WaveLAN"
-

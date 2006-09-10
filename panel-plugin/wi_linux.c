@@ -1,4 +1,4 @@
-/* $Id: wi_linux.c,v 1.4 2004/12/03 18:29:41 benny Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  * Copyright (c) 2004 An-Cheng Huang <pach@cs.cmu.edu>

@@ -1,4 +1,4 @@
-/* $Id: wi_bsd.c,v 1.5 2004/12/03 18:29:41 benny Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2003 Benedikt Meurer <benny@xfce.org>
  *

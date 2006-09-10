@@ -1,4 +1,4 @@
-/* $Id: wi_common.c,v 1.1 2004/02/09 21:20:54 benny Exp $ */
+/* $Id$ */
 /*-
  * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
