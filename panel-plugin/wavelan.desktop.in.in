@@ -1,0 +1,6 @@
+[Xfce Panel]
+Type=X-XFCE-PanelPlugin
+Encoding=UTF-8
+_Name=Wavelan
+_Comment=View the status of a wireless network
+X-XFCE-Exec=@PLUGIN_PATH@/xfce4-wavelan-plugin
