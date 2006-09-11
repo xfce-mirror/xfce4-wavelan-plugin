@@ -1,3 +1,8 @@
+2006-09-11 08:11  nick
+
+	* Fix typo in panel-plugin/Makefile.am
+	* BUmp version to 0.5.3 for release
+
 2006-08-10 19:03  james
 
 	* Make the plugin visible when added.
