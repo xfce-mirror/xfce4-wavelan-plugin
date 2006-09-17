@@ -26,11 +26,11 @@ msgstr "Brak skonfigurowanego urządzenia"
 
 #: ../panel-plugin/wavelan.c:499
 msgid "Properties"
-msgstr ""
+msgstr "Właściwości"
 
 #: ../panel-plugin/wavelan.c:515
 msgid "Wavelan Plugin Options"
-msgstr ""
+msgstr "Opcje wtyczki Wavelan"
 
 #: ../panel-plugin/wavelan.c:531
 msgid "Interface"
@@ -42,7 +42,7 @@ msgstr "_Ukrywaj gdy offline"
 
 #: ../panel-plugin/wavelan.c:563
 msgid "Autohide when no hardware present"
-msgstr ""
+msgstr "Ukryj gdy brak odpowiedniego urządzenia"
 
 #: ../panel-plugin/wavelan.c:574
 msgid ""
