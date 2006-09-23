@@ -49,6 +49,8 @@ msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
 msgstr ""
+"Notka: To spowoduje trudności w usunięciu lub konfiguracji wtyczki jeżeli  "
+"nie ma wykrytego urządzenia."
 
 #~ msgid "WaveLAN plugin"
 #~ msgstr "Wtyczka WaveLAN"
