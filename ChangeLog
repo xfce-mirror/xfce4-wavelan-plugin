@@ -1,3 +1,8 @@
+2006-12-21 21:34  james
+
+	* Add patch from Petr Salinger <Petr.Salinger@seznam.cz> to fix
+	  compilation on kfreebsd.
+
 2006-09-11 08:11  nick
 
 	* Fix typo in panel-plugin/Makefile.am

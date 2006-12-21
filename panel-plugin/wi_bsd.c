@@ -24,7 +24,7 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+#if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__) 
 
 #include <sys/types.h>
 #include <sys/cdefs.h>
@@ -35,7 +35,7 @@
 
 #include <net/if.h>
 #include <net/if_media.h>
-#ifdef __FreeBSD__
+#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 #include <net/if_var.h>
 #include <net/ethernet.h>
 
@@ -61,6 +61,22 @@
 #define le16toh(x) letoh16(x)
 #endif
 #endif
+
+#if defined(__GLIBC__)
+
+#define  strlcpy(dst, src, size) g_strlcpy(dst, src, size)
+
+#include <byteswap.h>
+#include <endian.h>
+#if __BYTE_ORDER == __LITTLE_ENDIAN
+#define le16toh(x)      ((uint16_t)(x))
+#elif __BYTE_ORDER == __BIG_ENDIAN
+#define le16toh(x)      bswap16((x))
+#else
+#error unknown ENDIAN
+#endif
+
+#endif /* __GLIBC__ */
 
 #include <stdio.h>
 #include <string.h>
