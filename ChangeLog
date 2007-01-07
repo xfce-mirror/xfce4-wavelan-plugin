@@ -1,3 +1,8 @@
+2007-01-07 22:45  james
+
+	* Fix an autoconf problem that needed sys/socket.h including before
+	  linux/wireless.h in its test program.
+
 2007-01-07 16:49  james
 
 	* Add an option to make the panel icon square.

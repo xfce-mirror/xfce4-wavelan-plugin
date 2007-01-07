@@ -41,7 +41,7 @@ dnl Check for standard header files
 AC_HEADER_STDC()
 AC_CHECK_HEADERS([math.h stdio.h stdlib.h string.h sys/types.h \
                   sys/socket.h sys/ioctl.h linux/wireless.h string.h \
-                  ctype.h])
+                  ctype.h], [], [], [#include <sys/socket.h>])
 
 dnl Check for i18n support
 XDT_I18N([@LINGUAS@])
