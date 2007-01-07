@@ -1,3 +1,8 @@
+20060911:
+---------
+  * Version 0.5.3
+  * Fix a typo that referenced the wrong executable in the .desktop file.
+
 20060810:
 ---------
   * Version 0.5.2

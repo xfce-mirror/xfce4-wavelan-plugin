@@ -64,6 +64,7 @@ typedef struct
 
   gboolean autohide;
   gboolean autohide_missing;
+  gboolean square_icon;
 
   int size;
   GtkOrientation orientation;
@@ -109,7 +110,7 @@ load_and_scale(const guint8 *data, int dstw, int dsth)
 static void
 wavelan_load_pixbufs(t_wavelan *wavelan)
 {
-  int n, w, h;
+  int n, w, h, second_dim;
 
   TRACE ("Entered wavelan_load_pixbufs, size = %d", wavelan->size);
 
@@ -122,15 +123,25 @@ wavelan_load_pixbufs(t_wavelan *wavelan)
   }
 
   /*
+   * Make it square if desired.
+   */
+  if (wavelan->square_icon) {
+    second_dim = wavelan->size;
+  }
+  else {
+    second_dim = -1;
+  }
+
+  /*
    * Determine dimension
    */
   if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL) {
-    w = -1;
+    w = second_dim;
     h = wavelan->size;
   }
   else {
     w = wavelan->size;
-    h = -1;
+    h = second_dim;
   }
 
   /*
@@ -277,6 +288,7 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
       
       wavelan->autohide = xfce_rc_read_bool_entry (rc, "Autohide", FALSE);
       wavelan->autohide_missing = xfce_rc_read_bool_entry(rc, "AutohideMissing", FALSE);
+      wavelan->square_icon = xfce_rc_read_bool_entry(rc, "SquareIcon", FALSE);
     }
   }
   
@@ -296,6 +308,8 @@ wavelan_new(XfcePanelPlugin *plugin)
 
   wavelan->autohide = FALSE;
   wavelan->autohide_missing = FALSE;
+
+  wavelan->square_icon = FALSE;
 
   wavelan->plugin = plugin;
   
@@ -396,6 +410,7 @@ wavelan_write_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
   }
   xfce_rc_write_bool_entry (rc, "Autohide", wavelan->autohide);
   xfce_rc_write_bool_entry (rc, "AutohideMissing", wavelan->autohide_missing);
+  xfce_rc_write_bool_entry (rc, "SquareIcon", wavelan->square_icon);
 
   xfce_rc_close(rc);
   
@@ -412,6 +427,14 @@ static void
 wavelan_set_size(t_wavelan *wavelan, int size)
 {
   wavelan->size = size;
+  wavelan_load_pixbufs(wavelan);
+  gtk_widget_set_size_request (wavelan->box, -1, -1);
+}
+
+static void
+wavelan_set_square_icon(t_wavelan *wavelan, gboolean square_icon)
+{
+  wavelan->square_icon = square_icon;
   wavelan_load_pixbufs(wavelan);
   gtk_widget_set_size_request (wavelan->box, -1, -1);
 }
@@ -442,6 +465,14 @@ wavelan_autohide_missing_changed(GtkToggleButton *button, t_wavelan *wavelan)
   TRACE ("Entered wavelan_autohide_missing_changed");
   wavelan->autohide_missing = gtk_toggle_button_get_active(button);
   wavelan_set_state(wavelan, wavelan->state);
+}
+
+/* square icon callback */
+static void 
+wavelan_square_icon_changed(GtkToggleButton *button, t_wavelan *wavelan)
+{
+  TRACE ("Entered wavelan_square_icon_changed");
+  wavelan_set_square_icon(wavelan, gtk_toggle_button_get_active(button));
 }
 
 /* query installed devices */
@@ -490,7 +521,7 @@ static void
 wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 {
   GtkWidget *dlg, *hbox, *label, *interface, *vbox, *autohide;
-  GtkWidget *autohide_missing, *header, *warn_label;
+  GtkWidget *autohide_missing, *header, *warn_label, *square_icon;
   GtkWidget *combo;
   GList     *interfaces, *lp;
 
@@ -575,6 +606,17 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   gtk_label_set_line_wrap(GTK_LABEL(warn_label), TRUE);
   gtk_widget_show(warn_label);
   gtk_box_pack_start(GTK_BOX(hbox), warn_label, TRUE, TRUE, 1);
+  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
+
+  hbox = gtk_hbox_new(FALSE, 2);
+  gtk_widget_show(hbox);
+  square_icon = gtk_check_button_new_with_label(_("Use a square icon"));
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(square_icon), 
+      wavelan->square_icon);
+  g_signal_connect(square_icon, "toggled", 
+      G_CALLBACK(wavelan_square_icon_changed), wavelan);
+  gtk_widget_show(square_icon);
+  gtk_box_pack_start(GTK_BOX(hbox), square_icon, TRUE, TRUE, 1);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
 
   for (lp = interfaces; lp != NULL; lp = lp ->next)
