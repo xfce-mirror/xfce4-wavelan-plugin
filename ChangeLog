@@ -1,3 +1,7 @@
+2007-01-07 23:28  james
+
+	* Remove an unused variable that caused a failure with -Werror.
+
 2007-01-07 22:45  james
 
 	* Fix an autoconf problem that needed sys/socket.h including before

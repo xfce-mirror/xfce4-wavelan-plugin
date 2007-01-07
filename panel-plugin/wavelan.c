@@ -300,7 +300,6 @@ wavelan_new(XfcePanelPlugin *plugin)
 {
 	t_wavelan *wavelan;
   XfceScreenPosition screen_position;
-  int size;
   
   TRACE ("Entered wavelan_new");
   
