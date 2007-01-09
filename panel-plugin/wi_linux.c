@@ -27,6 +27,10 @@
 
 #if defined(__linux__)
 
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <libxfce4util/libxfce4util.h>
 
 #include <math.h>
@@ -86,6 +90,37 @@ wi_close(struct wi_device *device)
   g_free(device);
 }
 
+static double
+wi_get_max_quality(struct wi_device *device)
+{
+  struct iwreq wreq;
+  double max_qual = 92.0;
+  char range_buf[sizeof(struct iw_range) * 2]; // wireless tools says it is
+                                              // large enough.
+  int result;
+
+  /* Set interface name */
+  strncpy(wreq.ifr_name, device->interface, IFNAMSIZ);
+
+  memset(range_buf, 0, sizeof(range_buf));
+
+  wreq.u.data.pointer = (caddr_t) range_buf;
+  wreq.u.data.length = sizeof(range_buf);
+  wreq.u.data.flags = 0;
+  if ((result = ioctl(device->socket, SIOCGIWRANGE, &wreq)) < 0) {
+    TRACE ("Couldn't get range information, taking default.");
+  } else {
+    struct iw_range *range = (struct iw_range *) range_buf;
+    max_qual = range->max_qual.qual;
+    if (max_qual <= 0) {
+      TRACE ("Got a negative value for max_qual, returning to default.");
+      max_qual = 92.0;
+    }
+  }
+
+  return max_qual;
+}
+
 int
 wi_query(struct wi_device *device, struct wi_stats *stats)
 {
@@ -97,6 +132,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   double link;
   long level;
   int result;
+  double max_qual = 92.0;
 
   struct iwreq wreq;
   struct iw_statistics wstats;
@@ -145,6 +181,9 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   }
   level = wstats.qual.level;
   link = wstats.qual.qual;
+
+  max_qual = wi_get_max_quality(device);
+
 #else /* WIRELESS_EXT <= 11 */
   /* Get interface stats through /proc/net/wireless */
   if ((fp = fopen("/proc/net/wireless", "r")) == NULL) {
@@ -181,8 +220,9 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   if (link <= 0)
     stats->ws_quality = 0;
   else {
-    /* thanks to google for this hint */
-    stats->ws_quality = (int)rint(log(link) / log(92.0) * 100.0);
+    /* thanks to google and wireless tools for this hint */
+    stats->ws_quality = (int)rint(log(link) / log(max_qual) * 100.0);
+    TRACE ("Quality: %2f, max quality: %2f", link, max_qual);
   }
 
   return(WI_OK);

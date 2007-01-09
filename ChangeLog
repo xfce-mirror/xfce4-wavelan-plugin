@@ -1,3 +1,12 @@
+2007-01-09 00:04  james
+
+	* Fix a bug in which the signal strength was incorrectly calculated, due to
+	  a max value being assumed that is not correct and usually too small.
+		This change will probably reduce the signal strength reported, but that is
+		because it was incorrect before. Bug 1499.
+	* Add config.h to panel-plugin/wi_linux.c to enable the trace debugging
+	  properly.
+
 2007-01-07 23:28  james
 
 	* Remove an unused variable that caused a failure with -Werror.
