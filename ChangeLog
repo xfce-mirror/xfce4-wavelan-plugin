@@ -1,3 +1,9 @@
+2207-01-09 20:24  james
+
+	* Add a check for libxfce4util in ./configure as it is possible to have
+	  the panel headers without the util headers. I haven't used libs and 
+		cflags which is probably a bug.
+
 2007-01-09 00:04  james
 
 	* Fix a bug in which the signal strength was incorrectly calculated, due to
