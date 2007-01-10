@@ -1,4 +1,10 @@
-2207-01-09 20:24  james
+2007-01-10 19:02  james
+
+	* Include more kernel headers in wi_linux.c as newer kernels don't
+	  do it for you when you are in userspace. Thanks to Maximilian Schleiss
+		for help debugging.
+
+2007-01-09 20:24  james
 
 	* Add a check for libxfce4util in ./configure as it is possible to have
 	  the panel headers without the util headers. I haven't used libs and 

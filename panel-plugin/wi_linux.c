@@ -41,6 +41,12 @@
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 
+/* On newer linux headers these need to be
+ * included first. It is probably a losing
+ * battle though.
+ */
+#include <linux/types.h>
+#include <linux/if.h>
 
 /* Require wireless extensions */
 #include <linux/wireless.h> 
