@@ -265,6 +265,37 @@ wavelan_reset(t_wavelan *wavelan)
   }
 }
 
+/* query installed devices */
+static GList*
+wavelan_query_interfaces (void)
+{
+  GList *interfaces = NULL;
+  gchar  line[1024];
+  FILE  *fp;
+  gint   n;
+
+  TRACE ("Entered wavelan_query_interface");
+  
+  fp = popen ("/sbin/ifconfig -a", "r");
+  if (fp != NULL)
+    {
+      while (fgets (line, 1024, fp) != NULL)
+        {
+          if (!isalpha (*line))
+            continue;
+
+          for (n = 0; isalnum (line[n]); ++n);
+          line[n] = '\0';
+
+          interfaces = g_list_append (interfaces, g_strdup (line));
+        }
+
+      pclose (fp);
+    }
+
+  return interfaces;
+}
+
 static void
 wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
 {
@@ -284,12 +315,18 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
       if ((s = xfce_rc_read_entry (rc, "Interface", NULL)) != NULL) 
       {
         wavelan->interface = g_strdup (s);
-      }
+      } 
       
       wavelan->autohide = xfce_rc_read_bool_entry (rc, "Autohide", FALSE);
       wavelan->autohide_missing = xfce_rc_read_bool_entry(rc, "AutohideMissing", FALSE);
       wavelan->square_icon = xfce_rc_read_bool_entry(rc, "SquareIcon", FALSE);
     }
+  }
+
+  if (wavelan->interface == NULL) {
+    GList *interfaces = wavelan_query_interfaces();
+    wavelan->interface = g_list_first(interfaces)->data;
+    g_list_free(interfaces);
   }
   
   wavelan_reset(wavelan);
@@ -472,37 +509,6 @@ wavelan_square_icon_changed(GtkToggleButton *button, t_wavelan *wavelan)
 {
   TRACE ("Entered wavelan_square_icon_changed");
   wavelan_set_square_icon(wavelan, gtk_toggle_button_get_active(button));
-}
-
-/* query installed devices */
-static GList*
-wavelan_query_interfaces (void)
-{
-  GList *interfaces = NULL;
-  gchar  line[1024];
-  FILE  *fp;
-  gint   n;
-
-  TRACE ("Entered wavelan_query_interface");
-  
-  fp = popen ("/sbin/ifconfig -a", "r");
-  if (fp != NULL)
-    {
-      while (fgets (line, 1024, fp) != NULL)
-        {
-          if (!isalpha (*line))
-            continue;
-
-          for (n = 0; isalnum (line[n]); ++n);
-          line[n] = '\0';
-
-          interfaces = g_list_append (interfaces, g_strdup (line));
-        }
-
-      pclose (fp);
-    }
-
-  return interfaces;
 }
 
 static void

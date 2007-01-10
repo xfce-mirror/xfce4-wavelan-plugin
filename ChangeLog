@@ -1,3 +1,11 @@
+2007-01-10 20:23  james
+
+	* Fix a bug where the interface that is top of the list isn't used unless
+		something else is selected first. It now defaults to the first interface
+		found if there is no rc file or interface stored in it. This does remove
+		the ability to have an instance without an associated interface, but who
+		wants that anyway? Thanks to Maximilian Schleiss for the report.
+
 2007-01-10 19:07  james
 
 	* Add the headers added in the last change to the checks in configure.
