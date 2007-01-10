@@ -1,3 +1,7 @@
+2007-01-10 19:07  james
+
+	* Add the headers added in the last change to the checks in configure.
+
 2007-01-10 19:02  james
 
 	* Include more kernel headers in wi_linux.c as newer kernels don't
