@@ -1,3 +1,15 @@
+20070117:
+---------
+  * Version 0.5.4
+  * Add an option to make the panel icon square.
+  * Fix a bug that calculated the signal strength incorrectly, reporting 102%
+    for some people. Your signal strength may well be reported lower now,
+    but apparently it was wrong before.
+  * Fix a bug where the interface wasn't activated if it was the first in
+    the list.
+  * Improve the handling of the kernel's include files.
+  * Fix compilation on kfreebsd thanks to Petr Salinger.
+
 20060911:
 ---------
   * Version 0.5.3
