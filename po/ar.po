@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: xfce\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 22:55+0200\n"
-"PO-Revision-Date: 2008-07-15 19:09+0200\n"
+"PO-Revision-Date: 2008-07-18 21:12+0200\n"
 "Last-Translator: Mohamed Magdy <mohamedmk@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:499
 msgid "Properties"
-msgstr ""
+msgstr "خصائص"
 
 #: ../panel-plugin/wavelan.c:515
 msgid "Wavelan Plugin Options"
@@ -29,15 +29,15 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:531
 msgid "Interface"
-msgstr ""
+msgstr "واجهة"
 
 #: ../panel-plugin/wavelan.c:553
 msgid "_Autohide when offline"
-msgstr ""
+msgstr "_إخفاء تلقائي عند عدم الاتصال"
 
 #: ../panel-plugin/wavelan.c:563
 msgid "Autohide when no hardware present"
-msgstr ""
+msgstr "إخفاء تلقائي عند غياب العتاد"
 
 #: ../panel-plugin/wavelan.c:574
 msgid ""
