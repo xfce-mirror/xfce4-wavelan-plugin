@@ -1,3 +1,8 @@
+2008-07-19 Landry Breuil <landry@xfce.org>
+
+	* Fix support for OpenBSD, using net80211 API instead of deprecated wi_* API.
+	* Show link quality AND txpower in plugin tooltip.
+
 2007-01-10 20:23  james
 
 	* Fix a bug where the interface that is top of the list isn't used unless
