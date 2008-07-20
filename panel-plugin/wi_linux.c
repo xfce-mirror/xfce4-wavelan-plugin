@@ -173,7 +173,8 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
     stats->ws_rate = 0;
   } else {
     TRACE ("Bit-rate is %d", wreq.u.bitrate.value);
-    stats->ws_rate = wreq.u.bitrate.value;
+    /* bitrate is in b/s, transform to Mb/s */
+    stats->ws_rate = wreq.u.bitrate.value / (1024 * 1024);
   }
 
 #if WIRELESS_EXT > 11

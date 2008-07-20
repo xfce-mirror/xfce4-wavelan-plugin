@@ -219,9 +219,9 @@ wavelan_timer(gpointer data)
         wavelan_set_state(wavelan, STATE_LINK0);
 
       if (strlen(stats.ws_netname) > 0)
-        tip = g_strdup_printf("%s: %ddB at %ddBm", stats.ws_netname, stats.ws_quality, stats.ws_rate);
+        tip = g_strdup_printf("%s: %d%% at %dMb/s", stats.ws_netname, stats.ws_quality, stats.ws_rate / 1000000);
       else
-        tip = g_strdup_printf("%ddB at %ddBm", stats.ws_quality, stats.ws_rate);
+        tip = g_strdup_printf("%d%% at %dMb/s", stats.ws_quality, stats.ws_rate / 1000000);
     }
   }
   else {
