@@ -27,8 +27,6 @@
 #ifndef __WI_H__
 #define __WI_H__
 
-#include <glib.h>
-
 #define WI_MAXSTRLEN  (512)
 
 struct wi_device;

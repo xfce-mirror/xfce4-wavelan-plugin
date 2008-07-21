@@ -238,7 +238,12 @@ _wi_quality(const struct wi_device *device, int *quality)
   if ((result = ioctl(device->socket, SIOCG80211NODE, (caddr_t) & nr)) != WI_OK)
     return (result);
 
-  *quality = nr.nr_rssi;
+  /* clearly broken, but stolen from ifconfig.c */
+  if (nr.nr_max_rssi)
+    *quality = IEEE80211_NODEREQ_RSSI(&nr); /* value in percentage */
+  else
+    *quality = nr.nr_rssi; /* value in decibels */
+
   return(WI_OK);
 }
 
@@ -246,15 +251,28 @@ static int
 _wi_rate(const struct wi_device *device, int *rate)
 {
   int result;
-  struct ieee80211_txpower txpower;
+  struct ieee80211_nodereq nr;
+  struct ieee80211_bssid bssid;
 
-  bzero((void *) &txpower, sizeof(txpower));
-  strlcpy(txpower.i_name, device->interface, sizeof(txpower.i_name));
-  if ((result = ioctl(device->socket, SIOCG80211TXPOWER, (caddr_t) & txpower)) != WI_OK)
+  bzero((void *) &bssid, sizeof(bssid));
+  bzero((void *) &nr, sizeof(nr));
 
+  /* get i_bssid from interface */
+  strlcpy(bssid.i_name, device->interface, sizeof(bssid.i_name));
+  if((result = ioctl(device->socket, SIOCG80211BSSID, (caddr_t) &bssid)) != WI_OK)
     return (result);
 
-  *rate = txpower.i_val;
+  /* put i_bssid into nr_macaddr to get nr_rssi */
+  bcopy(bssid.i_bssid, &nr.nr_macaddr, sizeof(nr.nr_macaddr));
+  strlcpy(nr.nr_ifname, device->interface, sizeof(nr.nr_ifname));
+  if ((result = ioctl(device->socket, SIOCG80211NODE, (caddr_t) & nr)) != WI_OK)
+    return (result);
+
+  /* stolen from ifconfig.c too, print only higher rate */
+  if (nr.nr_nrates)
+    *rate = (nr.nr_rates[nr.nr_nrates - 1] & IEEE80211_RATE_VAL) / 2;
+  else
+    *rate = 0;
   return(WI_OK);
 }
 #endif

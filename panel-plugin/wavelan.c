@@ -716,5 +716,22 @@ wavelan_construct (XfcePanelPlugin *plugin)
   
 }
 
-XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(wavelan_construct);
+#if 0
+int main(int argc, char** argv)
+{
+	struct wi_device *device;
+	struct wi_stats stats;
+	if ((device = wi_open(argv[1])) == NULL)
+		errx(1, "failed to open %s\n", argv[1]);
 
+
+	if (wi_query(device, &stats) != WI_OK)
+		errx(2, "wi_query failed\n");
+
+	printf("NWID:%s, quality:%d%%, rate:%dMb/s\n", stats.ws_netname, stats.ws_quality, stats.ws_rate);
+	wi_close(device);
+	return 0;
+}
+#else
+XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(wavelan_construct);
+#endif
