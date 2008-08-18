@@ -371,10 +371,7 @@ _wi_quality(const struct wi_device *device, int *quality)
   if ((result = _wi_getval(device, &wr)) != WI_OK)
     return(result);
 
-  if (strcmp(device->interface, "ath") == 0)	/* For the Atheros Cards */
-    *quality = le16toh(wr.wi_val[1]);
-  else
-    *quality = le16toh(wr.wi_val[0]);
+  *quality = le16toh(wr.wi_val[1]);
 
   return(WI_OK);
 }
