@@ -309,7 +309,6 @@ _wi_getval(const struct wi_device *device, struct ieee80211req_scan_result *scan
    if(ioctl(device->socket, SIOCG80211, &ireq) < 0)
       return(WI_NOSUCHDEV);
 
-   bzero((void*)&ifr, sizeof(ifr));
    if(ireq.i_len < sizeof(struct ieee80211req_scan_result))
       return(WI_NOSUCHDEV);
 
