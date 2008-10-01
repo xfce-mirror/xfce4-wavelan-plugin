@@ -1,6 +1,10 @@
 /* $Id: wi_bsd.c 562 2004-12-03 18:29:41Z benny $ */
 /*-
  * Copyright (c) 2003 Benedikt Meurer <benny@xfce.org>
+ *               2008 Landry Breuil <landry@xfce.org>
+ *                    (OpenBSD support)
+ *               2008 Pietro Cerutti <gahr@gahr.ch>
+ *                    (FreeBSD > 700000 adaptation)
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -36,16 +40,19 @@
 #include <net/if.h>
 #include <net/if_media.h>
 #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-#include <net/if_var.h>
-#include <net/ethernet.h>
-
-#include <dev/wi/if_wavelan_ieee.h>
-#if __FreeBSD_version >= 500033
-#include <sys/endian.h>
-#endif
-#else
 #include <netinet/in.h>
 #include <netinet/if_ether.h>
+#include <sys/endian.h>
+#if __FreeBSD_version >= 700000
+#include <sys/types.h>
+#include <sys/sysctl.h>
+#include <net80211/ieee80211_ioctl.h>
+#else
+#include <net/if_var.h>
+#include <net/ethernet.h>
+#include <dev/wi/if_wavelan_ieee.h>
+#endif
+#else
 #ifdef __NetBSD__
 #include <net80211/ieee80211.h>
 #include <net80211/ieee80211_ioctl.h>
@@ -96,8 +103,12 @@ struct wi_device
 
 static int _wi_carrier(const struct wi_device *);
 #if defined(__NetBSD__) || defined(__FreeBSD__)
-static int _wi_getval(const struct wi_device *, struct wi_req *);
 static int _wi_vendor(const struct wi_device *, char *, size_t);
+#if defined(__FreeBSD__) && __FreeBSD_version > 700000
+static int _wi_getval(const struct wi_device *, struct ieee80211req_scan_result *);
+#else
+static int _wi_getval(const struct wi_device *, struct wi_req *);
+#endif
 #endif
 static int _wi_netname(const struct wi_device *, char *, size_t);
 static int _wi_quality(const struct wi_device *, int *);
@@ -277,8 +288,36 @@ _wi_rate(const struct wi_device *device, int *rate)
 }
 #endif
 
-/* NetBSD and FreeBSD use old wi_* API */
+/* NetBSD and FreeBSD 6.x uses old wi_* API */
 #if defined(__NetBSD__) || defined(__FreeBSD__)
+/* FreeBSD 7.x use its own new iee80211 API */
+#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+static int
+_wi_getval(const struct wi_device *device, struct ieee80211req_scan_result *scan)
+{
+   char buffer[24 * 1024];
+   const uint8_t *bp;
+   struct ieee80211req ireq;
+   size_t len;
+   bzero(&ireq, sizeof(ireq));
+   strlcpy(ireq.i_name, device->interface, sizeof(ireq.i_name));
+
+   ireq.i_type = IEEE80211_IOC_SCAN_RESULTS;
+   ireq.i_data = buffer;
+   ireq.i_len = sizeof(buffer);
+
+   if(ioctl(device->socket, SIOCG80211, &ireq) < 0)
+      return(WI_NOSUCHDEV);
+
+   bzero((void*)&ifr, sizeof(ifr));
+   if(ireq.i_len < sizeof(struct ieee80211req_scan_result))
+      return(WI_NOSUCHDEV);
+
+   memcpy(scan, buffer, sizeof(struct ieee80211req_scan_result));
+
+   return(WI_OK);
+}
+#else
 static int
 _wi_getval(const struct wi_device *device, struct wi_req *wr)
 {
@@ -293,10 +332,31 @@ _wi_getval(const struct wi_device *device, struct wi_req *wr)
 
   return(WI_OK);
 }
-
+#endif
 static int
 _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
 {
+#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+   /*
+    * We use sysctl to get a device description
+    */
+   char mib[WI_MAXSTRLEN];
+   char dev_name[WI_MAXSTRLEN];
+   char *c = dev_name;
+   int  dev_number;
+
+   /*
+    * Dirty hack to split the device name into name and number
+    */
+   strncpy(dev_name, device->interface, WI_MAXSTRLEN);
+   while(!isdigit(*c)) c++;
+   dev_number = (int)strtol(c, NULL, 10);
+   *c = '\0';
+
+   snprintf(mib, sizeof(mib), "dev.%s.%d.%%desc", dev_name, dev_number);
+   if(sysctlbyname(mib, buffer, &len, NULL, 0) == -1)
+      return (WI_NOSUCHDEV);
+#else
 #define WI_RID_STA_IDENTITY_LUCENT	0x1
 #define WI_RID_STA_IDENTITY_PRISMII	0x2
 #define WI_RID_STA_IDENTITY_SAMSUNG	0x3
@@ -336,6 +396,7 @@ _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
 
   snprintf(buffer, len, "%s (ID %d, version %d.%d)", vendor,
       wr.wi_val[0], wr.wi_val[2], wr.wi_val[3]);
+#endif
 
   return(WI_OK);
 }
@@ -343,6 +404,18 @@ _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
 static int
 _wi_netname(const struct wi_device *device, char *buffer, size_t len)
 {
+#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+   struct ieee80211req ireq;
+
+   memset(&ireq, 0, sizeof(ireq));
+   strncpy(ireq.i_name, device->interface, sizeof(ireq.i_name));
+   ireq.i_type = IEEE80211_IOC_SSID;
+   ireq.i_val = -1;
+   ireq.i_data = buffer;
+   ireq.i_len = len; 
+   if (ioctl(device->socket, SIOCG80211, &ireq) < 0) 
+      return WI_NOSUCHDEV;
+#else
   struct wi_req wr;
   int result;
 
@@ -354,6 +427,7 @@ _wi_netname(const struct wi_device *device, char *buffer, size_t len)
     return(result);
 
   strlcpy(buffer, (char *)&wr.wi_val[1], MIN(len, le16toh(wr.wi_val[0]) + 1));
+#endif
 
   return(WI_OK);
 }
@@ -361,6 +435,16 @@ _wi_netname(const struct wi_device *device, char *buffer, size_t len)
 static int
 _wi_quality(const struct wi_device *device, int *quality)
 {
+#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+   struct ieee80211req_scan_result req;
+   int result;
+   bzero(&req, sizeof(req));
+
+   if((result = _wi_getval(device, &req)) != WI_OK)
+      return (result);
+
+   *quality = req.isr_rssi;
+#else
   struct wi_req wr;
   int result;
 
@@ -371,7 +455,11 @@ _wi_quality(const struct wi_device *device, int *quality)
   if ((result = _wi_getval(device, &wr)) != WI_OK)
     return(result);
 
+  /* according to various implementation (conky, ifconfig) :
+     wi_val[0] = quality, wi_val[1] = signal, wi_val[2] = noise
+     but my ral only shows a value for signal, and it seems it's a dB value */
   *quality = le16toh(wr.wi_val[1]);
+#endif
 
   return(WI_OK);
 }
@@ -379,6 +467,20 @@ _wi_quality(const struct wi_device *device, int *quality)
 static int
 _wi_rate(const struct wi_device *device, int *rate)
 {
+#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+   struct ieee80211req_scan_result req;
+   int result, i, high;
+   bzero(&req, sizeof(req));
+
+   if((result = _wi_getval(device, &req)) != WI_OK)
+      return (result);
+
+   for(i=0, high=-1; i<req.isr_nrates; i++)
+      if((req.isr_rates[i] & IEEE80211_RATE_VAL) > high)
+         high = req.isr_rates[i] & IEEE80211_RATE_VAL;
+   
+   *rate = high / 2;
+#else
   struct wi_req wr;
   int result;
 
@@ -390,6 +492,7 @@ _wi_rate(const struct wi_device *device, int *rate)
     return(result);
 
   *rate = le16toh(wr.wi_val[0]);
+#endif
 
   return(WI_OK);
 }
