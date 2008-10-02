@@ -102,9 +102,9 @@ struct wi_device
 };
 
 static int _wi_carrier(const struct wi_device *);
-#if defined(__NetBSD__) || defined(__FreeBSD__)
+#if defined(__FreeBSD__)
 static int _wi_vendor(const struct wi_device *, char *, size_t);
-#if defined(__FreeBSD__) && __FreeBSD_version > 700000
+#if __FreeBSD_version > 700000
 static int _wi_getval(const struct wi_device *, struct ieee80211req_scan_result *);
 #else
 static int _wi_getval(const struct wi_device *, struct wi_req *);
@@ -154,7 +154,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   bzero((void *)stats, sizeof(*stats));
 
   /* check vendor (independent of carrier state) */
-#if !defined(__OpenBSD__)
+#if defined(__FreeBSD__)
   if ((result = _wi_vendor(device, stats->ws_vendor, WI_MAXSTRLEN)) != WI_OK)
     return(result);
 #endif
@@ -288,50 +288,8 @@ _wi_rate(const struct wi_device *device, int *rate)
 }
 #endif
 
-/* NetBSD and FreeBSD 6.x uses old wi_* API */
-#if defined(__NetBSD__) || defined(__FreeBSD__)
-/* FreeBSD 7.x use its own new iee80211 API */
-#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
-static int
-_wi_getval(const struct wi_device *device, struct ieee80211req_scan_result *scan)
-{
-   char buffer[24 * 1024];
-   const uint8_t *bp;
-   struct ieee80211req ireq;
-   size_t len;
-   bzero(&ireq, sizeof(ireq));
-   strlcpy(ireq.i_name, device->interface, sizeof(ireq.i_name));
-
-   ireq.i_type = IEEE80211_IOC_SCAN_RESULTS;
-   ireq.i_data = buffer;
-   ireq.i_len = sizeof(buffer);
-
-   if(ioctl(device->socket, SIOCG80211, &ireq) < 0)
-      return(WI_NOSUCHDEV);
-
-   if(ireq.i_len < sizeof(struct ieee80211req_scan_result))
-      return(WI_NOSUCHDEV);
-
-   memcpy(scan, buffer, sizeof(struct ieee80211req_scan_result));
-
-   return(WI_OK);
-}
-#else
-static int
-_wi_getval(const struct wi_device *device, struct wi_req *wr)
-{
-  struct ifreq ifr;
-
-  bzero((void*)&ifr, sizeof(ifr));
-  strlcpy(ifr.ifr_name, device->interface, sizeof(ifr.ifr_name));
-  ifr.ifr_data = (void*)wr;
-
-  if (ioctl(device->socket, SIOCGWAVELAN, &ifr) < 0)
-    return(WI_NOSUCHDEV);
-
-  return(WI_OK);
-}
-#endif
+/* seems only FreeBSD supports this operation */
+#if defined(__FreeBSD__)
 static int
 _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
 {
@@ -399,7 +357,52 @@ _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
 
   return(WI_OK);
 }
+#endif /* wi_vendor */
 
+/* NetBSD and FreeBSD 6.x uses old wi_* API */
+#if defined(__NetBSD__) || defined(__FreeBSD__)
+/* FreeBSD 7.x use its own new iee80211 API */
+#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+static int
+_wi_getval(const struct wi_device *device, struct ieee80211req_scan_result *scan)
+{
+   char buffer[24 * 1024];
+   const uint8_t *bp;
+   struct ieee80211req ireq;
+   size_t len;
+   bzero(&ireq, sizeof(ireq));
+   strlcpy(ireq.i_name, device->interface, sizeof(ireq.i_name));
+
+   ireq.i_type = IEEE80211_IOC_SCAN_RESULTS;
+   ireq.i_data = buffer;
+   ireq.i_len = sizeof(buffer);
+
+   if(ioctl(device->socket, SIOCG80211, &ireq) < 0)
+      return(WI_NOSUCHDEV);
+
+   if(ireq.i_len < sizeof(struct ieee80211req_scan_result))
+      return(WI_NOSUCHDEV);
+
+   memcpy(scan, buffer, sizeof(struct ieee80211req_scan_result));
+
+   return(WI_OK);
+}
+#else
+static int
+_wi_getval(const struct wi_device *device, struct wi_req *wr)
+{
+  struct ifreq ifr;
+
+  bzero((void*)&ifr, sizeof(ifr));
+  strlcpy(ifr.ifr_name, device->interface, sizeof(ifr.ifr_name));
+  ifr.ifr_data = (void*)wr;
+
+  if (ioctl(device->socket, SIOCGWAVELAN, &ifr) < 0)
+    return(WI_NOSUCHDEV);
+
+  return(WI_OK);
+}
+#endif
 static int
 _wi_netname(const struct wi_device *device, char *buffer, size_t len)
 {
