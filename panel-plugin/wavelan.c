@@ -38,22 +38,11 @@
 #include <libxfce4panel/xfce-hvbox.h>
 
 #include <wi.h>
-#include "inline-icons.h"
 
 #include <string.h>
 #include <ctype.h>
 
-enum
-{
-  STATE_ERROR = 0,
-  STATE_LINK0 = 1,
-  STATE_LINK1 = 2,
-  STATE_LINK2 = 3,
-  STATE_LINK3 = 4,
-  STATE_LINK4 = 5,
-  STATE_LINK5 = 6
-};
-
+#define BORDER 8
 typedef struct
 {
   gchar *interface;
@@ -64,17 +53,15 @@ typedef struct
 
   gboolean autohide;
   gboolean autohide_missing;
-  gboolean square_icon;
+  gboolean signal_colors;
 
   int size;
   GtkOrientation orientation;
-  
-  GdkPixbuf *pb[7];
 
   GtkWidget *box;
   GtkWidget *ebox;
-	GtkWidget	*image;
-  GtkWidget *button;
+  GtkWidget *image;
+  GtkWidget *signal;
 
   GtkTooltips *tooltips;
 
@@ -82,98 +69,63 @@ typedef struct
   
 } t_wavelan;
 
-static GdkPixbuf *
-load_and_scale(const guint8 *data, int dstw, int dsth)
-{
-  GdkPixbuf *pb, *pb_scaled;
-  int pb_w, pb_h;
-
-  TRACE ("Entered load_and_scale");
-  
-  pb = gdk_pixbuf_new_from_inline(-1, data, FALSE, NULL);
-  pb_w = gdk_pixbuf_get_width(pb);
-  pb_h = gdk_pixbuf_get_height(pb);
-
-  if (dstw == pb_w && dsth == pb_h)
-    return(pb);
-  else if (dstw < 0)
-    dstw = (dsth * pb_w) / pb_h;
-  else if (dsth < 0)
-    dsth = (dstw * pb_h) / pb_w;
-
-  pb_scaled = gdk_pixbuf_scale_simple(pb, dstw, dsth, GDK_INTERP_HYPER);
-  g_object_unref(G_OBJECT(pb));
-
-  return(pb_scaled);
-}
-
 static void
-wavelan_load_pixbufs(t_wavelan *wavelan)
-{
-  int n, w, h, second_dim;
-
-  TRACE ("Entered wavelan_load_pixbufs, size = %d", wavelan->size);
-
-  /*
-   * free old pixbufs first
-   */
-  for (n = 0; n < 7; ++n) {
-    if (wavelan->pb[n] != NULL)
-      g_object_unref(G_OBJECT(wavelan->pb[n]));
-  }
-
-  /*
-   * Make it square if desired.
-   */
-  if (wavelan->square_icon) {
-    second_dim = wavelan->size;
-  }
-  else {
-    second_dim = -1;
-  }
-
-  /*
-   * Determine dimension
-   */
-  if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL) {
-    w = second_dim;
-    h = wavelan->size;
-  }
-  else {
-    w = wavelan->size;
-    h = second_dim;
-  }
-
-  /*
-   * Load and scale pixbufs
-   */
-  wavelan->pb[0] = load_and_scale(error_icon_data, w, h);
-  wavelan->pb[1] = load_and_scale(link0_icon_data, w, h);
-  wavelan->pb[2] = load_and_scale(link1_icon_data, w, h);
-  wavelan->pb[3] = load_and_scale(link2_icon_data, w, h);
-  wavelan->pb[4] = load_and_scale(link3_icon_data, w, h);
-  wavelan->pb[5] = load_and_scale(link4_icon_data, w, h);
-  wavelan->pb[6] = load_and_scale(link5_icon_data, w, h);
-}
-
-static void
-wavelan_set_state(t_wavelan *wavelan, guint state)
+wavelan_set_state(t_wavelan *wavelan, gint state)
 {  
-  /* this is OK, happens if this function is called too early */
-  if (wavelan->pb[0] == NULL)
-    return;
-
+  /* state = 0 -> no link, =-1 -> error */
   TRACE ("Entered wavelan_set_state, state = %u", state);
+
+  GtkRcStyle *rc;
+  GdkColor color;
+
+  gchar signal_color_bad[] = "#e00000";
+  gchar signal_color_weak[] = "#e05200";
+  gchar signal_color_good[] = "#e6ff00";
+  gchar signal_color_strong[] = "#06c500";
   
-  if (state > STATE_LINK5)
-    state = STATE_LINK5;
+  if(state > 100)
+    state = 100;
 
   wavelan->state = state;
-  gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), wavelan->pb[state]);
 
-  if (wavelan->autohide && state == STATE_LINK0)
+  if (state >= 1) {
+   gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->signal), state / 100);
+
+   if (wavelan->signal_colors) {
+    /* set color */
+    rc = gtk_widget_get_modifier_style(GTK_WIDGET(wavelan->signal));
+    if (!rc) rc = gtk_rc_style_new();
+    if (rc) {
+     rc->color_flags[GTK_STATE_PRELIGHT] |= GTK_RC_BG;
+     rc->color_flags[GTK_STATE_SELECTED] |= GTK_RC_BASE;
+     if (state > 70)
+      gdk_color_parse(signal_color_strong, &color);
+     else if (state > 55)
+      gdk_color_parse(signal_color_good, &color);
+     else if (state > 40)
+      gdk_color_parse(signal_color_weak, &color);
+     else
+      gdk_color_parse(signal_color_bad, &color);
+     rc->bg[GTK_STATE_PRELIGHT] = color;
+     rc->base[GTK_STATE_SELECTED] = color;
+     gtk_widget_modify_style(GTK_WIDGET(wavelan->signal), rc);
+     g_object_unref(rc);
+     }
+    }
+   else {
+    rc = gtk_rc_style_new();
+    gtk_widget_modify_style(GTK_WIDGET(wavelan->signal), rc);
+    g_object_unref(rc);
+    }
+
+   }
+  else
+   gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->signal), 0.0);
+
+  /* hide if no network & autohide or if no card found */
+  if (wavelan->autohide && state == 0)
     gtk_widget_hide(wavelan->ebox);
-  else if (wavelan->autohide_missing && state == STATE_ERROR)
+  else if (wavelan->autohide_missing && state == -1)
     gtk_widget_hide(wavelan->ebox);
   else
     gtk_widget_show(wavelan->ebox);
@@ -196,27 +148,16 @@ wavelan_timer(gpointer data)
       /* reset quality indicator */
       if (result == WI_NOCARRIER) {
         tip = g_strdup_printf(_("No carrier signal"));
-        wavelan_set_state(wavelan, STATE_LINK0);
+        wavelan_set_state(wavelan, 0);
       }
       else {
         /* set error */
         tip = g_strdup_printf("%s", wi_strerror(result));
-        wavelan_set_state(wavelan, STATE_ERROR);
+        wavelan_set_state(wavelan, -1);
       }
     }
     else {
-      if (stats.ws_quality >= 95)
-        wavelan_set_state(wavelan, STATE_LINK5);
-      else if (stats.ws_quality >= 73)
-        wavelan_set_state(wavelan, STATE_LINK4);
-      else if (stats.ws_quality >= 49)
-        wavelan_set_state(wavelan, STATE_LINK3);
-      else if (stats.ws_quality >= 25)
-        wavelan_set_state(wavelan, STATE_LINK2);
-      else if (stats.ws_quality >= 1)
-        wavelan_set_state(wavelan, STATE_LINK1);
-      else
-        wavelan_set_state(wavelan, STATE_LINK0);
+      wavelan_set_state(wavelan, stats.ws_quality);
 
       if (strlen(stats.ws_netname) > 0)
         tip = g_strdup_printf("%s: %d%% at %dMb/s", stats.ws_netname, stats.ws_quality, stats.ws_rate);
@@ -226,7 +167,7 @@ wavelan_timer(gpointer data)
   }
   else {
     tip = g_strdup(_("No device configured"));
-    wavelan_set_state(wavelan, STATE_ERROR);
+    wavelan_set_state(wavelan, -1);
   }
 
   /* activate new tooltip */
@@ -319,7 +260,7 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
       
       wavelan->autohide = xfce_rc_read_bool_entry (rc, "Autohide", FALSE);
       wavelan->autohide_missing = xfce_rc_read_bool_entry(rc, "AutohideMissing", FALSE);
-      wavelan->square_icon = xfce_rc_read_bool_entry(rc, "SquareIcon", FALSE);
+      wavelan->signal_colors = xfce_rc_read_bool_entry(rc, "SignalColors", FALSE);
     }
   }
 
@@ -335,7 +276,7 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
 static t_wavelan *
 wavelan_new(XfcePanelPlugin *plugin)
 {
-	t_wavelan *wavelan;
+  t_wavelan *wavelan;
   XfceScreenPosition screen_position;
   
   TRACE ("Entered wavelan_new");
@@ -345,7 +286,7 @@ wavelan_new(XfcePanelPlugin *plugin)
   wavelan->autohide = FALSE;
   wavelan->autohide_missing = FALSE;
 
-  wavelan->square_icon = FALSE;
+  wavelan->signal_colors = TRUE;
 
   wavelan->plugin = plugin;
   
@@ -354,61 +295,62 @@ wavelan_new(XfcePanelPlugin *plugin)
   wavelan->orientation = xfce_panel_plugin_get_orientation (plugin);
  
   wavelan->ebox = gtk_event_box_new();
-  gtk_container_add (GTK_CONTAINER (plugin), wavelan->ebox);
-  
-  if (xfce_screen_position_is_horizontal (screen_position))
-      wavelan->box = xfce_hvbox_new (GTK_ORIENTATION_HORIZONTAL, FALSE, 0);
+  xfce_panel_plugin_add_action_widget(plugin, wavelan->ebox);
+  gtk_container_add(GTK_CONTAINER(plugin), wavelan->ebox);
+
+  /* create box for img & progress bar */
+  if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
+    wavelan->box = xfce_hvbox_new(GTK_ORIENTATION_HORIZONTAL, FALSE, 0);
   else
-      wavelan->box = xfce_hvbox_new (GTK_ORIENTATION_VERTICAL, FALSE, 0);
-  
-  gtk_widget_show(wavelan->box);
-  gtk_container_add (GTK_CONTAINER (wavelan->ebox), wavelan->box);
+    wavelan->box = xfce_hvbox_new(GTK_ORIENTATION_VERTICAL, FALSE, 0);
+  gtk_container_set_border_width(GTK_CONTAINER(wavelan->box), BORDER / 2);
 
-  /*wavelan->button = xfce_create_panel_button ();
-  gtk_widget_show (wavelan->button);
-	gtk_box_pack_start(GTK_BOX (wavelan->box), wavelan->button, TRUE, TRUE, 0);*/
-  gtk_widget_set_size_request (wavelan->box, -1, -1);
-  
-  xfce_panel_plugin_add_action_widget (plugin, wavelan->box);
+  /* setup progressbar */
+  wavelan->signal = gtk_progress_bar_new();
+  if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
+  {
+    gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(wavelan->signal), GTK_PROGRESS_BOTTOM_TO_TOP);
+    gtk_widget_set_size_request(wavelan->signal, 8, -1);
+  } else {
+    gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(wavelan->signal), GTK_PROGRESS_LEFT_TO_RIGHT);
+    gtk_widget_set_size_request(wavelan->signal, -1, 8);
+  }
 
-  
   wavelan->image = gtk_image_new();
-	gtk_widget_show(wavelan->image);
-  gtk_container_add (GTK_CONTAINER (wavelan->box), wavelan->image);
+  gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "network-wireless", wavelan->size-6, 0, NULL));
+
+  gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->image), FALSE, FALSE, 2);
+  gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->signal), FALSE, FALSE, 2);
+
+  gtk_widget_show_all(wavelan->box);
+  gtk_container_add(GTK_CONTAINER(wavelan->ebox), GTK_WIDGET(wavelan->box));
+  gtk_widget_show_all(wavelan->ebox);
+  if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL) 
+    gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
+  else
+    gtk_widget_set_size_request(wavelan->ebox, wavelan->size, -1);
+  
 
   /* create tooltips */
   wavelan->tooltips = gtk_tooltips_new();
   g_object_ref (wavelan->tooltips);
   gtk_object_sink (GTK_OBJECT (wavelan->tooltips));
 
-  wavelan_load_pixbufs(wavelan);
-  
   wavelan_read_config(plugin, wavelan);
 
   wavelan_set_state(wavelan, wavelan->state);
 
-  gtk_widget_show_all(wavelan->ebox);
-  
   return(wavelan);
 }
 
 static void
 wavelan_free(t_wavelan *wavelan)
 {
-  int n;
-
   TRACE ("Entered wavelan_free");
   
   /* free tooltips */
   g_object_unref(G_OBJECT(wavelan->tooltips));
 
-  /* free pixbufs */
-  for (n = 0; n < 7; ++n)
-    if (wavelan->pb[n] != NULL)
-      g_object_unref(G_OBJECT(wavelan->pb[n]));
-
-  /* unregister the timer */
-  if (wavelan->timer_id != 0)
     g_source_remove(wavelan->timer_id);
 
   /* free the device info */
@@ -417,7 +359,8 @@ wavelan_free(t_wavelan *wavelan)
 
   if (wavelan->interface != NULL)
     g_free(wavelan->interface);
-	g_free(wavelan);
+
+  g_free(wavelan);
 }
 
 static void
@@ -446,7 +389,7 @@ wavelan_write_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
   }
   xfce_rc_write_bool_entry (rc, "Autohide", wavelan->autohide);
   xfce_rc_write_bool_entry (rc, "AutohideMissing", wavelan->autohide_missing);
-  xfce_rc_write_bool_entry (rc, "SquareIcon", wavelan->square_icon);
+  xfce_rc_write_bool_entry (rc, "SignalColors", wavelan->signal_colors);
 
   xfce_rc_close(rc);
   
@@ -456,23 +399,28 @@ static void
 wavelan_set_orientation(t_wavelan *wavelan, GtkOrientation orientation)
 {
   wavelan->orientation = orientation;
-  xfce_hvbox_set_orientation (XFCE_HVBOX (wavelan->box), orientation);
+  xfce_hvbox_set_orientation(XFCE_HVBOX(wavelan->box), orientation);
+  if (orientation == GTK_ORIENTATION_HORIZONTAL) {
+   gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(wavelan->signal), GTK_PROGRESS_BOTTOM_TO_TOP);
+   gtk_widget_set_size_request(wavelan->signal, 8, -1);
+   gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
+   }
+  else {
+   gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(wavelan->signal), GTK_PROGRESS_LEFT_TO_RIGHT);
+   gtk_widget_set_size_request(wavelan->signal, -1, 8);
+   gtk_widget_set_size_request(wavelan->ebox, wavelan->size, -1);
+   }
 }
 
 static void
 wavelan_set_size(t_wavelan *wavelan, int size)
 {
   wavelan->size = size;
-  wavelan_load_pixbufs(wavelan);
-  gtk_widget_set_size_request (wavelan->box, -1, -1);
-}
-
-static void
-wavelan_set_square_icon(t_wavelan *wavelan, gboolean square_icon)
-{
-  wavelan->square_icon = square_icon;
-  wavelan_load_pixbufs(wavelan);
-  gtk_widget_set_size_request (wavelan->box, -1, -1);
+  gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "network-wireless", wavelan->size-6, 0, NULL));
+  if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
+   gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
+  else
+   gtk_widget_set_size_request(wavelan->ebox, wavelan->size, -1);
 }
 
 /* interface changed callback */
@@ -503,12 +451,13 @@ wavelan_autohide_missing_changed(GtkToggleButton *button, t_wavelan *wavelan)
   wavelan_set_state(wavelan, wavelan->state);
 }
 
-/* square icon callback */
-static void 
-wavelan_square_icon_changed(GtkToggleButton *button, t_wavelan *wavelan)
+/* signal colors callback */
+static void
+wavelan_signal_colors_changed(GtkToggleButton *button, t_wavelan *wavelan)
 {
-  TRACE ("Entered wavelan_square_icon_changed");
-  wavelan_set_square_icon(wavelan, gtk_toggle_button_get_active(button));
+  TRACE ("Entered wavelan_signal_colors_changed");
+  wavelan->signal_colors = gtk_toggle_button_get_active(button);
+  wavelan_set_state(wavelan, wavelan->state);
 }
 
 static void
@@ -526,7 +475,7 @@ static void
 wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 {
   GtkWidget *dlg, *hbox, *label, *interface, *vbox, *autohide;
-  GtkWidget *autohide_missing, *header, *warn_label, *square_icon;
+  GtkWidget *autohide_missing, *header, *warn_label, *signal_colors;
   GtkWidget *combo;
   GList     *interfaces, *lp;
 
@@ -615,13 +564,13 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 
   hbox = gtk_hbox_new(FALSE, 2);
   gtk_widget_show(hbox);
-  square_icon = gtk_check_button_new_with_label(_("Use a square icon"));
-  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(square_icon), 
-      wavelan->square_icon);
-  g_signal_connect(square_icon, "toggled", 
-      G_CALLBACK(wavelan_square_icon_changed), wavelan);
-  gtk_widget_show(square_icon);
-  gtk_box_pack_start(GTK_BOX(hbox), square_icon, TRUE, TRUE, 1);
+  signal_colors = gtk_check_button_new_with_label(_("Enable signal quality colors"));
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(signal_colors), 
+      wavelan->signal_colors);
+  g_signal_connect(signal_colors, "toggled", 
+      G_CALLBACK(wavelan_signal_colors_changed), wavelan);
+  gtk_widget_show(signal_colors);
+  gtk_box_pack_start(GTK_BOX(hbox), signal_colors, TRUE, TRUE, 1);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
 
   for (lp = interfaces; lp != NULL; lp = lp ->next)
@@ -631,23 +580,6 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   gtk_widget_show (dlg);
   
 }
-
-static void
-wavelan_set_screen_position (t_wavelan *wavelan, 
-                             XfceScreenPosition position)
-{
-
-  /* Do I really need anything here? */
-  
-}
-
-/*static void
-wavelan_screen_position_changed (XfcePanelPlugin *plugin,
-                                 XfceScreenPosition position,
-                                 t_wavelan *wavelan)
-{
-    wavelan_set_screen_postion (wavelan, position); 
-}*/
 
 static void
 wavelan_orientation_changed (XfcePanelPlugin *plugin,
@@ -710,9 +642,6 @@ wavelan_construct (XfcePanelPlugin *plugin)
   xfce_panel_plugin_menu_show_configure (plugin);
   g_signal_connect (plugin, "configure-plugin",
                     G_CALLBACK (wavelan_configure), wavelan);
-  
-  wavelan_set_screen_position (wavelan,
-          xfce_panel_plugin_get_screen_position (plugin));
   
 }
 
