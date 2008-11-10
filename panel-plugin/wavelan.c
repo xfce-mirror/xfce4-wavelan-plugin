@@ -37,7 +37,7 @@
 #include <libxfce4panel/xfce-panel-plugin.h>
 #include <libxfce4panel/xfce-hvbox.h>
 
-#include <wi.h>
+#include "wi.h"
 
 #include <string.h>
 #include <ctype.h>
@@ -623,6 +623,8 @@ wavelan_construct (XfcePanelPlugin *plugin)
   TRACE ("Entered wavelan_construct");
   
   t_wavelan *wavelan = wavelan_new(plugin);
+
+  xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
 /*  g_signal_connect (plugin, "screen-position-changed",
                     G_CALLBACK (wavelan_screen_position_changed), wavelan);
