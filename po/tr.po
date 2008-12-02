@@ -41,8 +41,12 @@ msgid "Autohide when no hardware present"
 msgstr "Kullanılabilir aygıt olmadığında gizle"
 
 #: ../panel-plugin/wavelan.c:558
-msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
-msgstr "Uyarı: Eğer aygıt yok ise bu eklentiyi panelden kaldırmanız veya yapılandırmanız zor olabilir."
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there "
+"is no device detected."
+msgstr ""
+"Uyarı: Eğer aygıt yok ise bu eklentiyi panelden kaldırmanız veya "
+"yapılandırmanız zor olabilir."
 
 #: ../panel-plugin/wavelan.c:566
 msgid "Enable signal quality colors"
@@ -55,4 +59,3 @@ msgstr "Kablosuz ağ durumunu görüntüler"
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
 msgstr "Wavelan"
-

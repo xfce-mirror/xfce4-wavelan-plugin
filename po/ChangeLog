@@ -1,6 +1,7 @@
 2008-12-02  Michal Várady <miko.vaji@com>
 
 	* LINGUAS: cs was not present in LINGUAS file
+	* *.po: po files updated
 
 2008-11-17  Eren Türkay <erenturkay@xfce.org>
 
