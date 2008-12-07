@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-02 20:33+0100\n"
-"PO-Revision-Date: 2006-09-12 22:26+0200\n"
+"PO-Revision-Date: 2008-12-05 12:15+0200\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: librezale <librezale@librezale.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.2.0\n"
 
 #: ../panel-plugin/wavelan.c:149
 #, c-format
@@ -52,16 +53,16 @@ msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
 msgstr ""
-"Oharra: Honek gailurik ez aurkitu ezkero plugin-a konfiguratu edo kentzeko "
-"zailtasunak sortu ditzake."
+"Oharra: Honek gailurik ez aurkitu ezkero plugin-a konfiguratu edo "
+"kentzeko zailtasunak sortu ditzake."
 
 #: ../panel-plugin/wavelan.c:566
 msgid "Enable signal quality colors"
-msgstr ""
+msgstr "Gaitu seinale kalitate koloreak"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:1
 msgid "View the status of a wireless network"
-msgstr ""
+msgstr "Ikusi haririk gabeko sarearen egoera"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
