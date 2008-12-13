@@ -1,3 +1,7 @@
+2008-12-13  Maximilian Schleiss <maximilian@xfce.org>
+
+	* uk.po: Ukrainian translation update (Dmitry Nikitin)
+
 2008-12-07  Piarres Beobide <pi@beobide.net>
 
         * eu.po: Basque translation update
@@ -9,7 +13,7 @@
 
 2008-11-17  Eren Türkay <erenturkay@xfce.org>
 
-        * tr.po: Turkish translation update (Turkish translation team: Gökmen Görgen, Samed Beyribey, Özgür Kuru, Utku Aydın)
+        * tr.po: Turkish translation update (Turkish translation team)
 
 2008-11-12  Piarres Beobide <pi@beobide.net>
 
@@ -25,8 +29,7 @@
 
 2008-11-06 Og Maciel <ogmaciel@gnome.org>
 
-	* pt_BR.po: Updated Brazilian Portuguese translation by
-	Og Maciel.
+	* pt_BR.po: Updated Brazilian Portuguese translation
 
 2008-10-21 Lars Nielsen <lars@mit-web.dk>
 
