@@ -1,63 +1,61 @@
-# translation of xfce4-wavelan-plugin to Danish
-# Copyright (C) 2007 THE xfce4-wavelan-plugin'S COPYRIGHT HOLDER
+# Spanish translations for xfce4-wavelan-plugin package
+# Copyright (C) 2009 THE xfce4-wavelan-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-wavelan-plugin package.
-# Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007.
-# Per Kongstad <p_kongstad@op.pl>, 2008, 09.
+#  <abel.martin.ruiz@gmail.com>, 2009.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin 0.5.4\n"
+"Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-02 20:33+0100\n"
-"PO-Revision-Date: 2009-01-23 13:09+0100\n"
-"Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
-"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"PO-Revision-Date: 2009-02-11 20:14+0100\n"
+"Last-Translator: Abel Martín <abel.martin.ruiz@gmail.com>\n"
+"Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Danish\n"
-"X-Poedit-Country: DENMARK\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/wavelan.c:149
 #, c-format
 msgid "No carrier signal"
-msgstr "Ingen bærebølge"
+msgstr "Sin señal de portadora"
 
 #: ../panel-plugin/wavelan.c:168
 msgid "No device configured"
-msgstr "Ingen enhed konfigureret"
+msgstr "No hay ningún dispositivo configurado"
 
 #: ../panel-plugin/wavelan.c:483
 msgid "Properties"
-msgstr "Egenskaber"
+msgstr "Propiedades"
 
 #: ../panel-plugin/wavelan.c:499
 msgid "Wavelan Plugin Options"
-msgstr "Wavelan udvidelsesmodul-indstillinger"
+msgstr "Opciones del complemento Wavelan"
 
 #: ../panel-plugin/wavelan.c:515
 msgid "Interface"
-msgstr "Grænseflade"
+msgstr "Interfaz"
 
 #: ../panel-plugin/wavelan.c:537
 msgid "_Autohide when offline"
-msgstr "Skjul _automatisk når afkoblet"
+msgstr "_Ocultar automáticamente al estar desconectado"
 
 #: ../panel-plugin/wavelan.c:547
 msgid "Autohide when no hardware present"
-msgstr "Skjul automatisk når der ikke er nogen hardware til stede"
+msgstr "Ocultar automáticamente cuando el hardware no está presente"
 
 #: ../panel-plugin/wavelan.c:558
 msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
-msgstr "Bemærk: Dette gør det svært at fjerne eller konfigurere udvidelsesmodulet, hvis der ikke er fundet nogen enhed."
+msgstr "Aviso: Esto dificultará eliminar o configurar el complemento si no se detecta ningún dispositivo."
 
 #: ../panel-plugin/wavelan.c:566
 msgid "Enable signal quality colors"
-msgstr "Slå farver til signalkvalitet til"
+msgstr "Activar colores de calidad de señal"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:1
 msgid "View the status of a wireless network"
-msgstr "Vis status af et trådløst netværk"
+msgstr "Ver el estado de una red inalámbrica"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
