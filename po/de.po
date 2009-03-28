@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the xfce4-wavelan-plugin package.
 # Benedikt Meurer <benny@xfce.org>, 2005.
 # Fabian Nowak <timystery@arcor.de>, 2007.
+# Simon Schneider <simon@schneider.de>, 2009
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-02 20:33+0100\n"
-"PO-Revision-Date: 2007-01-18 08:49+0100\n"
-"Last-Translator: Fabian Nowak <timystery@arcor.de>\n"
+"PO-Revision-Date: 2009-02-25 08:58+0000\n"
+"Last-Translator: Simon Schneider <simon@schneiderimtal.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: ../panel-plugin/wavelan.c:149
 #, c-format
@@ -55,15 +56,15 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:566
 msgid "Enable signal quality colors"
-msgstr ""
+msgstr "Farben zur Anzeige der Signalstärke aktivieren"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:1
 msgid "View the status of a wireless network"
-msgstr ""
+msgstr "Status des Kabellosen Netzwerks anzeigen"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
-msgstr ""
+msgstr "Wavelan"
 
 #~ msgid "WaveLAN plugin"
 #~ msgstr "WaveLAN plugin"
