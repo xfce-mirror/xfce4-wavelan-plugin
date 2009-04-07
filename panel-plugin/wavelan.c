@@ -523,7 +523,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
 
   interface = GTK_COMBO (combo)->entry;
-  gtk_entry_set_max_length(GTK_ENTRY(interface), 10);
+  gtk_entry_set_max_length(GTK_ENTRY(interface), 16);
   if (wavelan->interface != NULL)
     gtk_entry_set_text(GTK_ENTRY(interface), wavelan->interface);
   g_signal_connect(interface, "changed", G_CALLBACK(wavelan_interface_changed),
