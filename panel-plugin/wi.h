@@ -34,7 +34,8 @@ struct wi_device;
 struct wi_stats
 {
   char  ws_netname[WI_MAXSTRLEN]; /* current SSID */
-  int   ws_quality;               /* current signal quality (percent) */
+  int   ws_quality;               /* current signal quality (percent or dBm) */
+  char  ws_qunit[4];              /* % or dBm ? */
   int   ws_rate;                  /* current rate (Mbps) */
   char  ws_vendor[WI_MAXSTRLEN];  /* device vendor name */
 };
