@@ -75,7 +75,7 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
   /* state = 0 -> no link, =-1 -> error */
   TRACE ("Entered wavelan_set_state, state = %u", state);
 
-  GtkRcStyle *rc;
+  GtkRcStyle *rc = NULL;
   GdkColor color;
 
   gchar signal_color_bad[] = "#e00000";
@@ -89,12 +89,11 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
   wavelan->state = state;
 
   if (state >= 1) {
-   gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->signal), state / 100);
+   gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->signal), (gdouble) state / 100);
 
    if (wavelan->signal_colors) {
     /* set color */
     rc = gtk_widget_get_modifier_style(GTK_WIDGET(wavelan->signal));
-    if (!rc) rc = gtk_rc_style_new();
     if (rc) {
      rc->color_flags[GTK_STATE_PRELIGHT] |= GTK_RC_BG;
      rc->color_flags[GTK_STATE_SELECTED] |= GTK_RC_BASE;
@@ -109,7 +108,6 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
      rc->bg[GTK_STATE_PRELIGHT] = color;
      rc->base[GTK_STATE_SELECTED] = color;
      gtk_widget_modify_style(GTK_WIDGET(wavelan->signal), rc);
-     g_object_unref(rc);
      }
     }
    else {
@@ -160,9 +158,9 @@ wavelan_timer(gpointer data)
       wavelan_set_state(wavelan, stats.ws_quality);
 
       if (strlen(stats.ws_netname) > 0)
-        tip = g_strdup_printf("%s: %d%% at %dMb/s", stats.ws_netname, stats.ws_quality, stats.ws_rate);
+        tip = g_strdup_printf("%s: %d%s at %dMb/s", stats.ws_netname, stats.ws_quality, stats.ws_qunit, stats.ws_rate);
       else
-        tip = g_strdup_printf("%d%% at %dMb/s", stats.ws_quality, stats.ws_rate);
+        tip = g_strdup_printf("%d%s at %dMb/s", stats.ws_quality, stats.ws_qunit, stats.ws_rate);
     }
   }
   else {
