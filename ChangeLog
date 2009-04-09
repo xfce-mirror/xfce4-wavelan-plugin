@@ -1,3 +1,11 @@
+2009-04-09 Landry Breuil <landry@xfce.org>
+
+	* Release 0.5.5
+	* Merge various patches from NetBSD and FreeBSD, 'should' work everywhere now..
+	* Totally revamped GUI, courtesy of Johan van der Slikke
+	* Show signal strengh in dBm on BSDs, in % on Linux
+	* Various bugfixes, localized config dialog is fixed
+
 2008-07-19 Landry Breuil <landry@xfce.org>
 
 	* Fix support for OpenBSD, using net80211 API instead of deprecated wi_* API.

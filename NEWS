@@ -1,3 +1,11 @@
+20090409:
+---------
+  * Version 0.5.5
+  * Merge various patches from NetBSD and FreeBSD, 'should' work everywhere now..
+  * Totally revamped GUI, courtesy of Johan van der Slikke
+  * Show signal strengh in dBm on BSDs, in % on Linux
+  * Various bugfixes, localized config dialog is fixed
+
 20070117:
 ---------
   * Version 0.5.4

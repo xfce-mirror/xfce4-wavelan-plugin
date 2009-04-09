@@ -4,6 +4,8 @@ Displays various information about a WaveLAN device:
 
 * Signal state (tells if a carrier signal was detected)
 * Signal quality (current quality of the carrier signal)
+    Note that the latter is in % on Linux and in dBm on BSDs. Hence, on BSDs, the
+    progressbar may be never full, as dBm is not easily comparable to a maximum.
 * Network name (current SSID of the WaveLAN network)
 
 At the time of this writing NetBSD, OpenBSD, FreeBSD and Linux are supported.
