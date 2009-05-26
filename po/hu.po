@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-02 20:33+0100\n"
-"PO-Revision-Date: 2006-09-12 08:11+0100\n"
+"PO-Revision-Date: 2009-05-26 06:20+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -48,24 +48,21 @@ msgid "Autohide when no hardware present"
 msgstr "Elrejtés ha nincs hardver"
 
 #: ../panel-plugin/wavelan.c:558
-msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Megjegyezés: ez nehezebbé teszi e beillesztés eltávolítását vagy beállítását "
-"ha nincs felismert eszköz"
+msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
+msgstr "Megjegyezés: ez nehezebbé teszi e beillesztés eltávolítását vagy beállítását ha nincs felismert eszköz"
 
 #: ../panel-plugin/wavelan.c:566
 msgid "Enable signal quality colors"
-msgstr ""
+msgstr "Jelminőség színek bekapcsolása"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:1
 msgid "View the status of a wireless network"
-msgstr ""
+msgstr "Megjeleníti a vezeték nélküli hálózat állapotát"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
-msgstr ""
+msgstr "Wavelan"
 
 #~ msgid "WaveLAN plugin"
 #~ msgstr "WaveLAN"
+
