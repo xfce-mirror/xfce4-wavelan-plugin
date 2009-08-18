@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-02 20:33+0100\n"
-"PO-Revision-Date: 2007-03-31 10:38+1000\n"
+"PO-Revision-Date: 2009-08-18 19:45+1000\n"
 "Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
 "Language-Team: English/GB\n"
 "MIME-Version: 1.0\n"
@@ -56,12 +56,12 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:566
 msgid "Enable signal quality colors"
-msgstr ""
+msgstr "Enable signal quality colours"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:1
 msgid "View the status of a wireless network"
-msgstr ""
+msgstr "View the status of a wireless network"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
-msgstr ""
+msgstr "Wavelan"
