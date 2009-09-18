@@ -1,19 +1,23 @@
 # Latvian translations for xfce4-wavelan-plugin package.
 # Copyright (C) 2003-2005 Benedikt Meurer.
 # This file is distributed under the same license as the fce4-wavelan-plugin package.
-# Rihards Prieditis <rprieditis@inbox.lv>, 2007.
 #
+# Rihards Prieditis <rprieditis@inbox.lv>, 2007.
+# Rihards Prieditis <rprieditis@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: Pfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-02 20:33+0100\n"
-"PO-Revision-Date: 2007-11-16 22:12+0300\n"
-"Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
-"Language-Team: Latvian <rprieditis@inbox>\n"
+"PO-Revision-Date: 2009-09-18 23:27+0100\n"
+"Last-Translator: Rihards Prieditis <rprieditis@gmail.com>\n"
+"Language-Team: Latvian <translation-team-lv@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 #: ../panel-plugin/wavelan.c:149
 #, c-format
@@ -30,7 +34,7 @@ msgstr "Rekvizīti"
 
 #: ../panel-plugin/wavelan.c:499
 msgid "Wavelan Plugin Options"
-msgstr "Wavelan Spraudņa Uzstādījumi"
+msgstr "Wavelan spraudņa uzstādījumi"
 
 #: ../panel-plugin/wavelan.c:515
 msgid "Interface"
@@ -48,16 +52,17 @@ msgstr "Slēpt, kad nav pieejama aparatūra"
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
-msgstr "Piezime: Būs grūti veikt konfigurāciju, kad nav pieejama ierīce."
+msgstr "Piezīme: Būs grūti veikt konfigurāciju, kad nav pieejama ierīce."
 
 #: ../panel-plugin/wavelan.c:566
 msgid "Enable signal quality colors"
-msgstr ""
+msgstr "Ieslēgt signāla kvalitātes krāsas"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:1
 msgid "View the status of a wireless network"
-msgstr ""
+msgstr "Apskatīt bezvadu tīkla statusu"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
-msgstr ""
+msgstr "Wavelan"
+
