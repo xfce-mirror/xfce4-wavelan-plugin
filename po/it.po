@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin v0.4.2.\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-11-02 20:33+0100\n"
-"PO-Revision-Date: 2006-08-09 21:30+0200\n"
-"Last-Translator: Emanuele Rocca <ema@debian.org>\n"
+"PO-Revision-Date: 2009-12-23 18:02+0100\n"
+"Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
 "Language-Team: Italian <xfce-i18n@xfce.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -26,11 +26,11 @@ msgstr "Nessun dispositivo configurato"
 
 #: ../panel-plugin/wavelan.c:483
 msgid "Properties"
-msgstr ""
+msgstr "Proprietà"
 
 #: ../panel-plugin/wavelan.c:499
 msgid "Wavelan Plugin Options"
-msgstr ""
+msgstr "Opzioni del plugin Wavelan"
 
 #: ../panel-plugin/wavelan.c:515
 msgid "Interface"
@@ -38,29 +38,28 @@ msgstr "Interfaccia"
 
 #: ../panel-plugin/wavelan.c:537
 msgid "_Autohide when offline"
-msgstr "_Nascondi automaticamente se offline"
+msgstr "_Nascondi se fuori rete"
 
 #: ../panel-plugin/wavelan.c:547
 msgid "Autohide when no hardware present"
-msgstr ""
+msgstr "Nascondi se non è presente alcun dispositivo"
 
 #: ../panel-plugin/wavelan.c:558
-msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
+msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
+msgstr "Nota: in questo modo risulterà difficile configurare o rimuovere questo plugin nel caso non venga riconosciuto alcun dispositivo."
 
 #: ../panel-plugin/wavelan.c:566
 msgid "Enable signal quality colors"
-msgstr ""
+msgstr "Abilita i colori per la qualità del segnale"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:1
 msgid "View the status of a wireless network"
-msgstr ""
+msgstr "Visualizza lo stato di una rete senza fili"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
-msgstr ""
+msgstr "Wavelan"
 
 #~ msgid "WaveLAN plugin"
 #~ msgstr "WaveLAN plugin"
+
