@@ -4,7 +4,7 @@
 # Benedikt Meurer <benny@xfce.org>, 2005.
 # Fabian Nowak <timystery@arcor.de>, 2007.
 # Simon Schneider <simon@schneider.de>, 2009
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: ../panel-plugin/wavelan.c:149
 #, c-format
@@ -47,20 +47,16 @@ msgid "Autohide when no hardware present"
 msgstr "Automatisch verstecken, wenn keine Hardware vorhanden ist"
 
 #: ../panel-plugin/wavelan.c:558
-msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Beachten Sie: Dies macht es schwierig, das Plugin zu entfernen oder zu "
-"konfigurieren, wenn kein Gerät erkannt wird."
+msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
+msgstr "Beachten Sie: Dies macht es schwierig, das Plugin zu entfernen oder zu konfigurieren, wenn kein Gerät erkannt wird."
 
 #: ../panel-plugin/wavelan.c:566
 msgid "Enable signal quality colors"
-msgstr "Farben zur Anzeige der Signalstärke aktivieren"
+msgstr "Farben zur Anzeige der Signalstärke nutzen"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:1
 msgid "View the status of a wireless network"
-msgstr "Status des Kabellosen Netzwerks anzeigen"
+msgstr "Status des Drahtlosenetzwerks anzeigen"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
