@@ -10,9 +10,9 @@ plugin_PROGRAMS = xfce4-wavelan-plugin
 #plugin_LTLIBRARIES =							\
 #	libwavelan.la
 
-xfce4_wavelan_plugin_LDFLAGS =							\
+xfce4_wavelan_plugin_LDADD =							\
 				@LIBXFCE4PANEL_LIBS@				\
-				@LIBXFCEGUI4L_LIBS@
+				@LIBXFCEGUI4_LIBS@
 
 xfce4_wavelan_plugin_SOURCES =							\
 	wavelan.c							\
