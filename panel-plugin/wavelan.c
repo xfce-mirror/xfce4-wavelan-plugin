@@ -62,8 +62,7 @@ typedef struct
   GtkWidget *ebox;
   GtkWidget *image;
   GtkWidget *signal;
-
-  GtkTooltips *tooltips;
+  GtkWidget *tooltip_text;
 
   XfcePanelPlugin *plugin;
   
@@ -168,10 +167,9 @@ wavelan_timer(gpointer data)
     wavelan_set_state(wavelan, -1);
   }
 
-  /* activate new tooltip */
+  /* set new tooltip */
   if (tip != NULL) {
-    gtk_tooltips_set_tip(wavelan->tooltips, GTK_WIDGET (wavelan->plugin), 
-                         tip, NULL);
+    gtk_label_set_text(GTK_LABEL(wavelan->tooltip_text), tip);
     g_free(tip);
   }
 
@@ -271,6 +269,12 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
   wavelan_reset(wavelan);
 }
 
+static gboolean tooltip_cb( GtkWidget *widget, gint x, gint y, gboolean keyboard, GtkTooltip * tooltip, t_wavelan *wavelan)
+{
+	gtk_tooltip_set_custom( tooltip, wavelan->tooltip_text );
+	return TRUE;
+}
+
 static t_wavelan *
 wavelan_new(XfcePanelPlugin *plugin)
 {
@@ -293,8 +297,13 @@ wavelan_new(XfcePanelPlugin *plugin)
   wavelan->orientation = xfce_panel_plugin_get_orientation (plugin);
  
   wavelan->ebox = gtk_event_box_new();
+  gtk_widget_set_has_tooltip(wavelan->ebox, TRUE);
+  g_signal_connect(wavelan->ebox, "query-tooltip", G_CALLBACK(tooltip_cb), wavelan);
   xfce_panel_plugin_add_action_widget(plugin, wavelan->ebox);
   gtk_container_add(GTK_CONTAINER(plugin), wavelan->ebox);
+
+  wavelan->tooltip_text = gtk_label_new(NULL);
+  g_object_ref( wavelan->tooltip_text );
 
   /* create box for img & progress bar */
   if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
@@ -328,12 +337,6 @@ wavelan_new(XfcePanelPlugin *plugin)
   else
     gtk_widget_set_size_request(wavelan->ebox, wavelan->size, -1);
   
-
-  /* create tooltips */
-  wavelan->tooltips = gtk_tooltips_new();
-  g_object_ref (wavelan->tooltips);
-  gtk_object_sink (GTK_OBJECT (wavelan->tooltips));
-
   wavelan_read_config(plugin, wavelan);
 
   wavelan_set_state(wavelan, wavelan->state);
@@ -347,9 +350,9 @@ wavelan_free(t_wavelan *wavelan)
   TRACE ("Entered wavelan_free");
   
   /* free tooltips */
-  g_object_unref(G_OBJECT(wavelan->tooltips));
+  g_object_unref(G_OBJECT(wavelan->tooltip_text));
 
-    g_source_remove(wavelan->timer_id);
+  g_source_remove(wavelan->timer_id);
 
   /* free the device info */
   if (wavelan->device != NULL)
