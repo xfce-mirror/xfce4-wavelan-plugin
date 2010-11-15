@@ -1,6 +1,4 @@
-/* $Id: wi_bsd.c 562 2004-12-03 18:29:41Z benny $ */
-/*-
- * Copyright (c) 2003 Benedikt Meurer <benny@xfce.org>
+/* Copyright (c) 2003 Benedikt Meurer <benny@xfce.org>
  *               2008 Landry Breuil <landry@xfce.org>
  *                    (OpenBSD support)
  *               2008 Pietro Cerutti <gahr@gahr.ch>

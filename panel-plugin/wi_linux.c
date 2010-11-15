@@ -1,6 +1,4 @@
-/* $Id: wi_linux.c,v 1.3 2004/02/12 22:43:46 benny Exp $ */
-/*-
- * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
+/* Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  * Copyright (c) 2004 An-Cheng Huang <pach@cs.cmu.edu>
  *
  * Redistribution and use in source and binary forms, with or without

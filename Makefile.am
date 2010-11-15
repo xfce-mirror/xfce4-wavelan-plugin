@@ -1,5 +1,3 @@
-# $Id: Makefile.am 694 2005-07-11 14:18:53Z benny $
-
 SUBDIRS =								\
 	panel-plugin							\
 	po

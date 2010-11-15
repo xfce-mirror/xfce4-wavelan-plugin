@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-02 20:33+0100\n"
+"POT-Creation-Date: 2010-11-15 11:17+0900\n"
 "PO-Revision-Date: 2009-05-14 03:27+0500\n"
 "Last-Translator: Muhammad Ali Makki <makki.ma@gmail.com>\n"
 "Language-Team: Urdu <makki.ma@gmail.com>\n"
+"Language: ur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,40 +20,43 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../panel-plugin/wavelan.c:149
-#, c-format
+#: ../panel-plugin/wavelan.c:146
 msgid "No carrier signal"
 msgstr "کوئی کیریئر سگنل نہیں"
 
-#: ../panel-plugin/wavelan.c:168
+#: ../panel-plugin/wavelan.c:165
 msgid "No device configured"
 msgstr "کوئی ڈیوائس تشکیل نہیں دی گئی"
 
-#: ../panel-plugin/wavelan.c:483
+#: ../panel-plugin/wavelan.c:494
 msgid "Properties"
 msgstr "خصوصیات"
 
-#: ../panel-plugin/wavelan.c:499
+#: ../panel-plugin/wavelan.c:510
 msgid "Wavelan Plugin Options"
 msgstr "ویولین پلگ ان اختیارات"
 
-#: ../panel-plugin/wavelan.c:515
+#: ../panel-plugin/wavelan.c:526
 msgid "Interface"
 msgstr "مواجہ"
 
-#: ../panel-plugin/wavelan.c:537
+#: ../panel-plugin/wavelan.c:547
 msgid "_Autohide when offline"
 msgstr "آف لائن پر خودکار _غائب کریں"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:557
 msgid "Autohide when no hardware present"
 msgstr "خودکار غائب کریں جب کوئی ہارڈویئر نہ ہو"
 
-#: ../panel-plugin/wavelan.c:558
-msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
-msgstr "نوٹ: اگر کوئی ڈیوائس ڈیٹیکٹ نہ ہوئی تو یہ پلگ ان کو تشکیل دینے اور اسے ختم کرنے میں مشکل پیدا کرے گا."
+#: ../panel-plugin/wavelan.c:568
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there "
+"is no device detected."
+msgstr ""
+"نوٹ: اگر کوئی ڈیوائس ڈیٹیکٹ نہ ہوئی تو یہ پلگ ان کو تشکیل دینے اور اسے ختم "
+"کرنے میں مشکل پیدا کرے گا."
 
-#: ../panel-plugin/wavelan.c:566
+#: ../panel-plugin/wavelan.c:576
 msgid "Enable signal quality colors"
 msgstr "سگنل کوالٹی رنگ فعال کریں"
 
@@ -63,4 +67,3 @@ msgstr "وائرلیس نیٹ ورک کی حالت دیکھیں"
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
 msgstr "ویولین"
-

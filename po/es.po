@@ -7,49 +7,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-02 20:33+0100\n"
+"POT-Creation-Date: 2010-11-15 11:17+0900\n"
 "PO-Revision-Date: 2009-02-11 20:14+0100\n"
 "Last-Translator: Abel Martín <abel.martin.ruiz@gmail.com>\n"
 "Language-Team: Spanish\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:149
-#, c-format
+#: ../panel-plugin/wavelan.c:146
 msgid "No carrier signal"
 msgstr "Sin señal de portadora"
 
-#: ../panel-plugin/wavelan.c:168
+#: ../panel-plugin/wavelan.c:165
 msgid "No device configured"
 msgstr "No hay ningún dispositivo configurado"
 
-#: ../panel-plugin/wavelan.c:483
+#: ../panel-plugin/wavelan.c:494
 msgid "Properties"
 msgstr "Propiedades"
 
-#: ../panel-plugin/wavelan.c:499
+#: ../panel-plugin/wavelan.c:510
 msgid "Wavelan Plugin Options"
 msgstr "Opciones del complemento Wavelan"
 
-#: ../panel-plugin/wavelan.c:515
+#: ../panel-plugin/wavelan.c:526
 msgid "Interface"
 msgstr "Interfaz"
 
-#: ../panel-plugin/wavelan.c:537
+#: ../panel-plugin/wavelan.c:547
 msgid "_Autohide when offline"
 msgstr "_Ocultar automáticamente al estar desconectado"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:557
 msgid "Autohide when no hardware present"
 msgstr "Ocultar automáticamente cuando el hardware no está presente"
 
-#: ../panel-plugin/wavelan.c:558
-msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
-msgstr "Aviso: Esto dificultará eliminar o configurar el complemento si no se detecta ningún dispositivo."
+#: ../panel-plugin/wavelan.c:568
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there "
+"is no device detected."
+msgstr ""
+"Aviso: Esto dificultará eliminar o configurar el complemento si no se "
+"detecta ningún dispositivo."
 
-#: ../panel-plugin/wavelan.c:566
+#: ../panel-plugin/wavelan.c:576
 msgid "Enable signal quality colors"
 msgstr "Activar colores de calidad de señal"
 
@@ -60,4 +64,3 @@ msgstr "Ver el estado de una red inalámbrica"
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
 msgstr "Wavelan"
-

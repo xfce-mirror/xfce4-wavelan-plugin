@@ -7,48 +7,52 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-02 20:33+0100\n"
+"POT-Creation-Date: 2010-11-15 11:17+0900\n"
 "PO-Revision-Date: 2009-01-09 17:20+0100\n"
 "Last-Translator: Nuno Miguel <nunis@netcabo.pt>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/wavelan.c:149
-#, c-format
+#: ../panel-plugin/wavelan.c:146
 msgid "No carrier signal"
 msgstr "Nenhum sinal de portador"
 
-#: ../panel-plugin/wavelan.c:168
+#: ../panel-plugin/wavelan.c:165
 msgid "No device configured"
 msgstr "Nenhum dispositivo configurado"
 
-#: ../panel-plugin/wavelan.c:483
+#: ../panel-plugin/wavelan.c:494
 msgid "Properties"
 msgstr "Propriedades"
 
-#: ../panel-plugin/wavelan.c:499
+#: ../panel-plugin/wavelan.c:510
 msgid "Wavelan Plugin Options"
 msgstr "Opções do Plugin Wavelan"
 
-#: ../panel-plugin/wavelan.c:515
+#: ../panel-plugin/wavelan.c:526
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:537
+#: ../panel-plugin/wavelan.c:547
 msgid "_Autohide when offline"
 msgstr "_Ocultar automaticamente quando offline"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:557
 msgid "Autohide when no hardware present"
 msgstr "Ocultar automaticamente quando não existe hardware"
 
-#: ../panel-plugin/wavelan.c:558
-msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
-msgstr "Nota: Isto irá tornar difícil de remover ou configurar o plugin se nenhum dispositivo é detectado."
+#: ../panel-plugin/wavelan.c:568
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there "
+"is no device detected."
+msgstr ""
+"Nota: Isto irá tornar difícil de remover ou configurar o plugin se nenhum "
+"dispositivo é detectado."
 
-#: ../panel-plugin/wavelan.c:566
+#: ../panel-plugin/wavelan.c:576
 msgid "Enable signal quality colors"
 msgstr "Ligar cores de qualidade de sinal"
 
@@ -59,4 +63,3 @@ msgstr "Ver o estado da rede sem fios"
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
 msgstr "Wavelan"
-

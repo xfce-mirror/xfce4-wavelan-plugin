@@ -7,48 +7,52 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-12-14 16:18+0100\n"
+"POT-Creation-Date: 2010-11-15 11:17+0900\n"
 "PO-Revision-Date: 2008-12-14 21:00+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/wavelan.c:150
-#, c-format
+#: ../panel-plugin/wavelan.c:146
 msgid "No carrier signal"
 msgstr "Ingen bärarsignal"
 
-#: ../panel-plugin/wavelan.c:169
+#: ../panel-plugin/wavelan.c:165
 msgid "No device configured"
 msgstr "Ingen enhet konfigurerad"
 
-#: ../panel-plugin/wavelan.c:484
+#: ../panel-plugin/wavelan.c:494
 msgid "Properties"
 msgstr "Egenskaper"
 
-#: ../panel-plugin/wavelan.c:500
+#: ../panel-plugin/wavelan.c:510
 msgid "Wavelan Plugin Options"
 msgstr "Alternativ för Wavelan-insticksmodulen"
 
-#: ../panel-plugin/wavelan.c:516
+#: ../panel-plugin/wavelan.c:526
 msgid "Interface"
 msgstr "Gränssnitt"
 
-#: ../panel-plugin/wavelan.c:538
+#: ../panel-plugin/wavelan.c:547
 msgid "_Autohide when offline"
 msgstr "_Dölj automatiskt när frånkopplad"
 
-#: ../panel-plugin/wavelan.c:548
+#: ../panel-plugin/wavelan.c:557
 msgid "Autohide when no hardware present"
 msgstr "Dölj automatiskt när ingen maskinvara finns"
 
-#: ../panel-plugin/wavelan.c:559
-msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
-msgstr "Observera: Detta kommer att göra det svårt att ta bort eller konfigurera insticksmodulen om det inte finns någon upptäckt enhet."
+#: ../panel-plugin/wavelan.c:568
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there "
+"is no device detected."
+msgstr ""
+"Observera: Detta kommer att göra det svårt att ta bort eller konfigurera "
+"insticksmodulen om det inte finns någon upptäckt enhet."
 
-#: ../panel-plugin/wavelan.c:567
+#: ../panel-plugin/wavelan.c:576
 msgid "Enable signal quality colors"
 msgstr "Aktivera färger för signalkvalitet"
 
@@ -59,4 +63,3 @@ msgstr "Visa status för ett trådlöst nätverk"
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
 msgstr "Wavelan"
-

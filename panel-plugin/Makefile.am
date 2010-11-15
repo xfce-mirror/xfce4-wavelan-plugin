@@ -1,5 +1,3 @@
-# $Id: Makefile.am 694 2005-07-11 14:18:53Z benny $
-
 INCLUDES =								\
 	-DG_LOG_DOMAIN=\"xfce4-wavelan-plugin\"				\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"

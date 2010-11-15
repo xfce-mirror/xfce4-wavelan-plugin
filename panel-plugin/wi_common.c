@@ -1,6 +1,4 @@
-/* $Id: wi_common.c 545 2004-02-09 21:20:54Z benny $ */
-/*-
- * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
+/* Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -43,5 +41,3 @@ wi_strerror(int error)
     return("Unknown error");
   }
 }
-
-

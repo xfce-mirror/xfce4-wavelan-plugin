@@ -1,6 +1,5 @@
-/* $Id: wavelan.c,v 1.9 2004/08/03 16:46:39 benny Exp $ */
-/*-
- * Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
+/* Copyright (c) 2003,2004 Benedikt Meurer <benny@xfce.org>
+ * Copyright (c) 2010 Florian Rivoal <frivoal@xfce.org>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
