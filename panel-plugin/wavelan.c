@@ -144,12 +144,12 @@ wavelan_timer(gpointer data)
       TRACE ("result = %d", result);
       /* reset quality indicator */
       if (result == WI_NOCARRIER) {
-        tip = g_strdup_printf(_("No carrier signal"));
+        tip = g_strdup(_("No carrier signal"));
         wavelan_set_state(wavelan, 0);
       }
       else {
         /* set error */
-        tip = g_strdup_printf("%s", wi_strerror(result));
+        tip = g_strdup(wi_strerror(result));
         wavelan_set_state(wavelan, -1);
       }
     }
