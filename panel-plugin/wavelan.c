@@ -177,6 +177,16 @@ wavelan_timer(gpointer data)
   return(TRUE);
 }
 
+inline guint
+timeout_add_seconds(guint interval, GSourceFunc function, gpointer data)
+{
+#if GLIB_CHECK_VERSION( 2,14,0 )
+  return g_timeout_add_seconds(interval, function, data);
+#else
+  return g_timeout_add(interval*1000, function, data);
+#endif
+}
+
 static void
 wavelan_reset(t_wavelan *wavelan)
 {
@@ -197,7 +207,7 @@ wavelan_reset(t_wavelan *wavelan)
     if ((wavelan->device = wi_open(wavelan->interface)) != NULL) {
       /* register the update timer */
       TRACE ("Opened device");
-      wavelan->timer_id = g_timeout_add(250, wavelan_timer, wavelan);
+      wavelan->timer_id = timeout_add_seconds(1, wavelan_timer, wavelan);
     }
   }
 }
