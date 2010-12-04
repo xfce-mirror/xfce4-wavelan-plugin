@@ -1,208 +1,1489 @@
-2009-04-09 Landry Breuil <landry@xfce.org>
-
-	* Release 0.5.5
-	* Merge various patches from NetBSD and FreeBSD, 'should' work everywhere now..
-	* Totally revamped GUI, courtesy of Johan van der Slikke
-	* Show signal strengh in dBm on BSDs, in % on Linux
-	* Various bugfixes, localized config dialog is fixed
-
-2008-07-19 Landry Breuil <landry@xfce.org>
-
-	* Fix support for OpenBSD, using net80211 API instead of deprecated wi_* API.
-	* Show link quality AND txpower in plugin tooltip.
-
-2007-01-10 20:23  james
-
-	* Fix a bug where the interface that is top of the list isn't used unless
-		something else is selected first. It now defaults to the first interface
-		found if there is no rc file or interface stored in it. This does remove
-		the ability to have an instance without an associated interface, but who
-		wants that anyway? Thanks to Maximilian Schleiss for the report.
-
-2007-01-10 19:07  james
-
-	* Add the headers added in the last change to the checks in configure.
-
-2007-01-10 19:02  james
-
-	* Include more kernel headers in wi_linux.c as newer kernels don't
-	  do it for you when you are in userspace. Thanks to Maximilian Schleiss
-		for help debugging.
-
-2007-01-09 20:24  james
-
-	* Add a check for libxfce4util in ./configure as it is possible to have
-	  the panel headers without the util headers. I haven't used libs and 
-		cflags which is probably a bug.
-
-2007-01-09 00:04  james
-
-	* Fix a bug in which the signal strength was incorrectly calculated, due to
-	  a max value being assumed that is not correct and usually too small.
-		This change will probably reduce the signal strength reported, but that is
-		because it was incorrect before. Bug 1499.
-	* Add config.h to panel-plugin/wi_linux.c to enable the trace debugging
-	  properly.
-
-2007-01-07 23:28  james
-
-	* Remove an unused variable that caused a failure with -Werror.
-
-2007-01-07 22:45  james
-
-	* Fix an autoconf problem that needed sys/socket.h including before
-	  linux/wireless.h in its test program.
-
-2007-01-07 16:49  james
-
-	* Add an option to make the panel icon square.
-
-2006-12-21 22:23  james
-
-	* Add a THANKS file for people who contribute to the plugin.
-
-2006-12-21 21:34  james
-
-	* Add patch from Petr Salinger <Petr.Salinger@seznam.cz> to fix
-	  compilation on kfreebsd.
-
-2006-09-11 08:11  nick
-
-	* Fix typo in panel-plugin/Makefile.am
-	* BUmp version to 0.5.3 for release
-
-2006-08-10 19:03  james
-
-	* Make the plugin visible when added.
-	* Add an option to hide when no device present.
-
-2006-08-10 01:59  james
-
-	* Fixed the regression that made the icon square.
-	* Improve the build system slightly.
-
-2006-08-09 23:23  james
-
-	* Added Italian translation. (Thanks ema).
-
-2006-08-09 17:51  james
-
-	* Fixed a bug that meant it didn't work on most linux systems
-
-2006-05-03 23:23  james
-
-	* Updated to work with new API
-
-2004-08-03 18:46  benny
-
-	* panel-plugin/wavelan.c: Fix for Linux ifconfig.
-
-2004-08-03 15:21  benny
-
-	* NEWS, configure, configure.ac, panel-plugin/wavelan.c: Version
-	0.4.0 with support for threaded xfce4-panel.  Added combo for
-	interface selection.
-
-2004-07-29 22:42  benny
-
-	* panel-plugin/wavelan.c: Fix hanging panel with threading.
-
-2004-07-28 23:49  benny
-
-	* m4/depends.m4: Fix BM_DEPEND_CHECK().
-
-2004-07-24 19:43  benny
-
-	* Makefile.in, aclocal.m4, config.guess, config.sub, configure,
-	install-sh, ltmain.sh, mkinstalldirs, panel-plugin/Makefile.in,
-	panel-plugin/wavelan.c: Prepare this for threaded panel.
-
-2004-07-24 19:30  benny
-
-	* m4/depends.m4: Correct min. required panel version.
-
-2004-07-24 19:27  benny
-
-	* m4/depends.m4: Extended XFCE_PANEL_PLUGIN macro to honor the new
-	threaded panel.
-
-2004-07-21 11:00  benny
-
-	* m4/depends.m4: New panel plugin check
-
-2004-02-12 23:45  benny
-
-	* ChangeLog: Updated ChangeLog.
-
-2004-02-12 23:43  benny
-
-	* NEWS, README, configure, configure.ac, panel-plugin/wi_linux.c:
-	Improved Linux support by An-Cheng Huang.
-
-2004-02-11 18:02  benny
-
-	* AUTHORS, ChangeLog, NEWS, configure, configure.ac,
-	panel-plugin/wi_linux.c: Improved Linux support, thanks to An-Cheng
-	Huang
-
-2004-02-10 00:32  benny
-
-	* panel-plugin/wavelan.c: Added code to autohide the plugin if the
-	device is offline, that is the plugin is unable to detect a
-	"carrier signal". This saves space in the panel.
-
-2004-02-09 22:49  benny
-
-	* panel-plugin/icons.xcf: Keep this here, so we can change the
-	icons at any time.
-
-2004-02-09 22:20  benny
-
-	* AUTHORS, COPYING, Makefile.in, NEWS, README, aclocal.m4, compile,
-	config.guess, config.sub, configure, configure.ac, depcomp,
-	install-sh, ltmain.sh, missing, mkinstalldirs,
-	panel-plugin/Makefile.am, panel-plugin/Makefile.in,
-	panel-plugin/error.png, panel-plugin/inline-icons.h,
-	panel-plugin/link0.png, panel-plugin/link1.png,
-	panel-plugin/link2.png, panel-plugin/link3.png,
-	panel-plugin/link4.png, panel-plugin/link5.png,
-	panel-plugin/wavelan.c, panel-plugin/wi.h, panel-plugin/wi_bsd.c,
-	panel-plugin/wi_common.c, panel-plugin/wi_linux.c: More
-	eye-candy-ness, having nice graphics instead of the ugly progress
-	indicators. Linux support added, but currently untested.
-
-2004-01-13 21:21  benny
-
-	* panel-plugin/wavelan.c: Don't use deprecated functions! :-)
-
-2004-01-09 13:57  benny
-
-	* panel-plugin/wi_bsd.c: Added OpenBSD support, thanks to Jolan
-	Luff.
-
-2003-12-19 17:57  benny
-
-	* NEWS, configure, configure.ac, panel-plugin/wavelan.c,
-	panel-plugin/wi.h, panel-plugin/wi_bsd.c: Added FreeBSD support,
-	thanks to Sebastian Yepes F.
-
-2003-11-11 19:43  benny
-
-	* AUTHORS, COPYING, ChangeLog, INSTALL, Makefile.am, Makefile.in,
-	README, aclocal.m4, autogen.sh, compile, config.guess, config.h.in,
-	config.sub, configure, configure.ac, depcomp, install-sh, missing,
-	mkinstalldirs, NEWS, ltmain.sh, m4/debug.m4, m4/depends.m4,
-	m4/i18n.m4, panel-plugin/Makefile.am, panel-plugin/Makefile.in,
-	panel-plugin/wavelan.c, panel-plugin/wi.h, panel-plugin/wi_bsd.c:
-	Initial revision
-
-2003-11-11 19:43  benny
-
-	* AUTHORS, COPYING, ChangeLog, INSTALL, Makefile.am, Makefile.in,
-	README, aclocal.m4, autogen.sh, compile, config.guess, config.h.in,
-	config.sub, configure, configure.ac, depcomp, install-sh, missing,
-	mkinstalldirs, NEWS, ltmain.sh, m4/debug.m4, m4/depends.m4,
-	m4/i18n.m4, panel-plugin/Makefile.am, panel-plugin/Makefile.in,
-	panel-plugin/wavelan.c, panel-plugin/wi.h, panel-plugin/wi_bsd.c:
-	Initial import.
-
+commit 58a1006f435896c1eb8a55f654872c93d3ae10cb
+Author: Florian Rivoal <frivoal@xfce.org>
+Date:   Sat Dec 4 09:32:27 2010 +0900
+
+    Drop the .pot file
+    
+    It can be automatically generated, so no need to check it in.
+
+commit 5f39ee8de1813893762b29c2994fbe5c157f98db
+Author: Sergio Marques <smarquespt@gmail.com>
+Date:   Fri Nov 19 16:16:54 2010 +0100
+
+    l10n: Updated Portuguese (pt) translation to 100%
+    
+    New status: 11 messages complete with 0 fuzzies and 0 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 94206aa6b15f74efa67e37a99f8f8d3359ffb0ec
+Author: Florian Rivoal <frivoal@xfce.org>
+Date:   Mon Nov 15 11:20:08 2010 +0900
+
+    Overall package cleanup
+    
+    Update copyright notices, update autogen.sh, remove svn fluff, update the
+    LINGUAS file, make update-po, update the INSTALL file.
+
+commit 682c767dfc42d2fa9630542e9585f887625e8c1a
+Author: Florian Rivoal <frivoal@xfce.org>
+Date:   Mon Nov 15 10:57:32 2010 +0900
+
+    Simpler string handling
+    
+    Use g_strdup rather than g_strdup_printf when possible.
+
+commit bb704d0fe9a1df145df578944dc03439ba19cbac
+Author: Florian Rivoal <frivoal@xfce.org>
+Date:   Mon Nov 15 10:49:38 2010 +0900
+
+    Wake up less often to save power
+    
+    Use g_timeout_add_seconds instead of g_timeout_add for less frequent
+    wake ups, which should help (even if only a little) with battery life.
+    
+    based on a patch submitted in bug #5181.
+
+commit 24812523c0a03512fcd009132a859c38fd8cddfd
+Author: Florian Rivoal <frivoal@xfce.org>
+Date:   Mon Nov 15 10:39:35 2010 +0900
+
+    Replace deprecated GtkTooltips by GtkTooltip
+    
+    This fixes bug #5866
+
+commit 46c1f02c04bc910275603f4c278883363c8131fe
+Author: Florian Rivoal <frivoal@xfce.org>
+Date:   Sun Nov 7 20:49:15 2010 +0900
+
+    Remove the size limit on the name of the interface
+    
+    The limitation to 10, then 16 was arbitrary, so isn't really worth
+    having. Without the limit, users can enter names for interfaces that
+    can't possibly exist on the system, but that's not really a drawback,
+    as this just means the interface won't be detected. Fix bug 3867.
+
+commit 3844bf462a93793c41efc54617d4d834cf372192
+Author: Florian Rivoal <frivoal@xfce.org>
+Date:   Sun Nov 7 20:16:38 2010 +0900
+
+    xfce4-panel 4.7 compatibility fix
+    
+    Fix mistakes in the support for libxfcegui4 in Makefile.am. This fixes
+    Bug 6615.
+
+commit 1e010e3622641ce7f93a0bf6b6d4de6adb2c9a9b
+Author: Bauzhan Muftakhidinov <baurthefirst@gmail.com>
+Date:   Fri Sep 10 09:56:43 2010 +0200
+
+    l10n: New translation to Kazakh.
+    
+    New status: 11 messages complete with 0 fuzzies and 0 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit d7f5b8bd8e2b1c5d8fc1e9db8e6f4c8364cdb2c4
+Author: Landry Breuil <landry@rhaalovely.net>
+Date:   Sun Aug 8 10:58:49 2010 +0200
+
+    Add libxfcegui4 cflags/libs checks to fix build with xfce4-panel 4.7.
+    Bug #6615.
+
+commit f8e2bf350b828a38c7f914d37a3e78d82c465444
+Author: Gheyret Kenji <gheyret@yahoo.com>
+Date:   Thu Aug 5 09:39:03 2010 +0200
+
+    l10n: Updated Uyghur (ug) translation to 100%
+    
+    New status: 11 messages complete with 0 fuzzies and 0 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 37971e5f6e5f676651162fc701adfb2d624793a5
+Author: Gheyret Kenji <gheyret@yahoo.com>
+Date:   Fri Jul 30 04:27:17 2010 +0200
+
+    l10n: Uyghur translation
+    
+    New status: 2 messages complete with 0 fuzzies and 9 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 57680f75ba090acddb77889dce896719bad420f5
+Author: Fabian Nowak <timystery@arcor.de>
+Date:   Sun Mar 28 12:42:16 2010 +0200
+
+    l10n: Updated German (de) translation to 100%
+    
+    New status: 11 messages complete with 0 fuzzies and 0 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 12745964721285a0c5d52b672b3e1ecee78b208f
+Author: Andres Kovtunos <kovtunos@yandex.ru>
+Date:   Mon Mar 15 16:45:00 2010 +0100
+
+    l10n: Initial Russian translation.
+    
+    New status: 11 messages complete with 0 fuzzies and 0 untranslated.
+    
+    Transmitted-via: Transifex (translations.xfce.org).
+
+commit 30cc01ba7faad7f256241631aa6f469fc27f7072
+Author: Cristian Marchi <cri.penta@gmail.com>
+Date:   Wed Dec 23 17:31:37 2009 +0000
+
+    l10n: Updates to Italian (it) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 0ad53042f99e8bd441c9526eee1253b92bab94ed
+Author: Leandro Regueiro <leandro.regueiro@gmail.com>
+Date:   Thu Oct 1 15:31:07 2009 +0000
+
+    l10n: Updates to Galician (gl) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 9d6ac0bf1b08eb0898a89e60426a7456c52a3a3d
+Author: Rihards Prieditis <rprieditis@gmail.com>
+Date:   Fri Sep 18 22:27:43 2009 +0000
+
+    l10n: Updates to Latvian (lv) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 466341d3b3a8466061c832fa89c1c5dd20e954bc
+Author: Jeff Bailes <thepizzaking@gmail.com>
+Date:   Tue Aug 18 10:11:27 2009 +0000
+
+    l10n: Updates to English (United Kingdom) (en_GB) translation
+    
+    Transmitted-via: Transifex (translations.xfce.org)
+
+commit 644f79ae2d3d990bcc21ffd5b67c8ce40fb446be
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Sat Aug 8 13:41:32 2009 +0000
+
+    update goodies translation
+    
+    (Old svn revision: 7896)
+
+commit a21075f7768cf75ef08f29c9d9bd797cd9b15f15
+Author: Gabor Kelemen <kelemeng@gnome.hu>
+Date:   Sat Jul 25 08:15:51 2009 +0000
+
+    2009-07-25  Gabor Kelemen  <kelemeng@gnome.hu>
+    
+    	* hu.po: Translation reworked.
+    
+    (Old svn revision: 7823)
+
+commit b23258cd66231bc01ea1c1691e47a1a8e9243bf8
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Tue Jun 9 20:43:09 2009 +0000
+
+    Drop svn:executable bit from po files
+    
+    (Old svn revision: 7518)
+
+commit dd745ebe0625d17f8f2c6f4f211d193a5c639de3
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Fri May 29 10:44:34 2009 +0000
+
+    update goodies translations
+    
+    (Old svn revision: 7436)
+
+commit 323ca26bbb82b2fbda4cf9a05b64c2e582bde91f
+Author: SZERVÁC Attila <sas@321.hu>
+Date:   Tue May 26 04:56:27 2009 +0000
+
+    [intl:hu] xfmpc added
+    
+    (Old svn revision: 7422)
+
+commit 65d98af4f06d14a9ce3529e933df8722e11afac4
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Thu Apr 16 08:20:27 2009 +0000
+
+    goodies translation update
+    
+    (Old svn revision: 7213)
+
+commit 3421c9de00bebd324e68573598634de1338b34fa
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Thu Apr 9 19:26:22 2009 +0000
+
+    Bump for 0.5.5 release, update NEWS/ChangeLog.
+    
+    
+    (Old svn revision: 7149)
+
+commit 763b0e935ea6185cf305efcde7186c5718ae1959
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Wed Apr 8 21:15:10 2009 +0000
+
+    More fixes :
+    - initialize rc to NULL, and avoid unrefing it (as gtk docs states that passing it back to
+      gtk_widget_modify_style() will unref it)
+    - dont create an unnecessary GtkRcStyle on the fly.
+    - cast state to gdouble to be sure the value passed to gtk_progress_bar_set_fraction() is
+      decimal
+    - use the new stats.ws_qunit field in tooltip.
+    
+    
+    (Old svn revision: 7144)
+
+commit 2689e98c8164190ac457dc3c43689ea12bc54afb
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Wed Apr 8 21:08:52 2009 +0000
+
+    Give up on the % vs dBm issue, add a ws_qunit
+    field with will be % on linux and dBm on BSDs,
+    may be refined one day.. all those drivers
+    with different ways of reporting signal strengh
+    definitely sucks.
+    
+    
+    (Old svn revision: 7143)
+
+commit 1300b4ac84b195256c752b0c9f307eb55e0916c0
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Tue Apr 7 21:49:28 2009 +0000
+
+    It appears that bitrate was not calculated correctly,
+    tnx Corsac for testing and confirming it was ok with these values.
+    
+    
+    (Old svn revision: 7133)
+
+commit 2dcc46376e9f3c36f7f9f46481789073324b80b1
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Tue Apr 7 21:48:19 2009 +0000
+
+    Merge patch from debian, interface name is limited to 16 chars in linux kernel.
+    
+    
+    (Old svn revision: 7132)
+
+commit 5ed3c52420c843bc884bf1b32fb10d3ab4916243
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Sat Mar 28 15:05:58 2009 +0000
+
+    german and catalan translations
+    
+    (Old svn revision: 7012)
+
+commit eab61b970530206eae5f4ee53a01fbc3673b4ef0
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Sat Mar 14 15:26:30 2009 +0000
+
+    Translations updates - es fr gl it tr
+    
+    (Old svn revision: 6902)
+
+commit c98247a5cafca4fb6ae75c63a364302050b1e42e
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Thu Mar 5 20:12:29 2009 +0000
+
+    Fix the renaming of the pt nb files -- thanks to jerome who noticed this problem
+    
+    (Old svn revision: 6850)
+
+commit c25e9ffc37ddd5780a208776b26fbaa6c2b1dd3c
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Thu Mar 5 14:53:41 2009 +0000
+
+    Renamed pt_PT to pt and nb_NO to nb (bug #4574)
+    
+    (Old svn revision: 6848)
+
+commit 563928ae04b5c5a22d3009c8b54c642aef2e329a
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Sun Feb 22 22:57:36 2009 +0000
+
+    Update translations -- Remove executable property on all po files (only da.po actuall)
+    
+    (Old svn revision: 6759)
+
+commit 66aae8d58da1dc9fa289f708e06c1d7dc3fbf903
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Sun Feb 8 08:24:06 2009 +0000
+
+    Translations updates - fr id it ja nb pl
+    
+    (Old svn revision: 6659)
+
+commit dcf356345531aadf9fce73865fac6f196364cbb0
+Author: Per Kongstad <p_kongstad@op.pl>
+Date:   Fri Jan 23 15:43:53 2009 +0000
+
+    	* da.po: Danish translation update (Per Kongstad)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     	* da.po: Danish translation updated (Per Kongstad)
+    
+    
+    
+     	* da.po: Danish translation updated 0.5.2 (Per Kongstad)
+    
+     	*da.po: Danish translation updated (Per Kongstad)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    (Old svn revision: 6528)
+
+commit 8d1c80023fa360bb19c631d185d9c5f23b9a42d8
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Sun Jan 18 17:54:19 2009 +0000
+
+    Translations updates - de ca it ja nb pt_PT tr
+    
+    (Old svn revision: 6493)
+
+commit 3d222412244b1cf8b2e218cd68e7a5434857a59e
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Thu Dec 25 19:20:40 2008 +0000
+
+    Translations updates - es gl id ja uk
+    
+    (Old svn revision: 6367)
+
+commit 878cf4212f2e362aec54d728dd21bd39f2e3602f
+Author: Alexander Toresson <alexander.toresson@gmail.com>
+Date:   Sat Dec 20 21:52:03 2008 +0000
+
+    xfce4-taskmanager/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-time-out-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-wavelan-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-radio-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-datetime-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-cpufreq-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfburn/trunk/po:
+    	* sv.po: Swedish translation update (Daniel Nylander)
+    xfce4-xkb-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-smartbookmark-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-smartpm-plugin/trunk/po:
+    	* sv.po: Swedish translation update (Daniel Nylander)
+    thunar-media-tags-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfvnc/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-verve-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-xfapplet-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    thunar-archive-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-websearch-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-screenshooter-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-teatime-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfce4-rss-plugin/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    xfmpc/trunk/po:
+    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    
+    (Old svn revision: 6343)
+
+commit 6584203380ffafb8de57797eb6b7015ccea76ceb
+Author: Piarres Beobide <pi@beobide.net>
+Date:   Sun Dec 14 00:56:49 2008 +0000
+
+    Goodies basque translation update
+    
+    
+    (Old svn revision: 6307)
+
+commit 4516f122896a9c4584c583fc0e34321fde0317ef
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Sat Dec 13 14:34:32 2008 +0000
+
+    Translations updates - ja uk zh_CN
+    
+    (Old svn revision: 6298)
+
+commit 8db6b5ad7745929dfe2cce29c1135cd5ddf80b4a
+Author: Piarres Beobide <pi@beobide.net>
+Date:   Sun Dec 7 18:35:53 2008 +0000
+
+    Goodies Basque translation update
+    
+    
+    (Old svn revision: 6292)
+
+commit 154530b55b11d289431a16b46e2a11e5bcf4a9bf
+Author: Michal Varady <miko.vaji@gmail.com>
+Date:   Tue Dec 2 18:35:44 2008 +0000
+
+    po files updated, Czech translation updated
+    
+    
+    (Old svn revision: 6251)
+
+commit b106a21fd991a4fe19443bcc6a1283a96d3ea15d
+Author: Michal Varady <miko.vaji@gmail.com>
+Date:   Tue Dec 2 18:27:49 2008 +0000
+
+    cs added to LINGUAS file
+    
+    (Old svn revision: 6250)
+
+commit d863c9039b853aa546ae81a0ab9a09e259850658
+Author: Eren Turkay <turkay.eren@gmail.com>
+Date:   Mon Nov 17 14:12:47 2008 +0000
+
+    Add/update Turkish translation files thanks to the Turkish translation team! (Gökmen Görgen, Samed Beyribey, Özgür Kuru, Utku Aydın)
+    
+    (Old svn revision: 6129)
+
+commit f1c9157e7187a96b8befd63f7347487f1b93856a
+Author: Piarres Beobide <pi@beobide.net>
+Date:   Wed Nov 12 10:59:45 2008 +0000
+
+    Some goodies Basque translation update
+    
+    
+    (Old svn revision: 6068)
+
+commit 84d4d4e5fb7eb4ffaf1eb74e91197f25a69cd72d
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Mon Nov 10 21:33:25 2008 +0000
+
+    Fix #4594, patch from timystery at arcor dot de, thanks!
+    
+    
+    (Old svn revision: 6057)
+
+commit 50072019fcb65e5741893ba3d42bb2188aa9f988
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Sun Nov 9 23:17:35 2008 +0000
+
+    Translations updates for a lot of languages in a lot of packages
+    
+    (Old svn revision: 6041)
+
+commit 97669f607452f456951599f51821c713aa9e0bd4
+Author: Alexander Nyakhaychyk <nyakhaychyk@gmail.com>
+Date:   Sun Nov 9 11:41:18 2008 +0000
+
+    	* be.po: Belarusian translation update
+    
+    
+    (Old svn revision: 6032)
+
+commit b1fc87d7c8371d45ad10db032484ca759758a079
+Author: Alexander Nyakhaychyk <nyakhaychyk@gmail.com>
+Date:   Sun Nov 9 11:38:32 2008 +0000
+
+    	* be.po: Belarusian translation update
+    
+    
+    (Old svn revision: 6031)
+
+commit 25d3ee30b7a8e60154e31422c2356c7a5eaada63
+Author: Og Maciel <ogmaciel@gnome.org>
+Date:   Fri Nov 7 03:25:43 2008 +0000
+
+    Updated Brazilian Portuguese translation.
+    
+    (Old svn revision: 6002)
+
+commit 2041a67bdc0fefbcc637fe858bbb92b963a6dfbf
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Sun Nov 2 23:27:57 2008 +0000
+
+    Totally rework the gui part :
+    - use network-wireless icon from fd.o-compliant icon theme
+    - add a progressbar to report the signal quality
+    -> it's now much more visually consistent with e.g
+      battery/systemload/netload plugin
+    - remove the old icons
+    - adds a new option (replacing the previous 'square icon') :
+      'signal color' (if enabled and gtk theme permits it) colors
+    the progress bar from red to green, corresponding to signal quality.
+    - it adds a new string, so make update-po.
+    
+    This is largely based on a tarball sent in august on goodies-dev by
+    Johan Slikkie van der Slikke <johan // slikkie.nl>, thanks to him !
+    
+    
+    (Old svn revision: 5927)
+
+commit 116035a4769a227bda3feb07de786ce0c0f87bf4
+Author: Lars Nielsen <lars@mit-web.dk>
+Date:   Tue Oct 21 20:16:45 2008 +0000
+
+    update-po
+    
+    (Old svn revision: 5741)
+
+commit 5e693b3627f6266a4de9594978fd5f72051d7342
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Thu Oct 2 21:22:40 2008 +0000
+
+    Simplify #ifdef dance, Jean-yves Migeon (thanks!) confirmed me that
+    WI_RID_STA_IDENTITY was not available on NetBSD. wi_vendor() is
+    hence only defined/used on FreeBSD.
+    
+    
+    (Old svn revision: 5505)
+
+commit 8934fc1932bec90594a0600cd54830386aab0426
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Wed Oct 1 21:31:30 2008 +0000
+
+    oops
+    
+    (Old svn revision: 5502)
+
+commit d4262cd62e9373c2f35fc2c50c1cae5d7cd8979c
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Wed Oct 1 20:05:23 2008 +0000
+
+    Play the #ifdef dance and update support for FreeBSD 7.x.
+    Adapted from http://www.freebsd.org/cgi/query-pr.cgi?pr=120104
+    
+    
+    (Old svn revision: 5501)
+
+commit c5d19cabc2259c757d7d14eaf7c5c5741b794ea6
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Mon Aug 18 20:34:59 2008 +0000
+
+    Signal quality is in wi_val[1] in any cas on NetBSD, confirmed and tested by Jean-Yves
+    Migeon, thanks !
+    Double-checked by reading NetBSD cvs in src/sys/net80211/ieee80211_ioctl.c
+    Support for NetBSD should be okay now, FreeBSD support has to be rewritten to use the new
+    API which appeared in 7.0 version.
+    
+    
+    (Old svn revision: 5276)
+
+commit 0e859d2658538552298eb0485ab43153a9d0e9ac
+Author: Maxim Dziumanenko <mvd@mylinux.com.ua>
+Date:   Thu Jul 31 13:16:06 2008 +0000
+
+    Maxim Dziumanenko <dziumanenko@gmail.com>
+    
+    * Updated Ukrainian translation.
+    
+    
+    
+    (Old svn revision: 5183)
+
+commit 6fabfe5760d25d47da7418c4c8631c29f6bdff2d
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Mon Jul 21 17:33:56 2008 +0000
+
+    - fix quality computation on OpenBSD, best effort atm..
+    - fix rate computation, txpower has nothing to do with rate.
+    - no need to include glib.h here
+    - add #if zero'ed code for debugging purposes in wavelan.c
+    
+    
+    (Old svn revision: 5149)
+
+commit b3bf190cd9ee008fbb2d28eba9f41ad7932cedeb
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Mon Jul 21 15:22:02 2008 +0000
+
+    Use network-wireless icon for the .desktop file, it's in Freedesktop icon naming spec so supposed to be here.
+    
+    
+    (Old svn revision: 5148)
+
+commit 4274255d4852c903a6fbc41f3279422be5f8f827
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Mon Jul 21 15:01:40 2008 +0000
+
+    oops, this should have been removed in the previous commit
+    
+    (Old svn revision: 5147)
+
+commit 8536c3f0b5a0c89aff612e6e5d14a297c58fe52a
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Sun Jul 20 11:03:36 2008 +0000
+
+    Transform bitrate in Mb/s in Linux part.
+    Properly fix units for tooltip : quality is a percentage and rate is in Mb/s.
+    I still have to figure how to compute correct signal quality on *bsd.
+    
+    
+    (Old svn revision: 5145)
+
+commit 3f971181cd6a4ff83af1952b8e86c0c85f6c62be
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Sat Jul 19 21:34:56 2008 +0000
+
+    Show link quality AND txpower in plugin tooltip.
+    Update ChangeLog while here.
+    
+    
+    (Old svn revision: 5143)
+
+commit a757d99ebd8a1aaef3bb6115040d01d50e1f85c4
+Author: Landry Breuil <landry@openbsd.org>
+Date:   Sat Jul 19 21:31:19 2008 +0000
+
+    Fix support for OpenBSD, using net80211 API instead of deprecated wi_*.
+    No change for NetBSD and FreeBSD.
+    
+    
+    (Old svn revision: 5142)
+
+commit 85bfe6e60958ca74ca1fb4c2f9f2c699c14ac8ec
+Author: Mohamed Magdy <mohamed.m.k@gmail.com>
+Date:   Fri Jul 18 19:20:10 2008 +0000
+
+    Update Arabic translations
+    
+    (Old svn revision: 5140)
+
+commit ec30201b2173e0ee778de9b1b755676d538dadf7
+Author: Mohamed Magdy <mohamed.m.k@gmail.com>
+Date:   Wed Jul 16 23:01:19 2008 +0000
+
+    Update Arabic translations
+    
+    (Old svn revision: 5118)
+
+commit 645cad7a844d0e6bf2b503f7055ccf959ce939c5
+Author: Mohamed Magdy <mohamed.m.k@gmail.com>
+Date:   Tue Jul 15 19:15:17 2008 +0000
+
+    Update Arabic translations
+    
+    (Old svn revision: 5098)
+
+commit fbd59a626949b9dcd560f6934be4b29d929a6a7d
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Thu Jun 26 22:00:51 2008 +0000
+
+    Translations added and updated for most goodies (gl)
+    
+    (Old svn revision: 4998)
+
+commit 3d5caa6156a0ec47ec16dd015718118add1d08d5
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Wed Jun 25 21:44:02 2008 +0000
+
+    Translations added for most goodies (id)
+    
+    (Old svn revision: 4996)
+
+commit bd5583bb52b2ec0b0cdbfa375e92a79ae978b105
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Tue May 27 00:21:25 2008 +0000
+
+    update-po
+    
+    (Old svn revision: 4846)
+
+commit a85206d2a9e2bb7bfac6379a7e54ee8b01383039
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Wed May 14 08:45:04 2008 +0000
+
+    update japanese translation
+    
+    (Old svn revision: 4795)
+
+commit a3f5ab0b1cbcc7a0e297b3c0d9454f9dd118e6ff
+Author: Michal Varady <miko.vaji@gmail.com>
+Date:   Mon Dec 17 13:46:48 2007 +0000
+
+    New Czech translations
+    
+    
+    (Old svn revision: 3720)
+
+commit f08bb792fdf8ed896e24e440c9ed802c58d45bd7
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Mon Nov 19 23:06:36 2007 +0000
+
+    Latvian translations added to most goodies.
+    
+    (Old svn revision: 3611)
+
+commit 9b6b24ad00a957079185214019a7818738342b98
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Thu Nov 15 08:37:37 2007 +0000
+
+    Fix changelogs for updated ur.po files, and add thunar-archive-plugin
+    
+    (Old svn revision: 3591)
+
+commit edaffd55d418465d678b4dd3b79536b1daf7aad2
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Thu Nov 15 08:24:33 2007 +0000
+
+    Rename pk.po to ur.po
+    
+    (Old svn revision: 3590)
+
+commit ee4816ea6d2929477673365333583c0873ef36c6
+Author: Brian Tarricone <brian@tarricone.org>
+Date:   Mon Oct 29 09:17:36 2007 +0000
+
+    add missing file to POTFILES
+    
+    
+    (Old svn revision: 3471)
+
+commit 41864331a0feec4e0feebfdd13b9df77c443d0d1
+Author: Mike Massonnet <mmassonnet@xfce.org>
+Date:   Sun Oct 28 19:05:17 2007 +0000
+
+    Add new translation by محمد علي المكي <makki.ma@gmail.com>
+    
+    (Old svn revision: 3466)
+
+commit 440bd2815c1d8bd24f3b9e641fbd60f8ce276bd8
+Author: Brian Tarricone <brian@tarricone.org>
+Date:   Wed Oct 24 22:36:53 2007 +0000
+
+    remove trailing parens on AC_INIT version info to work around bug
+    in intltool 0.35.x and 0.36.x
+    
+    
+    (Old svn revision: 3434)
+
+commit abfd3d18339eb6a8f41fd08d2153cc560167c9ab
+Author: Og Maciel <ogmaciel@gnome.org>
+Date:   Sat Sep 8 01:27:05 2007 +0000
+
+    Brazilian Portuguese translations added by Vladimir Melo.
+    
+    (Old svn revision: 3166)
+
+commit 38e1f52bd686af402e2a1b67145a8f38331d6f72
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Sun Jul 8 21:34:59 2007 +0000
+
+    Last bunch of pt_PT and nb_NO files to be added.
+    
+    (Old svn revision: 2900)
+
+commit 3437e6ea2e3818ddf1de35cb88e764a83e19fc0f
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Sun Jul 8 20:18:00 2007 +0000
+
+    * nb_NO.po: Norwegian Bokmal translations added
+    * pt_PT.po: European Portuguese translations added
+    
+    
+    (Old svn revision: 2898)
+
+commit 3dc17e34c17f392e017e2b4ab60aa660349846fc
+Author: Pau Rullan Ferragut <paurullan@bulma.net>
+Date:   Sat Mar 31 11:53:29 2007 +0000
+
+    forgot to add in LINGUAS en_GB
+    
+    (Old svn revision: 2639)
+
+commit dd9cee15e927da6bc7d57d20b51b8f7aca112cb6
+Author: Pau Rullan Ferragut <paurullan@bulma.net>
+Date:   Sat Mar 31 07:26:46 2007 +0000
+
+    i18n british translation
+    
+    (Old svn revision: 2611)
+
+commit bea60234d962ebf4dce4947fb1d8b2d60fa2115b
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Tue Feb 20 23:34:44 2007 +0000
+
+    * fr.po: Modified the French translation for the timer plugin.
+    * ko.po: Updated the Korean translations by ByungHyun Choi
+      for the mount, netload, wavelan and xmms plugin packages.
+    
+    (Old svn revision: 2508)
+
+commit 6e3876b09616ee1f436ac0198c9283a72e608fda
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Fri Feb 2 18:52:37 2007 +0000
+
+    Added the Albanian translations by Besnik Bleta for all the goodies.
+    
+    (Old svn revision: 2480)
+
+commit 3091360f8b5f844af974af68dde10f481847ffb8
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Thu Jan 18 15:55:07 2007 +0000
+
+    Updated the French, German and Polish translations. Added the Polish translation to the thunar-volman package.
+    
+    (Old svn revision: 2425)
+
+commit f64b82d158f1c0a092776f0403f1174005dd77e5
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Wed Jan 17 20:28:52 2007 +0000
+
+      * Release version 0.5.4.
+    
+    
+    (Old svn revision: 2407)
+
+commit 5f9563a7547b7d75f755fac34ad7912f321a603c
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Wed Jan 10 20:26:19 2007 +0000
+
+    	* Fix a bug where the interface that is top of the list isn't used unless
+    		something else is selected first. It now defaults to the first interface
+    		found if there is no rc file or interface stored in it. This does remove
+    		the ability to have an instance without an associated interface, but who
+    		wants that anyway? Thanks to Maximilian Schleiss for the report.
+    
+    
+    (Old svn revision: 2334)
+
+commit ef79cec1c48d5c77766cd0c646af1534e91fcde7
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Wed Jan 10 19:24:47 2007 +0000
+
+      * Readd the check for libxfce4util that I mistakenly reverted in the last
+        revision.
+    
+    
+    (Old svn revision: 2333)
+
+commit cf2bed2079c03f813adee88a78a111a3a2f34098
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Wed Jan 10 19:08:14 2007 +0000
+
+    	* Add the headers added in the last change to the checks in configure.
+    
+    
+    (Old svn revision: 2332)
+
+commit a2792dd369bb4cc90fcdf87a36e4ee014848dd1b
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Wed Jan 10 19:05:02 2007 +0000
+
+    	* Include more kernel headers in wi_linux.c as newer kernels don't
+    	  do it for you when you are in userspace. Thanks to Maximilian Schleiss
+    		for help debugging.
+    
+    
+    (Old svn revision: 2331)
+
+commit 2655f4a2ebf6220a09f80309e7b0a6296eebe6df
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Tue Jan 9 20:26:51 2007 +0000
+
+    	* Add a check for libxfce4util in ./configure as it is possible to have
+    	  the panel headers without the util headers. I haven't used libs and
+    		cflags which is probably a bug.
+    
+    
+    (Old svn revision: 2329)
+
+commit 0bf7b4ae853f1d8ab093683805c9a0f122548bdc
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Tue Jan 9 00:07:48 2007 +0000
+
+    	* Fix a bug in which the signal strength was incorrectly calculated, due to
+    	  a max value being assumed that is not correct and usually too small.
+    		This change will probably reduce the signal strength reported, but that is
+    		because it was incorrect before. Bug 1499.
+    	* Add config.h to panel-plugin/wi_linux.c to enable the trace debugging
+    
+    
+    (Old svn revision: 2323)
+
+commit f37b511206924c8495b0d5461804df30c407014d
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Sun Jan 7 23:29:02 2007 +0000
+
+    	* Remove an unused variable that caused a failure with -Werror.
+    
+    
+    (Old svn revision: 2315)
+
+commit 79f5224370604bfc4f399729e100844e03d37010
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Sun Jan 7 22:46:21 2007 +0000
+
+    	* Fix an autoconf problem that needed sys/socket.h including before
+    	  linux/wireless.h in its test program.
+    
+    
+    (Old svn revision: 2314)
+
+commit 76955e2c2893f901c05cccec1780923091bf4b76
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Sun Jan 7 17:21:51 2007 +0000
+
+    Add an option to make the panel plugin icon square.
+    
+    
+    (Old svn revision: 2310)
+
+commit e6403e959502461d10bb7f117ac18c3c792cac74
+Author: Maximilian Schleiss <maxschleiss@solnet.ch>
+Date:   Tue Jan 2 13:35:45 2007 +0000
+
+    Added the Belorusian translation of the xfce4-wavelan-plugin package.
+    
+    (Old svn revision: 2293)
+
+commit 24a21c8eedd438195801f6fc4ea627361094a03d
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Thu Dec 21 22:24:11 2006 +0000
+
+    	* Add a THANKS file for people who contribute to the plugin.
+    
+    
+    
+    (Old svn revision: 2271)
+
+commit 4471a4dd9744d97350a67754ac63d19ec9ffb0eb
+Author: James Westby <jw+xfce@jameswestby.net>
+Date:   Thu Dec 21 21:36:06 2006 +0000
+
+    	* Add patch from Petr Salinger <Petr.Salinger@seznam.cz> to fix
+    	  compilation on kfreebsd.
+    
+    
+    
+    (Old svn revision: 2270)
+
+commit 80f3e84848fadd9654db33e59fb42bbd6180113f
+Author: Nick Schermer <nick@xfce.org>
+Date:   Wed Dec 20 20:14:55 2006 +0000
+
+    * Fix po problem
+    
+    
+    (Old svn revision: 2264)
+
+commit 7165ebc82298c0324f545011a8b5d77ff80d1cfe
+Author: SZERVÁC Attila <sas@321.hu>
+Date:   Sun Dec 17 19:49:36 2006 +0000
+
+    little header fixes
+    
+    (Old svn revision: 2248)
+
+commit 70b9a32965599c4fccac8ae9599fb39c77414a83
+Author: Pau Rullan Ferragut <paurullan@bulma.net>
+Date:   Fri Dec 15 07:17:29 2006 +0000
+
+    i18n update
+    
+    (Old svn revision: 2232)
+
+commit e8128a0ec3906ff2623612d10948c1a53d595bcb
+Author: Pau Rullan Ferragut <paurullan@bulma.net>
+Date:   Mon Nov 27 18:43:47 2006 +0000
+
+    i18n korean update
+    
+    (Old svn revision: 2190)
+
+commit 59a24d53e24de87e6362bc8bda1939db1ce73643
+Author: Pau Rullan Ferragut <paurullan@bulma.net>
+Date:   Sun Nov 5 18:49:30 2006 +0000
+
+    i18n updated French translation
+    
+    (Old svn revision: 2147)
+
+commit 5f5a99293754402769d4c78a687ea05e3fdeab4c
+Author: Nick Schermer <nick@xfce.org>
+Date:   Tue Oct 24 18:56:38 2006 +0000
+
+    Add LINGUAS file
+    
+    (Old svn revision: 2128)
+
+commit 5c48dd4fa120febbd4a283685fbc9ae688c5c1f9
+Author: Jean-François Wauthy <pollux@xfce.org>
+Date:   Sat Sep 23 11:30:43 2006 +0000
+
+    various translations updates
+    
+    (Old svn revision: 2066)
+
+commit c601d554f610da2352da7834f902b4bb63a03559
+Author: Pau Rullan Ferragut <paurullan@bulma.net>
+Date:   Mon Sep 18 18:16:01 2006 +0000
+
+    wavelan, add catalan translation
+    
+    (Old svn revision: 2049)
+
+commit e1c66879d89159287580211f4a0f8bd8d8a85a16
+Author: Jean-François Wauthy <pollux@xfce.org>
+Date:   Sun Sep 17 20:09:46 2006 +0000
+
+    Update French and Polish translations
+    
+    (Old svn revision: 2039)
+
+commit 0f6f765d76568400ffcf940b598832f67ccceb2e
+Author: Piarres Beobide <pi@beobide.net>
+Date:   Tue Sep 12 20:20:50 2006 +0000
+
+    xfce4-wavelan-plugin basque translation update
+    
+    
+    (Old svn revision: 2025)
+
+commit 7a979ba3aa157d9d0645c2db69d86803d7cc11c4
+Author: SZERVÁC Attila <sas@321.hu>
+Date:   Tue Sep 12 06:26:00 2006 +0000
+
+    hu trunk: updates
+    
+    (Old svn revision: 2022)
+
+commit d8e00cff62da9a4ede7a2b1fc58cea0fef963049
+Author: Nick Schermer <nick@xfce.org>
+Date:   Mon Sep 11 06:26:49 2006 +0000
+
+    * Fix typo
+    * 0.5.3
+    
+    
+    (Old svn revision: 2015)
+
+commit 87f0e01bf9d3642e6d724371dc39d90263409d81
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Sep 10 20:59:05 2006 +0000
+
+    * Import of the 0.5.2 4.4 compatible version of this plugin
+    
+    
+    (Old svn revision: 2012)
+
+commit fcabf12bdfaf0141b701a87b61c2f46fad3ef036
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Sep 10 20:13:07 2006 +0000
+
+    * Create new trunk directories
+    
+    
+    (Old svn revision: 2008)
+
+commit ba8364b65b1f0e2483d441230ca9a103d430bd4f
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Sep 10 19:31:33 2006 +0000
+
+    * Regenerated all *.po files
+    
+    
+    (Old svn revision: 2006)
+
+commit a4be2a2f454ab2e357b5c13aa068828969b1a512
+Author: Nick Schermer <nick@xfce.org>
+Date:   Sun Sep 10 19:16:49 2006 +0000
+
+    * Created new pot files for all goodies
+    
+    
+    (Old svn revision: 2005)
+
+commit 98b6be7dcc60ab85806ce6cfe7b519c851811238
+Author: Jean-François Wauthy <pollux@xfce.org>
+Date:   Sun Aug 27 14:14:49 2006 +0000
+
+    Add/Update Czech translations
+    
+    (Old svn revision: 1927)
+
+commit 078d1878522e1891805221b27fb9606a832302cb
+Author: Emanuele Rocca <ema@debian.org>
+Date:   Thu Aug 10 08:25:30 2006 +0000
+
+    Italian translation: copyright fixed
+    
+    (Old svn revision: 1876)
+
+commit 9f12e7182e13cbb907e8b1829133b324843579d0
+Author: Emanuele Rocca <ema@debian.org>
+Date:   Wed Aug 9 19:43:30 2006 +0000
+
+    Italian translation
+    
+    
+    (Old svn revision: 1874)
+
+commit 081e64040d4be6a41d6bfe4bd736141c7326de90
+Author: Jean-François Wauthy <pollux@xfce.org>
+Date:   Sat Jul 29 20:00:55 2006 +0000
+
+    Update French translations
+    
+    (Old svn revision: 1816)
+
+commit 62ce2d2330adf93cef5033470c2dbd7d286bab8c
+Author: Daichi Kawahata <daichi.k@aioros.ocn.ne.jp>
+Date:   Sat Apr 8 07:15:52 2006 +0000
+
+    Added/Updated Polish translations by Piotr Malinski <admin@rk.edu.pl>.
+    
+    
+    (Old svn revision: 1306)
+
+commit 26c0825493d67b2293718f5430ed34573d867789
+Author: Daichi Kawahata <daichi.k@aioros.ocn.ne.jp>
+Date:   Sun Apr 2 09:49:31 2006 +0000
+
+    Updated.
+    
+    
+    (Old svn revision: 1274)
+
+commit 0ca6fa4a9588dbadedf8b3f7669ea0d6d68f4fcc
+Author: Daichi Kawahata <daichi.k@aioros.ocn.ne.jp>
+Date:   Sun Apr 2 09:41:53 2006 +0000
+
+    Fixed.
+    
+    
+    (Old svn revision: 1273)
+
+commit 7a20a633ccec3ad12e1a095e377cd09c9d53db68
+Author: Daichi Kawahata <daichi.k@aioros.ocn.ne.jp>
+Date:   Sun Apr 2 09:40:43 2006 +0000
+
+    Added Japanese translations.
+    
+    
+    (Old svn revision: 1272)
+
+commit c20fdb7600b2a2d800588cd74ddee96ec73cdbc9
+Author: Daichi Kawahata <daichi.k@aioros.ocn.ne.jp>
+Date:   Thu Feb 23 11:59:55 2006 +0000
+
+    Added Vietnamese translations by Phan Vinh Thinh <teppi@vnlinux.org>.
+    
+    
+    (Old svn revision: 1120)
+
+commit c80fa75dc19abadbeaf33930e10d9bbce3d70f30
+Author: Daichi Kawahata <daichi.k@aioros.ocn.ne.jp>
+Date:   Wed Feb 22 15:12:38 2006 +0000
+
+    Updated.
+    
+    
+    (Old svn revision: 1107)
+
+commit 2ce8c6be71fcb33c09b21dcf231b6806eda697bc
+Author: Daichi Kawahata <daichi.k@aioros.ocn.ne.jp>
+Date:   Wed Feb 15 14:05:35 2006 +0000
+
+    Added Basque translations by Piarres Beobide <pi@beobide.net>.
+    
+    
+    (Old svn revision: 1059)
+
+commit e6d843c7c4e6f2e49e06db2b20c64d074d581eea
+Author: SZERVÁC Attila <sas@321.hu>
+Date:   Sat Feb 11 17:23:39 2006 +0000
+
+    Add Hungarian Translations
+    
+    (Old svn revision: 1040)
+
+commit f871fe0a7483a24ca3326499d2f7897c7059a87b
+Author: ByungHyun Choi <byunghyun.choi@debianusers.org>
+Date:   Wed Nov 2 17:19:32 2005 +0000
+
+    11/03/2005: ByungHyun Choi
+    	added Korean translations for modemlights and wavelan plugin
+    	modified Korean translations for fsguard and sendsors plugin
+    
+    
+    (Old svn revision: 864)
+
+commit 558dd7deb1552568151a82fbdda69db0391f074c
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Mon Jul 11 14:18:53 2005 +0000
+
+    Use xfce4-dev-tools. Add i18n support.
+    
+    
+    
+    (Old svn revision: 694)
+
+commit fe2cccc484eacd4cb4a41c1a63bcfeae768ce8d5
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Fri Dec 3 18:29:41 2004 +0000
+
+    Version 0.4.1 with Linux fixes from veser@gmx.net and misc fixes.
+    
+    
+    (Old svn revision: 562)
+
+commit 01befa813140d184214c3d5e5c1d196429dfcf79
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Tue Aug 3 16:46:39 2004 +0000
+
+    Fix for Linux ifconfig.
+    
+    
+    (Old svn revision: 560)
+
+commit d3269a01db20b97c613e75a272fe920c7d2f2335
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Tue Aug 3 13:21:01 2004 +0000
+
+    Version 0.4.0 with support for threaded xfce4-panel.
+    Added combo for interface selection.
+    
+    
+    (Old svn revision: 559)
+
+commit e025d689488eabab83137be93de68fc66e90665f
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Thu Jul 29 20:42:41 2004 +0000
+
+    Fix hanging panel with threading.
+    
+    
+    (Old svn revision: 558)
+
+commit b35c68828578881a5c01ce01532462d27c733b2e
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Wed Jul 28 21:49:36 2004 +0000
+
+    Fix BM_DEPEND_CHECK().
+    
+    
+    (Old svn revision: 557)
+
+commit dfe622ed6ecb38105e462f504be1b8ee558f8c90
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Sat Jul 24 17:43:54 2004 +0000
+
+    Prepare this for threaded panel.
+    
+    
+    (Old svn revision: 556)
+
+commit 6ae40941951fa779a62f1ab17627ce34b1eacf5b
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Sat Jul 24 17:30:05 2004 +0000
+
+    Correct min. required panel version.
+    
+    
+    (Old svn revision: 555)
+
+commit f78d73754d874bdeb95f165da87dabb6bf67c916
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Sat Jul 24 17:27:03 2004 +0000
+
+    Extended XFCE_PANEL_PLUGIN macro to honor the new threaded panel.
+    
+    
+    (Old svn revision: 554)
+
+commit 0033a3140598fc4a460c12e6cd7c4e9eb1565de1
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Wed Jul 21 09:00:31 2004 +0000
+
+    New panel plugin check
+    
+    
+    (Old svn revision: 553)
+
+commit 950b5bd11c82f1d5f7a858240e89b73e28a81c18
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Thu Feb 12 22:45:10 2004 +0000
+
+    Updated ChangeLog.
+    
+    
+    (Old svn revision: 551)
+
+commit bf50b61074cfec6f265c0fb2b8e0056226f718ba
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Thu Feb 12 22:43:46 2004 +0000
+
+    Improved Linux support by An-Cheng Huang.
+    
+    
+    (Old svn revision: 550)
+
+commit 5777c89bb6dc8b11611eade0c18ca1e6d8d5e39e
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Wed Feb 11 17:02:03 2004 +0000
+
+    Improved Linux support, thanks to An-Cheng Huang
+    
+    
+    (Old svn revision: 548)
+
+commit 51d4777dd95ee90a8d32eea34753c45b0d14b9c8
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Mon Feb 9 23:32:54 2004 +0000
+
+    Added code to autohide the plugin if the device is offline, that is
+    the plugin is unable to detect a "carrier signal". This saves space
+    in the panel.
+    
+    
+    (Old svn revision: 547)
+
+commit e4be3c15b0600dbe9a7397875469b7641908e0b6
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Mon Feb 9 21:49:30 2004 +0000
+
+    Keep this here, so we can change the icons at any time.
+    
+    
+    (Old svn revision: 546)
+
+commit 1d661fbadbb291c3f0b1a13a3a16e0052bd50286
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Mon Feb 9 21:20:54 2004 +0000
+
+    More eye-candy-ness, having nice graphics instead of the ugly
+    progress indicators. Linux support added, but currently untested.
+    
+    
+    (Old svn revision: 545)
+
+commit b7d825825039ff45ff828ce46314ce62a21f44d7
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Tue Jan 13 20:21:40 2004 +0000
+
+    Don't use deprecated functions! :-)
+    
+    
+    (Old svn revision: 544)
+
+commit 5f38a9000be6ec21466ab45850f5f1926c26e967
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Fri Jan 9 12:57:02 2004 +0000
+
+    Added OpenBSD support, thanks to Jolan Luff.
+    
+    
+    (Old svn revision: 543)
+
+commit f067c27bdcaa523590ba4ea7c1bbe8644ed0b2ec
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Fri Dec 19 16:57:47 2003 +0000
+
+    Added FreeBSD support, thanks to Sebastian Yepes F.
+    
+    
+    (Old svn revision: 542)
+
+commit d6409b78f5b8efad5b604627c72a7c3731335d80
+Author: Benedikt Meurer <benny@xfce.org>
+Date:   Tue Nov 11 18:43:32 2003 +0000
+
+    Initial revision
+    
+    
+    (Old svn revision: 538)
+
+commit c8aaf6c954e355ea100f8c9989f8f4da3bbcb850
+Author: Unknown Author <xfce4-dev@xfce.org>
+Date:   Tue Nov 11 18:43:32 2003 +0000
+
+    New repository initialized by cvs2svn.
+    
+    (Old svn revision: 537)
