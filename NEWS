@@ -1,21 +1,18 @@
-20101204:
+0.5.6 (2010/12/04):
 ---------
-  * Version 0.5.6
   * Support for both xfce 4.6 and 4.8
   * Various bug fixes and code cleanup
   * Translated into 6 more languages (33 total)
 
-20090409:
+0.5.5 (2009/04/09):
 ---------
-  * Version 0.5.5
   * Merge various patches from NetBSD and FreeBSD, 'should' work everywhere now..
   * Totally revamped GUI, courtesy of Johan van der Slikke
   * Show signal strengh in dBm on BSDs, in % on Linux
   * Various bugfixes, localized config dialog is fixed
 
-20070117:
+0.5.4 (2007/01/17):
 ---------
-  * Version 0.5.4
   * Add an option to make the panel icon square.
   * Fix a bug that calculated the signal strength incorrectly, reporting 102%
     for some people. Your signal strength may well be reported lower now,
@@ -25,63 +22,56 @@
   * Improve the handling of the kernel's include files.
   * Fix compilation on kfreebsd thanks to Petr Salinger.
 
-20060911:
+0.5.3 (2006/09/11):
 ---------
-  * Version 0.5.3
   * Fix a typo that referenced the wrong executable in the .desktop file.
 
-20060810:
+0.5.2 (2006/08/10):
 ---------
-  * Version 0.5.2
   * Fix the regression that made the icon square.
   * Added Italian translation. (Thanks ema).
   * Allow hiding the plugin if no device is present.
 
-20060809:
+0.5.1 (2006/08/09):
 ---------
-  * Version 0.5.1
   * Fix the bug that meant that it couldn't find the device on most systems.
 
-20060503:
+0.5.0 (2006/05/03):
 ---------
-  * Version 0.5.0
   * Updated to new panel API
 
-20041203:
+0.4.1 (2004/12/03):
 ---------
-	* Version 0.4.1.
 	* Applied patch from veser@gmx.net to ensure that ESSSID is always
 	  zero terminated on Linux.
 	* Don't use deprecated Gtk+ functions.
 
-20040803:
+0.4.0 (2004/08/03):
 ---------
-	* Version 0.4.0 with support for threaded xfce4-panel.
+	* Support for threaded xfce4-panel.
 	* Added combo for interface selection.
 
-20040212:
+0.3.2 (2004/02/12):
 ---------
-	* Version 0.3.2 with improved Linux support from An-Cheng Huang
-	  using the Linux Wireless Extensions ioctl()'s if available.
+	* Improved Linux support from An-Cheng Huang using the Linux Wireless
+	* Extensions ioctl()'s if available.
 
-20040211:
+0.3.1 (2004/02/11):
 ---------
-	* Version 0.3.1 with fixes from An-Cheng for linux. Linux
-	  version will be improved soon.
+	* Fixes from An-Cheng for linux. Linux version will be improved soon.
 
-20040209:
+0.3.0 (2004/02/09):
 ---------
-	* Version 0.3.0 with (initial) OpenBSD support and some more
-	  eye-candy.
+	* (initial) OpenBSD support and some more eye-candy.
 	* Added (untested) Linux support, requires /proc/net/wireless
 	  which should be provided by the so called "WireLess Extension".
 
-20031219:
+0.2.0 (2003/12/19):
 ---------
 	* Initial (tested) FreeBSD support, thanks to Sebastian Yepes F.
 	  <esn@x123.info>. In addition the current transfer rate selection
-	  is displayed. This is now version 0.2.0.
+	  is displayed.
 
-20031111:
+0.1.0 (2003/11/11):
 ---------
-	* Version 0.1.0 with tested NetBSD support.
+	* Tested NetBSD support.
