@@ -1,0 +1,59 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-wavelan-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-04 11:16+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: George Vasilakos <forfolias@linuxteam.cs.teilar.gr>\n"
+"Language-Team: Greek <nls@tux.hellug.gr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
+
+#: ../panel-plugin/wavelan.c:146
+msgid "No carrier signal"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:165
+msgid "No device configured"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:494
+msgid "Properties"
+msgstr "Ιδιότητες"
+
+#: ../panel-plugin/wavelan.c:510
+msgid "Wavelan Plugin Options"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:526
+msgid "Interface"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:547
+msgid "_Autohide when offline"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:557
+msgid "Autohide when no hardware present"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:568
+msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:576
+msgid "Enable signal quality colors"
+msgstr ""
+
+#: ../panel-plugin/wavelan.desktop.in.in.h:1
+msgid "View the status of a wireless network"
+msgstr ""
+
+#: ../panel-plugin/wavelan.desktop.in.in.h:2
+msgid "Wavelan"
+msgstr ""
+
