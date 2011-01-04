@@ -1,3 +1,4 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
@@ -15,11 +16,11 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:146
 msgid "No carrier signal"
-msgstr ""
+msgstr "Δεν υπάρχει σήμα μεταφορέα"
 
 #: ../panel-plugin/wavelan.c:165
 msgid "No device configured"
-msgstr ""
+msgstr "Δεν έχει ρυθμιστεί συσκευή"
 
 #: ../panel-plugin/wavelan.c:494
 msgid "Properties"
@@ -27,33 +28,33 @@ msgstr "Ιδιότητες"
 
 #: ../panel-plugin/wavelan.c:510
 msgid "Wavelan Plugin Options"
-msgstr ""
+msgstr "Επιλογές πρόσθετου WaveLAN"
 
 #: ../panel-plugin/wavelan.c:526
 msgid "Interface"
-msgstr ""
+msgstr "Διασύνδεση"
 
 #: ../panel-plugin/wavelan.c:547
 msgid "_Autohide when offline"
-msgstr ""
+msgstr "_Αυτόματη απόκρυψη όταν δεν υπάρχει σύνδεση"
 
 #: ../panel-plugin/wavelan.c:557
 msgid "Autohide when no hardware present"
-msgstr ""
+msgstr "Αυτόματη απόκρυψη όταν δεν βρίσκεται υλικό"
 
 #: ../panel-plugin/wavelan.c:568
 msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
-msgstr ""
+msgstr "Σημείωση: Αυτό θα καταστήσει δύσκολο να αφαιρεθεί ή να ρυθμιστεί το πρόσθετο αν δεν έχει βρεθεί κάποια συσκευή."
 
 #: ../panel-plugin/wavelan.c:576
 msgid "Enable signal quality colors"
-msgstr ""
+msgstr "Ενεργοποίηση χρωμάτων ποιότητας σήματος"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:1
 msgid "View the status of a wireless network"
-msgstr ""
+msgstr "Προβολή της κατάστασης ενός ασύρματου δικτύου"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
+#, fuzzy
 msgid "Wavelan"
-msgstr ""
-
+msgstr "Wavelan"
