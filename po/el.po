@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-04 11:16+0000\n"
+"POT-Creation-Date: 2011-01-06 05:15+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: George Vasilakos <forfolias@linuxteam.cs.teilar.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -55,6 +55,5 @@ msgid "View the status of a wireless network"
 msgstr "Προβολή της κατάστασης ενός ασύρματου δικτύου"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
-#, fuzzy
 msgid "Wavelan"
 msgstr "Wavelan"
