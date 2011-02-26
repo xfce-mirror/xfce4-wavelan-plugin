@@ -91,10 +91,6 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
 
    if (wavelan->signal_colors) {
     /* set color */
-    rc = gtk_widget_get_modifier_style(GTK_WIDGET(wavelan->signal));
-    if (rc) {
-     rc->color_flags[GTK_STATE_PRELIGHT] |= GTK_RC_BG;
-     rc->color_flags[GTK_STATE_SELECTED] |= GTK_RC_BASE;
      if (state > 70)
       gdk_color_parse(signal_color_strong, &color);
      else if (state > 55)
@@ -103,15 +99,16 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
       gdk_color_parse(signal_color_weak, &color);
      else
       gdk_color_parse(signal_color_bad, &color);
-     rc->bg[GTK_STATE_PRELIGHT] = color;
-     rc->base[GTK_STATE_SELECTED] = color;
-     gtk_widget_modify_style(GTK_WIDGET(wavelan->signal), rc);
-     }
-    }
-   else {
-    rc = gtk_rc_style_new();
-    gtk_widget_modify_style(GTK_WIDGET(wavelan->signal), rc);
-    g_object_unref(rc);
+
+        gtk_widget_modify_bg(GTK_WIDGET(wavelan->signal),
+                             GTK_STATE_PRELIGHT,
+                             &color);
+        gtk_widget_modify_bg(GTK_WIDGET(wavelan->signal),
+                             GTK_STATE_SELECTED,
+                             &color);
+        gtk_widget_modify_base(GTK_WIDGET(wavelan->signal),
+                             GTK_STATE_SELECTED,
+                             &color);
     }
 
    }
