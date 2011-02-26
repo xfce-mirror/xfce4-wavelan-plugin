@@ -26,7 +26,14 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__) 
+#if !defined(__FreeBSD_kernel__) && defined(__FreeBSD__)
+#define __FreeBSD_kernel__ __FreeBSD__
+#endif
+#if !defined(__FreeBSD_kernel_version) && defined(__FreeBSD_version)
+#define __FreeBSD_kernel_version __FreeBSD_version
+#endif
+
+#if defined(__NetBSD__) || defined(__FreeBSD_kernel__) || defined(__FreeBSD_kernel_kernel__) || defined(__OpenBSD__) 
 
 #include <sys/types.h>
 #include <sys/cdefs.h>
@@ -37,11 +44,11 @@
 
 #include <net/if.h>
 #include <net/if_media.h>
-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+#ifdef __FreeBSD_kernel__
 #include <netinet/in.h>
 #include <netinet/if_ether.h>
 #include <sys/endian.h>
-#if __FreeBSD_version >= 700000
+#if __FreeBSD_kernel_version >= 700000
 #include <sys/types.h>
 #include <sys/sysctl.h>
 #include <net80211/ieee80211_ioctl.h>
@@ -100,9 +107,9 @@ struct wi_device
 };
 
 static int _wi_carrier(const struct wi_device *);
-#if defined(__FreeBSD__)
+#if defined(__FreeBSD_kernel__)
 static int _wi_vendor(const struct wi_device *, char *, size_t);
-#if __FreeBSD_version > 700000
+#if __FreeBSD_kernel_version > 700000
 static int _wi_getval(const struct wi_device *, struct ieee80211req_scan_result *);
 #else
 static int _wi_getval(const struct wi_device *, struct wi_req *);
@@ -153,7 +160,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
 
   g_strlcpy(stats->ws_qunit, "dBm", 4);
   /* check vendor (independent of carrier state) */
-#if defined(__FreeBSD__)
+#if defined(__FreeBSD_kernel__)
   if ((result = _wi_vendor(device, stats->ws_vendor, WI_MAXSTRLEN)) != WI_OK)
     return(result);
 #endif
@@ -288,11 +295,11 @@ _wi_rate(const struct wi_device *device, int *rate)
 #endif
 
 /* seems only FreeBSD supports this operation */
-#if defined(__FreeBSD__)
+#if defined(__FreeBSD_kernel__)
 static int
 _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
 {
-#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+#if defined(__FreeBSD_kernel__) && __FreeBSD_kernel_version >= 700000
    /*
     * We use sysctl to get a device description
     */
@@ -359,9 +366,9 @@ _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
 #endif /* wi_vendor */
 
 /* NetBSD and FreeBSD 6.x uses old wi_* API */
-#if defined(__NetBSD__) || defined(__FreeBSD__)
+#if defined(__NetBSD__) || defined(__FreeBSD_kernel__)
 /* FreeBSD 7.x use its own new iee80211 API */
-#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+#if defined(__FreeBSD_kernel__) && __FreeBSD_kernel_version >= 700000
 static int
 _wi_getval(const struct wi_device *device, struct ieee80211req_scan_result *scan)
 {
@@ -405,7 +412,7 @@ _wi_getval(const struct wi_device *device, struct wi_req *wr)
 static int
 _wi_netname(const struct wi_device *device, char *buffer, size_t len)
 {
-#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+#if defined(__FreeBSD_kernel__) && __FreeBSD_kernel_version >= 700000
    struct ieee80211req ireq;
 
    memset(&ireq, 0, sizeof(ireq));
@@ -436,7 +443,7 @@ _wi_netname(const struct wi_device *device, char *buffer, size_t len)
 static int
 _wi_quality(const struct wi_device *device, int *quality)
 {
-#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+#if defined(__FreeBSD_kernel__) && __FreeBSD_kernel_version >= 700000
    struct ieee80211req_scan_result req;
    int result;
    bzero(&req, sizeof(req));
@@ -468,7 +475,7 @@ _wi_quality(const struct wi_device *device, int *quality)
 static int
 _wi_rate(const struct wi_device *device, int *rate)
 {
-#if defined(__FreeBSD__) && __FreeBSD_version >= 700000
+#if defined(__FreeBSD_kernel__) && __FreeBSD_kernel_version >= 700000
    struct ieee80211req_scan_result req;
    int result, i, high;
    bzero(&req, sizeof(req));
@@ -498,5 +505,5 @@ _wi_rate(const struct wi_device *device, int *rate)
   return(WI_OK);
 }
 
-#endif  /* defined(__NetBSD__) || defined(__FreeBSD__) */
+#endif  /* defined(__NetBSD__) || defined(__FreeBSD_kernel__) */
 #endif
