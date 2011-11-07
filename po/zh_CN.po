@@ -2,57 +2,57 @@
 # Copyright (C) 2009 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
 # Hunt Xu <huntxu@live.cn>, 2009.
-#
+# Chipong Luo <chipong_l@yahoo.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce 4-wavelan-plugin\n"
+"Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-15 11:17+0900\n"
+"POT-Creation-Date: 2011-10-09 04:10+0000\n"
 "PO-Revision-Date: 2009-05-13 11:34+0800\n"
-"Last-Translator: Hunt Xu <huntxu@live.cn>\n"
-"Language-Team: Chinese (simplified)\n"
+"Last-Translator: Chipong Luo <chipong_l@yahoo.com>\n"
+"Language-Team: Chinese (simplified) <xfce-i18n@xfce.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/wavelan.c:146
+#: ../panel-plugin/wavelan.c:143
 msgid "No carrier signal"
-msgstr "没有信号"
+msgstr "无载波信号"
 
-#: ../panel-plugin/wavelan.c:165
+#: ../panel-plugin/wavelan.c:162
 msgid "No device configured"
-msgstr "没有已配置设备"
+msgstr "无已配置设备"
 
-#: ../panel-plugin/wavelan.c:494
+#: ../panel-plugin/wavelan.c:491
 msgid "Properties"
-msgstr "首选项"
+msgstr "属性"
 
-#: ../panel-plugin/wavelan.c:510
+#: ../panel-plugin/wavelan.c:507
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan 插件选项"
 
-#: ../panel-plugin/wavelan.c:526
+#: ../panel-plugin/wavelan.c:523
 msgid "Interface"
 msgstr "界面"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:544
 msgid "_Autohide when offline"
 msgstr "离线时自动隐藏(_A)"
 
-#: ../panel-plugin/wavelan.c:557
+#: ../panel-plugin/wavelan.c:554
 msgid "Autohide when no hardware present"
-msgstr "没有硬件可用时自动隐藏"
+msgstr "无硬件存在时自动隐藏"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:565
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
-msgstr "提示: 如果没有设备被检测到，移出或配置此插件将会变得困难。"
+msgstr "注意：这样会让在未检测到设备时移除或配置此插件变得困难。"
 
-#: ../panel-plugin/wavelan.c:576
+#: ../panel-plugin/wavelan.c:573
 msgid "Enable signal quality colors"
-msgstr "使用颜色表示信号质量"
+msgstr "启用信号质量颜色"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:1
 msgid "View the status of a wireless network"
@@ -60,4 +60,4 @@ msgstr "查看无线网络状态"
 
 #: ../panel-plugin/wavelan.desktop.in.in.h:2
 msgid "Wavelan"
-msgstr "Wavelan"
+msgstr "Wavelan 网络查看器"
