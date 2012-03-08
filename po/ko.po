@@ -29,7 +29,7 @@ msgstr "설정한 장치 없음"
 
 #: ../panel-plugin/wavelan.c:491
 msgid "Properties"
-msgstr "기본 설정"
+msgstr "속성"
 
 #: ../panel-plugin/wavelan.c:507
 msgid "Wavelan Plugin Options"
