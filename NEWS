@@ -1,3 +1,11 @@
+0.5.7 (2012/04/03):
+---------
+  * Port to libxfce4ui
+  * Adapt to panel 4.9 and newer
+  * Fix compatibility with GNU/kFreeBSD (bug #6963)
+  * Fix transparency and bar color (bug #7346)
+  * Explicitely link against libm (bugs #7991, #8516)
+
 0.5.6 (2010/12/04):
 ---------
   * Support for both xfce 4.6 and 4.8
