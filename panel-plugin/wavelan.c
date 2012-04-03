@@ -39,6 +39,12 @@
 #include <string.h>
 #include <ctype.h>
 
+#ifdef LIBXFCE4PANEL_CHECK_VERSION
+#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+#define HAS_PANEL_49
+#endif
+#endif
+
 #define BORDER 8
 typedef struct
 {
@@ -328,7 +334,11 @@ wavelan_new(XfcePanelPlugin *plugin)
   }
 
   wavelan->image = gtk_image_new();
+#ifdef HAS_PANEL_49
+  gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "network-wireless", wavelan->size/xfce_panel_plugin_get_nrows(wavelan->plugin)-6, 0, NULL));
+#else
   gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "network-wireless", wavelan->size-6, 0, NULL));
+#endif
 
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->image), FALSE, FALSE, 2);
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->signal), FALSE, FALSE, 2);
@@ -421,7 +431,11 @@ static void
 wavelan_set_size(t_wavelan *wavelan, int size)
 {
   wavelan->size = size;
+#ifdef HAS_PANEL_49
+  gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "network-wireless", wavelan->size/xfce_panel_plugin_get_nrows(wavelan->plugin)-6, 0, NULL));
+#else
   gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "network-wireless", wavelan->size-6, 0, NULL));
+#endif
   if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
    gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
   else
