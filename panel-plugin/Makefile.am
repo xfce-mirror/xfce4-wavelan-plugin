@@ -11,7 +11,7 @@ plugin_PROGRAMS = xfce4-wavelan-plugin
 xfce4_wavelan_plugin_LDADD =							\
 				$(LIBM)						\
 				@LIBXFCE4PANEL_LIBS@				\
-				@LIBXFCEGUI4_LIBS@
+				@LIBXFCE4UI_LIBS@
 
 xfce4_wavelan_plugin_SOURCES =							\
 	wavelan.c							\
@@ -22,7 +22,7 @@ xfce4_wavelan_plugin_SOURCES =							\
 
 xfce4_wavelan_plugin_CFLAGS =							\
 	@LIBXFCE4PANEL_CFLAGS@							\
-	@LIBXFCEGUI4_CFLAGS@
+	@LIBXFCE4UI_CFLAGS@
 
 # .desktop file
 #

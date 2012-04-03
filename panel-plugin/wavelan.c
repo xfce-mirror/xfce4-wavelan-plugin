@@ -31,10 +31,8 @@
 #include <gtk/gtk.h>
 
 #include <libxfce4util/libxfce4util.h>
-#include <libxfce4panel/xfce-panel-convenience.h>
-#include <libxfcegui4/libxfcegui4.h>
+#include <libxfce4ui/libxfce4ui.h>
 #include <libxfce4panel/xfce-panel-plugin.h>
-#include <libxfce4panel/xfce-hvbox.h>
 
 #include "wi.h"
 
@@ -504,12 +502,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 2);
 
-  header = xfce_create_header (NULL, _("Wavelan Plugin Options"));
-  gtk_widget_set_size_request (GTK_BIN (header)->child, 200, 32);
-  gtk_container_set_border_width (GTK_CONTAINER (header), 6);
-  gtk_widget_show (header);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), header,
-                      FALSE, TRUE, 0);
+  xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Generic Monitor"));
               
   vbox = gtk_vbox_new(FALSE, 8);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
