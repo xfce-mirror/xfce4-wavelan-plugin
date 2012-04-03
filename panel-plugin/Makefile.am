@@ -9,6 +9,7 @@ plugin_PROGRAMS = xfce4-wavelan-plugin
 #	libwavelan.la
 
 xfce4_wavelan_plugin_LDADD =							\
+				$(LIBM)						\
 				@LIBXFCE4PANEL_LIBS@				\
 				@LIBXFCEGUI4_LIBS@
 

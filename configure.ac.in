@@ -37,6 +37,9 @@ AC_CHECK_HEADERS([math.h stdio.h stdlib.h string.h sys/types.h \
                   linux/wireless.h string.h \
                   ctype.h], [], [], [#include <sys/socket.h>])
 
+AC_CHECK_LIBM
+AC_SUBST(LIBM)
+
 dnl Check for i18n support
 XDT_I18N([@LINGUAS@])
 
