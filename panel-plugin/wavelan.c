@@ -516,7 +516,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 2);
 
-  xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Generic Monitor"));
+  xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Wavelan Plugin Options"));
               
   vbox = gtk_vbox_new(FALSE, 8);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
