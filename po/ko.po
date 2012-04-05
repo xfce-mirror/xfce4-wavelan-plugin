@@ -8,11 +8,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin.master\n"
-"Report-Msgid-Bugs-To: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge.net>\n"
+"Report-Msgid-Bugs-To: xfce-i18n <xfce-i18n@xfce.org>\n"
 "POT-Creation-Date: 2012-02-25 13:33+0000\n"
 "PO-Revision-Date: 2012-02-26 00:55+0900\n"
-"Last-Translator: Sung Jin Gang <ujuc@ujuc.kr>\n"
-"Language-Team: xfce4-users-kr-i18n <xfce4-users-kr-i18n@lists.sourceforge.net>\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: xfce-i18n <xfce-i18n@xfce.org>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +49,7 @@ msgstr "장치가 없으면 자동으로 숨기기"
 
 #: ../panel-plugin/wavelan.c:565
 msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
-msgstr "참고: 장치가 감지되지 않은 경우에는 플러그인을 없애거나 설정하기 어렵게 되는 경우가 있습니다."
+msgstr "참고: 장치를 감지하지 못한 경우에는 플러그인 제거나 설정이 어려워질 수 있습니다."
 
 #: ../panel-plugin/wavelan.c:573
 msgid "Enable signal quality colors"
