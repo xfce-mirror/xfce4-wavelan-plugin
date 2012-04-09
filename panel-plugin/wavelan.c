@@ -77,7 +77,6 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
   /* state = 0 -> no link, =-1 -> error */
   TRACE ("Entered wavelan_set_state, state = %u", state);
 
-  GtkRcStyle *rc = NULL;
   GdkColor color;
 
   gchar signal_color_bad[] = "#e00000";
@@ -494,7 +493,7 @@ static void
 wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 {
   GtkWidget *dlg, *hbox, *label, *interface, *vbox, *autohide;
-  GtkWidget *autohide_missing, *header, *warn_label, *signal_colors;
+  GtkWidget *autohide_missing, *warn_label, *signal_colors;
   GtkWidget *combo;
   GList     *interfaces, *lp;
 

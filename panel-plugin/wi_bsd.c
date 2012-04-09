@@ -158,7 +158,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   /* clear stats first */
   bzero((void *)stats, sizeof(*stats));
 
-  g_strlcpy(stats->ws_qunit, "dBm", 4);
+  strlcpy(stats->ws_qunit, "dBm", 4);
   /* check vendor (independent of carrier state) */
 #if defined(__FreeBSD_kernel__)
   if ((result = _wi_vendor(device, stats->ws_vendor, WI_MAXSTRLEN)) != WI_OK)
