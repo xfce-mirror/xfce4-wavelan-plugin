@@ -500,23 +500,22 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 
   TRACE ("Entered wavelan_create_options");
   
-  dlg = gtk_dialog_new_with_buttons (_("Properties"),
-              GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
-              GTK_DIALOG_DESTROY_WITH_PARENT | 
+  dlg = xfce_titled_dialog_new_with_buttons (_("Wavelan Plugin Options"),
+              NULL,
               GTK_DIALOG_NO_SEPARATOR,
-              GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
+              GTK_STOCK_CLOSE,
+              GTK_RESPONSE_OK,
               NULL);
 
-  g_object_set_data (G_OBJECT (plugin), "dialog", dlg);
-
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
+  gtk_window_set_icon_name (GTK_WINDOW (dlg), "network-wireless");
 
   g_signal_connect (dlg, "response", G_CALLBACK (wavelan_dialog_response),
                     wavelan);
   
   gtk_container_set_border_width (GTK_CONTAINER (dlg), 2);
 
-  xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Wavelan Plugin Options"));
+  xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Properties"));
               
   vbox = gtk_vbox_new(FALSE, 8);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
@@ -630,6 +629,26 @@ wavelan_configure (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 }
 
 static void
+wavelan_show_about (XfcePanelPlugin *plugin, t_wavelan *wavelan)
+{
+   GdkPixbuf *icon;
+   const gchar *auth[] = { "Benedikt Meurer <benny at xfce.org>", "Florian Rivoal <frivoal@xfce.org>", NULL };
+   icon = xfce_panel_pixbuf_from_source("network-wireless", NULL, 32);
+   gtk_show_about_dialog(NULL,
+      "logo", icon,
+      "license", xfce_get_license_text (XFCE_LICENSE_TEXT_BSD),
+      "version", PACKAGE_VERSION,
+      "program-name", PACKAGE_NAME,
+      "comments", _("View the status of a wireless network"),
+      "website", "http://goodies.xfce.org/projects/panel-plugins/xfce4-wavelan-plugin",
+      "copyright", "Copyright (c) 2003-2004 Benedikt Meurer\n",
+      "authors", auth, NULL);
+
+   if(icon)
+      g_object_unref(G_OBJECT(icon));
+}
+
+static void
 wavelan_construct (XfcePanelPlugin *plugin)
 {
   
@@ -658,6 +677,8 @@ wavelan_construct (XfcePanelPlugin *plugin)
   g_signal_connect (plugin, "configure-plugin",
                     G_CALLBACK (wavelan_configure), wavelan);
   
+  xfce_panel_plugin_menu_show_about(plugin);
+  g_signal_connect (plugin, "about", G_CALLBACK (wavelan_show_about), wavelan);
 }
 
 #if 0
