@@ -57,6 +57,7 @@ typedef struct
   gboolean autohide;
   gboolean autohide_missing;
   gboolean signal_colors;
+  gboolean show_icon;
 
   int size;
   GtkOrientation orientation;
@@ -117,6 +118,12 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
    }
   else
    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->signal), 0.0);
+
+  /* hide icon */
+  if (wavelan->show_icon)
+    gtk_widget_show(wavelan->image);
+  else
+    gtk_widget_hide(wavelan->image);
 
   /* hide if no network & autohide or if no card found */
   if (wavelan->autohide && state == 0)
@@ -266,6 +273,7 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
       wavelan->autohide = xfce_rc_read_bool_entry (rc, "Autohide", FALSE);
       wavelan->autohide_missing = xfce_rc_read_bool_entry(rc, "AutohideMissing", FALSE);
       wavelan->signal_colors = xfce_rc_read_bool_entry(rc, "SignalColors", FALSE);
+      wavelan->show_icon = xfce_rc_read_bool_entry(rc, "ShowIcon", FALSE);
     }
   }
 
@@ -298,6 +306,7 @@ wavelan_new(XfcePanelPlugin *plugin)
   wavelan->autohide_missing = FALSE;
 
   wavelan->signal_colors = TRUE;
+  wavelan->show_icon = TRUE;
 
   wavelan->plugin = plugin;
   
@@ -404,6 +413,7 @@ wavelan_write_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
   xfce_rc_write_bool_entry (rc, "Autohide", wavelan->autohide);
   xfce_rc_write_bool_entry (rc, "AutohideMissing", wavelan->autohide_missing);
   xfce_rc_write_bool_entry (rc, "SignalColors", wavelan->signal_colors);
+  xfce_rc_write_bool_entry (rc, "ShowIcon", wavelan->show_icon);
 
   xfce_rc_close(rc);
   
@@ -469,6 +479,15 @@ wavelan_autohide_missing_changed(GtkToggleButton *button, t_wavelan *wavelan)
   wavelan_set_state(wavelan, wavelan->state);
 }
 
+/* show icon callback */
+static void
+wavelan_show_icon_changed(GtkToggleButton *button, t_wavelan *wavelan)
+{
+  TRACE ("Entered wavelan_show_icon_changed");
+  wavelan->show_icon = gtk_toggle_button_get_active(button);
+  wavelan_set_state(wavelan, wavelan->state);
+}
+
 /* signal colors callback */
 static void
 wavelan_signal_colors_changed(GtkToggleButton *button, t_wavelan *wavelan)
@@ -493,7 +512,7 @@ static void
 wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 {
   GtkWidget *dlg, *hbox, *label, *interface, *vbox, *autohide;
-  GtkWidget *autohide_missing, *warn_label, *signal_colors;
+  GtkWidget *autohide_missing, *warn_label, *signal_colors, *show_icon;
   GtkWidget *combo;
   GList     *interfaces, *lp;
 
@@ -582,6 +601,17 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
       G_CALLBACK(wavelan_signal_colors_changed), wavelan);
   gtk_widget_show(signal_colors);
   gtk_box_pack_start(GTK_BOX(hbox), signal_colors, TRUE, TRUE, 1);
+  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
+
+  hbox = gtk_hbox_new(FALSE, 2);
+  gtk_widget_show(hbox);
+  show_icon = gtk_check_button_new_with_label(_("Show icon"));
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(show_icon), 
+      wavelan->show_icon);
+  g_signal_connect(show_icon, "toggled", 
+      G_CALLBACK(wavelan_show_icon_changed), wavelan);
+  gtk_widget_show(show_icon);
+  gtk_box_pack_start(GTK_BOX(hbox), show_icon, TRUE, TRUE, 1);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
 
   for (lp = interfaces; lp != NULL; lp = lp ->next)
