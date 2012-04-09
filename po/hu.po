@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-15 11:17+0900\n"
+"POT-Creation-Date: 2012-04-09 17:49+0200\n"
 "PO-Revision-Date: 2009-07-25 10:14+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
@@ -18,35 +18,35 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:146
+#: ../panel-plugin/wavelan.c:147
 msgid "No carrier signal"
 msgstr "Nincs hordozójel"
 
-#: ../panel-plugin/wavelan.c:165
+#: ../panel-plugin/wavelan.c:166
 msgid "No device configured"
 msgstr "Nincs beállítva eszköz"
 
-#: ../panel-plugin/wavelan.c:494
+#: ../panel-plugin/wavelan.c:503
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: ../panel-plugin/wavelan.c:510
+#: ../panel-plugin/wavelan.c:519
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan bővítmény beállításai"
 
-#: ../panel-plugin/wavelan.c:526
+#: ../panel-plugin/wavelan.c:530
 msgid "Interface"
 msgstr "Felület"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:551
 msgid "_Autohide when offline"
 msgstr "_Automatikus elrejtés ha nincs kapcsolat"
 
-#: ../panel-plugin/wavelan.c:557
+#: ../panel-plugin/wavelan.c:561
 msgid "Autohide when no hardware present"
 msgstr "Automatikus elrejtés ha nem található hardver"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:572
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
@@ -54,14 +54,14 @@ msgstr ""
 "Megjegyzés: ez megnehezíti a bővítmény eltávolítását vagy beállítását, ha "
 "nem található eszköz."
 
-#: ../panel-plugin/wavelan.c:576
+#: ../panel-plugin/wavelan.c:580
 msgid "Enable signal quality colors"
 msgstr "Jelminőség színeinek engedélyezése"
 
-#: ../panel-plugin/wavelan.desktop.in.in.h:1
-msgid "View the status of a wireless network"
-msgstr "Vezeték nélküli hálózat állapotának megjelenítése"
-
-#: ../panel-plugin/wavelan.desktop.in.in.h:2
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
+
+#: ../panel-plugin/wavelan.desktop.in.h:2
+msgid "View the status of a wireless network"
+msgstr "Vezeték nélküli hálózat állapotának megjelenítése"

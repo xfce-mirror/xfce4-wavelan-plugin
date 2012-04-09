@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-15 11:17+0900\n"
+"POT-Creation-Date: 2012-04-09 17:49+0200\n"
 "PO-Revision-Date: 2009-09-18 23:27+0100\n"
 "Last-Translator: Rihards Prieditis <rprieditis@gmail.com>\n"
 "Language-Team: Latvian <translation-team-lv@lists.sourceforge.net>\n"
@@ -20,48 +20,48 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
-#: ../panel-plugin/wavelan.c:146
+#: ../panel-plugin/wavelan.c:147
 msgid "No carrier signal"
 msgstr "Nav nesēja signāla"
 
-#: ../panel-plugin/wavelan.c:165
+#: ../panel-plugin/wavelan.c:166
 msgid "No device configured"
 msgstr "Nav konfigurēta ierīce"
 
-#: ../panel-plugin/wavelan.c:494
+#: ../panel-plugin/wavelan.c:503
 msgid "Properties"
 msgstr "Rekvizīti"
 
-#: ../panel-plugin/wavelan.c:510
+#: ../panel-plugin/wavelan.c:519
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan spraudņa uzstādījumi"
 
-#: ../panel-plugin/wavelan.c:526
+#: ../panel-plugin/wavelan.c:530
 msgid "Interface"
 msgstr "Interfeisi"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:551
 msgid "_Autohide when offline"
 msgstr "_Slēpt, kad nepieslēgts"
 
-#: ../panel-plugin/wavelan.c:557
+#: ../panel-plugin/wavelan.c:561
 msgid "Autohide when no hardware present"
 msgstr "Slēpt, kad nav pieejama aparatūra"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:572
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
 msgstr "Piezīme: Būs grūti veikt konfigurāciju, kad nav pieejama ierīce."
 
-#: ../panel-plugin/wavelan.c:576
+#: ../panel-plugin/wavelan.c:580
 msgid "Enable signal quality colors"
 msgstr "Ieslēgt signāla kvalitātes krāsas"
 
-#: ../panel-plugin/wavelan.desktop.in.in.h:1
-msgid "View the status of a wireless network"
-msgstr "Apskatīt bezvadu tīkla statusu"
-
-#: ../panel-plugin/wavelan.desktop.in.in.h:2
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
+
+#: ../panel-plugin/wavelan.desktop.in.h:2
+msgid "View the status of a wireless network"
+msgstr "Apskatīt bezvadu tīkla statusu"
