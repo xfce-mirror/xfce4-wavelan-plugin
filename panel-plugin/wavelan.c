@@ -677,5 +677,5 @@ int main(int argc, char** argv)
 	return 0;
 }
 #else
-XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL(wavelan_construct);
+XFCE_PANEL_PLUGIN_REGISTER(wavelan_construct);
 #endif

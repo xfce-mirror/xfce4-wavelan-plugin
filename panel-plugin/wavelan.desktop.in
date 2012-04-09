@@ -4,4 +4,4 @@ Encoding=UTF-8
 _Name=Wavelan
 _Comment=View the status of a wireless network
 Icon=network-wireless
-X-XFCE-Exec=@PLUGIN_PATH@/xfce4-wavelan-plugin
+X-XFCE-Exec=wavelan
