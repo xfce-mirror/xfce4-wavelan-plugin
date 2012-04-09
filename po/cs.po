@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 17:49+0200\n"
+"POT-Creation-Date: 2012-04-09 18:46+0200\n"
 "PO-Revision-Date: 2008-12-02 20:33+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../panel-plugin/wavelan.c:147
+#: ../panel-plugin/wavelan.c:146
 msgid "No carrier signal"
 msgstr "Žádný signál"
 
-#: ../panel-plugin/wavelan.c:166
+#: ../panel-plugin/wavelan.c:165
 msgid "No device configured"
 msgstr "Žádné nakonfigurované zařízení"
 
-#: ../panel-plugin/wavelan.c:503
-msgid "Properties"
-msgstr "Vlastnosti"
-
-#: ../panel-plugin/wavelan.c:519
+#: ../panel-plugin/wavelan.c:502
 msgid "Wavelan Plugin Options"
 msgstr "Možnosti zásuvného modulu Bezdrátové připojení"
 
-#: ../panel-plugin/wavelan.c:530
+#: ../panel-plugin/wavelan.c:517
+msgid "Properties"
+msgstr "Vlastnosti"
+
+#: ../panel-plugin/wavelan.c:528
 msgid "Interface"
 msgstr "Zařízení"
 
-#: ../panel-plugin/wavelan.c:551
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Automaticky skrývat v režimu offline"
 
-#: ../panel-plugin/wavelan.c:561
+#: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no hardware present"
 msgstr "Automaticky skrývat v nepřítomnosti zařízení"
 
-#: ../panel-plugin/wavelan.c:572
+#: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
@@ -53,14 +53,14 @@ msgstr ""
 "Poznámka: Pokud nebude nalezeno zařízení, bude obtížné odebrat nebo nastavit "
 "tento zásuvný modul."
 
-#: ../panel-plugin/wavelan.c:580
+#: ../panel-plugin/wavelan.c:578
 msgid "Enable signal quality colors"
 msgstr "Povolit barvy kvality signálu"
+
+#: ../panel-plugin/wavelan.c:641 ../panel-plugin/wavelan.desktop.in.h:2
+msgid "View the status of a wireless network"
+msgstr "Zobrazuje stav bezdrátové sítě"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Bezdrátové připojení"
-
-#: ../panel-plugin/wavelan.desktop.in.h:2
-msgid "View the status of a wireless network"
-msgstr "Zobrazuje stav bezdrátové sítě"

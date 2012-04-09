@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 17:49+0200\n"
+"POT-Creation-Date: 2012-04-09 18:46+0200\n"
 "PO-Revision-Date: 2009-02-25 08:58+0000\n"
 "Last-Translator: Simon Schneider <simon@schneiderimtal.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -18,35 +18,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/wavelan.c:147
+#: ../panel-plugin/wavelan.c:146
 msgid "No carrier signal"
 msgstr "Kein Empfang"
 
-#: ../panel-plugin/wavelan.c:166
+#: ../panel-plugin/wavelan.c:165
 msgid "No device configured"
 msgstr "Kein Gerät konfiguriert"
 
-#: ../panel-plugin/wavelan.c:503
-msgid "Properties"
-msgstr "Eigenschaften"
-
-#: ../panel-plugin/wavelan.c:519
+#: ../panel-plugin/wavelan.c:502
 msgid "Wavelan Plugin Options"
 msgstr "Optionen für das Wavelan-Plugin"
 
-#: ../panel-plugin/wavelan.c:530
+#: ../panel-plugin/wavelan.c:517
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: ../panel-plugin/wavelan.c:528
 msgid "Interface"
 msgstr "Schnittstelle"
 
-#: ../panel-plugin/wavelan.c:551
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Automatisch verstecken wenn offline"
 
-#: ../panel-plugin/wavelan.c:561
+#: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no hardware present"
 msgstr "Automatisch verstecken, wenn keine Hardware vorhanden ist"
 
-#: ../panel-plugin/wavelan.c:572
+#: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
@@ -54,17 +54,17 @@ msgstr ""
 "Beachten Sie: Dies macht es schwierig, das Plugin zu entfernen oder zu "
 "konfigurieren, wenn kein Gerät erkannt wird."
 
-#: ../panel-plugin/wavelan.c:580
+#: ../panel-plugin/wavelan.c:578
 msgid "Enable signal quality colors"
 msgstr "Farben zur Anzeige der Signalstärke nutzen"
+
+#: ../panel-plugin/wavelan.c:641 ../panel-plugin/wavelan.desktop.in.h:2
+msgid "View the status of a wireless network"
+msgstr "Status des Drahtlosenetzwerks anzeigen"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
-
-#: ../panel-plugin/wavelan.desktop.in.h:2
-msgid "View the status of a wireless network"
-msgstr "Status des Drahtlosenetzwerks anzeigen"
 
 #~ msgid "WaveLAN plugin"
 #~ msgstr "WaveLAN plugin"

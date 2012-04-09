@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 17:49+0200\n"
+"POT-Creation-Date: 2012-04-09 18:46+0200\n"
 "PO-Revision-Date: 2011-06-15 11:34+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
@@ -18,35 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:147
+#: ../panel-plugin/wavelan.c:146
 msgid "No carrier signal"
 msgstr "Geen dragersignaal"
 
-#: ../panel-plugin/wavelan.c:166
+#: ../panel-plugin/wavelan.c:165
 msgid "No device configured"
 msgstr "Geen apparaat ingesteld"
 
-#: ../panel-plugin/wavelan.c:503
-msgid "Properties"
-msgstr "Eigenschappen"
-
-#: ../panel-plugin/wavelan.c:519
+#: ../panel-plugin/wavelan.c:502
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan Plugin Opties"
 
-#: ../panel-plugin/wavelan.c:530
+#: ../panel-plugin/wavelan.c:517
+msgid "Properties"
+msgstr "Eigenschappen"
+
+#: ../panel-plugin/wavelan.c:528
 msgid "Interface"
 msgstr "Gebruikersomgeving"
 
-#: ../panel-plugin/wavelan.c:551
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Automatisch verbergen wanneer geen verbinding"
 
-#: ../panel-plugin/wavelan.c:561
+#: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no hardware present"
 msgstr "Automatisch verbergen wanneer geen apparaat aanwezig"
 
-#: ../panel-plugin/wavelan.c:572
+#: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
@@ -54,14 +54,14 @@ msgstr ""
 "Let op: Dit zal het moeilijk maken om de plugin te verwijderen of in te "
 "stellen wanneer er geen apparaat wordt bespeurd."
 
-#: ../panel-plugin/wavelan.c:580
+#: ../panel-plugin/wavelan.c:578
 msgid "Enable signal quality colors"
 msgstr "Schakel kleuren in voor signaalkwaliteit"
+
+#: ../panel-plugin/wavelan.c:641 ../panel-plugin/wavelan.desktop.in.h:2
+msgid "View the status of a wireless network"
+msgstr "Bekijk de status van een draadloos netwerk"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
-
-#: ../panel-plugin/wavelan.desktop.in.h:2
-msgid "View the status of a wireless network"
-msgstr "Bekijk de status van een draadloos netwerk"

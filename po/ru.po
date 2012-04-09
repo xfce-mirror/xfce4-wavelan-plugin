@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-vawelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 17:49+0200\n"
+"POT-Creation-Date: 2012-04-09 18:46+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Andriy Kovtun <kovtunos@yandex.ru>\n"
 "Language-Team: Russian <xfce4-dev@xfce.org>\n"
@@ -12,35 +12,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Russian\n"
 
-#: ../panel-plugin/wavelan.c:147
+#: ../panel-plugin/wavelan.c:146
 msgid "No carrier signal"
 msgstr "Отсутствует несущая сигнала"
 
-#: ../panel-plugin/wavelan.c:166
+#: ../panel-plugin/wavelan.c:165
 msgid "No device configured"
 msgstr "Устройство не настроено"
 
-#: ../panel-plugin/wavelan.c:503
-msgid "Properties"
-msgstr "Параметры"
-
-#: ../panel-plugin/wavelan.c:519
+#: ../panel-plugin/wavelan.c:502
 msgid "Wavelan Plugin Options"
 msgstr "Настройки модуля беспроводной сети"
 
-#: ../panel-plugin/wavelan.c:530
+#: ../panel-plugin/wavelan.c:517
+msgid "Properties"
+msgstr "Параметры"
+
+#: ../panel-plugin/wavelan.c:528
 msgid "Interface"
 msgstr "Интерфейс"
 
-#: ../panel-plugin/wavelan.c:551
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "Автоматически прятать при отсутствии сигнала"
 
-#: ../panel-plugin/wavelan.c:561
+#: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no hardware present"
 msgstr "Автоматически прятать, при отсутствии устройств"
 
-#: ../panel-plugin/wavelan.c:572
+#: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
@@ -48,14 +48,14 @@ msgstr ""
 "Примечание: При отсутствии устройств возникнут трудности при конфигурации "
 "или удалении модуля."
 
-#: ../panel-plugin/wavelan.c:580
+#: ../panel-plugin/wavelan.c:578
 msgid "Enable signal quality colors"
 msgstr "Включить цвета качества сигнала"
+
+#: ../panel-plugin/wavelan.c:641 ../panel-plugin/wavelan.desktop.in.h:2
+msgid "View the status of a wireless network"
+msgstr "Просмотреть статус беспроводной сети"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Беспроводная сеть"
-
-#: ../panel-plugin/wavelan.desktop.in.h:2
-msgid "View the status of a wireless network"
-msgstr "Просмотреть статус беспроводной сети"

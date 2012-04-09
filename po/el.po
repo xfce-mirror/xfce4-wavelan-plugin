@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 17:49+0200\n"
+"POT-Creation-Date: 2012-04-09 18:46+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: George Vasilakos <forfolias@linuxteam.cs.teilar.gr>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -15,35 +15,35 @@ msgstr ""
 "X-Poedit-Language: Greek\n"
 "X-Poedit-Country: GREECE\n"
 
-#: ../panel-plugin/wavelan.c:147
+#: ../panel-plugin/wavelan.c:146
 msgid "No carrier signal"
 msgstr "Δεν υπάρχει σήμα μεταφορέα"
 
-#: ../panel-plugin/wavelan.c:166
+#: ../panel-plugin/wavelan.c:165
 msgid "No device configured"
 msgstr "Δεν έχει ρυθμιστεί συσκευή"
 
-#: ../panel-plugin/wavelan.c:503
-msgid "Properties"
-msgstr "Ιδιότητες"
-
-#: ../panel-plugin/wavelan.c:519
+#: ../panel-plugin/wavelan.c:502
 msgid "Wavelan Plugin Options"
 msgstr "Επιλογές πρόσθετου WaveLAN"
 
-#: ../panel-plugin/wavelan.c:530
+#: ../panel-plugin/wavelan.c:517
+msgid "Properties"
+msgstr "Ιδιότητες"
+
+#: ../panel-plugin/wavelan.c:528
 msgid "Interface"
 msgstr "Διασύνδεση"
 
-#: ../panel-plugin/wavelan.c:551
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Αυτόματη απόκρυψη όταν δεν υπάρχει σύνδεση"
 
-#: ../panel-plugin/wavelan.c:561
+#: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no hardware present"
 msgstr "Αυτόματη απόκρυψη όταν δεν βρίσκεται υλικό"
 
-#: ../panel-plugin/wavelan.c:572
+#: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
@@ -51,14 +51,14 @@ msgstr ""
 "Σημείωση: Αυτό θα καταστήσει δύσκολο να αφαιρεθεί ή να ρυθμιστεί το πρόσθετο "
 "αν δεν έχει βρεθεί κάποια συσκευή."
 
-#: ../panel-plugin/wavelan.c:580
+#: ../panel-plugin/wavelan.c:578
 msgid "Enable signal quality colors"
 msgstr "Ενεργοποίηση χρωμάτων ποιότητας σήματος"
+
+#: ../panel-plugin/wavelan.c:641 ../panel-plugin/wavelan.desktop.in.h:2
+msgid "View the status of a wireless network"
+msgstr "Προβολή της κατάστασης ενός ασύρματου δικτύου"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
-
-#: ../panel-plugin/wavelan.desktop.in.h:2
-msgid "View the status of a wireless network"
-msgstr "Προβολή της κατάστασης ενός ασύρματου δικτύου"
