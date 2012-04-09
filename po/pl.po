@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 18:46+0200\n"
+"POT-Creation-Date: 2012-04-09 23:00+0200\n"
 "PO-Revision-Date: 2006-04-08 13:22+0900\n"
 "Last-Translator: Piotr Maliński <admin@rk.edu.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/wavelan.c:146
+#: ../panel-plugin/wavelan.c:153
 msgid "No carrier signal"
 msgstr "Brak sygnału nośnika"
 
-#: ../panel-plugin/wavelan.c:165
+#: ../panel-plugin/wavelan.c:172
 msgid "No device configured"
 msgstr "Brak skonfigurowanego urządzenia"
 
-#: ../panel-plugin/wavelan.c:502
+#: ../panel-plugin/wavelan.c:521
 msgid "Wavelan Plugin Options"
 msgstr "Opcje wtyczki Wavelan"
 
-#: ../panel-plugin/wavelan.c:517
+#: ../panel-plugin/wavelan.c:536
 msgid "Properties"
 msgstr "Właściwości"
 
-#: ../panel-plugin/wavelan.c:528
+#: ../panel-plugin/wavelan.c:547
 msgid "Interface"
 msgstr "Interfejs"
 
-#: ../panel-plugin/wavelan.c:549
+#: ../panel-plugin/wavelan.c:568
 msgid "_Autohide when offline"
 msgstr "_Ukrywaj gdy offline"
 
-#: ../panel-plugin/wavelan.c:559
+#: ../panel-plugin/wavelan.c:578
 msgid "Autohide when no hardware present"
 msgstr "Ukryj gdy brak odpowiedniego urządzenia"
 
-#: ../panel-plugin/wavelan.c:570
+#: ../panel-plugin/wavelan.c:589
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
@@ -53,11 +53,15 @@ msgstr ""
 "Notka: To spowoduje trudności w usunięciu lub konfiguracji wtyczki jeżeli  "
 "nie ma wykrytego urządzenia."
 
-#: ../panel-plugin/wavelan.c:578
+#: ../panel-plugin/wavelan.c:597
 msgid "Enable signal quality colors"
 msgstr ""
 
-#: ../panel-plugin/wavelan.c:641 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:608
+msgid "Show icon"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr ""
 

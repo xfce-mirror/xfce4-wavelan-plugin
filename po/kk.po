@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 18:46+0200\n"
+"POT-Creation-Date: 2012-04-09 23:00+0200\n"
 "PO-Revision-Date: 2010-09-10 13:56+0600\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
@@ -19,46 +19,50 @@ msgstr ""
 "X-Poedit-Language: Kazakh\n"
 "X-Poedit-Country: KAZAKHSTAN\n"
 
-#: ../panel-plugin/wavelan.c:146
+#: ../panel-plugin/wavelan.c:153
 msgid "No carrier signal"
 msgstr "Сигналдың тасушысы жоқ"
 
-#: ../panel-plugin/wavelan.c:165
+#: ../panel-plugin/wavelan.c:172
 msgid "No device configured"
 msgstr "Бапталған құрылғылар жоқ"
 
-#: ../panel-plugin/wavelan.c:502
+#: ../panel-plugin/wavelan.c:521
 msgid "Wavelan Plugin Options"
 msgstr "Сымсыз желі плагинінің баптаулары"
 
-#: ../panel-plugin/wavelan.c:517
+#: ../panel-plugin/wavelan.c:536
 msgid "Properties"
 msgstr "Қасиеттері"
 
-#: ../panel-plugin/wavelan.c:528
+#: ../panel-plugin/wavelan.c:547
 msgid "Interface"
 msgstr "Интерфейс"
 
-#: ../panel-plugin/wavelan.c:549
+#: ../panel-plugin/wavelan.c:568
 msgid "_Autohide when offline"
 msgstr "Желі ж_оқ кезде автожасыру"
 
-#: ../panel-plugin/wavelan.c:559
+#: ../panel-plugin/wavelan.c:578
 msgid "Autohide when no hardware present"
 msgstr "Құрылғы жоқ кезде автожасыру"
 
-#: ../panel-plugin/wavelan.c:570
+#: ../panel-plugin/wavelan.c:589
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
 msgstr ""
 "Ескерту: Құрылғылар жоқ кезде плагинді өшіру не баптау қиынға соғатын болады."
 
-#: ../panel-plugin/wavelan.c:578
+#: ../panel-plugin/wavelan.c:597
 msgid "Enable signal quality colors"
 msgstr "Сигнал сапасының түстерін іске қосу"
 
-#: ../panel-plugin/wavelan.c:641 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:608
+msgid "Show icon"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Сымсыз желінің қалып-күйін қарау"
 

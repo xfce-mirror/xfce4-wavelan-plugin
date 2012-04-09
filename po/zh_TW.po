@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 18:46+0200\n"
+"POT-Creation-Date: 2012-04-09 23:00+0200\n"
 "PO-Revision-Date: 2012-01-15 21:00+0800\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: chinese-l10n <chinese-l10n@googlegroups.com>\n"
@@ -17,45 +17,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/wavelan.c:146
+#: ../panel-plugin/wavelan.c:153
 msgid "No carrier signal"
 msgstr "無載波信號"
 
-#: ../panel-plugin/wavelan.c:165
+#: ../panel-plugin/wavelan.c:172
 msgid "No device configured"
 msgstr "未設定裝置"
 
-#: ../panel-plugin/wavelan.c:502
+#: ../panel-plugin/wavelan.c:521
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan 插件選項"
 
-#: ../panel-plugin/wavelan.c:517
+#: ../panel-plugin/wavelan.c:536
 msgid "Properties"
 msgstr "屬性"
 
-#: ../panel-plugin/wavelan.c:528
+#: ../panel-plugin/wavelan.c:547
 msgid "Interface"
 msgstr "介面"
 
-#: ../panel-plugin/wavelan.c:549
+#: ../panel-plugin/wavelan.c:568
 msgid "_Autohide when offline"
 msgstr "離線時自動隱藏(_A)"
 
-#: ../panel-plugin/wavelan.c:559
+#: ../panel-plugin/wavelan.c:578
 msgid "Autohide when no hardware present"
 msgstr "當沒有硬體時自動隱藏"
 
-#: ../panel-plugin/wavelan.c:570
+#: ../panel-plugin/wavelan.c:589
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
 msgstr "注意：當沒偵測到裝置時，這會讓它難以移除或難以設定插件。"
 
-#: ../panel-plugin/wavelan.c:578
+#: ../panel-plugin/wavelan.c:597
 msgid "Enable signal quality colors"
 msgstr "啟用訊號品質色彩"
 
-#: ../panel-plugin/wavelan.c:641 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:608
+msgid "Show icon"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "檢視無線網路狀態"
 

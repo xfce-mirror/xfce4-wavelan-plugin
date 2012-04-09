@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 18:46+0200\n"
+"POT-Creation-Date: 2012-04-09 23:00+0200\n"
 "PO-Revision-Date: 2009-07-13 19:55+0100\n"
 "Last-Translator: Marcos Antonio Alvarez Costales <marcoscostales@gmail.com>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -12,35 +12,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:146
+#: ../panel-plugin/wavelan.c:153
 msgid "No carrier signal"
 msgstr "Ensin señal de portadora"
 
-#: ../panel-plugin/wavelan.c:165
+#: ../panel-plugin/wavelan.c:172
 msgid "No device configured"
 msgstr "Nun hai dengún preséu configuráu"
 
-#: ../panel-plugin/wavelan.c:502
+#: ../panel-plugin/wavelan.c:521
 msgid "Wavelan Plugin Options"
 msgstr "Opciones del complementu Wavelan"
 
-#: ../panel-plugin/wavelan.c:517
+#: ../panel-plugin/wavelan.c:536
 msgid "Properties"
 msgstr "Propiedaes"
 
-#: ../panel-plugin/wavelan.c:528
+#: ../panel-plugin/wavelan.c:547
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:549
+#: ../panel-plugin/wavelan.c:568
 msgid "_Autohide when offline"
 msgstr "_Anubrir automáticamente al tar desconeutáu"
 
-#: ../panel-plugin/wavelan.c:559
+#: ../panel-plugin/wavelan.c:578
 msgid "Autohide when no hardware present"
 msgstr "Anubrir automáticamente cuando'l hardware nun ta presente"
 
-#: ../panel-plugin/wavelan.c:570
+#: ../panel-plugin/wavelan.c:589
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
@@ -48,11 +48,15 @@ msgstr ""
 "Avisu: Esto va dificultar desaniciar o configurar el complementu si nun se "
 "deteuta dengún preséu."
 
-#: ../panel-plugin/wavelan.c:578
+#: ../panel-plugin/wavelan.c:597
 msgid "Enable signal quality colors"
 msgstr "Activar colores de calidá de señal"
 
-#: ../panel-plugin/wavelan.c:641 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:608
+msgid "Show icon"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Ver l'estáu d'una rede inalámbrica"
 
