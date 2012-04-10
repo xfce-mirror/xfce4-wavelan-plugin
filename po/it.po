@@ -2,19 +2,19 @@
 # Copyright (C) 2003,2004 Benedikt Meurer <benny@xfce.org>
 # This file is distributed under the same license as the xfce4-wavelan-plugin package.
 # Emanuele Rocca <ema@debian.org>, 2006
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin v0.4.2.\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 23:00+0200\n"
+"POT-Creation-Date: 2012-04-10 18:45+0000\n"
 "PO-Revision-Date: 2009-12-23 18:02+0100\n"
 "Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
 "Language-Team: Italian <xfce-i18n@xfce.org>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 
 #: ../panel-plugin/wavelan.c:153
 msgid "No carrier signal"
@@ -58,13 +58,13 @@ msgstr "Abilita i colori per la qualità del segnale"
 
 #: ../panel-plugin/wavelan.c:608
 msgid "Show icon"
-msgstr ""
+msgstr "Mostra l'icona"
 
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:1
 msgid "View the status of a wireless network"
 msgstr "Visualizza lo stato di una rete senza fili"
 
-#: ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.desktop.in.h:2
 msgid "Wavelan"
 msgstr "Wavelan"
 
