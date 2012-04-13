@@ -1,3 +1,7 @@
+0.5.10 (2012/04/13):
+---------
+  * Translation updates (uk,sk,eu,pt_BR,it,da,nl,pt,gl,ko,zh_CN)
+
 0.5.9 (2012/04/13):
 ---------
   * Make the icon optional (bug #7520)
