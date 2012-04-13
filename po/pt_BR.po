@@ -3,19 +3,19 @@
 # This file is distributed under the same license as the xfce4-waveland-plugin package.
 # Vladimir Melo <vladimirmelo@foresightlinux.org>, 2007.
 # Og Maciel <ogmaciel@gnome.org>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 23:00+0200\n"
+"POT-Creation-Date: 2012-04-11 23:30+0000\n"
 "PO-Revision-Date: 2008-11-06 22:23-0400\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 
 #: ../panel-plugin/wavelan.c:153
 msgid "No carrier signal"
@@ -59,12 +59,12 @@ msgstr "Habilitar cores para qualidade do sinal"
 
 #: ../panel-plugin/wavelan.c:608
 msgid "Show icon"
-msgstr ""
+msgstr "Mostrar ícone"
 
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:1
 msgid "View the status of a wireless network"
 msgstr "Visualizar o status de uma rede sem fios"
 
-#: ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.desktop.in.h:2
 msgid "Wavelan"
 msgstr "Wavelan"
