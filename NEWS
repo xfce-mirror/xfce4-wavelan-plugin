@@ -1,3 +1,7 @@
+0.5.9 (2012/04/13):
+---------
+  * Make the icon optional (bug #7520)
+
 0.5.8 (2012/04/09):
 ---------
   * Build the plugin as an external module
