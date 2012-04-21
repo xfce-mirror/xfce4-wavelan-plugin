@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Nuno Miguel <nunis@netcabo.pt>, 2007.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-10 07:15+0000\n"
-"PO-Revision-Date: 2012-01-09 16:15-0000\n"
-"Last-Translator: Sérgio Marques <smarquespt@gmail.com>\n"
+"PO-Revision-Date: 2012-04-21 15:53+0100\n"
+"Last-Translator: Nuno Miguel <nunomgue@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +29,7 @@ msgstr "Nenhum dispositivo configurado"
 
 #: ../panel-plugin/wavelan.c:521
 msgid "Wavelan Plugin Options"
-msgstr "Opções do \"plug-in\" Wavelan"
+msgstr "Opções do \"plugin\" Wavelan"
 
 #: ../panel-plugin/wavelan.c:536
 msgid "Properties"
@@ -48,12 +48,8 @@ msgid "Autohide when no hardware present"
 msgstr "Ocultar automaticamente se não existir equipamento"
 
 #: ../panel-plugin/wavelan.c:589
-msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Nota: isto torna difícil remover ou configurar o \"plug-in\", caso nenhum "
-"dispositivo seja detetado."
+msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
+msgstr "Nota: isto torna difícil remover ou configurar o \"plugin\", caso nenhum dispositivo seja detetado."
 
 #: ../panel-plugin/wavelan.c:597
 msgid "Enable signal quality colors"
@@ -63,10 +59,12 @@ msgstr "Ativar cores de qualidade de sinal"
 msgid "Show icon"
 msgstr "Mostrar ícone"
 
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:671
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "View the status of a wireless network"
 msgstr "Ver o estado da rede sem fios"
 
 #: ../panel-plugin/wavelan.desktop.in.h:2
 msgid "Wavelan"
 msgstr "Wavelan"
+
