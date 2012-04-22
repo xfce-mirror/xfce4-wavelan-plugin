@@ -62,7 +62,7 @@ msgstr "아이콘 표시"
 #: ../panel-plugin/wavelan.c:671
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "View the status of a wireless network"
-msgstr "무선 네트워크 상태 보기"
+msgstr "무선 네트워크 상태를 봅니다"
 
 #: ../panel-plugin/wavelan.desktop.in.h:2
 msgid "Wavelan"
