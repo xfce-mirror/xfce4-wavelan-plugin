@@ -5,23 +5,23 @@
 # Daichi Kawahata <daichi@xfce.org>, 2006.
 # Nobuhiro Iwamatsu <iwamatsu@nigauri.org>, 2008.
 # Masato Hashimoto <cabezon.hashimoto@gmail.com>,2012.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-13 21:18+0900\n"
+"POT-Creation-Date: 2012-05-17 14:15+0000\n"
 "PO-Revision-Date: 2012-04-13 21:20+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
 
 #: ../panel-plugin/wavelan.c:153
 msgid "No carrier signal"
-msgstr "キャリアーシグナルがありません"
+msgstr "キャリアシグナルがありません"
 
 #: ../panel-plugin/wavelan.c:172
 msgid "No device configured"
@@ -48,8 +48,12 @@ msgid "Autohide when no hardware present"
 msgstr "ハードウェアがない時は自動的に隠す"
 
 #: ../panel-plugin/wavelan.c:589
-msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
-msgstr "メモ: デバイスが検知されない場合、プラグインを外したり、設定することが難しくなります。"
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there "
+"is no device detected."
+msgstr ""
+"メモ: デバイスが検知されない場合、プラグインを外したり、設定することが難しく"
+"なります。"
 
 #: ../panel-plugin/wavelan.c:597
 msgid "Enable signal quality colors"
@@ -59,12 +63,10 @@ msgstr "信号品質色を有効にする"
 msgid "Show icon"
 msgstr "アイコンを表示する"
 
-#: ../panel-plugin/wavelan.c:671
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:1
 msgid "View the status of a wireless network"
 msgstr "無線ネットワークの状態を表示します"
 
-#: ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.desktop.in.h:2
 msgid "Wavelan"
 msgstr "Wavelan"
-
