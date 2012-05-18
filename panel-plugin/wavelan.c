@@ -316,6 +316,8 @@ wavelan_new(XfcePanelPlugin *plugin)
  
   wavelan->ebox = gtk_event_box_new();
   gtk_widget_set_has_tooltip(wavelan->ebox, TRUE);
+  gtk_event_box_set_visible_window(GTK_EVENT_BOX(wavelan->ebox), FALSE);
+  gtk_event_box_set_above_child(GTK_EVENT_BOX(wavelan->ebox), TRUE);
   g_signal_connect(wavelan->ebox, "query-tooltip", G_CALLBACK(tooltip_cb), wavelan);
   xfce_panel_plugin_add_action_widget(plugin, wavelan->ebox);
   gtk_container_add(GTK_CONTAINER(plugin), wavelan->ebox);
