@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-17 14:15+0000\n"
+"POT-Creation-Date: 2012-05-18 00:57+0000\n"
 "PO-Revision-Date: 2012-04-13 21:20+0900\n"
 "Last-Translator: Masato Hashimoto <cabezon.hashimoto@gmail.com>\n"
 "Language-Team: Japanese <xfce-users-jp@ml.fdiary.net>\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:153
 msgid "No carrier signal"
-msgstr "キャリアシグナルがありません"
+msgstr "キャリアーシグナルがありません"
 
 #: ../panel-plugin/wavelan.c:172
 msgid "No device configured"
