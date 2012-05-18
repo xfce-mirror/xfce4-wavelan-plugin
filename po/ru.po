@@ -1,15 +1,16 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-vawelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 23:00+0200\n"
+"POT-Creation-Date: 2012-04-14 03:15+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Andriy Kovtun <kovtunos@yandex.ru>\n"
 "Language-Team: Russian <xfce4-dev@xfce.org>\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
 "X-Poedit-Language: Russian\n"
 
 #: ../panel-plugin/wavelan.c:153
@@ -54,12 +55,12 @@ msgstr "Включить цвета качества сигнала"
 
 #: ../panel-plugin/wavelan.c:608
 msgid "Show icon"
-msgstr ""
+msgstr "Показывать иконку"
 
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:1
 msgid "View the status of a wireless network"
 msgstr "Просмотреть статус беспроводной сети"
 
-#: ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.desktop.in.h:2
 msgid "Wavelan"
 msgstr "Беспроводная сеть"

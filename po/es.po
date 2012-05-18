@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 23:00+0200\n"
-"PO-Revision-Date: 2009-02-11 20:14+0100\n"
-"Last-Translator: Abel Martín <abel.martin.ruiz@gmail.com>\n"
+"POT-Creation-Date: 2012-04-19 04:00+0000\n"
+"PO-Revision-Date: 2012-04-18 22:35-0600\n"
+"Last-Translator: Sergio <oigres200@gmail.com>\n"
 "Language-Team: Spanish\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -46,12 +46,8 @@ msgid "Autohide when no hardware present"
 msgstr "Ocultar automáticamente cuando el hardware no está presente"
 
 #: ../panel-plugin/wavelan.c:589
-msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Aviso: Esto dificultará eliminar o configurar el complemento si no se "
-"detecta ningún dispositivo."
+msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
+msgstr "Aviso: Esto dificultará eliminar o configurar el complemento si no se detecta ningún dispositivo."
 
 #: ../panel-plugin/wavelan.c:597
 msgid "Enable signal quality colors"
@@ -59,12 +55,14 @@ msgstr "Activar colores de calidad de señal"
 
 #: ../panel-plugin/wavelan.c:608
 msgid "Show icon"
-msgstr ""
+msgstr "Mostrar icono"
 
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:671
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "View the status of a wireless network"
 msgstr "Ver el estado de una red inalámbrica"
 
-#: ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.desktop.in.h:2
 msgid "Wavelan"
 msgstr "Wavelan"
+

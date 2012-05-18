@@ -1,68 +1,68 @@
-# European Portuguese translation of the xfce4-wavelan-plugin package.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Nuno Miguel <nunis@netcabo.pt>, 2007.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin\n"
+"Project-Id-Version: wawelan-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-10 07:15+0000\n"
-"PO-Revision-Date: 2012-04-21 15:53+0100\n"
-"Last-Translator: Nuno Miguel <nunomgue@gmail.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2012-05-10 16:24+0000\n"
+"PO-Revision-Date: 2012-05-10 20:50+0100\n"
+"Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
+"Language-Team: Croatian <ikoli@yahoo.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Poedit-Language: Portuguese\n"
-"X-Poedit-Country: PORTUGAL\n"
+"X-Poedit-Language: Croatian\n"
+"X-Poedit-Country: CROATIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: ../panel-plugin/wavelan.c:153
 msgid "No carrier signal"
-msgstr "Nenhum sinal de transporte"
+msgstr ""
 
 #: ../panel-plugin/wavelan.c:172
 msgid "No device configured"
-msgstr "Nenhum dispositivo configurado"
+msgstr "Nijedan uređaj nije konfiguriran"
 
 #: ../panel-plugin/wavelan.c:521
 msgid "Wavelan Plugin Options"
-msgstr "Opções do \"plugin\" Wavelan"
+msgstr "Opcije Wawelan priključka"
 
 #: ../panel-plugin/wavelan.c:536
 msgid "Properties"
-msgstr "Propriedades"
+msgstr "Svojstva"
 
 #: ../panel-plugin/wavelan.c:547
 msgid "Interface"
-msgstr "Interface"
+msgstr "Sučelje"
 
 #: ../panel-plugin/wavelan.c:568
 msgid "_Autohide when offline"
-msgstr "_Ocultar automaticamente se desligado"
+msgstr ""
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Autohide when no hardware present"
-msgstr "Ocultar automaticamente se não existir equipamento"
+msgstr ""
 
 #: ../panel-plugin/wavelan.c:589
 msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
-msgstr "Nota: isto torna difícil remover ou configurar o \"plugin\", caso nenhum dispositivo seja detetado."
+msgstr "Bilješka:Biti će teško ukloniti ili konfigurirati priključak ako nije otkriven nijedan uređaj."
 
 #: ../panel-plugin/wavelan.c:597
 msgid "Enable signal quality colors"
-msgstr "Ativar cores de qualidade de sinal"
+msgstr "Omogući boje kvalitete signala"
 
 #: ../panel-plugin/wavelan.c:608
 msgid "Show icon"
-msgstr "Mostrar ícone"
+msgstr "Pokaži ikonu"
 
 #: ../panel-plugin/wavelan.c:671
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "View the status of a wireless network"
-msgstr "Ver o estado da rede sem fios"
+msgstr "Pogledaj status bežične mreže"
 
 #: ../panel-plugin/wavelan.desktop.in.h:2
 msgid "Wavelan"
