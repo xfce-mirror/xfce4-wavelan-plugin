@@ -2,19 +2,19 @@
 # Copyright (C) 2003-2007 Benedikt Meurer <benny@xfce.org>
 # This file is distributed under the same license as the xfce4-wavelan-plugin package.
 # Andhika Padmawan <andhika.padmawan@gmail.com>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 23:00+0200\n"
+"POT-Creation-Date: 2012-06-10 10:42+0000\n"
 "PO-Revision-Date: 2008-12-19 22:31+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
-"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: id\n"
 
 #: ../panel-plugin/wavelan.c:153
 msgid "No carrier signal"
@@ -24,27 +24,27 @@ msgstr "Tak ada sinyal pembawa"
 msgid "No device configured"
 msgstr "Tak ada divais yang dikonfigurasi"
 
-#: ../panel-plugin/wavelan.c:521
+#: ../panel-plugin/wavelan.c:523
 msgid "Wavelan Plugin Options"
 msgstr "Opsi Plugin Wavelan"
 
-#: ../panel-plugin/wavelan.c:536
+#: ../panel-plugin/wavelan.c:538
 msgid "Properties"
 msgstr "Properti"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:549
 msgid "Interface"
 msgstr "Antarmuka"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:570
 msgid "_Autohide when offline"
 msgstr "_Sembunyi otomatis jika terputus"
 
-#: ../panel-plugin/wavelan.c:578
+#: ../panel-plugin/wavelan.c:580
 msgid "Autohide when no hardware present"
 msgstr "Sembunyi otomatis jika tak ada peranti keras"
 
-#: ../panel-plugin/wavelan.c:589
+#: ../panel-plugin/wavelan.c:591
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there "
 "is no device detected."
@@ -52,18 +52,18 @@ msgstr ""
 "Catatan: Ini akan menyulitkan untuk menghapus atau mengonfigurasi plugin "
 "jika tak ada divais yang terdeteksi."
 
-#: ../panel-plugin/wavelan.c:597
+#: ../panel-plugin/wavelan.c:599
 msgid "Enable signal quality colors"
 msgstr "Aktifkan warna kualitas sinyal"
 
-#: ../panel-plugin/wavelan.c:608
+#: ../panel-plugin/wavelan.c:610
 msgid "Show icon"
-msgstr ""
+msgstr "Tampilkan ikon"
 
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:673 ../panel-plugin/wavelan.desktop.in.h:1
 msgid "View the status of a wireless network"
 msgstr "Tampilkan status jaringan nirkabel"
 
-#: ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.desktop.in.h:2
 msgid "Wavelan"
 msgstr "Wavelan"
