@@ -428,7 +428,7 @@ wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
   border_width = size > 26 ? 2 : 1;
   wavelan->size = size;
   image_size = wavelan->size - (2 * border_width);
-  gtk_widget_set_size_request(GTK_WIDGET(wavelan->image), image_size, image_size);
+  xfce_panel_image_set_size(XFCE_PANEL_IMAGE(wavelan->image), image_size);
   gtk_container_set_border_width(GTK_CONTAINER(wavelan->box), border_width);
   if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
    gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
