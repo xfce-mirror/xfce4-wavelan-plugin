@@ -72,6 +72,9 @@ typedef struct
   
 } t_wavelan;
 
+static void wavelan_set_size(t_wavelan *wavelan, int size);
+static void wavelan_set_orientation(t_wavelan *wavelan, GtkOrientation orientation);
+
 static void
 wavelan_set_state(t_wavelan *wavelan, gint state)
 {  
@@ -326,40 +329,21 @@ wavelan_new(XfcePanelPlugin *plugin)
   g_object_ref( wavelan->tooltip_text );
 
   /* create box for img & progress bar */
-  if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
-    wavelan->box = xfce_hvbox_new(GTK_ORIENTATION_HORIZONTAL, FALSE, 0);
-  else
-    wavelan->box = xfce_hvbox_new(GTK_ORIENTATION_VERTICAL, FALSE, 0);
-  gtk_container_set_border_width(GTK_CONTAINER(wavelan->box), BORDER / 2);
+  wavelan->box = xfce_hvbox_new(wavelan->orientation, FALSE, 0);
 
   /* setup progressbar */
   wavelan->signal = gtk_progress_bar_new();
-  if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
-  {
-    gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(wavelan->signal), GTK_PROGRESS_BOTTOM_TO_TOP);
-    gtk_widget_set_size_request(wavelan->signal, 8, -1);
-  } else {
-    gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(wavelan->signal), GTK_PROGRESS_LEFT_TO_RIGHT);
-    gtk_widget_set_size_request(wavelan->signal, -1, 8);
-  }
+  wavelan->image = GTK_WIDGET(xfce_panel_image_new_from_source("network-wireless"));
 
-  wavelan->image = gtk_image_new();
-#ifdef HAS_PANEL_49
-  gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "network-wireless", wavelan->size/xfce_panel_plugin_get_nrows(wavelan->plugin)-6, 0, NULL));
-#else
-  gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "network-wireless", wavelan->size-6, 0, NULL));
-#endif
+  gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->image), FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->signal), FALSE, FALSE, 0);
 
-  gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->image), FALSE, FALSE, 2);
-  gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->signal), FALSE, FALSE, 2);
 
+  wavelan_set_size(wavelan, wavelan->size);
+  wavelan_set_orientation(wavelan, wavelan->orientation);
   gtk_widget_show_all(wavelan->box);
   gtk_container_add(GTK_CONTAINER(wavelan->ebox), GTK_WIDGET(wavelan->box));
   gtk_widget_show_all(wavelan->ebox);
-  if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL) 
-    gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
-  else
-    gtk_widget_set_size_request(wavelan->ebox, wavelan->size, -1);
   
   wavelan_read_config(plugin, wavelan);
 
@@ -441,12 +425,16 @@ wavelan_set_orientation(t_wavelan *wavelan, GtkOrientation orientation)
 static void
 wavelan_set_size(t_wavelan *wavelan, int size)
 {
-  wavelan->size = size;
+  int border_width, image_size;
 #ifdef HAS_PANEL_49
-  gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "network-wireless", wavelan->size/xfce_panel_plugin_get_nrows(wavelan->plugin)-6, 0, NULL));
-#else
-  gtk_image_set_from_pixbuf(GTK_IMAGE(wavelan->image), gtk_icon_theme_load_icon(gtk_icon_theme_get_default(), "network-wireless", wavelan->size-6, 0, NULL));
+  size /= xfce_panel_plugin_get_nrows(wavelan->plugin);
+  xfce_panel_plugin_set_small (wavelan->plugin, (xfce_panel_plugin_get_mode(wavelan->plugin) != XFCE_PANEL_PLUGIN_MODE_DESKBAR));
 #endif
+  border_width = size > 26 ? 2 : 1;
+  wavelan->size = size;
+  image_size = wavelan->size - (2 * border_width);
+  gtk_widget_set_size_request(GTK_WIDGET(wavelan->image), image_size, image_size);
+  gtk_container_set_border_width(GTK_CONTAINER(wavelan->box), border_width);
   if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
    gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
   else
