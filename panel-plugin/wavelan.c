@@ -72,8 +72,8 @@ typedef struct
   
 } t_wavelan;
 
-static void wavelan_set_size(t_wavelan *wavelan, int size);
-static void wavelan_set_orientation(t_wavelan *wavelan, GtkOrientation orientation);
+static void wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan);
+static void wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_wavelan *wavelan);
 
 static void
 wavelan_set_state(t_wavelan *wavelan, gint state)
@@ -299,7 +299,6 @@ static t_wavelan *
 wavelan_new(XfcePanelPlugin *plugin)
 {
   t_wavelan *wavelan;
-  XfceScreenPosition screen_position;
   
   TRACE ("Entered wavelan_new");
   
@@ -313,10 +312,6 @@ wavelan_new(XfcePanelPlugin *plugin)
 
   wavelan->plugin = plugin;
   
-  wavelan->size = xfce_panel_plugin_get_size (plugin);
-  screen_position = xfce_panel_plugin_get_screen_position (plugin);
-  wavelan->orientation = xfce_panel_plugin_get_orientation (plugin);
- 
   wavelan->ebox = gtk_event_box_new();
   gtk_widget_set_has_tooltip(wavelan->ebox, TRUE);
   gtk_event_box_set_visible_window(GTK_EVENT_BOX(wavelan->ebox), FALSE);
@@ -339,8 +334,8 @@ wavelan_new(XfcePanelPlugin *plugin)
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->signal), FALSE, FALSE, 0);
 
 
-  wavelan_set_size(wavelan, wavelan->size);
-  wavelan_set_orientation(wavelan, wavelan->orientation);
+  wavelan_set_size(plugin, xfce_panel_plugin_get_size (plugin), wavelan);
+  wavelan_set_orientation(plugin, xfce_panel_plugin_get_orientation (plugin),  wavelan);
   gtk_widget_show_all(wavelan->box);
   gtk_container_add(GTK_CONTAINER(wavelan->ebox), GTK_WIDGET(wavelan->box));
   gtk_widget_show_all(wavelan->ebox);
@@ -353,7 +348,7 @@ wavelan_new(XfcePanelPlugin *plugin)
 }
 
 static void
-wavelan_free(t_wavelan *wavelan)
+wavelan_free(XfcePanelPlugin* plugin, t_wavelan *wavelan)
 {
   TRACE ("Entered wavelan_free");
   
@@ -406,7 +401,7 @@ wavelan_write_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
 }
 
 static void
-wavelan_set_orientation(t_wavelan *wavelan, GtkOrientation orientation)
+wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_wavelan *wavelan)
 {
   wavelan->orientation = orientation;
   xfce_hvbox_set_orientation(XFCE_HVBOX(wavelan->box), orientation);
@@ -423,12 +418,12 @@ wavelan_set_orientation(t_wavelan *wavelan, GtkOrientation orientation)
 }
 
 static void
-wavelan_set_size(t_wavelan *wavelan, int size)
+wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
 {
   int border_width, image_size;
 #ifdef HAS_PANEL_49
-  size /= xfce_panel_plugin_get_nrows(wavelan->plugin);
-  xfce_panel_plugin_set_small (wavelan->plugin, (xfce_panel_plugin_get_mode(wavelan->plugin) != XFCE_PANEL_PLUGIN_MODE_DESKBAR));
+  size /= xfce_panel_plugin_get_nrows(plugin);
+  xfce_panel_plugin_set_small (plugin, (xfce_panel_plugin_get_mode(plugin) != XFCE_PANEL_PLUGIN_MODE_DESKBAR));
 #endif
   border_width = size > 26 ? 2 : 1;
   wavelan->size = size;
@@ -613,41 +608,6 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 }
 
 static void
-wavelan_orientation_changed (XfcePanelPlugin *plugin,
-                             GtkOrientation orientation,
-                             t_wavelan *wavelan)
-{
-    wavelan_set_orientation(wavelan, orientation);
-}
-  
-
-static void
-wavelan_size_changed(XfcePanelPlugin *plugin,
-                     int size,
-                     t_wavelan *wavelan)
-{
-    wavelan_set_size(wavelan, size);
-}
-
-static void 
-wavelan_free_data (XfcePanelPlugin *plugin, t_wavelan *wavelan)
-{
-  wavelan_free(wavelan);
-}
-
-void
-wavelan_save (XfcePanelPlugin *plugin, t_wavelan *wavelan)
-{
-  wavelan_write_config(plugin, wavelan);
-}
-
-static void
-wavelan_configure (XfcePanelPlugin *plugin, t_wavelan *wavelan)
-{
-    wavelan_create_options(plugin, wavelan);
-}
-
-static void
 wavelan_show_about (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 {
    GdkPixbuf *icon;
@@ -677,24 +637,21 @@ wavelan_construct (XfcePanelPlugin *plugin)
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
-/*  g_signal_connect (plugin, "screen-position-changed",
-                    G_CALLBACK (wavelan_screen_position_changed), wavelan);
-*/
   g_signal_connect (plugin, "orientation-changed",
-                    G_CALLBACK (wavelan_orientation_changed), wavelan);
+                    G_CALLBACK (wavelan_set_orientation), wavelan);
 
   g_signal_connect (plugin, "size-changed",
-                    G_CALLBACK (wavelan_size_changed), wavelan);
+                    G_CALLBACK (wavelan_set_size), wavelan);
  
   g_signal_connect (plugin, "free-data",
-                    G_CALLBACK (wavelan_free_data), wavelan);
+                    G_CALLBACK (wavelan_free), wavelan);
 
   g_signal_connect (plugin, "save",
-                    G_CALLBACK (wavelan_save), wavelan);
+                    G_CALLBACK (wavelan_write_config), wavelan);
   
   xfce_panel_plugin_menu_show_configure (plugin);
   g_signal_connect (plugin, "configure-plugin",
-                    G_CALLBACK (wavelan_configure), wavelan);
+                    G_CALLBACK (wavelan_create_options), wavelan);
   
   xfce_panel_plugin_menu_show_about(plugin);
   g_signal_connect (plugin, "about", G_CALLBACK (wavelan_show_about), wavelan);
