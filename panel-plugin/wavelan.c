@@ -425,7 +425,7 @@ wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
   DBG("wavelan_set_size(%d)", size);
 #ifdef HAS_PANEL_49
   size /= xfce_panel_plugin_get_nrows(plugin);
-  xfce_panel_plugin_set_small (plugin, (xfce_panel_plugin_get_mode(plugin) != XFCE_PANEL_PLUGIN_MODE_DESKBAR));
+  xfce_panel_plugin_set_small (plugin, TRUE);
 #endif
   border_width = size > 26 ? 2 : 1;
   wavelan->size = size;
