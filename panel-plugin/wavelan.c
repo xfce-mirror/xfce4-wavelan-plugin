@@ -403,6 +403,7 @@ wavelan_write_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
 static void
 wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_wavelan *wavelan)
 {
+  DBG("wavelan_set_orientation(%d)", orientation);
   wavelan->orientation = orientation;
   xfce_hvbox_set_orientation(XFCE_HVBOX(wavelan->box), orientation);
   if (orientation == GTK_ORIENTATION_HORIZONTAL) {
@@ -421,6 +422,7 @@ static void
 wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
 {
   int border_width, image_size;
+  DBG("wavelan_set_size(%d)", size);
 #ifdef HAS_PANEL_49
   size /= xfce_panel_plugin_get_nrows(plugin);
   xfce_panel_plugin_set_small (plugin, (xfce_panel_plugin_get_mode(plugin) != XFCE_PANEL_PLUGIN_MODE_DESKBAR));
