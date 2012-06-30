@@ -5,7 +5,7 @@ dnl
 dnl Version information
 m4_define([xwp_version_major], [0])
 m4_define([xwp_version_minor], [5])
-m4_define([xwp_version_micro], [10])
+m4_define([xwp_version_micro], [11])
 m4_define([xwp_version], [xwp_version_major().xwp_version_minor().xwp_version_micro()])
 
 dnl Initial autoconf
