@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Саша Петровић <salepetronije@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-30 03:45+0000\n"
+"PO-Revision-Date: 2012-09-26 00:19+0200\n"
+"Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
+"Language-Team: српски <xfce-i18n@xfce.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Gtranslator 2.91.5\n"
+
+#: ../panel-plugin/wavelan.c:156
+msgid "No carrier signal"
+msgstr "Нема сигнала оператера "
+
+#: ../panel-plugin/wavelan.c:175
+msgid "No device configured"
+msgstr "Није подешен ни један уређај"
+
+#: ../panel-plugin/wavelan.c:508
+msgid "Wavelan Plugin Options"
+msgstr "Могућности прикучка Мрежног таласа"
+
+#: ../panel-plugin/wavelan.c:523
+msgid "Properties"
+msgstr "Особине"
+
+#: ../panel-plugin/wavelan.c:534
+msgid "Interface"
+msgstr "Сучеље"
+
+#: ../panel-plugin/wavelan.c:555
+msgid "_Autohide when offline"
+msgstr "_Сакриј кад је ван мреже"
+
+#: ../panel-plugin/wavelan.c:565
+msgid "Autohide when no hardware present"
+msgstr "Сакриј кад уређај није присутан."
+
+#: ../panel-plugin/wavelan.c:576
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there "
+"is no device detected."
+msgstr ""
+"Примедба: Ово ће отежати уклањање или подешавање прикључка уколико није "
+"препознат ни један уређај."
+
+#: ../panel-plugin/wavelan.c:584
+msgid "Enable signal quality colors"
+msgstr "Омогући боје по квалитету сигнала"
+
+#: ../panel-plugin/wavelan.c:595
+msgid "Show icon"
+msgstr "Прикажи икону"
+
+#: ../panel-plugin/wavelan.c:623 ../panel-plugin/wavelan.desktop.in.h:1
+msgid "View the status of a wireless network"
+msgstr "Прикажи стање бежичне мреже"
+
+#: ../panel-plugin/wavelan.desktop.in.h:2
+msgid "Wavelan"
+msgstr "Мрежни талас"
