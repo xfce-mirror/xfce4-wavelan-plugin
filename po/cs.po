@@ -39,11 +39,11 @@ msgstr "Zařízení"
 
 #: ../panel-plugin/wavelan.c:555
 msgid "_Autohide when offline"
-msgstr "_Automaticky skrývat v režimu offline"
+msgstr "_Automaticky skrýt v režimu offline"
 
 #: ../panel-plugin/wavelan.c:565
 msgid "Autohide when no hardware present"
-msgstr "Automaticky skrývat v nepřítomnosti zařízení"
+msgstr "Automaticky skrýt v nepřítomnosti zařízení"
 
 #: ../panel-plugin/wavelan.c:576
 msgid ""
