@@ -1,0 +1,70 @@
+# Hebrew translation for xfce4-wavelan-plugin package.
+# Copyright (c) 2003-2004 Benedikt Meurer
+# This file is distributed under the same license as the xfce4-wavelan-plugin package.
+# Hebrew speakers the world over, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-wavelan-plugin 0.5.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-18 05:57+0000\n"
+"PO-Revision-Date: 2013-01-18 08:48+0200\n"
+"Last-Translator: \n"
+"Language-Team: Rahut\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: he\n"
+
+# מוביל
+#: ../panel-plugin/wavelan.c:156
+msgid "No carrier signal"
+msgstr "אין אות תקשורת"
+
+#: ../panel-plugin/wavelan.c:175
+msgid "No device configured"
+msgstr "אין התקן מוגדר"
+
+#: ../panel-plugin/wavelan.c:508
+msgid "Wavelan Plugin Options"
+msgstr "אפשרויות תוספת Wavelan"
+
+#: ../panel-plugin/wavelan.c:523
+msgid "Properties"
+msgstr "מאפיינים"
+
+#: ../panel-plugin/wavelan.c:534
+msgid "Interface"
+msgstr "ממשק"
+
+#: ../panel-plugin/wavelan.c:555
+msgid "_Autohide when offline"
+msgstr "_הסתר אוטומטית כאשר לא מקוון"
+
+#: ../panel-plugin/wavelan.c:565
+msgid "Autohide when no hardware present"
+msgstr "הסתר אוטומטית כאשר לא מצויה חומרה"
+
+# אם אין התקן מאותר
+#: ../panel-plugin/wavelan.c:576
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there "
+"is no device detected."
+msgstr "הערה: זו תקשה להסיר או להגדיר את התוספת אם לא אותר התקן."
+
+#: ../panel-plugin/wavelan.c:584
+msgid "Enable signal quality colors"
+msgstr "אפשר צבעי איכות אות"
+
+#: ../panel-plugin/wavelan.c:595
+msgid "Show icon"
+msgstr "הצג צלמית"
+
+#: ../panel-plugin/wavelan.c:623 ../panel-plugin/wavelan.desktop.in.h:1
+msgid "View the status of a wireless network"
+msgstr "צפה במצב של רשת אלחוטית"
+
+#: ../panel-plugin/wavelan.desktop.in.h:2
+msgid "Wavelan"
+msgstr ""
