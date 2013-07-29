@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# k3lt01 <keltoiboy@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 21:27+0200\n"
+"PO-Revision-Date: 2013-07-29 09:42+0000\n"
+"Last-Translator: k3lt01 <keltoiboy@gmail.com>\n"
+"Language-Team: English (Australia) (http://www.transifex.com/projects/p/xfce/language/en_AU/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_AU\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/wavelan.c:156
+msgid "No carrier signal"
+msgstr "No carrier signal"
+
+#: ../panel-plugin/wavelan.c:175
+msgid "No device configured"
+msgstr "No device configured"
+
+#: ../panel-plugin/wavelan.c:508
+msgid "Wavelan Plugin Options"
+msgstr "Wavelan Plugin Options"
+
+#: ../panel-plugin/wavelan.c:523
+msgid "Properties"
+msgstr "Properties"
+
+#: ../panel-plugin/wavelan.c:534
+msgid "Interface"
+msgstr "Interface"
+
+#: ../panel-plugin/wavelan.c:555
+msgid "_Autohide when offline"
+msgstr "_Autohide when offline"
+
+#: ../panel-plugin/wavelan.c:565
+msgid "Autohide when no hardware present"
+msgstr "Autohide when no hardware present"
+
+#: ../panel-plugin/wavelan.c:576
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
+
+#: ../panel-plugin/wavelan.c:584
+msgid "Enable signal quality colors"
+msgstr "Enable signal quality colours"
+
+#: ../panel-plugin/wavelan.c:595
+msgid "Show icon"
+msgstr "Show icon"
+
+#: ../panel-plugin/wavelan.c:623 ../panel-plugin/wavelan.desktop.in.h:2
+msgid "View the status of a wireless network"
+msgstr "View the status of a wireless network"
+
+#: ../panel-plugin/wavelan.desktop.in.h:1
+msgid "Wavelan"
+msgstr "Wavelan"
