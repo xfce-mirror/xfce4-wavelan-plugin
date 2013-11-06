@@ -1,23 +1,24 @@
-# Hebrew translation for xfce4-wavelan-plugin package.
-# Copyright (c) 2003-2004 Benedikt Meurer
-# This file is distributed under the same license as the xfce4-wavelan-plugin package.
-# Hebrew speakers the world over, 2013.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Hebrew speakers the world over, 2013
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin 0.5.11\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-18 05:57+0000\n"
-"PO-Revision-Date: 2013-01-18 08:48+0200\n"
-"Last-Translator: \n"
-"Language-Team: Rahut\n"
+"POT-Creation-Date: 2013-07-03 21:27+0200\n"
+"PO-Revision-Date: 2013-11-06 09:02+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew (http://www.transifex.com/projects/p/xfce/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
 "Language: he\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# מוביל
 #: ../panel-plugin/wavelan.c:156
 msgid "No carrier signal"
 msgstr "אין אות תקשורת"
@@ -28,7 +29,7 @@ msgstr "אין התקן מוגדר"
 
 #: ../panel-plugin/wavelan.c:508
 msgid "Wavelan Plugin Options"
-msgstr "אפשרויות תוספת Wavelan"
+msgstr "אפשרויות תוסף Wavelan"
 
 #: ../panel-plugin/wavelan.c:523
 msgid "Properties"
@@ -36,35 +37,34 @@ msgstr "מאפיינים"
 
 #: ../panel-plugin/wavelan.c:534
 msgid "Interface"
-msgstr "ממשק"
+msgstr "מנשק"
 
 #: ../panel-plugin/wavelan.c:555
 msgid "_Autohide when offline"
-msgstr "_הסתר אוטומטית כאשר לא מקוון"
+msgstr "ה_סתרה אוטומטית בחוסר פעילות"
 
 #: ../panel-plugin/wavelan.c:565
 msgid "Autohide when no hardware present"
-msgstr "הסתר אוטומטית כאשר לא מצויה חומרה"
+msgstr "הסתרה אוטומטית כאשר לא מצויה חומרה"
 
-# אם אין התקן מאותר
 #: ../panel-plugin/wavelan.c:576
 msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr "הערה: זו תקשה להסיר או להגדיר את התוספת אם לא אותר התקן."
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "הערה: מצב זה יקשה על הסרה או הגדרה של התוסף אם לא זוהה התקן."
 
 #: ../panel-plugin/wavelan.c:584
 msgid "Enable signal quality colors"
-msgstr "אפשר צבעי איכות אות"
+msgstr "הפעלת צבעי איכות אות"
 
 #: ../panel-plugin/wavelan.c:595
 msgid "Show icon"
-msgstr "הצג צלמית"
+msgstr "הצגת סמל"
 
-#: ../panel-plugin/wavelan.c:623 ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:623 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
-msgstr "צפה במצב של רשת אלחוטית"
+msgstr "הצגת מצבה של הרשת האלחוטית"
 
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
-msgstr ""
+msgstr "Wavelan"
