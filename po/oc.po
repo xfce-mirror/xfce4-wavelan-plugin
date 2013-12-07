@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Cedric31 <cvalmary@yahoo.fr>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-07-03 21:27+0200\n"
+"PO-Revision-Date: 2013-12-07 10:54+0000\n"
+"Last-Translator: Cedric31 <cvalmary@yahoo.fr>\n"
+"Language-Team: Occitan (post 1500) (http://www.transifex.com/projects/p/xfce/language/oc/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: oc\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../panel-plugin/wavelan.c:156
+msgid "No carrier signal"
+msgstr "Pas de portadoira"
+
+#: ../panel-plugin/wavelan.c:175
+msgid "No device configured"
+msgstr "Cap de periferic pas configurat"
+
+#: ../panel-plugin/wavelan.c:508
+msgid "Wavelan Plugin Options"
+msgstr "Opcions de l'empeuton Wavelan"
+
+#: ../panel-plugin/wavelan.c:523
+msgid "Properties"
+msgstr "Proprietats"
+
+#: ../panel-plugin/wavelan.c:534
+msgid "Interface"
+msgstr "Interfàcia"
+
+#: ../panel-plugin/wavelan.c:555
+msgid "_Autohide when offline"
+msgstr "Amagar _automaticament fòra connexion"
+
+#: ../panel-plugin/wavelan.c:565
+msgid "Autohide when no hardware present"
+msgstr "Amagar automaticament en l'abséncia de material"
+
+#: ../panel-plugin/wavelan.c:576
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Nòta : La configuracion o supression d'aqueste empeuton serà dificile en l'abséncia de periferic."
+
+#: ../panel-plugin/wavelan.c:584
+msgid "Enable signal quality colors"
+msgstr "Activar las colors de qualitat del senhal"
+
+#: ../panel-plugin/wavelan.c:595
+msgid "Show icon"
+msgstr "Afichar l'icòna"
+
+#: ../panel-plugin/wavelan.c:623 ../panel-plugin/wavelan.desktop.in.h:2
+msgid "View the status of a wireless network"
+msgstr "Veire l'estat d'una ret sens fial"
+
+#: ../panel-plugin/wavelan.desktop.in.h:1
+msgid "Wavelan"
+msgstr "Wavelan"
