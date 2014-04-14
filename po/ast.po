@@ -1,62 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Tornes Llume <l.lumex03.tornes@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 23:00+0200\n"
-"PO-Revision-Date: 2009-07-13 19:55+0100\n"
-"Last-Translator: Marcos Antonio Alvarez Costales <marcoscostales@gmail.com>\n"
-"Language-Team: Asturian <alministradores@softastur.org>\n"
-"Language: ast\n"
+"POT-Creation-Date: 2013-07-03 21:27+0200\n"
+"PO-Revision-Date: 2014-04-14 00:03+0000\n"
+"Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
+"Language-Team: Asturian (http://www.transifex.com/projects/p/xfce/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ast\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:153
+#: ../panel-plugin/wavelan.c:156
 msgid "No carrier signal"
 msgstr "Ensin señal de portadora"
 
-#: ../panel-plugin/wavelan.c:172
+#: ../panel-plugin/wavelan.c:175
 msgid "No device configured"
 msgstr "Nun hai dengún preséu configuráu"
 
-#: ../panel-plugin/wavelan.c:521
+#: ../panel-plugin/wavelan.c:508
 msgid "Wavelan Plugin Options"
 msgstr "Opciones del complementu Wavelan"
 
-#: ../panel-plugin/wavelan.c:536
+#: ../panel-plugin/wavelan.c:523
 msgid "Properties"
 msgstr "Propiedaes"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:534
 msgid "Interface"
-msgstr "Interface"
+msgstr "Interfaz"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:555
 msgid "_Autohide when offline"
 msgstr "_Anubrir automáticamente al tar desconeutáu"
 
-#: ../panel-plugin/wavelan.c:578
+#: ../panel-plugin/wavelan.c:565
 msgid "Autohide when no hardware present"
-msgstr "Anubrir automáticamente cuando'l hardware nun ta presente"
+msgstr "Anubrir automáticamente cuando nun heba hardware presente"
 
-#: ../panel-plugin/wavelan.c:589
+#: ../panel-plugin/wavelan.c:576
 msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Avisu: Esto va dificultar desaniciar o configurar el complementu si nun se "
-"deteuta dengún preséu."
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Avisu: Esto difilcutará el desaniciu o configuración del complementu si nun se deteuta dengún preséu."
 
-#: ../panel-plugin/wavelan.c:597
+#: ../panel-plugin/wavelan.c:584
 msgid "Enable signal quality colors"
-msgstr "Activar colores de calidá de señal"
+msgstr "Habilitar colores de calidá de señal"
 
-#: ../panel-plugin/wavelan.c:608
+#: ../panel-plugin/wavelan.c:595
 msgid "Show icon"
-msgstr ""
+msgstr "Amosar iconu"
 
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:623 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Ver l'estáu d'una rede inalámbrica"
 
