@@ -78,9 +78,6 @@ static void wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orie
 static void
 wavelan_set_state(t_wavelan *wavelan, gint state)
 {  
-  /* state = 0 -> no link, =-1 -> error */
-  TRACE ("Entered wavelan_set_state, state = %u", state);
-
   GdkColor color;
 
   gchar signal_color_bad[] = "#e00000";
@@ -88,6 +85,9 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
   gchar signal_color_good[] = "#e6ff00";
   gchar signal_color_strong[] = "#06c500";
   
+  /* state = 0 -> no link, =-1 -> error */
+  TRACE ("Entered wavelan_set_state, state = %d", state);
+
   if(state > 100)
     state = 100;
 
@@ -632,10 +632,9 @@ wavelan_show_about (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 static void
 wavelan_construct (XfcePanelPlugin *plugin)
 {
-  
-  TRACE ("Entered wavelan_construct");
-  
   t_wavelan *wavelan = wavelan_new(plugin);
+
+  TRACE ("Entered wavelan_construct");
 
   xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
