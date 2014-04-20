@@ -299,6 +299,7 @@ wavelan_new(XfcePanelPlugin *plugin)
 
   wavelan->signal_colors = TRUE;
   wavelan->show_icon = TRUE;
+  wavelan->state = -2;
 
   wavelan->plugin = plugin;
   
