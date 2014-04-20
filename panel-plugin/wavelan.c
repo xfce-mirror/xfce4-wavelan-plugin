@@ -38,6 +38,9 @@
 
 #include <string.h>
 #include <ctype.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <ifaddrs.h>
 
 #ifdef LIBXFCE4PANEL_CHECK_VERSION
 #if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
@@ -216,29 +219,26 @@ static GList*
 wavelan_query_interfaces (void)
 {
   GList *interfaces = NULL;
-  gchar  line[1024];
-  FILE  *fp;
-  gint   n;
+  struct ifaddrs *ifaddr, *ifa;
 
   TRACE ("Entered wavelan_query_interface");
-  
-  fp = popen ("/sbin/ifconfig -a", "r");
-  if (fp != NULL)
-    {
-      while (fgets (line, 1024, fp) != NULL)
-        {
-          if (!isalpha (*line))
-            continue;
 
-          for (n = 0; isalnum (line[n]); ++n);
-          line[n] = '\0';
-
-          interfaces = g_list_append (interfaces, g_strdup (line));
-        }
-
-      pclose (fp);
-    }
-
+  if (getifaddrs(&ifaddr) == -1) {
+    return NULL;
+  }
+  for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next) {
+    if (ifa->ifa_addr == NULL)
+      continue;
+#if defined(AF_LINK) /* BSD */
+    if (ifa->ifa_addr->sa_family == AF_LINK)
+#elif defined(AF_PACKET) /* linux */
+    if (ifa->ifa_addr->sa_family == AF_PACKET)
+#else
+#error "couldnt find a way to get address family on your system"
+#endif
+      interfaces = g_list_append (interfaces, g_strdup (ifa->ifa_name));
+  }
+  freeifaddrs(ifaddr);
   return interfaces;
 }
 
