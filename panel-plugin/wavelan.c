@@ -553,7 +553,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   
   hbox = gtk_hbox_new(FALSE, 2);
   gtk_widget_show(hbox);
-  autohide_missing = gtk_check_button_new_with_label(_("Autohide when no hardware present"));
+  autohide_missing = gtk_check_button_new_with_mnemonic(_("Autohide when no _hardware present"));
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(autohide_missing), 
       wavelan->autohide_missing);
   g_signal_connect(autohide_missing, "toggled", 
@@ -572,7 +572,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 
   hbox = gtk_hbox_new(FALSE, 2);
   gtk_widget_show(hbox);
-  signal_colors = gtk_check_button_new_with_label(_("Enable signal quality colors"));
+  signal_colors = gtk_check_button_new_with_mnemonic(_("Enable sig_nal quality colors"));
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(signal_colors), 
       wavelan->signal_colors);
   g_signal_connect(signal_colors, "toggled", 
@@ -583,7 +583,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 
   hbox = gtk_hbox_new(FALSE, 2);
   gtk_widget_show(hbox);
-  show_icon = gtk_check_button_new_with_label(_("Show icon"));
+  show_icon = gtk_check_button_new_with_mnemonic(_("Show _icon"));
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(show_icon), 
       wavelan->show_icon);
   g_signal_connect(show_icon, "toggled", 
