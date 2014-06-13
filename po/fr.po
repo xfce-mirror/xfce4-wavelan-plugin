@@ -1,70 +1,72 @@
-# French translation of the xfce4-wavelan-plugin package.
-# Copyright (C) 2003-2007 Benedikt Meurer <benny@xfce.org>
-# This file is distributed under the same license as the xfce4-wavelan-plugin package.
-# Gérald Barré <g.barre@free.fr>, 2006.
-# Maximilian Schleiss <maximilian@xfce.org>, 2009.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Gérald Barré <g.barre@free.fr>, 2006
+# jc1 <jc1.quebecos@gmail.com>, 2013
+# Maximilian Schleiss <maximilian@xfce.org>, 2009
+# Yannick Le Guen <leguen.yannick@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-13 21:30+0000\n"
-"PO-Revision-Date: 2009-01-27 22:52+0100\n"
-"Last-Translator: Maximilian Schleiss <maximilian@xfce.org>\n"
-"Language-Team: French <xfce-i18n@xfce.org>\n"
+"POT-Creation-Date: 2014-06-13 00:31+0200\n"
+"PO-Revision-Date: 2014-06-13 07:42+0000\n"
+"Last-Translator: Yannick Le Guen <leguen.yannick@gmail.com>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/xfce-panel-plugins/language/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/wavelan.c:153
+#: ../panel-plugin/wavelan.c:159
 msgid "No carrier signal"
 msgstr "Pas de porteuse"
 
-#: ../panel-plugin/wavelan.c:172
+#: ../panel-plugin/wavelan.c:178
 msgid "No device configured"
 msgstr "Aucun périphérique configuré"
 
-#: ../panel-plugin/wavelan.c:521
+#: ../panel-plugin/wavelan.c:499
 msgid "Wavelan Plugin Options"
 msgstr "Options du greffon Wavelan"
 
-#: ../panel-plugin/wavelan.c:536
+#: ../panel-plugin/wavelan.c:514
 msgid "Properties"
 msgstr "Propriétés"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:525
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:546
 msgid "_Autohide when offline"
 msgstr "Masquer _automatiquement hors connexion"
 
-#: ../panel-plugin/wavelan.c:578
-msgid "Autohide when no hardware present"
-msgstr "Masquer automatiquement en l'absence de matériel"
+#: ../panel-plugin/wavelan.c:556
+msgid "Autohide when no _hardware present"
+msgstr "Masquer automatiquement en l'absence de _matériel"
 
-#: ../panel-plugin/wavelan.c:589
+#: ../panel-plugin/wavelan.c:567
 msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Note : La configuration ou suppression de ce greffon sera difficile en "
-"l'absence de périphérique."
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Note : La configuration ou suppression de ce greffon sera difficile en l'absence de périphérique."
 
-#: ../panel-plugin/wavelan.c:597
-msgid "Enable signal quality colors"
-msgstr "Activer les couleurs de qualité de signal"
+#: ../panel-plugin/wavelan.c:575
+msgid "Enable sig_nal quality colors"
+msgstr "Activer les couleurs de qualité de sig_nal"
 
-#: ../panel-plugin/wavelan.c:608
-msgid "Show icon"
-msgstr "Afficher l'icône"
+#: ../panel-plugin/wavelan.c:586
+msgid "Show _icon"
+msgstr "Afficher l'_icône"
 
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:614 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
-msgstr "Afficher l'état d'un réseau sans fil"
+msgstr "Voir l'état d'un réseau sans fil"
 
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
