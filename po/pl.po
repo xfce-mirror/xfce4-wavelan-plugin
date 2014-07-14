@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-06-13 00:31+0200\n"
-"PO-Revision-Date: 2014-06-20 11:19+0000\n"
+"PO-Revision-Date: 2014-07-14 10:16+0000\n"
 "Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: Polish (http://www.transifex.com/projects/p/xfce-panel-plugins/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "_Ukrywanie po rozłączeniu"
 
 #: ../panel-plugin/wavelan.c:556
 msgid "Autohide when no _hardware present"
-msgstr ""
+msgstr "Automatyczne _ukrywanie przy nieobecności urządzenia"
 
 #: ../panel-plugin/wavelan.c:567
 msgid ""
@@ -56,7 +56,7 @@ msgstr "Uwaga: może utrudniać usunięcie lub skonfigurowanie apletu."
 
 #: ../panel-plugin/wavelan.c:575
 msgid "Enable sig_nal quality colors"
-msgstr ""
+msgstr "Włącz kolory jakości syg_nału"
 
 #: ../panel-plugin/wavelan.c:586
 msgid "Show _icon"
