@@ -526,12 +526,13 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   gtk_widget_show(label);
 
   interfaces = wavelan_query_interfaces ();
-  combo = gtk_combo_new ();
-  gtk_combo_set_popdown_strings (GTK_COMBO (combo), interfaces);
+  combo = gtk_combo_box_text_new_with_entry ();
+  for (lp = interfaces; lp != NULL; lp = lp->next)
+    gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (combo), lp->data);
   gtk_widget_show (combo);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
 
-  interface = GTK_COMBO (combo)->entry;
+  interface = gtk_bin_get_child (GTK_BIN (combo));
   if (wavelan->interface != NULL)
     gtk_entry_set_text(GTK_ENTRY(interface), wavelan->interface);
   g_signal_connect(interface, "changed", G_CALLBACK(wavelan_interface_changed),
