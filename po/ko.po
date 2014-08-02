@@ -1,70 +1,71 @@
-# Korean translations for xfce4-wavelan-plugin package.
-# Copyright (C) 2003-2005 Benedikt Meurer.
-# This file is distributed under the same license as the libxfcegui4 package.
-# ByungHyun Choi <byunghyun.choi@debianusers.org>, 2005.
-# Seong ho cho <darkcircle.0426@gmail.com>, 2011-2012.
-# Sung Jin Gang <ujuc@ujuc.kr>, 2012.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# ByungHyun Choi <byunghyun.choi@debianusers.org>, 2005
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2014
+# Sung Jin Gang <ujuc@ujuc.kr>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin.master\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-10 07:15+0000\n"
-"PO-Revision-Date: 2012-04-10 18:04+0900\n"
+"POT-Creation-Date: 2014-06-13 00:31+0200\n"
+"PO-Revision-Date: 2014-08-02 09:34+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"Language-Team: xfce-i18n <xfce-i18n@xfce.org>\n"
-"Language: ko\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/xfce-panel-plugins/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/wavelan.c:153
+#: ../panel-plugin/wavelan.c:159
 msgid "No carrier signal"
 msgstr "캐리어 신호 없음"
 
-#: ../panel-plugin/wavelan.c:172
+#: ../panel-plugin/wavelan.c:178
 msgid "No device configured"
 msgstr "설정한 장치 없음"
 
-#: ../panel-plugin/wavelan.c:521
+#: ../panel-plugin/wavelan.c:499
 msgid "Wavelan Plugin Options"
 msgstr "무선랜 플러그인 옵션"
 
-#: ../panel-plugin/wavelan.c:536
+#: ../panel-plugin/wavelan.c:514
 msgid "Properties"
 msgstr "속성"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:525
 msgid "Interface"
 msgstr "장치"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:546
 msgid "_Autohide when offline"
 msgstr "연결이 없으면 자동으로 숨기기(_A)"
 
-#: ../panel-plugin/wavelan.c:578
-msgid "Autohide when no hardware present"
-msgstr "장치가 없으면 자동으로 숨기기"
+#: ../panel-plugin/wavelan.c:556
+msgid "Autohide when no _hardware present"
+msgstr "장치가 없으면 자동 숨김(_H)"
 
-#: ../panel-plugin/wavelan.c:589
-msgid "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
+#: ../panel-plugin/wavelan.c:567
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
 msgstr "참고: 장치를 감지하지 못한 경우에는 플러그인 제거나 설정이 어려워질 수 있습니다."
 
-#: ../panel-plugin/wavelan.c:597
-msgid "Enable signal quality colors"
-msgstr "신호 품질 색 활성화"
+#: ../panel-plugin/wavelan.c:575
+msgid "Enable sig_nal quality colors"
+msgstr "신호 품질 색 활성화(_N)"
 
-#: ../panel-plugin/wavelan.c:608
-msgid "Show icon"
-msgstr "아이콘 표시"
+#: ../panel-plugin/wavelan.c:586
+msgid "Show _icon"
+msgstr "아이콘 표시(_I)"
 
-#: ../panel-plugin/wavelan.c:671
-#: ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:614 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "무선 네트워크 상태를 봅니다"
 
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "무선랜"
-
