@@ -161,7 +161,7 @@ wavelan_timer(gpointer data)
       }
       else {
         /* set error */
-        tip = g_strdup(wi_strerror(result));
+        tip = g_strdup(_(wi_strerror(result)));
         wavelan_set_state(wavelan, -1);
       }
     }
@@ -169,9 +169,11 @@ wavelan_timer(gpointer data)
       wavelan_set_state(wavelan, stats.ws_quality);
 
       if (strlen(stats.ws_netname) > 0)
-        tip = g_strdup_printf("%s: %d%s at %dMb/s", stats.ws_netname, stats.ws_quality, stats.ws_qunit, stats.ws_rate);
+        /* Translators: net_name: quality quality_unit at rate Mb/s*/
+        tip = g_strdup_printf(_("%s: %d%s at %dMb/s"), stats.ws_netname, stats.ws_quality, stats.ws_qunit, stats.ws_rate);
       else
-        tip = g_strdup_printf("%d%s at %dMb/s", stats.ws_quality, stats.ws_qunit, stats.ws_rate);
+        /* Translators: quality quality_unit at rate Mb/s*/
+        tip = g_strdup_printf(_("%d%s at %dMb/s"), stats.ws_quality, stats.ws_qunit, stats.ws_rate);
     }
   }
   else {

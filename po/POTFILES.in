@@ -1,2 +1,3 @@
 panel-plugin/wavelan.c
+panel-plugin/wi_common.c
 panel-plugin/wavelan.desktop.in

@@ -147,7 +147,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
 
   /* FIXME */
   g_strlcpy(stats->ws_qunit, "%", 2);
-  g_strlcpy(stats->ws_vendor, "Unknown", WI_MAXSTRLEN);
+  g_strlcpy(stats->ws_vendor, _("Unknown"), WI_MAXSTRLEN);
 
   /* Set interface name */
   strncpy(wreq.ifr_name, device->interface, IFNAMSIZ);

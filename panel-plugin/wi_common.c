@@ -24,20 +24,23 @@
 
 #include <wi.h>
 
+/* Trick to mark strings for translation */
+#define N_(str) (str)
+
 const char *
 wi_strerror(int error)
 {
   switch (error) {
   case WI_NOCARRIER:
-    return("No carrier signal");
+    return N_("No carrier signal");
 
   case WI_NOSUCHDEV:
-    return("No such WaveLAN device");
+    return N_("No such WaveLAN device");
 
   case WI_INVAL:
-    return("Invalid parameter");
+    return N_("Invalid parameter");
 
   default:
-    return("Unknown error");
+    return N_("Unknown error");
   }
 }
