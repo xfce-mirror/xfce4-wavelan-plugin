@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-13 00:31+0200\n"
-"PO-Revision-Date: 2014-06-20 10:49+0000\n"
+"POT-Creation-Date: 2014-12-04 18:31+0100\n"
+"PO-Revision-Date: 2014-12-05 12:53+0000\n"
 "Last-Translator: Nuno Miguel <nunomgue@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/xfce-panel-plugins/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -19,51 +19,75 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:159
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Nenhum sinal de transporte"
 
-#: ../panel-plugin/wavelan.c:178
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr "%s: %d%s a %dMb/s"
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr "%d%s a %dMb/s"
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "Nenhum dispositivo configurado"
 
-#: ../panel-plugin/wavelan.c:499
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
 msgstr "Opções do \"plugin\" Wavelan"
 
-#: ../panel-plugin/wavelan.c:514
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "Propriedades"
 
-#: ../panel-plugin/wavelan.c:525
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:546
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Ocultar automaticamente se desligado"
 
-#: ../panel-plugin/wavelan.c:556
+#: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
 msgstr "Ocultar automaticamente quando _hardware ausente"
 
-#: ../panel-plugin/wavelan.c:567
+#: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Nota: isto torna difícil remover ou configurar o \"plugin\", caso nenhum dispositivo seja detetado."
 
-#: ../panel-plugin/wavelan.c:575
+#: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
 msgstr "Ligar cores de qualidade de si_nal"
 
-#: ../panel-plugin/wavelan.c:586
+#: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
 msgstr "Mostrar í_cone"
 
-#: ../panel-plugin/wavelan.c:614 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Ver o estado da rede sem fios"
+
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr "Nenhum dispositivo de rede"
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr "Parâmetro inválido"
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "Erro desconhecido"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
