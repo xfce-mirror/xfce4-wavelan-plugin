@@ -5,14 +5,14 @@
 # Translators:
 #  <abel.martin.ruiz@gmail.com>, 2009
 # gabrieltandil <gabriel.tandil@gmail.com>, 2014
-# Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013
+# Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-13 00:31+0200\n"
-"PO-Revision-Date: 2014-06-13 11:17+0000\n"
-"Last-Translator: gabrieltandil <gabriel.tandil@gmail.com>\n"
+"POT-Creation-Date: 2014-12-04 18:31+0100\n"
+"PO-Revision-Date: 2014-12-08 05:41+0000\n"
+"Last-Translator: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,51 +20,75 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:159
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Sin señal portadora"
 
-#: ../panel-plugin/wavelan.c:178
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr "%s: %d %s a %d Mb/s"
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr "%d %s a %d Mb/s"
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "No hay ningún dispositivo configurado"
 
-#: ../panel-plugin/wavelan.c:499
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
 msgstr "Opciones del complemento de ondas lan"
 
-#: ../panel-plugin/wavelan.c:514
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "Propiedades"
 
-#: ../panel-plugin/wavelan.c:525
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "Interfaz"
 
-#: ../panel-plugin/wavelan.c:546
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Ocultar automáticamente al estar desconectado"
 
-#: ../panel-plugin/wavelan.c:556
+#: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
 msgstr "Ocultar automáticamente cuando el _hardware no esté presente"
 
-#: ../panel-plugin/wavelan.c:567
+#: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Aviso: Esto dificultará eliminar o configurar el complemento si no se detecta ningún dispositivo."
 
-#: ../panel-plugin/wavelan.c:575
+#: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
 msgstr "Activar colores de calidad de se_ñal"
 
-#: ../panel-plugin/wavelan.c:586
+#: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
 msgstr "Mostrar _icono"
 
-#: ../panel-plugin/wavelan.c:614 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Ver el estado de una red inalámbrica"
+
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr "No existe el dispositivo de ondas lan"
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr "Parámentro no válido"
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "Error desconocido"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
