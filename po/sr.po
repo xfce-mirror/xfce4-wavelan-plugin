@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-13 00:31+0200\n"
-"PO-Revision-Date: 2014-06-19 14:07+0000\n"
+"POT-Creation-Date: 2014-12-04 18:31+0100\n"
+"PO-Revision-Date: 2014-12-10 16:03+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -18,51 +18,75 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/wavelan.c:159
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Нема сигнала пружаоца услуга"
 
-#: ../panel-plugin/wavelan.c:178
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr "%s: %d%s са %dMb/s"
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr "%d%s са %dMb/s"
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "Није подешен ни један уређај"
 
-#: ../panel-plugin/wavelan.c:499
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
 msgstr "Могућности прикључка Мрежног таласа"
 
-#: ../panel-plugin/wavelan.c:514
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "Особине"
 
-#: ../panel-plugin/wavelan.c:525
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "Сучеље"
 
-#: ../panel-plugin/wavelan.c:546
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Самостално сакриј кад је ван мреже"
 
-#: ../panel-plugin/wavelan.c:556
+#: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
 msgstr "Самостално сакриј када _уређај није присутан"
 
-#: ../panel-plugin/wavelan.c:567
+#: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Примедба: Ово ће отежати уклањање или подешавање прикључка уколико није препознат ни један уређај."
 
-#: ../panel-plugin/wavelan.c:575
+#: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
 msgstr "Омогући приказ боја по јачини _пријема"
 
-#: ../panel-plugin/wavelan.c:586
+#: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
-msgstr "Приказуј иконицу"
+msgstr "Приказуј _иконицу"
 
-#: ../panel-plugin/wavelan.c:614 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Преглед стања бежичне мреже"
+
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr "Нема таквог бежичног уређаја"
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr "Одредница је неисправна"
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "Непозната грешка"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
