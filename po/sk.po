@@ -1,70 +1,94 @@
-# Slovak translations for xfce4-wavelan-plugin package
-# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-wavelan-plugin package.
-# Tomáš Vadina <kyberdev@gmail.com>, 2011.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Slavko <linux@slavino.sk>, 2015
+# Tomáš Vadina <tomasvadina+transifex@cryptolab.net>, 2011
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-12 11:00+0000\n"
-"PO-Revision-Date: 2011-08-04 07:59+0200\n"
-"Last-Translator: Tomáš Vadina <kyberdev@gmail.com>\n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"POT-Creation-Date: 2014-12-04 18:31+0100\n"
+"PO-Revision-Date: 2015-02-26 16:21+0000\n"
+"Last-Translator: Slavko <linux@slavino.sk>\n"
+"Language-Team: Slovak (http://www.transifex.com/projects/p/xfce-panel-plugins/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sk\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../panel-plugin/wavelan.c:153
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Žiadny signál"
 
-#: ../panel-plugin/wavelan.c:172
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr "%s: %d%s na %dMb/s"
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr "%d%s na %dMb/s"
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "Žiadne nastavené zariadenie"
 
-#: ../panel-plugin/wavelan.c:521
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
 msgstr "Možnosti zásuvného modulu Bezdrôtová sieť"
 
-#: ../panel-plugin/wavelan.c:536
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "Rozhranie"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Automaticky skrývať, ak nie je pripojený"
 
+#: ../panel-plugin/wavelan.c:559
+msgid "Autohide when no _hardware present"
+msgstr "Automaticky skryť, ak neexistuje _hardvér"
+
+#: ../panel-plugin/wavelan.c:570
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Poznámka: Ak nebude nájdené zariadenie, bude problematické odobrať, alebo nastaviť tento zásuvný modul."
+
 #: ../panel-plugin/wavelan.c:578
-msgid "Autohide when no hardware present"
-msgstr "Automaticky skrývať v neprítomnosti hardvéru"
+msgid "Enable sig_nal quality colors"
+msgstr "zapnúť farby kvality sig_nálu"
 
 #: ../panel-plugin/wavelan.c:589
-msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Poznámka: Ak nebude nájdené zariadenie, bude problematické odobrať, alebo "
-"nastaviť tento zásuvný modul."
+msgid "Show _icon"
+msgstr "Zobraziť _ikonu"
 
-#: ../panel-plugin/wavelan.c:597
-msgid "Enable signal quality colors"
-msgstr "Povoliť farby kvality signálu"
-
-#: ../panel-plugin/wavelan.c:608
-msgid "Show icon"
-msgstr "Zobraziť ikonu"
-
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Zobrazuje stav bezdrôtovej siete"
 
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr "Žiadne zariadenie WaveLAN"
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr "Neplatný parameter"
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "Neznáma chyba"
+
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Bezdrôtová sieť"
