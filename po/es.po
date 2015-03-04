@@ -5,14 +5,15 @@
 # Translators:
 #  <abel.martin.ruiz@gmail.com>, 2009
 # gabrieltandil <gabriel.tandil@gmail.com>, 2014
+# gabrieltandil <gabriel.tandil@gmail.com>, 2014
 # Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-04 18:31+0100\n"
-"PO-Revision-Date: 2014-12-08 05:41+0000\n"
-"Last-Translator: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>\n"
+"PO-Revision-Date: 2015-03-04 21:25+0000\n"
+"Last-Translator: Manolo Díaz <diaz.manolo@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +43,7 @@ msgstr "No hay ningún dispositivo configurado"
 
 #: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
-msgstr "Opciones del complemento de ondas lan"
+msgstr "Opciones del complemento de ondas en lan"
 
 #: ../panel-plugin/wavelan.c:516
 msgid "Properties"
@@ -80,11 +81,11 @@ msgstr "Ver el estado de una red inalámbrica"
 
 #: ../panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
-msgstr "No existe el dispositivo de ondas lan"
+msgstr "No existe el dispositivo de ondas en lan"
 
 #: ../panel-plugin/wi_common.c:41
 msgid "Invalid parameter"
-msgstr "Parámentro no válido"
+msgstr "Parámetro no válido"
 
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
@@ -92,4 +93,4 @@ msgstr "Error desconocido"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
-msgstr "Ondas lan"
+msgstr "Ondas en lan"
