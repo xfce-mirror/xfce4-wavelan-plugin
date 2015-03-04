@@ -1,3 +1,15 @@
+0.5.12 (2015/03/04):
+---------
+  * Add strings to translation
+  * Use GtkComboBoxText instead of GtkCombo
+  * Use check buttons with mnemonic for hot keys
+  * Use getifaddrs() instead of popen ("/sbin/ifconfig -a") (bug #10822)
+  * Remove check for glib 2.14, was released 7 years ago..
+  * Make this compile with -Wall -Werror (declarations after statement)
+  * new translations: bg, en_AU, fi, he, is, ms, oc, th, sr
+  * updated translations: ar, ast, be, cs, en_AU, es, fr, he, hr, it,ja
+    ko, ms, nb, nl, pl, pt, pt_BR, ru, sk, sv, tr, uk, ug, zh_CN, zh_TW
+
 0.5.11 (2012/06/30):
 ---------
   * Better compliance with panel plugin HIG
