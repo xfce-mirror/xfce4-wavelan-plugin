@@ -15,7 +15,7 @@ AC_INIT([xfce4-wavelan-plugin], [xwp_version], [goodies-dev@xfce.org])
 AC_PREREQ([2.50])
 
 dnl Initial automake
-AM_INIT_AUTOMAKE([AC_PACKAGE_TARNAME()], [AC_PACKAGE_VERSION()])
+AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip])
 AM_CONFIG_HEADER([config.h])
 AM_MAINTAINER_MODE()
 
