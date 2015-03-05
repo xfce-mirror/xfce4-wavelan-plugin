@@ -1,74 +1,100 @@
-# German translations for the xfce4-wavelan-plugin package.
-# Copyright (C) 2003-2005 Benedikt Meurer <benny@xfce.org>
-# This file is distributed under the same license as the xfce4-wavelan-plugin package.
-# Benedikt Meurer <benny@xfce.org>, 2005.
-# Fabian Nowak <timystery@arcor.de>, 2007.
-# Simon Schneider <simon@schneider.de>, 2009
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Benedikt Meurer <benny@xfce.org>, 2005
+# Fabian Nowak <timystery@arcor.de>, 2007
+# Simon Schneider <simon@schneider.de>, 2009
+# Tobias Bannert <tobannert@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-14 09:00+0000\n"
-"PO-Revision-Date: 2009-02-25 08:58+0000\n"
-"Last-Translator: Simon Schneider <simon@schneiderimtal.de>\n"
-"Language-Team: German <de@li.org>\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2015-03-05 14:52+0000\n"
+"Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
+"Language-Team: German (http://www.transifex.com/projects/p/xfce-panel-plugins/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:153
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Kein Empfang"
 
-#: ../panel-plugin/wavelan.c:172
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr "%s: %d%s mit %dMb/s"
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr "%d%s mit %dMb/s"
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "Kein Gerät konfiguriert"
 
-#: ../panel-plugin/wavelan.c:521
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
-msgstr "Optionen für das Wavelan-Plugin"
+msgstr "Optionen für die Wavelan-Erweiterung"
 
-#: ../panel-plugin/wavelan.c:536
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "Eigenschaften"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "Schnittstelle"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
-msgstr "_Automatisch verstecken wenn offline"
+msgstr "Automatisch verbergen, wenn vom _Netz getrennt"
+
+#: ../panel-plugin/wavelan.c:559
+msgid "Autohide when no _hardware present"
+msgstr "Automatisch verbergen, wenn kein _Gerät vorhanden"
+
+#: ../panel-plugin/wavelan.c:570
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Anmerkung: Das macht es schwierig, die Erweiterung zu entfernen oder zu konfigurieren, wenn kein Gerät erkannt wird."
 
 #: ../panel-plugin/wavelan.c:578
-msgid "Autohide when no hardware present"
-msgstr "Automatisch verstecken, wenn keine Hardware vorhanden ist"
+msgid "Enable sig_nal quality colors"
+msgstr "_Signalqualitätsfarben aktivieren"
 
 #: ../panel-plugin/wavelan.c:589
-msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Beachten Sie: Dies macht es schwierig, das Plugin zu entfernen oder zu "
-"konfigurieren, wenn kein Gerät erkannt wird."
+msgid "Show _icon"
+msgstr "_Symbol anzeigen"
 
-#: ../panel-plugin/wavelan.c:597
-msgid "Enable signal quality colors"
-msgstr "Farben zur Anzeige der Signalstärke nutzen"
-
-#: ../panel-plugin/wavelan.c:608
-msgid "Show icon"
-msgstr "Symbol anzeigen"
-
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
-msgstr "Status des Drahtlosenetzwerks anzeigen"
+msgstr "Status des Drahtlosnetzwerks anzeigen"
 
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr "Keine WaveLAN-Gerät"
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr "Ungültiger Parameter"
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "Unbekannter Fehler"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
-
-#~ msgid "WaveLAN plugin"
-#~ msgstr "WaveLAN plugin"
