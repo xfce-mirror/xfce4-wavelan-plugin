@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Georgi Georgiev <georgiev_1994@abv.bg>, 2014
-# Kiril Kirilov <cybercop_montana@abv.bg>, 2014
+# Kiril Kirilov <cybercop_montana@abv.bg>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-04 18:31+0100\n"
-"PO-Revision-Date: 2014-12-05 17:51+0000\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2015-03-05 06:50+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/bg/)\n"
 "MIME-Version: 1.0\n"
@@ -88,6 +88,10 @@ msgstr "Невалиден параметър"
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
 msgstr "Неизвестна грешка"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "Неизвестно"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
