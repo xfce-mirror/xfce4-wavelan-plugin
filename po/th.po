@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-04 18:31+0100\n"
-"PO-Revision-Date: 2015-02-16 04:19+0000\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2015-03-05 09:25+0000\n"
 "Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/xfce-panel-plugins/language/th/)\n"
 "MIME-Version: 1.0\n"
@@ -87,6 +87,10 @@ msgstr "พารามิเตอร์ไม่ถูกต้อง"
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
 msgstr "ข้อผิดพลาดไม่ทราบสาเหตุ"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "ไม่ทราบ"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
