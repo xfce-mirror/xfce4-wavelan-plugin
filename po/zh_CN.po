@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-04 18:31+0100\n"
-"PO-Revision-Date: 2015-02-16 02:59+0000\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2015-03-06 03:54+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/xfce-panel-plugins/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -90,6 +90,10 @@ msgstr "无效参数"
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
 msgstr "未知错误"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "未知"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
