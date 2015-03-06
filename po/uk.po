@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2008
-# Yarema aka Knedlyk <yupadmin@gmail.com>, 2014
+# Yarema aka Knedlyk <yupadmin@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-04 18:31+0100\n"
-"PO-Revision-Date: 2014-12-16 10:12+0000\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2015-03-06 22:08+0000\n"
 "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -88,6 +88,10 @@ msgstr "Неправильний параметр"
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
 msgstr "Невідома помилка"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "Невідомо"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
