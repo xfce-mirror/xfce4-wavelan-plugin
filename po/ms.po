@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# abuyop <abuyop@gmail.com>, 2014
+# abuyop <abuyop@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-04 18:31+0100\n"
-"PO-Revision-Date: 2014-12-16 17:04+0000\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2015-03-06 07:44+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/xfce-panel-plugins/language/ms/)\n"
 "MIME-Version: 1.0\n"
@@ -87,6 +87,10 @@ msgstr "Parameter tidak sah"
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
 msgstr "Ralat tidak diketahui"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "Tidak Diketahui"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
