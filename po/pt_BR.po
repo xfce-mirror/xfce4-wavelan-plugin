@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# André Miranda <andreldm1989@gmail.com>, 2014
+# André Miranda <andreldm1989@gmail.com>, 2014-2015
 # Og Maciel <ogmaciel@gnome.org>, 2008
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2014
 # Vladimir Melo <vladimirmelo@foresightlinux.org>, 2007
@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-04 18:31+0100\n"
-"PO-Revision-Date: 2014-12-10 03:33+0000\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2015-03-07 00:52+0000\n"
 "Last-Translator: André Miranda <andreldm1989@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/xfce-panel-plugins/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -90,6 +90,10 @@ msgstr "Parâmetro inválido"
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
 msgstr "Erro desconhecido"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "Desconhecido"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
