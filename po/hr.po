@@ -5,14 +5,14 @@
 # Translators:
 # Edin Veskovic <edin.veskovic@openmailbox.org>, 2014-2015
 # Edin Veskovic <edin.veskovic@openmailbox.org>, 2014
-# Ivica  Kolić <ikoli@yahoo.com>, 2013
+# Ivica  Kolić <ikoli@yahoo.com>, 2013,2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2015-03-06 17:57+0000\n"
-"Last-Translator: Edin Veskovic <edin.veskovic@openmailbox.org>\n"
+"PO-Revision-Date: 2015-03-16 10:46+0000\n"
+"Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,7 +58,7 @@ msgstr "_Samoskrivanje kada je izvan mreže"
 
 #: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
-msgstr "Automatski sakrij kada nije prisutan _hardver"
+msgstr "Automatski sakrij kada nije _prisutan hardver"
 
 #: ../panel-plugin/wavelan.c:570
 msgid ""
@@ -72,7 +72,7 @@ msgstr "Omogući boje za kvalitetu sig_nala"
 
 #: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
-msgstr "Pokazuj _ikonu"
+msgstr "Pokaži _ikonu"
 
 #: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
@@ -92,7 +92,7 @@ msgstr "Nepoznata greška"
 
 #: ../panel-plugin/wi_linux.c:150
 msgid "Unknown"
-msgstr "Nepoznata"
+msgstr "Nepoznato"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
