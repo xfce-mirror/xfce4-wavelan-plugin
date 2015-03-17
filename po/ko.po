@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-04 18:31+0100\n"
-"PO-Revision-Date: 2015-01-15 12:03+0000\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2015-03-17 04:47+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/xfce-panel-plugins/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -89,6 +89,10 @@ msgstr "잘못된 매개변수"
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
 msgstr "알 수 없는 오류"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "알 수 없음"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
