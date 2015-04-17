@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2015-03-12 11:27+0000\n"
+"PO-Revision-Date: 2015-04-17 09:30+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/xfce-panel-plugins/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -27,13 +27,13 @@ msgstr "Nėra signalo"
 #: ../panel-plugin/wavelan.c:173
 #, c-format
 msgid "%s: %d%s at %dMb/s"
-msgstr ""
+msgstr "%s: %d%s su %dMb/s sparta"
 
 #. Translators: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:176
 #, c-format
 msgid "%d%s at %dMb/s"
-msgstr ""
+msgstr "%d%s su %dMb/s sparta"
 
 #: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
