@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-04 18:31+0100\n"
-"PO-Revision-Date: 2015-01-13 07:23+0000\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2015-06-11 05:39+0000\n"
 "Last-Translator: Michael Findlay <keltoiboy@gmail.com>\n"
 "Language-Team: English (Australia) (http://www.transifex.com/projects/p/xfce-panel-plugins/language/en_AU/)\n"
 "MIME-Version: 1.0\n"
@@ -87,6 +87,10 @@ msgstr "Invalid parameter"
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
 msgstr "Unknown error"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "Unknown"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
