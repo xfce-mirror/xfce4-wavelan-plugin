@@ -1,70 +1,99 @@
-# Catalan translation of xfce4-wavelan-plugin.
-# Copyright (C) 2003-2006 Benedikt Meurer <benny@xfce.org>
-# This file is distributed under the same license as the xfce4-wavelan-plugin package.
-# Pau Ruŀlan Ferragut <paurullan@bulma.net>, 2006.
-# Harald Servat <redcrash@gmail.com>, 2009.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Harald Servat <redcrash@gmail.com>, 2009
+# Davidmp <medipas@gmail.com>, 2016
+# Pau Ruŀlan Ferragut <paurullan@bulma.net>, 2006
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-19 15:30+0000\n"
-"PO-Revision-Date: 2009-04-15 11:59+0100\n"
-"Last-Translator: Harald Servat <redcrash@gmail.com>\n"
-"Language-Team: Catalan\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2016-04-07 16:10+0000\n"
+"Last-Translator: Davidmp <medipas@gmail.com>\n"
+"Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:153
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Sense senyal"
 
-#: ../panel-plugin/wavelan.c:172
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr "%s: %d%s a %dMb/s"
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr "%d%s a %dMb/s"
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "No s'ha trobat cap dispositiu configurat"
 
-#: ../panel-plugin/wavelan.c:521
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
 msgstr "Opcions del connector Wavelan"
 
-#: ../panel-plugin/wavelan.c:536
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "Propietats"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "Interfície"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
-msgstr "_Amaga automàticament quan està desconnectat"
+msgstr "_Amaga automàticament quan estigui desconnectat"
+
+#: ../panel-plugin/wavelan.c:559
+msgid "Autohide when no _hardware present"
+msgstr "Amaga automàticament quan no _hi hagi dispositius presents"
+
+#: ../panel-plugin/wavelan.c:570
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Nota: això farà més difícil suprimir o configurar el connector si no s'han detectat dispositius."
 
 #: ../panel-plugin/wavelan.c:578
-msgid "Autohide when no hardware present"
-msgstr "Amaga automàticament quan no hi ha dispositius presents"
+msgid "Enable sig_nal quality colors"
+msgstr "Activa els colors per a la qualitat del se_nyal"
 
 #: ../panel-plugin/wavelan.c:589
-msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Nota: Això farà més difícil suprimir o configurar el connector si no s'han "
-"detectat dispositius."
+msgid "Show _icon"
+msgstr "Mostra la _icona"
 
-#: ../panel-plugin/wavelan.c:597
-msgid "Enable signal quality colors"
-msgstr "Activa els colors per a la qualitat del senyal"
-
-#: ../panel-plugin/wavelan.c:608
-msgid "Show icon"
-msgstr "Mostra la icona"
-
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
-msgstr "Veure l'estat de la xarxa inalàmbrica"
+msgstr "Mostra l'estat de la xarxa sense fil"
 
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr "No hi ha tal dispositiu WaveLAN"
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr "Paràmetre no vàlid"
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "Error desconegut"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "Desconegut"
+
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
