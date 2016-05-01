@@ -158,7 +158,11 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   /* clear stats first */
   bzero((void *)stats, sizeof(*stats));
 
+#if defined(__OpenBSD__)
+  strlcpy(stats->ws_qunit, "%", 2);
+#else
   strlcpy(stats->ws_qunit, "dBm", 4);
+#endif
   /* check vendor (independent of carrier state) */
 #if defined(__FreeBSD_kernel__)
   if ((result = _wi_vendor(device, stats->ws_vendor, WI_MAXSTRLEN)) != WI_OK)
@@ -258,8 +262,15 @@ _wi_quality(const struct wi_device *device, int *quality)
   /* clearly broken, but stolen from ifconfig.c */
   if (nr.nr_max_rssi)
     *quality = IEEE80211_NODEREQ_RSSI(&nr); /* value in percentage */
+  /* nr_rssi is in dBm, convert to % via
+   http://stackoverflow.com/questions/15797920/how-to-convert-wifi-signal-strength-from-quality-percent-to-rssi-dbm
+  */
+  else if (nr.nr_rssi <= -100)
+    *quality = 0;
+  else if (nr.nr_rssi >= -50)
+    *quality = 100;
   else
-    *quality = nr.nr_rssi; /* value in decibels */
+    *quality = 2 * (100 + nr.nr_rssi);
 
   return(WI_OK);
 }
