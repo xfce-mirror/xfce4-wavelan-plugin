@@ -42,12 +42,6 @@
 #include <sys/socket.h>
 #include <ifaddrs.h>
 
-#ifdef LIBXFCE4PANEL_CHECK_VERSION
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
-#define HAS_PANEL_49
-#endif
-#endif
-
 #define BORDER 8
 typedef struct
 {
@@ -416,10 +410,8 @@ wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
 {
   int border_width, image_size;
   DBG("wavelan_set_size(%d)", size);
-#ifdef HAS_PANEL_49
   size /= xfce_panel_plugin_get_nrows(plugin);
   xfce_panel_plugin_set_small (plugin, TRUE);
-#endif
   border_width = size > 26 ? 2 : 1;
   wavelan->size = size;
   image_size = wavelan->size - (2 * border_width);
