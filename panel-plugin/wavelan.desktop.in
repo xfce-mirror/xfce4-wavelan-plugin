@@ -6,3 +6,4 @@ _Comment=View the status of a wireless network
 Icon=network-wireless
 X-XFCE-Internal=FALSE
 X-XFCE-Module=wavelan
+X-XFCE-API=2.0
