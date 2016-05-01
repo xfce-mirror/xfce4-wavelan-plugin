@@ -75,7 +75,11 @@ static void wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orie
 static void
 wavelan_set_state(t_wavelan *wavelan, gint state)
 {  
-  GdkColor color;
+  GdkRGBA color;
+#if GTK_CHECK_VERSION (3, 16, 0)
+  GtkCssProvider *css_provider;
+  gchar *css;
+#endif
 
   gchar signal_color_bad[] = "#e00000";
   gchar signal_color_weak[] = "#e05200";
@@ -96,23 +100,39 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
    if (wavelan->signal_colors) {
     /* set color */
      if (state > 70)
-      gdk_color_parse(signal_color_strong, &color);
+      gdk_rgba_parse(&color, signal_color_strong);
      else if (state > 55)
-      gdk_color_parse(signal_color_good, &color);
+      gdk_rgba_parse(&color, signal_color_good);
      else if (state > 40)
-      gdk_color_parse(signal_color_weak, &color);
+      gdk_rgba_parse(&color, signal_color_weak);
      else
-      gdk_color_parse(signal_color_bad, &color);
+      gdk_rgba_parse(&color, signal_color_bad);
 
-        gtk_widget_modify_bg(GTK_WIDGET(wavelan->signal),
+#if GTK_CHECK_VERSION (3, 16, 0)
+#if GTK_CHECK_VERSION (3, 20, 0)
+     css = g_strdup_printf("progressbar progress { background-color: %s; background-image: none; }", gdk_rgba_to_string(&color));
+#else
+     css = g_strdup_printf(".progressbar { background-color: %s; background-image: none; }", gdk_rgba_to_string(&color));
+#endif
+     /* Setup Gtk style */
+     css_provider = gtk_css_provider_new ();
+     gtk_css_provider_load_from_data (css_provider, css, strlen(css), NULL);
+     gtk_style_context_add_provider (
+         GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (wavelan->signal))),
+         GTK_STYLE_PROVIDER (css_provider),
+         GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+     g_free(css);
+#else
+     gtk_widget_override_background_color(GTK_WIDGET(wavelan->signal),
                              GTK_STATE_PRELIGHT,
                              &color);
-        gtk_widget_modify_bg(GTK_WIDGET(wavelan->signal),
+     gtk_widget_override_background_color(GTK_WIDGET(wavelan->signal),
                              GTK_STATE_SELECTED,
                              &color);
-        gtk_widget_modify_base(GTK_WIDGET(wavelan->signal),
+     gtk_widget_override_color(GTK_WIDGET(wavelan->signal),
                              GTK_STATE_SELECTED,
                              &color);
+#endif
     }
 
    }
