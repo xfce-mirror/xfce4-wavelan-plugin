@@ -392,14 +392,14 @@ wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_w
 {
   DBG("wavelan_set_orientation(%d)", orientation);
   wavelan->orientation = orientation;
-  xfce_hvbox_set_orientation(XFCE_HVBOX(wavelan->box), orientation);
+  gtk_orientable_set_orientation(GTK_ORIENTABLE(wavelan->box), orientation);
+  gtk_orientable_set_orientation(GTK_ORIENTABLE(wavelan->signal), !orientation);
+  gtk_progress_bar_set_inverted(GTK_PROGRESS_BAR(wavelan->signal), (orientation == GTK_ORIENTATION_HORIZONTAL));
   if (orientation == GTK_ORIENTATION_HORIZONTAL) {
-   gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(wavelan->signal), GTK_PROGRESS_BOTTOM_TO_TOP);
    gtk_widget_set_size_request(wavelan->signal, 8, -1);
    gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
    }
   else {
-   gtk_progress_bar_set_orientation(GTK_PROGRESS_BAR(wavelan->signal), GTK_PROGRESS_LEFT_TO_RIGHT);
    gtk_widget_set_size_request(wavelan->signal, -1, 8);
    gtk_widget_set_size_request(wavelan->ebox, wavelan->size, -1);
    }
