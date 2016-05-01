@@ -510,7 +510,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 8);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
   gtk_widget_show(vbox);
-  gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), vbox,
+  gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG (dlg))), vbox,
                       TRUE, TRUE, 0);
   
   hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 8);
