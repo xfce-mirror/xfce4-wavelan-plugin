@@ -311,7 +311,7 @@ wavelan_new(XfcePanelPlugin *plugin)
   g_object_ref( wavelan->tooltip_text );
 
   /* create box for img & progress bar */
-  wavelan->box = xfce_hvbox_new(wavelan->orientation, FALSE, 0);
+  wavelan->box = gtk_box_new(wavelan->orientation, 0);
 
   /* setup progressbar */
   wavelan->signal = gtk_progress_bar_new();
@@ -507,13 +507,13 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 
   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Properties"));
               
-  vbox = gtk_vbox_new(FALSE, 8);
+  vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 8);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
   gtk_widget_show(vbox);
   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), vbox,
                       TRUE, TRUE, 0);
   
-  hbox = gtk_hbox_new(FALSE, 8);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 8);
   gtk_widget_show(hbox);
   
   label = gtk_label_new(_("Interface"));
@@ -536,7 +536,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   gtk_box_pack_start(GTK_BOX(hbox), label, TRUE, FALSE, 1);
   gtk_box_pack_start(GTK_BOX(hbox), combo, TRUE, FALSE, 1);
 
-  hbox = gtk_hbox_new(FALSE, 2);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_widget_show(hbox);
   autohide = gtk_check_button_new_with_mnemonic(_("_Autohide when offline"));
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(autohide), wavelan->autohide);
@@ -546,7 +546,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   gtk_box_pack_start(GTK_BOX(hbox), autohide, TRUE, TRUE, 1);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
   
-  hbox = gtk_hbox_new(FALSE, 2);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_widget_show(hbox);
   autohide_missing = gtk_check_button_new_with_mnemonic(_("Autohide when no _hardware present"));
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(autohide_missing), 
@@ -557,7 +557,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   gtk_box_pack_start(GTK_BOX(hbox), autohide_missing, TRUE, TRUE, 1);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
 
-  hbox = gtk_hbox_new(FALSE, 2);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_widget_show(hbox);
   warn_label = gtk_label_new(_("Note: This will make it difficult to remove or configure the plugin if there is no device detected."));
   gtk_label_set_line_wrap(GTK_LABEL(warn_label), TRUE);
@@ -565,7 +565,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   gtk_box_pack_start(GTK_BOX(hbox), warn_label, TRUE, TRUE, 1);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
 
-  hbox = gtk_hbox_new(FALSE, 2);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_widget_show(hbox);
   signal_colors = gtk_check_button_new_with_mnemonic(_("Enable sig_nal quality colors"));
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(signal_colors), 
@@ -576,7 +576,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   gtk_box_pack_start(GTK_BOX(hbox), signal_colors, TRUE, TRUE, 1);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 1);
 
-  hbox = gtk_hbox_new(FALSE, 2);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 2);
   gtk_widget_show(hbox);
   show_icon = gtk_check_button_new_with_mnemonic(_("Show _icon"));
   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(show_icon), 
