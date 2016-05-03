@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2016-05-01 16:00+0000\n"
+"PO-Revision-Date: 2016-05-03 15:46+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
-msgstr "Sense senyal"
+msgstr "No hi ha senyal portadora"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:173
@@ -39,7 +39,7 @@ msgstr "%d%s a %d Mb/s"
 
 #: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
-msgstr "No s'ha trobat cap dispositiu configurat"
+msgstr "No hi ha cap dispositiu configurat"
 
 #: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
@@ -69,7 +69,7 @@ msgstr "Nota: això farà més difícil suprimir o configurar el connector si no
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
-msgstr "Activa els colors per a la qualitat del se_nyal"
+msgstr "Habilita els colors per a la qualitat del se_nyal"
 
 #: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
@@ -77,7 +77,7 @@ msgstr "Mostra la _icona"
 
 #: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
-msgstr "Mostra l'estat de la xarxa sense fil"
+msgstr "Visualitzeu l'estat de la xarxa sense fil"
 
 #: ../panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
