@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2016-05-03 15:46+0000\n"
+"PO-Revision-Date: 2016-05-04 12:00+0000\n"
 "Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
-msgstr "No hi ha senyal portadora"
+msgstr "No hi ha senyal portador"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:173
@@ -55,11 +55,11 @@ msgstr "Interfície"
 
 #: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
-msgstr "_Amaga automàticament quan estigui desconnectat"
+msgstr "Oculta _automàticament quan estigui desconnectat"
 
 #: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
-msgstr "Amaga automàticament quan no _hi hagi dispositius presents"
+msgstr "Oculta automàticament quan no _hi hagi maquinari present"
 
 #: ../panel-plugin/wavelan.c:570
 msgid ""
