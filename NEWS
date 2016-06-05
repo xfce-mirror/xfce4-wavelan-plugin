@@ -1,3 +1,7 @@
+0.5.99 (2016/06/05):
+---------
+  * port to gtk+3/libxfce4ui-2/libxfce4panel-2.0
+
 0.5.12 (2015/03/04):
 ---------
   * Add strings to translation
