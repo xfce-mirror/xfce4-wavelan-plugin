@@ -110,10 +110,13 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
 
 #if GTK_CHECK_VERSION (3, 16, 0)
 #if GTK_CHECK_VERSION (3, 20, 0)
-     css = g_strdup_printf("progressbar progress { background-color: %s; background-image: none; }", gdk_rgba_to_string(&color));
+     css = g_strdup_printf("progressbar trough { min-width: 4px; min-height: 4px; } \
+                            progressbar progress { min-width: 4px; min-height: 4px; \
+                                                   background-color: %s; background-image: none; }",
 #else
-     css = g_strdup_printf(".progressbar { background-color: %s; background-image: none; }", gdk_rgba_to_string(&color));
+     css = g_strdup_printf(".progressbar { background-color: %s; background-image: none; }",
 #endif
+                           gdk_rgba_to_string(&color));
      /* Setup Gtk style */
      css_provider = gtk_css_provider_new ();
      gtk_css_provider_load_from_data (css_provider, css, strlen(css), NULL);
