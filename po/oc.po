@@ -3,66 +3,95 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Cedric31 <cvalmary@yahoo.fr>, 2013
+# Cédric Valmary <cvalmary@yahoo.fr>, 2016
+# Cédric Valmary <cvalmary@yahoo.fr>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 21:27+0200\n"
-"PO-Revision-Date: 2013-12-07 10:54+0000\n"
-"Last-Translator: Cedric31 <cvalmary@yahoo.fr>\n"
-"Language-Team: Occitan (post 1500) (http://www.transifex.com/projects/p/xfce/language/oc/)\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2016-10-23 14:54+0000\n"
+"Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>\n"
+"Language-Team: Occitan (post 1500) (http://www.transifex.com/xfce/xfce-panel-plugins/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: oc\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/wavelan.c:156
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Pas de portadoira"
 
-#: ../panel-plugin/wavelan.c:175
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr ""
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "Cap de periferic pas configurat"
 
-#: ../panel-plugin/wavelan.c:508
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
 msgstr "Opcions de l'empeuton Wavelan"
 
-#: ../panel-plugin/wavelan.c:523
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "Proprietats"
 
-#: ../panel-plugin/wavelan.c:534
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "Interfàcia"
 
-#: ../panel-plugin/wavelan.c:555
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "Amagar _automaticament fòra connexion"
 
-#: ../panel-plugin/wavelan.c:565
-msgid "Autohide when no hardware present"
-msgstr "Amagar automaticament en l'abséncia de material"
+#: ../panel-plugin/wavelan.c:559
+msgid "Autohide when no _hardware present"
+msgstr ""
 
-#: ../panel-plugin/wavelan.c:576
+#: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Nòta : La configuracion o supression d'aqueste empeuton serà dificile en l'abséncia de periferic."
 
-#: ../panel-plugin/wavelan.c:584
-msgid "Enable signal quality colors"
-msgstr "Activar las colors de qualitat del senhal"
+#: ../panel-plugin/wavelan.c:578
+msgid "Enable sig_nal quality colors"
+msgstr ""
 
-#: ../panel-plugin/wavelan.c:595
-msgid "Show icon"
-msgstr "Afichar l'icòna"
+#: ../panel-plugin/wavelan.c:589
+msgid "Show _icon"
+msgstr "Afichar l'_icòna"
 
-#: ../panel-plugin/wavelan.c:623 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Veire l'estat d'una ret sens fial"
+
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr ""
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr ""
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "Error desconeguda"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "Desconegut"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
