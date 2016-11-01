@@ -1,3 +1,8 @@
+0.6.0 (2016/11/01):
+---------
+  * set progressbar minimal width/height so that it looks like with gtk+2
+  * updated translations
+
 0.5.99 (2016/06/05):
 ---------
   * port to gtk+3/libxfce4ui-2/libxfce4panel-2.0
