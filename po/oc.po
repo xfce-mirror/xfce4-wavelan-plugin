@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2016-10-23 14:54+0000\n"
+"PO-Revision-Date: 2016-11-24 17:56+0000\n"
 "Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/xfce/xfce-panel-plugins/language/oc/)\n"
 "MIME-Version: 1.0\n"
@@ -27,13 +27,13 @@ msgstr "Pas de portadoira"
 #: ../panel-plugin/wavelan.c:173
 #, c-format
 msgid "%s: %d%s at %dMb/s"
-msgstr ""
+msgstr "%s : %d %s a %d Mo/s"
 
 #. Translators: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:176
 #, c-format
 msgid "%d%s at %dMb/s"
-msgstr ""
+msgstr "%d %s a %d Mo/s"
 
 #: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
@@ -57,7 +57,7 @@ msgstr "Amagar _automaticament fòra connexion"
 
 #: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
-msgstr ""
+msgstr "Amagar automaticament en l’abséncia de _material"
 
 #: ../panel-plugin/wavelan.c:570
 msgid ""
@@ -67,7 +67,7 @@ msgstr "Nòta : La configuracion o supression d'aqueste empeuton serà dificile 
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
-msgstr ""
+msgstr "Activar las colors de qualitat de se_nhal"
 
 #: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
@@ -79,11 +79,11 @@ msgstr "Veire l'estat d'una ret sens fial"
 
 #: ../panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
-msgstr ""
+msgstr "Pas cap de periferic WaveLAN"
 
 #: ../panel-plugin/wi_common.c:41
 msgid "Invalid parameter"
-msgstr ""
+msgstr "Paramètre invalid"
 
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
