@@ -79,6 +79,11 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
 #if GTK_CHECK_VERSION (3, 16, 0)
   GtkCssProvider *css_provider;
   gchar *css;
+#if GTK_CHECK_VERSION (3, 20, 0)
+  gchar * cssminsizes = "min-width: 4px; min-height: 0px";
+  if(gtk_orientable_get_orientation(GTK_ORIENTABLE(wavelan->signal)) == GTK_ORIENTATION_HORIZONTAL)
+    cssminsizes = "min-width: 0px; min-height: 4px";
+#endif
 #endif
 
   gchar signal_color_bad[] = "#e00000";
@@ -94,37 +99,31 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
 
   wavelan->state = state;
 
-  if (state >= 1) {
+  if (state >= 1)
    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->signal), (gdouble) state / 100);
+  else
+   gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->signal), 0.0);
 
-   if (wavelan->signal_colors) {
-    /* set color */
-     if (state > 70)
-      gdk_rgba_parse(&color, signal_color_strong);
-     else if (state > 55)
-      gdk_rgba_parse(&color, signal_color_good);
-     else if (state > 40)
-      gdk_rgba_parse(&color, signal_color_weak);
-     else
-      gdk_rgba_parse(&color, signal_color_bad);
+  if (wavelan->signal_colors) {
+     /* set color */
+   if (state > 70)
+    gdk_rgba_parse(&color, signal_color_strong);
+   else if (state > 55)
+    gdk_rgba_parse(&color, signal_color_good);
+   else if (state > 40)
+    gdk_rgba_parse(&color, signal_color_weak);
+   else
+    gdk_rgba_parse(&color, signal_color_bad);
 
 #if GTK_CHECK_VERSION (3, 16, 0)
 #if GTK_CHECK_VERSION (3, 20, 0)
-     css = g_strdup_printf("progressbar trough { min-width: 4px; min-height: 4px; } \
-                            progressbar progress { min-width: 4px; min-height: 4px; \
-                                                   background-color: %s; background-image: none; }",
+     css = g_strdup_printf("progressbar trough { %s } \
+                            progressbar progress { %s ; background-color: %s; background-image: none; }",
+                           cssminsizes, cssminsizes,
 #else
      css = g_strdup_printf(".progressbar { background-color: %s; background-image: none; }",
 #endif
                            gdk_rgba_to_string(&color));
-     /* Setup Gtk style */
-     css_provider = gtk_css_provider_new ();
-     gtk_css_provider_load_from_data (css_provider, css, strlen(css), NULL);
-     gtk_style_context_add_provider (
-         GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (wavelan->signal))),
-         GTK_STYLE_PROVIDER (css_provider),
-         GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-     g_free(css);
 #else
      gtk_widget_override_background_color(GTK_WIDGET(wavelan->signal),
                              GTK_STATE_PRELIGHT,
@@ -136,11 +135,25 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
                              GTK_STATE_SELECTED,
                              &color);
 #endif
-    }
+  } else {
+#if GTK_CHECK_VERSION (3, 20, 0)
+     /* only set size... */
+     css = g_strdup_printf("progressbar trough { %s } \
+                            progressbar progress { %s }",
+                           cssminsizes, cssminsizes);
+#endif
+  }
 
-   }
-  else
-   gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->signal), 0.0);
+#if GTK_CHECK_VERSION (3, 16, 0)
+  /* Setup Gtk style */
+  css_provider = gtk_css_provider_new ();
+  gtk_css_provider_load_from_data (css_provider, css, strlen(css), NULL);
+  gtk_style_context_add_provider (
+      GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (wavelan->signal))),
+      GTK_STYLE_PROVIDER (css_provider),
+      GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+  g_free(css);
+#endif
 
   /* hide icon */
   if (wavelan->show_icon)
@@ -418,14 +431,11 @@ wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_w
   gtk_orientable_set_orientation(GTK_ORIENTABLE(wavelan->box), orientation);
   gtk_orientable_set_orientation(GTK_ORIENTABLE(wavelan->signal), !orientation);
   gtk_progress_bar_set_inverted(GTK_PROGRESS_BAR(wavelan->signal), (orientation == GTK_ORIENTATION_HORIZONTAL));
-  if (orientation == GTK_ORIENTATION_HORIZONTAL) {
-   gtk_widget_set_size_request(wavelan->signal, 8, -1);
+  if (orientation == GTK_ORIENTATION_HORIZONTAL)
    gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
-   }
-  else {
-   gtk_widget_set_size_request(wavelan->signal, -1, 8);
+  else
    gtk_widget_set_size_request(wavelan->ebox, wavelan->size, -1);
-   }
+  wavelan_set_state(wavelan, wavelan->state);
 }
 
 static void
