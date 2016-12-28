@@ -64,6 +64,9 @@ typedef struct
   GtkWidget *image;
   GtkWidget *signal;
   GtkWidget *tooltip_text;
+#if GTK_CHECK_VERSION (3, 16, 0)
+  GtkCssProvider *css_provider;
+#endif
 
   XfcePanelPlugin *plugin;
   
@@ -77,7 +80,6 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
 {  
   GdkRGBA color;
 #if GTK_CHECK_VERSION (3, 16, 0)
-  GtkCssProvider *css_provider;
   gchar *css, *color_str;
 #if GTK_CHECK_VERSION (3, 20, 0)
   gchar * cssminsizes = "min-width: 4px; min-height: 0px";
@@ -92,7 +94,7 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
   gchar signal_color_strong[] = "#06c500";
   
   /* state = 0 -> no link, =-1 -> error */
-  TRACE ("Entered wavelan_set_state, state = %d", state);
+  DBG ("Entered wavelan_set_state, state = %d", state);
 
   if(state > 100)
     state = 100;
@@ -147,13 +149,7 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
   }
 
 #if GTK_CHECK_VERSION (3, 16, 0)
-  /* Setup Gtk style */
-  css_provider = gtk_css_provider_new ();
-  gtk_css_provider_load_from_data (css_provider, css, strlen(css), NULL);
-  gtk_style_context_add_provider (
-      GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (wavelan->signal))),
-      GTK_STYLE_PROVIDER (css_provider),
-      GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+  gtk_css_provider_load_from_data (wavelan->css_provider, css, strlen(css), NULL);
   g_free(css);
 #endif
 
@@ -353,6 +349,11 @@ wavelan_new(XfcePanelPlugin *plugin)
 
   /* setup progressbar */
   wavelan->signal = gtk_progress_bar_new();
+  wavelan->css_provider = gtk_css_provider_new ();
+  gtk_style_context_add_provider (
+      GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (wavelan->signal))),
+      GTK_STYLE_PROVIDER (wavelan->css_provider),
+      GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
   wavelan->image = GTK_WIDGET(xfce_panel_image_new_from_source("network-wireless"));
 
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->image), FALSE, FALSE, 0);
