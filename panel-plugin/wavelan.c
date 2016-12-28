@@ -78,7 +78,7 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
   GdkRGBA color;
 #if GTK_CHECK_VERSION (3, 16, 0)
   GtkCssProvider *css_provider;
-  gchar *css;
+  gchar *css, *color_str;
 #if GTK_CHECK_VERSION (3, 20, 0)
   gchar * cssminsizes = "min-width: 4px; min-height: 0px";
   if(gtk_orientable_get_orientation(GTK_ORIENTABLE(wavelan->signal)) == GTK_ORIENTATION_HORIZONTAL)
@@ -116,6 +116,7 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
     gdk_rgba_parse(&color, signal_color_bad);
 
 #if GTK_CHECK_VERSION (3, 16, 0)
+     color_str = gdk_rgba_to_string(&color);
 #if GTK_CHECK_VERSION (3, 20, 0)
      css = g_strdup_printf("progressbar trough { %s } \
                             progressbar progress { %s ; background-color: %s; background-image: none; }",
@@ -123,7 +124,8 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
 #else
      css = g_strdup_printf(".progressbar { background-color: %s; background-image: none; }",
 #endif
-                           gdk_rgba_to_string(&color));
+                           color_str);
+     g_free(color_str);
 #else
      gtk_widget_override_background_color(GTK_WIDGET(wavelan->signal),
                              GTK_STATE_PRELIGHT,
