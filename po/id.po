@@ -1,69 +1,97 @@
-# Indonesian translations for xfce4-wavelan-plugin package.
-# Copyright (C) 2003-2007 Benedikt Meurer <benny@xfce.org>
-# This file is distributed under the same license as the xfce4-wavelan-plugin package.
-# Andhika Padmawan <andhika.padmawan@gmail.com>, 2008.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# Andhika Padmawan <andhika.padmawan@gmail.com>, 2008
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-10 10:42+0000\n"
-"PO-Revision-Date: 2008-12-19 22:31+0700\n"
-"Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
-"Language-Team: Indonesian <id@li.org>\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2017-05-16 04:59+0000\n"
+"Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
+"Language-Team: Indonesian (http://www.transifex.com/xfce/xfce-panel-plugins/language/id/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/wavelan.c:153
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Tak ada sinyal pembawa"
 
-#: ../panel-plugin/wavelan.c:172
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr "%s: %d%s pada %dMb/s"
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr "%d%s pada %dMb/s"
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "Tak ada divais yang dikonfigurasi"
 
-#: ../panel-plugin/wavelan.c:523
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
 msgstr "Opsi Plugin Wavelan"
 
-#: ../panel-plugin/wavelan.c:538
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "Properti"
 
-#: ../panel-plugin/wavelan.c:549
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "Antarmuka"
 
-#: ../panel-plugin/wavelan.c:570
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Sembunyi otomatis jika terputus"
 
-#: ../panel-plugin/wavelan.c:580
-msgid "Autohide when no hardware present"
-msgstr "Sembunyi otomatis jika tak ada peranti keras"
+#: ../panel-plugin/wavelan.c:559
+msgid "Autohide when no _hardware present"
+msgstr "Sembunyikan otomatis saat tidak ada perangkat keras yang ada"
 
-#: ../panel-plugin/wavelan.c:591
+#: ../panel-plugin/wavelan.c:570
 msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Catatan: Ini akan menyulitkan untuk menghapus atau mengonfigurasi plugin "
-"jika tak ada divais yang terdeteksi."
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Catatan: Ini akan menyulitkan untuk menghapus atau mengonfigurasi plugin jika tak ada divais yang terdeteksi."
 
-#: ../panel-plugin/wavelan.c:599
-msgid "Enable signal quality colors"
-msgstr "Aktifkan warna kualitas sinyal"
+#: ../panel-plugin/wavelan.c:578
+msgid "Enable sig_nal quality colors"
+msgstr "Aktifkan kualitas si_nyal warna"
 
-#: ../panel-plugin/wavelan.c:610
-msgid "Show icon"
-msgstr "Tampilkan ikon"
+#: ../panel-plugin/wavelan.c:589
+msgid "Show _icon"
+msgstr "Tampilkan _ikon"
 
-#: ../panel-plugin/wavelan.c:673 ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Tampilkan status jaringan nirkabel"
 
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr "Tidak ada perangkat WaveLAN semacam itu"
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr "Parameter tidak valid"
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "Kesalahan tidak diketahui"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "Tidak diketahui"
+
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
