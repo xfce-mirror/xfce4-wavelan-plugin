@@ -1,71 +1,97 @@
-# English/GB translation of xfce4-wavelan-plugin.
-# Copyright (C) 2007 THE xfce4-wavelan-plugin'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-wavelan-plugin package.
-# Jeff Bailes <thepizzaking@gmail.com>, 2007.
-#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
-# 
+# Translators:
+# Jeff Bailes <thepizzaking@gmail.com>, 2007
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-27 20:24+0000\n"
-"PO-Revision-Date: 2009-08-18 19:45+1000\n"
-"Last-Translator: Jeff Bailes <thepizzaking@gmail.com>\n"
-"Language-Team: English/GB\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2017-07-25 11:29+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/xfce/xfce-panel-plugins/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:153
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "No carrier signal"
 
-#: ../panel-plugin/wavelan.c:172
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr ""
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "No device configured"
 
-#: ../panel-plugin/wavelan.c:521
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan Plugin Options"
 
-#: ../panel-plugin/wavelan.c:536
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "Properties"
 
-#: ../panel-plugin/wavelan.c:547
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:568
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Autohide when offline"
 
+#: ../panel-plugin/wavelan.c:559
+msgid "Autohide when no _hardware present"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:570
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
+
 #: ../panel-plugin/wavelan.c:578
-msgid "Autohide when no hardware present"
-msgstr "Autohide when no hardware present"
+msgid "Enable sig_nal quality colors"
+msgstr ""
 
 #: ../panel-plugin/wavelan.c:589
-msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
+msgid "Show _icon"
 msgstr ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
 
-#: ../panel-plugin/wavelan.c:597
-msgid "Enable signal quality colors"
-msgstr "Enable signal quality colours"
-
-#: ../panel-plugin/wavelan.c:608
-msgid "Show icon"
-msgstr "Show icon"
-
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "View the status of a wireless network"
 
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr ""
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr ""
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr ""
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr ""
+
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
