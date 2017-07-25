@@ -1,67 +1,96 @@
-# Uyghur translation for xfce4-wavelan-plugin.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Gheyret Kenji <gheyret@gmail.com>, YEAR.
-#
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-24 04:51+0000\n"
-"PO-Revision-Date: 2011-11-09 16:10+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2017-07-25 11:29+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"Language-Team: Uighur (http://www.transifex.com/xfce/xfce-panel-plugins/language/ug/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ug\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/wavelan.c:156
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "سىگنالى يوق"
 
-#: ../panel-plugin/wavelan.c:175
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr ""
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "ئۈسكۈنە سەپلەنمىگەن"
 
-#: ../panel-plugin/wavelan.c:508
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan قىستۇرمىسىنىڭ تاللانمىسى"
 
-#: ../panel-plugin/wavelan.c:523
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "خاسلىق"
 
-#: ../panel-plugin/wavelan.c:534
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "ئارايۈز"
 
-#: ../panel-plugin/wavelan.c:555
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "توردا يوق چاغدا يوشۇرسۇن(_A)"
 
-#: ../panel-plugin/wavelan.c:565
-msgid "Autohide when no hardware present"
-msgstr "قاتتىق دېتال تەڭشەلمىگەندە يوشۇرسۇن"
+#: ../panel-plugin/wavelan.c:559
+msgid "Autohide when no _hardware present"
+msgstr ""
 
-#: ../panel-plugin/wavelan.c:576
+#: ../panel-plugin/wavelan.c:570
 msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
 msgstr "ئىزاھات: ئۈسكۈنە يوق ۋاقىتتا قىستۇرمىنى ئۆچۈرۈش ۋە تەڭشەش قىيىنلىشىدۇ"
 
-#: ../panel-plugin/wavelan.c:584
-msgid "Enable signal quality colors"
-msgstr "سىگنال سۈپىتى كۆرسەتكۈچىنى ئىناۋەتلىك قىلسۇن"
+#: ../panel-plugin/wavelan.c:578
+msgid "Enable sig_nal quality colors"
+msgstr ""
 
-#: ../panel-plugin/wavelan.c:595
-msgid "Show icon"
-msgstr "سىنبەلگە كۆرسەتسۇن"
+#: ../panel-plugin/wavelan.c:589
+msgid "Show _icon"
+msgstr ""
 
-#: ../panel-plugin/wavelan.c:623 ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "سىمسىز تور ھالىتىنى كۆرسەتسۇن"
 
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr ""
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr ""
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr ""
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr ""
+
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Wavelan"
