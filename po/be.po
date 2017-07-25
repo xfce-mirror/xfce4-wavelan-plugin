@@ -1,68 +1,97 @@
-# Belarusian translation of the xfce4-wavelan-plugin package.
-# Copyright (C) Benedikt Meurer <benny@xfce.org>
-# This file is distributed under the same license as the xfce4-wavelan-plugin package.
-# Alexander Nyakhaychyk <nyakhaychyk@gmail.com>, 2007, 2008.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Alexander Nyakhaychyk <nyakhaychyk@gmail.com>, 2007-2008
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin trunk\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-22 08:30+0000\n"
-"PO-Revision-Date: 2008-11-09 13:41+0200\n"
-"Last-Translator: Alexander Nyakhaychyk <nyakhaychyk@gmail.com>\n"
-"Language-Team: Belarusian <xfce-i18n@xfce.org>\n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2017-07-25 11:29+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-panel-plugins/language/be/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: be\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../panel-plugin/wavelan.c:156
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Адсутнічае сігнал"
 
-#: ../panel-plugin/wavelan.c:175
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr ""
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
 msgstr "Прылада не наладжана"
 
-#: ../panel-plugin/wavelan.c:508
+#: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
 msgstr "Опцыі модуля Wi-Fi"
 
-#: ../panel-plugin/wavelan.c:523
+#: ../panel-plugin/wavelan.c:516
 msgid "Properties"
 msgstr "Уласьцівасьці"
 
-#: ../panel-plugin/wavelan.c:534
+#: ../panel-plugin/wavelan.c:527
 msgid "Interface"
 msgstr "Картка"
 
-#: ../panel-plugin/wavelan.c:555
+#: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
 msgstr "_Хаваць, калі не далучаны"
 
-#: ../panel-plugin/wavelan.c:565
-msgid "Autohide when no hardware present"
-msgstr "Хаваць, калі адсутнічае прылада"
+#: ../panel-plugin/wavelan.c:559
+msgid "Autohide when no _hardware present"
+msgstr ""
 
-#: ../panel-plugin/wavelan.c:576
+#: ../panel-plugin/wavelan.c:570
 msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
-"Заўвага: гэтая опцыя зробіць вельмі складаным наладку альбо выдаленьне "
-"модулю, калі будзе адсутнічаць прылада."
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Заўвага: гэтая опцыя зробіць вельмі складаным наладку альбо выдаленьне модулю, калі будзе адсутнічаць прылада."
 
-#: ../panel-plugin/wavelan.c:584
-msgid "Enable signal quality colors"
-msgstr "Уключыць колеры якасьці сыгналу"
-
-#: ../panel-plugin/wavelan.c:595
-msgid "Show icon"
+#: ../panel-plugin/wavelan.c:578
+msgid "Enable sig_nal quality colors"
 msgstr ""
 
-#: ../panel-plugin/wavelan.c:623 ../panel-plugin/wavelan.desktop.in.h:1
+#: ../panel-plugin/wavelan.c:589
+msgid "Show _icon"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Прагляд стану бесправоднай сеткі"
 
-#: ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr ""
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr ""
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr ""
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr ""
+
+#: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
 msgstr "Бесправодная сетка"
