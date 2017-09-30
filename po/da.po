@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2017-09-29 17:24+0000\n"
+"PO-Revision-Date: 2017-09-30 14:19+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "Ingen enhed konfigureret"
 
 #: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
-msgstr "Wavelan udvidelsesmodul-indstillinger"
+msgstr "Wavelan-plugin-indstillinger"
 
 #: ../panel-plugin/wavelan.c:516
 msgid "Properties"
@@ -64,7 +64,7 @@ msgstr "Skjul automatisk når der ikke er nogen _hardware til stede"
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
-msgstr "Bemærk: Dette gør det svært at fjerne eller konfigurere udvidelsesmodulet, hvis der ikke er fundet nogen enhed."
+msgstr "Bemærk: Dette gør det svært at fjerne eller konfigurere pluginet, hvis der ikke er fundet nogen enhed."
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
