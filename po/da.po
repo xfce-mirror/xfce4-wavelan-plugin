@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2017-11-01 15:03+0000\n"
+"PO-Revision-Date: 2017-11-01 17:59+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
-msgstr "Ingen bærebølge"
+msgstr "Intet bærebølgesignal"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:173
@@ -54,21 +54,21 @@ msgstr "Grænseflade"
 
 #: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
-msgstr "Skjul _automatisk når afkoblet"
+msgstr "Skjul _automatisk når offline"
 
 #: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
-msgstr "Skjul automatisk når der ikke er nogen _hardware til stede"
+msgstr "Skjul automatisk når der ikke er noget _hardware til stede"
 
 #: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
-msgstr "Bemærk: Dette gør det svært at fjerne eller konfigurere pluginet, hvis der ikke er fundet nogen enhed."
+msgstr "Bemærk: Dette vil gør det svært at fjerne eller konfigurere pluginet, hvis der ikke er fundet nogen enhed."
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
-msgstr "Aktivér farver for sig_nal"
+msgstr "Aktivér farver for sig_nalets kvalitet"
 
 #: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
@@ -76,11 +76,11 @@ msgstr "Vis _ikon"
 
 #: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
-msgstr "Vis status af et trådløst netværk"
+msgstr "Vis statussen af et trådløst netværk"
 
 #: ../panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
-msgstr "Ingen Wavelan-enhed"
+msgstr "Sådan en Wavelan-enhed findes ikke"
 
 #: ../panel-plugin/wi_common.c:41
 msgid "Invalid parameter"
