@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2017-09-30 14:19+0000\n"
+"PO-Revision-Date: 2017-11-01 15:03+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "Ingen enhed konfigureret"
 
 #: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
-msgstr "Wavelan-plugin-indstillinger"
+msgstr "Valgmuligheder for Wavelan-plugin"
 
 #: ../panel-plugin/wavelan.c:516
 msgid "Properties"
