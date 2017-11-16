@@ -194,7 +194,15 @@ wavelan_timer(gpointer data)
       }
     }
     else {
-      wavelan_set_state(wavelan, stats.ws_quality);
+      /*
+       * Usual formula is: qual = 4 * (signal - noise)
+       * where noise is typically about -96dBm, but we don't have
+       * the actual noise value here, so approximate one.
+       */
+      if (strcmp(stats.ws_qunit, "dBm") == 0)
+        wavelan_set_state(wavelan, 4 * (stats.ws_quality - (-96)));
+      else
+        wavelan_set_state(wavelan, stats.ws_quality);
 
       if (strlen(stats.ws_netname) > 0)
         /* Translators: net_name: quality quality_unit at rate Mb/s*/
