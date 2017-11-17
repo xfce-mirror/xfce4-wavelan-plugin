@@ -379,6 +379,8 @@ _wi_getval(const struct wi_device *device, struct wi_req *wr)
 }
 #endif
 
+#if defined(__NetBSD__) || defined(__FreeBSD__) ||  defined(__FreeBSD_kernel__)
+
 static int
 _wi_netname(const struct wi_device *device, char *buffer, size_t len)
 {
@@ -483,4 +485,5 @@ _wi_rate(const struct wi_device *device, int *rate)
   return(WI_OK);
 }
 
+#endif  /* defined(__NetBSD__) || || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) */
 #endif
