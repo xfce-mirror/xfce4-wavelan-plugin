@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2008-2009
+# Xosé <xosecalvo@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2018-01-15 22:31+0000\n"
+"Last-Translator: Xosé <xosecalvo@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-panel-plugins/language/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,13 +27,13 @@ msgstr "Sen sinal portador"
 #: ../panel-plugin/wavelan.c:173
 #, c-format
 msgid "%s: %d%s at %dMb/s"
-msgstr ""
+msgstr "%s: %d%s a %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:176
 #, c-format
 msgid "%d%s at %dMb/s"
-msgstr ""
+msgstr "%d%s a %dMb/s"
 
 #: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
@@ -56,7 +57,7 @@ msgstr "_Agochar automaticamente cando estea desconectado"
 
 #: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
-msgstr ""
+msgstr "Agochar automaticamente cando non haxa _hardware presente"
 
 #: ../panel-plugin/wavelan.c:570
 msgid ""
@@ -66,11 +67,11 @@ msgstr "Nota: Isto dificultará eliminar ou configurar o engadido se non se dete
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
-msgstr ""
+msgstr "_Activar cores de calidade do sinal"
 
 #: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
-msgstr ""
+msgstr "Mostrar a _icona"
 
 #: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
@@ -78,19 +79,19 @@ msgstr "Ver o estado dunha rede sen fíos"
 
 #: ../panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
-msgstr ""
+msgstr "Non existe ese dispositivo WaveLAN"
 
 #: ../panel-plugin/wi_common.c:41
 msgid "Invalid parameter"
-msgstr ""
+msgstr "Parámetro incorrecto"
 
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
-msgstr ""
+msgstr "Erro descoñecido"
 
 #: ../panel-plugin/wi_linux.c:150
 msgid "Unknown"
-msgstr ""
+msgstr "Descoñecido"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
