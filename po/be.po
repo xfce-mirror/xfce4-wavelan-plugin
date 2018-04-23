@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2018-04-05 22:02+0000\n"
+"PO-Revision-Date: 2018-04-23 18:29+0000\n"
 "Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-panel-plugins/language/be/)\n"
 "MIME-Version: 1.0\n"
@@ -20,19 +20,19 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
-msgstr "Адсутнічае сігнал"
+msgstr "Сігнал адсутнічае"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:173
 #, c-format
 msgid "%s: %d%s at %dMb/s"
-msgstr ""
+msgstr "%s: %d%s пры %dМб/с"
 
 #. Translators: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:176
 #, c-format
 msgid "%d%s at %dMb/s"
-msgstr ""
+msgstr "%d%s пры %dМб/с"
 
 #: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
@@ -40,58 +40,58 @@ msgstr "Прылада не наладжана"
 
 #: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
-msgstr "Опцыі модуля Wi-Fi"
+msgstr "Параметры ўбудовы бяздротавай сеткі"
 
 #: ../panel-plugin/wavelan.c:516
 msgid "Properties"
-msgstr "Уласьцівасьці"
+msgstr "Уласцівасці"
 
 #: ../panel-plugin/wavelan.c:527
 msgid "Interface"
-msgstr "Картка"
+msgstr "Інтэрфейс"
 
 #: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
-msgstr "_Хаваць, калі не далучаны"
+msgstr "Аўтаматычна хаваць пры адсутнасці _сігналу"
 
 #: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
-msgstr ""
+msgstr "Аўтаматычна хаваць пры адсутнасці _прылады"
 
 #: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
-msgstr "Заўвага: гэтая опцыя зробіць вельмі складаным наладку альбо выдаленьне модулю, калі будзе адсутнічаць прылада."
+msgstr "Заўвага: будзе цяжка выдаліць альбо наладзіць убудову, калі прылада не выяўлена."
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
-msgstr ""
+msgstr "Адлюстроўваць ко_лерам якасць сігналу"
 
 #: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
-msgstr ""
+msgstr "Паказваць з_начок"
 
 #: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
-msgstr "Прагляд стану бесправоднай сеткі"
+msgstr "Прагляд стану бяздротавай сеткі"
 
 #: ../panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
-msgstr ""
+msgstr "Прылада WaveLAN адсутнічае"
 
 #: ../panel-plugin/wi_common.c:41
 msgid "Invalid parameter"
-msgstr ""
+msgstr "Хібны параметр"
 
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
-msgstr ""
+msgstr "Невядомая памылка"
 
 #: ../panel-plugin/wi_linux.c:150
 msgid "Unknown"
-msgstr ""
+msgstr "Невядома"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
-msgstr "Бесправодная сетка"
+msgstr "Бяздротавая сетка"
