@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ammuu5, 2017
+# Ammuu5, 2017-2018
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2017-12-19 07:48+0000\n"
+"PO-Revision-Date: 2018-07-16 14:17+0000\n"
 "Last-Translator: Ammuu5\n"
 "Language-Team: Finnish (http://www.transifex.com/xfce/xfce-panel-plugins/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
-msgstr ""
+msgstr "Ei kantoaaltosignaalia"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:173
 #, c-format
 msgid "%s: %d%s at %dMb/s"
-msgstr ""
+msgstr "%s:%d%s nopeudella %d Mb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:176
@@ -83,7 +83,7 @@ msgstr "Ei tällaista WaveLAN-laitetta"
 
 #: ../panel-plugin/wi_common.c:41
 msgid "Invalid parameter"
-msgstr ""
+msgstr "Virheellinen parametri"
 
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
