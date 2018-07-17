@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Cristian Marchi <cri.penta@gmail.com>, 2014-2015
+# Emanuele Petriglia <inbox@emanuelepetriglia.me>, 2018
 # Emanuele Rocca <ema@debian.org>, 2006
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2018-07-11 15:09+0000\n"
+"PO-Revision-Date: 2018-07-17 12:22+0000\n"
 "Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.me>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-panel-plugins/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +42,7 @@ msgstr "Nessun dispositivo configurato"
 
 #: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
-msgstr "Opzioni del plugin Wavelan"
+msgstr "Opzioni del componente aggiuntivo Wavelan"
 
 #: ../panel-plugin/wavelan.c:516
 msgid "Properties"
@@ -63,7 +64,7 @@ msgstr "Nascondi automaticamente se l'_hardware non è presente"
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
-msgstr "Nota: in questo modo risulterà difficile configurare o rimuovere questo plugin nel caso non venga riconosciuto alcun dispositivo."
+msgstr "Nota: in questo modo risulterà difficile configurare o rimuovere questo componente aggiuntivo nel caso non venga riconosciuto alcun dispositivo."
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
