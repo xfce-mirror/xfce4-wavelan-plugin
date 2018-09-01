@@ -156,7 +156,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   wreq.u.essid.pointer = (caddr_t) essid;
   wreq.u.essid.length = IW_ESSID_MAX_SIZE + 1;
   wreq.u.essid.flags = 0;
-  if ((result = ioctl(device->socket, SIOCGIWESSID, &wreq) < 0)) {
+  if ((result = ioctl(device->socket, SIOCGIWESSID, &wreq)) < 0) {
     TRACE ("Couldn't get ESSID");
     g_strlcpy(stats->ws_netname, "", WI_MAXSTRLEN);
   } else {
@@ -167,7 +167,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   }
 
   /* Get bit rate */
-  if ((result = ioctl(device->socket, SIOCGIWRATE, &wreq) < 0)) {
+  if ((result = ioctl(device->socket, SIOCGIWRATE, &wreq)) < 0) {
     TRACE ("Couldn't get bit-rate");
     stats->ws_rate = 0;
   } else {
