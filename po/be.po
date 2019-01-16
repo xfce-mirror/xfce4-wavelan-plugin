@@ -4,12 +4,13 @@
 # 
 # Translators:
 # Alexander Nyakhaychyk <nyakhaychyk@gmail.com>, 2007-2008
+# Zmicer Turok <zmicerturok@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2018-04-23 18:29+0000\n"
+"PO-Revision-Date: 2019-01-16 09:02+0000\n"
 "Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-panel-plugins/language/be/)\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +37,7 @@ msgstr "%d%s пры %dМб/с"
 
 #: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
-msgstr "Прылада не наладжана"
+msgstr "Прылада не наладжаная"
 
 #: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
@@ -62,7 +63,7 @@ msgstr "Аўтаматычна хаваць пры адсутнасці _пры�
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
-msgstr "Заўвага: будзе цяжка выдаліць альбо наладзіць убудову, калі прылада не выяўлена."
+msgstr "Заўвага: будзе цяжка выдаліць альбо наладзіць убудову, калі прылада не выяўленая."
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
