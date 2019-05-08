@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Saibamen <saibamenppl@gmail.com>, 2015
+# Adam Stachowicz <saibamenppl@gmail.com>, 2015
 # Piotr Maliński <admin@rk.edu.pl>, 2006
 # Piotr Sokół <psokol.l10n@gmail.com>, 2012
 # Piotr Strębski <strebski@gmail.com>, 2014-2015
