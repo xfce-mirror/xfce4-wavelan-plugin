@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Sveinn í Felli <sv1@fellsnet.is>, 2013-2015
+# Sveinn í Felli <sv1@fellsnet.is>, 2013-2015,2019
 # Sveinn í Felli <sveinki@nett.is>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
+"PO-Revision-Date: 2019-05-10 11:27+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-panel-plugins/language/is/)\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "Viðmót"
 
 #: ../panel-plugin/wavelan.c:549
 msgid "_Autohide when offline"
-msgstr "_Fela sjálfkrafa þegar ótengt"
+msgstr "_Fela sjálfkrafa þegar er ótengt við net"
 
 #: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
