@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2019-08-16 06:12+0000\n"
+"PO-Revision-Date: 2019-08-21 19:55+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-panel-plugins/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -72,7 +72,7 @@ msgstr "_Activar cores de calidade do sinal"
 
 #: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
-msgstr "Mostrar a _icona"
+msgstr "Amosar a _icona"
 
 #: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
