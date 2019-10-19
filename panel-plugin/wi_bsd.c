@@ -250,7 +250,7 @@ _wi_quality(const struct wi_device *device, int *quality)
   if (nr.nr_max_rssi)
     *quality = IEEE80211_NODEREQ_RSSI(&nr); /* value in percentage */
   /* nr_rssi is in dBm, convert to % via
-   http://stackoverflow.com/questions/15797920/how-to-convert-wifi-signal-strength-from-quality-percent-to-rssi-dbm
+   https://stackoverflow.com/questions/15797920/how-to-convert-wifi-signal-strength-from-quality-percent-to-rssi-dbm
   */
   else if (nr.nr_rssi <= -100)
     *quality = 0;

@@ -652,7 +652,7 @@ wavelan_show_about (XfcePanelPlugin *plugin, t_wavelan *wavelan)
       "version", PACKAGE_VERSION,
       "program-name", PACKAGE_NAME,
       "comments", _("View the status of a wireless network"),
-      "website", "http://goodies.xfce.org/projects/panel-plugins/xfce4-wavelan-plugin",
+      "website", "https://goodies.xfce.org/projects/panel-plugins/xfce4-wavelan-plugin",
       "copyright", "Copyright (c) 2003-2004 Benedikt Meurer\n",
       "authors", auth, NULL);
 
