@@ -4,14 +4,15 @@
 # 
 # Translators:
 # Alexander Nyakhaychyk <nyakhaychyk@gmail.com>, 2007-2008
-# Zmicer Turok <zmicerturok@gmail.com>, 2019
+# Zmicer Turok <nashtlumach@gmail.com>, 2019
+# Zmicer Turok <nashtlumach@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2019-01-16 09:02+0000\n"
-"Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
+"PO-Revision-Date: 2020-03-05 11:51+0000\n"
+"Last-Translator: Zmicer Turok <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-panel-plugins/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +42,7 @@ msgstr "Прылада не наладжаная"
 
 #: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
-msgstr "Параметры ўбудовы бяздротавай сеткі"
+msgstr "Параметры ўбудовы бесправадной сеткі"
 
 #: ../panel-plugin/wavelan.c:516
 msgid "Properties"
@@ -67,7 +68,7 @@ msgstr "Заўвага: будзе цяжка выдаліць альбо нал
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
-msgstr "Адлюстроўваць ко_лерам якасць сігналу"
+msgstr "Паказваць ко_лерам якасць сігналу"
 
 #: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
@@ -75,7 +76,7 @@ msgstr "Паказваць з_начок"
 
 #: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
-msgstr "Прагляд стану бяздротавай сеткі"
+msgstr "Прагляд стану бесправадной сеткі"
 
 #: ../panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
@@ -95,4 +96,4 @@ msgstr "Невядома"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
-msgstr "Бяздротавая сетка"
+msgstr "Бесправадная сетка"
