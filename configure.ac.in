@@ -13,6 +13,7 @@ AC_COPYRIGHT([Copyright (c) 2003-2006 Benedikt Meurer <benny@xfce.org>
 Copyright (c) 2010 Florian Rivoal <frivoal@xfce.org>])
 AC_INIT([xfce4-wavelan-plugin], [xwp_version], [xfce-dev@xfce.org])
 AC_PREREQ([2.50])
+AC_CONFIG_MACRO_DIRS([m4])
 
 dnl Initial automake
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip])

@@ -1,4 +1,4 @@
-INCLUDES =								\
+AM_CPPFLAGS =								\
 	-DG_LOG_DOMAIN=\"xfce4-wavelan-plugin\"				\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"
 
