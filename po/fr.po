@@ -6,8 +6,8 @@
 # Charles Monzat <c.monzat@laposte.net>, 2018
 # Gérald Barré <g.barre@free.fr>, 2006
 # jc1 <jc1.quebecos@gmail.com>, 2013-2014
-# Louis Moureaux <inactive+louis94@transifex.com>, 2014
-# Louis Moureaux <inactive+louis94@transifex.com>, 2014
+# 9bd356497422d3b951d73481908ce38a_9594f42 <5107b79d5223bd4fa6f541efbd7ae736_103107>, 2014
+# 9bd356497422d3b951d73481908ce38a_9594f42 <5107b79d5223bd4fa6f541efbd7ae736_103107>, 2014
 # Maximilian Schleiss <maximilian@xfce.org>, 2009
 # Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2015
 msgid ""
