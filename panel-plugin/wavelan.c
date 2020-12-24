@@ -79,6 +79,10 @@ static void
 wavelan_set_state(t_wavelan *wavelan, gint state)
 {  
   GdkRGBA color;
+  gchar signal_color_bad[] = "#e00000";
+  gchar signal_color_weak[] = "#e05200";
+  gchar signal_color_good[] = "#e6ff00";
+  gchar signal_color_strong[] = "#06c500";
 #if GTK_CHECK_VERSION (3, 16, 0)
   gchar *css, *color_str;
 #if GTK_CHECK_VERSION (3, 20, 0)
@@ -87,11 +91,6 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
     cssminsizes = "min-width: 0px; min-height: 4px";
 #endif
 #endif
-
-  gchar signal_color_bad[] = "#e00000";
-  gchar signal_color_weak[] = "#e05200";
-  gchar signal_color_good[] = "#e6ff00";
-  gchar signal_color_strong[] = "#06c500";
   
   /* state = 0 -> no link, =-1 -> error */
   DBG ("Entered wavelan_set_state, state = %d", state);
