@@ -1,3 +1,20 @@
+0.6.2
+======
+- Fix ISO C90 forbids mixed declarations and code
+- Update configure.ac.in syntax and enable debug when building from git
+- Create READEM.md. Update configure.ac.in
+- Add basic GitLab pipeline
+- Update .gitignore, fix configure scripts
+- Update URLs from goodies.x.o to docs.x.o (Bug #16181)
+- Fix build with panel 4.15
+- Make build less verbose
+- s/http/https
+- Translation Updates:
+  Albanian, Armenian (Armenia), Belarusian, Bulgarian, Chinese
+  (Taiwan), Eastern Armenian, English (Canada), French, Galician,
+  Greek, Hebrew, Hungarian, Polish, Slovak, Slovenian, Spanish,
+  Turkish, Uyghur
+
 0.6.1 (2019/09/13):
 ---------
   * Preferences: Improve spacing (bug #14679)
