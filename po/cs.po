@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Alois Nešpor <info@aloisnespor.info>, 2014
-# Michal Várady <miko.vaji@gmail.com>, 2014-2015
+# Michal Várady <miko.vaji@gmail.com>, 2014-2015,2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
+"PO-Revision-Date: 2020-12-30 21:03+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/xfce/xfce-panel-plugins/language/cs/)\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgstr "Automaticky skrýt v nepřítomnosti _zařízení"
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
-msgstr "Poznámka: Pokud nebude nalezeno zařízení, bude obtížné odebrat nebo nastavit tento zásuvný modul."
+msgstr "Poznámka: Pokud nebude nalezeno zařízení, bude obtížné odebrat nebo konfigurovat tento zásuvný modul."
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
