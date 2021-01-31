@@ -11,6 +11,7 @@ configure
 config.*
 configure.in
 intltool*
+m4/
 mkinstalldirs
 missing
 compile
@@ -27,4 +28,8 @@ configure.ac
 libtool
 panel-plugin/libwavelan.la
 panel-plugin/xfce4-wavelan-plugin
+po/.intltool-merge-cache*
+po/*.gmo
+po/Makefile.in.in
+po/POTFILES
 
