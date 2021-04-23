@@ -21,7 +21,7 @@ AC_CONFIG_MACRO_DIRS([m4])
 
 dnl Initial automake
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
-AM_CONFIG_HEADER([config.h])
+AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE()
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
@@ -34,7 +34,6 @@ LT_PREREQ([2.2.6])
 LT_INIT([disable-static])
 
 dnl Check for standard header files
-AC_HEADER_STDC()
 AC_CHECK_HEADERS([math.h stdio.h stdlib.h string.h sys/types.h \
                   sys/socket.h sys/ioctl.h linux/types.h linux/if.h \
                   linux/wireless.h string.h \
