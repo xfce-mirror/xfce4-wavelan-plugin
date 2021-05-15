@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2021-05-07 21:21+0000\n"
+"PO-Revision-Date: 2021-05-15 16:43+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -30,13 +30,13 @@ msgstr "Sin señal portadora"
 #: ../panel-plugin/wavelan.c:173
 #, c-format
 msgid "%s: %d%s at %dMb/s"
-msgstr "%s: %d %s a %d Mb/s"
+msgstr "%s: %d%s a %d Mb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:176
 #, c-format
 msgid "%d%s at %dMb/s"
-msgstr "%d %s a %d Mb/s"
+msgstr "%d%s a %d Mb/s"
 
 #: ../panel-plugin/wavelan.c:180
 msgid "No device configured"
@@ -44,7 +44,7 @@ msgstr "No se ha configurado ningún dispositivo"
 
 #: ../panel-plugin/wavelan.c:501
 msgid "Wavelan Plugin Options"
-msgstr "Opciones del complemento Wavelan"
+msgstr "Opciones de Wavelan"
 
 #: ../panel-plugin/wavelan.c:516
 msgid "Properties"
@@ -60,21 +60,21 @@ msgstr "_Ocultar automáticamente al estar sin conexión"
 
 #: ../panel-plugin/wavelan.c:559
 msgid "Autohide when no _hardware present"
-msgstr "Ocultar automáticamente cuando no haya _hardware presente"
+msgstr "Ocultar automáticamente si no se _detecta ningún dispositivo"
 
 #: ../panel-plugin/wavelan.c:570
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
-msgstr "Aviso: Esta opción dificultará la eliminación o la configuración del complemento si no se detecta ningún dispositivo."
+msgstr "Nota: esta opción dificultará la eliminación o la configuración del complemento si no se detecta ningún dispositivo."
 
 #: ../panel-plugin/wavelan.c:578
 msgid "Enable sig_nal quality colors"
-msgstr "Activar colores para la calidad de la se_ñal"
+msgstr "_Activar colores para la calidad de la señal"
 
 #: ../panel-plugin/wavelan.c:589
 msgid "Show _icon"
-msgstr "Mostrar el _icono"
+msgstr "_Mostrar el icono"
 
 #: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
@@ -82,7 +82,7 @@ msgstr "Consultar el estado de una red inalámbrica"
 
 #: ../panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
-msgstr "No existe ningún dispositivo WaveLAN"
+msgstr "No existe el dispositivo inalámbrico especificado"
 
 #: ../panel-plugin/wi_common.c:41
 msgid "Invalid parameter"
