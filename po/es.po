@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2021-05-15 16:43+0000\n"
+"PO-Revision-Date: 2021-05-22 08:29+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "_Mostrar el icono"
 
 #: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
-msgstr "Consultar el estado de una red inalámbrica"
+msgstr "Muestra el estado de una red inalámbrica"
 
 #: ../panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
