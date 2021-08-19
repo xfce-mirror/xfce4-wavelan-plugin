@@ -31,6 +31,7 @@
 
 #include <libxfce4util/libxfce4util.h>
 
+#include <unistd.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -79,17 +80,9 @@ wi_open(const char *interface)
   return(device);
 }
 
-static void
-close(int fd)
-{
-  shutdown(fd, SHUT_RDWR);
-}
-
 void
 wi_close(struct wi_device *device)
 {
-  g_return_if_fail(device != NULL);
-
   close(device->socket);
   g_free(device);
 }
