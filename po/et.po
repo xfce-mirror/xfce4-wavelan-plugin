@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Priit Jõerüüt <transifex@joeruut.com>, 2021
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-05 00:32+0100\n"
+"PO-Revision-Date: 2021-09-14 20:24+0000\n"
+"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>\n"
+"Language-Team: Estonian (http://www.transifex.com/xfce/xfce-panel-plugins/language/et/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: et\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
+msgid "No carrier signal"
+msgstr "Teenuse signaal puudub"
+
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:173
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr "%s: %d%s kiirusega %dMb/s"
+
+#. Translators: quality quality_unit at rate Mb/s
+#: ../panel-plugin/wavelan.c:176
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr "%d%s kiirusega %dMb/s"
+
+#: ../panel-plugin/wavelan.c:180
+msgid "No device configured"
+msgstr "Seade on kirjeldamata"
+
+#: ../panel-plugin/wavelan.c:501
+msgid "Wavelan Plugin Options"
+msgstr "Traadita võrguseadme jälgija eelistused"
+
+#: ../panel-plugin/wavelan.c:516
+msgid "Properties"
+msgstr "Omadused"
+
+#: ../panel-plugin/wavelan.c:527
+msgid "Interface"
+msgstr "Võrguliides"
+
+#: ../panel-plugin/wavelan.c:549
+msgid "_Autohide when offline"
+msgstr "Peida automaatselt, kui _võrguühendus puudub"
+
+#: ../panel-plugin/wavelan.c:559
+msgid "Autohide when no _hardware present"
+msgstr "Peida automaatselt, kui arvutis ei leidu vastavat _raudvara"
+
+#: ../panel-plugin/wavelan.c:570
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Märkus: kui raudvara puudumisel peidad selle vidina automaatselt, siis on sul raske seda hiljem seadistada ja eemaldada."
+
+#: ../panel-plugin/wavelan.c:578
+msgid "Enable sig_nal quality colors"
+msgstr "Märgista värvidega _signaali kvaliteeti"
+
+#: ../panel-plugin/wavelan.c:589
+msgid "Show _icon"
+msgstr "Näita _ikooni"
+
+#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
+msgid "View the status of a wireless network"
+msgstr "Vaata traadita võrgu olekut"
+
+#: ../panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr "Sellist traadita võrguseadet ei leidu"
+
+#: ../panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr "Vigane parameeter"
+
+#: ../panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "Teadmata viga"
+
+#: ../panel-plugin/wi_linux.c:150
+msgid "Unknown"
+msgstr "Pole teada"
+
+#: ../panel-plugin/wavelan.desktop.in.h:1
+msgid "Wavelan"
+msgstr "Traadita võrguseade"
