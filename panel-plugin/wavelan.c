@@ -57,6 +57,8 @@ typedef struct
   gboolean show_icon;
 
   int size;
+  char* icon_str;
+  char* icon_str_prev;
   GtkOrientation orientation;
 
   GtkWidget *box;
@@ -153,8 +155,25 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
 #endif
 
   /* hide icon */
-  if (wavelan->show_icon)
-    gtk_widget_show(wavelan->image);
+  if (wavelan->show_icon) {
+     /* set image */
+	wavelan->icon_str_prev = wavelan->icon_str;
+   if (state > 70) {
+	 wavelan->icon_str = "network-wireless-signal-excellent";
+   } else if (state > 55) {
+	 wavelan->icon_str = "network-wireless-signal-good";
+   } else if (state > 40) {
+	 wavelan->icon_str = "network-wireless-signal-weak";
+   } else if (state > 0) {
+	 wavelan->icon_str = "network-wireless-signal-low";
+   } else {
+	 wavelan->icon_str = "network-wireless-signal-none";
+   }
+   // if icon_str is not updated, do not update the icon.
+   // This is because xfce_panel_image_set_from_source causes a momentary flicker.
+   if ( strcmp(wavelan->icon_str_prev, wavelan->icon_str) != 0 )
+	 xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), wavelan->icon_str);
+    gtk_widget_show(wavelan->image);}
   else
     gtk_widget_hide(wavelan->image);
 
@@ -361,7 +380,8 @@ wavelan_new(XfcePanelPlugin *plugin)
       GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (wavelan->signal))),
       GTK_STYLE_PROVIDER (wavelan->css_provider),
       GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-  wavelan->image = GTK_WIDGET(xfce_panel_image_new_from_source("network-wireless"));
+  wavelan->image = GTK_WIDGET(xfce_panel_image_new_from_source("network-wireless-signal-none"));
+  wavelan->icon_str = "network-wireless-signal-none";
 
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->image), FALSE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->signal), FALSE, FALSE, 0);
