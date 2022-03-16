@@ -57,6 +57,7 @@ typedef struct
   gboolean show_icon;
 
   int size;
+  int signal_strength;
   GtkOrientation orientation;
 
   GtkWidget *box;
@@ -72,8 +73,52 @@ typedef struct
   
 } t_wavelan;
 
+enum icon_values {
+    OFFLINE = 0,
+    EXCELLENT,
+    GOOD,
+    OK,
+    WEAK,
+    NONE
+};
+
 static void wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan);
 static void wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_wavelan *wavelan);
+static char* wi_icons(enum icon_values strength);
+
+static char*
+wi_icons(enum icon_values strength)
+{
+  GtkIconTheme* theme = gtk_icon_theme_get_default();
+  switch(strength)
+    {
+    case EXCELLENT:  // IF: fallback in case non-symbolic themes aren't present
+      if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-excellent"))
+        return "network-wireless-signal-excellent";
+      return "network-wireless-signal-excellent-symbolic";
+    case GOOD:
+      if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-good"))
+        return "network-wireless-signal-good";
+      return "network-wireless-signal-good-symbolic";
+    case OK:
+      if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-weak"))
+        return "network-wireless-signal-weak";
+      return "network-wireless-signal-ok-symbolic";
+    case WEAK:
+      if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-low"))
+        return "network-wireless-signal-low";
+      return "network-wireless-signal-weak-symbolic";
+    case NONE:
+      if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-none"))
+        return "network-wireless-signal-none";
+      return "network-wireless-signal-none-symbolic";
+    case OFFLINE:
+    default:
+      if(gtk_icon_theme_has_icon(theme, "network-wireless-offline"))
+        return "network-wireless-offline";
+      return "network-wireless-offline-symbolic";
+    }
+}
 
 static void
 wavelan_set_state(t_wavelan *wavelan, gint state)
@@ -107,11 +152,11 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
 
   if (wavelan->signal_colors) {
      /* set color */
-   if (state > 70)
+   if (state > 80)
     gdk_rgba_parse(&color, signal_color_strong);
    else if (state > 55)
     gdk_rgba_parse(&color, signal_color_good);
-   else if (state > 40)
+   else if (state > 30)
     gdk_rgba_parse(&color, signal_color_weak);
    else
     gdk_rgba_parse(&color, signal_color_bad);
@@ -153,8 +198,25 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
 #endif
 
   /* hide icon */
-  if (wavelan->show_icon)
-    gtk_widget_show(wavelan->image);
+  if (wavelan->show_icon) {
+     /* set image */
+    int signal_strength_prev = wavelan->signal_strength;
+    if (state > 80) {
+      wavelan->signal_strength = EXCELLENT;
+    } else if (state > 55) {
+       wavelan->signal_strength = GOOD;
+    } else if (state > 30) {
+       wavelan->signal_strength = OK;
+    } else if (state > 5) {
+       wavelan->signal_strength = WEAK;
+    } else {
+       wavelan->signal_strength = NONE;
+    }
+    // if signal_strength is not updated, do not update the icon.
+    // This is because xfce_panel_image_set_from_source causes a momentary flicker.
+  if (signal_strength_prev != wavelan->signal_strength)
+  xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), wi_icons(wavelan->signal_strength));
+    gtk_widget_show(wavelan->image);}
   else
     gtk_widget_hide(wavelan->image);
 
@@ -361,7 +423,9 @@ wavelan_new(XfcePanelPlugin *plugin)
       GTK_STYLE_CONTEXT (gtk_widget_get_style_context (GTK_WIDGET (wavelan->signal))),
       GTK_STYLE_PROVIDER (wavelan->css_provider),
       GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-  wavelan->image = GTK_WIDGET(xfce_panel_image_new_from_source("network-wireless"));
+
+  wavelan->signal_strength = OFFLINE;
+  wavelan->image = GTK_WIDGET(xfce_panel_image_new_from_source(wi_icons(wavelan->signal_strength)));
 
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->image), FALSE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->signal), FALSE, FALSE, 0);
