@@ -79,45 +79,41 @@ enum icon_values {
     GOOD,
     OK,
     WEAK,
-    NONE
+    NONE,
+    ICON_NUM
 };
+
+GtkSettings* settings;
+char* strength_to_icon[ICON_NUM];
+int theme_changed;
 
 static void wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan);
 static void wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_wavelan *wavelan);
-static char* wi_icons(enum icon_values strength);
+static void set_wireless_icons(void);
 
-static char*
-wi_icons(enum icon_values strength)
+static void
+set_wireless_icons(void) //triggered when theme is changed
 {
   GtkIconTheme* theme = gtk_icon_theme_get_default();
-  switch(strength)
-    {
-    case EXCELLENT:  // IF: fallback in case non-symbolic themes aren't present
-      if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-excellent"))
-        return "network-wireless-signal-excellent";
-      return "network-wireless-signal-excellent-symbolic";
-    case GOOD:
-      if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-good"))
-        return "network-wireless-signal-good";
-      return "network-wireless-signal-good-symbolic";
-    case OK:
-      if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-weak"))
-        return "network-wireless-signal-weak";
-      return "network-wireless-signal-ok-symbolic";
-    case WEAK:
-      if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-low"))
-        return "network-wireless-signal-low";
-      return "network-wireless-signal-weak-symbolic";
-    case NONE:
-      if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-none"))
-        return "network-wireless-signal-none";
-      return "network-wireless-signal-none-symbolic";
-    case OFFLINE:
-    default:
-      if(gtk_icon_theme_has_icon(theme, "network-wireless-offline"))
-        return "network-wireless-offline";
-      return "network-wireless-offline-symbolic";
-    }
+  if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-excellent"))
+  {
+    strength_to_icon[EXCELLENT] = "network-wireless-signal-excellent";
+    strength_to_icon[GOOD] = "network-wireless-signal-good";
+    strength_to_icon[OK] = "network-wireless-signal-weak";
+    strength_to_icon[WEAK] = "network-wireless-signal-low";
+    strength_to_icon[NONE] = "network-wireless-signal-none";
+    strength_to_icon[OFFLINE] = "network-wireless-offline";
+  }
+  else // fallback in case non-symbolic themes aren't present
+  {
+    strength_to_icon[EXCELLENT] = "network-wireless-signal-excellent-symbolic";
+    strength_to_icon[GOOD] = "network-wireless-signal-good-symbolic";
+    strength_to_icon[OK] = "network-wireless-signal-ok-symbolic";
+    strength_to_icon[WEAK] = "network-wireless-signal-weak-symbolic";
+    strength_to_icon[NONE] = "network-wireless-signal-none-symbolic";
+    strength_to_icon[OFFLINE] = "network-wireless-offline-symbolic";
+  }
+  theme_changed = 1;
 }
 
 static void
@@ -214,8 +210,9 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
     }
     // if signal_strength is not updated, do not update the icon.
     // This is because xfce_panel_image_set_from_source causes a momentary flicker.
-  if (signal_strength_prev != wavelan->signal_strength)
-  xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), wi_icons(wavelan->signal_strength));
+  if (signal_strength_prev != wavelan->signal_strength || theme_changed) {
+  xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength]);
+  theme_changed = 0; }
     gtk_widget_show(wavelan->image);}
   else
     gtk_widget_hide(wavelan->image);
@@ -424,8 +421,11 @@ wavelan_new(XfcePanelPlugin *plugin)
       GTK_STYLE_PROVIDER (wavelan->css_provider),
       GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
+  settings = gtk_settings_get_default();
+  g_signal_connect(settings, "notify::gtk-icon-theme-name", G_CALLBACK(set_wireless_icons), NULL);
+  set_wireless_icons(); // to initialize strength_to_icon
   wavelan->signal_strength = OFFLINE;
-  wavelan->image = GTK_WIDGET(xfce_panel_image_new_from_source(wi_icons(wavelan->signal_strength)));
+  wavelan->image = GTK_WIDGET(xfce_panel_image_new_from_source(strength_to_icon[wavelan->signal_strength]));
 
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->image), FALSE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->signal), FALSE, FALSE, 0);
