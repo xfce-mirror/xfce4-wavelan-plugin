@@ -90,6 +90,7 @@ int theme_changed;
 static void wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan);
 static void wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_wavelan *wavelan);
 static void set_wireless_icons(void);
+static void wavelan_update_icon(t_wavelan *wavelan, gint state);
 
 static void
 set_wireless_icons(void) //triggered when theme is changed
@@ -114,6 +115,33 @@ set_wireless_icons(void) //triggered when theme is changed
     strength_to_icon[OFFLINE] = "network-wireless-offline-symbolic";
   }
   theme_changed = 1;
+}
+
+static void
+wavelan_update_icon(t_wavelan *wavelan, gint state)
+{
+  if (wavelan->show_icon) {
+     /* set image */
+    int signal_strength_prev = wavelan->signal_strength;
+    if (state > 80) {
+      wavelan->signal_strength = EXCELLENT;
+    } else if (state > 55) {
+       wavelan->signal_strength = GOOD;
+    } else if (state > 30) {
+       wavelan->signal_strength = OK;
+    } else if (state > 5) {
+       wavelan->signal_strength = WEAK;
+    } else {
+       wavelan->signal_strength = NONE;
+    }
+    // if signal_strength is not updated, do not update the icon.
+    // This is because xfce_panel_image_set_from_source causes a momentary flicker.
+  if (signal_strength_prev != wavelan->signal_strength || theme_changed) {
+  xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength]);
+  theme_changed = 0; }
+    gtk_widget_show(wavelan->image);}
+  else
+    gtk_widget_hide(wavelan->image);
 }
 
 static void
@@ -193,29 +221,7 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
   g_free(css);
 #endif
 
-  /* hide icon */
-  if (wavelan->show_icon) {
-     /* set image */
-    int signal_strength_prev = wavelan->signal_strength;
-    if (state > 80) {
-      wavelan->signal_strength = EXCELLENT;
-    } else if (state > 55) {
-       wavelan->signal_strength = GOOD;
-    } else if (state > 30) {
-       wavelan->signal_strength = OK;
-    } else if (state > 5) {
-       wavelan->signal_strength = WEAK;
-    } else {
-       wavelan->signal_strength = NONE;
-    }
-    // if signal_strength is not updated, do not update the icon.
-    // This is because xfce_panel_image_set_from_source causes a momentary flicker.
-  if (signal_strength_prev != wavelan->signal_strength || theme_changed) {
-  xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength]);
-  theme_changed = 0; }
-    gtk_widget_show(wavelan->image);}
-  else
-    gtk_widget_hide(wavelan->image);
+wavelan_update_icon(wavelan, state); // update's wavelan's icon to reflect state
 
   /* hide if no network & autohide or if no card found */
   if (wavelan->autohide && state == 0)
