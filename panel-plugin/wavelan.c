@@ -49,7 +49,7 @@ typedef struct
   struct wi_device *device;
   guint timer_id;
 
-  guint state;
+  gint state; // can be -1 for OFFLINE
 
   gboolean autohide;
   gboolean autohide_missing;
@@ -83,17 +83,15 @@ enum icon_values {
     ICON_NUM
 };
 
-GtkSettings* settings;
 char* strength_to_icon[ICON_NUM];
-int theme_changed;
 
 static void wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan);
 static void wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_wavelan *wavelan);
-static void set_wireless_icons(void);
-static void wavelan_update_icon(t_wavelan *wavelan, gint state);
+static void wavelan_init_icons(t_wavelan *wavelan);
+static void wavelan_update_icon(t_wavelan *wavelan);
 
 static void
-set_wireless_icons(void) //triggered when theme is changed
+wavelan_init_icons(t_wavelan *wavelan) //triggered when theme is changed
 {
   GtkIconTheme* theme = gtk_icon_theme_get_default();
   if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-excellent"))
@@ -114,34 +112,36 @@ set_wireless_icons(void) //triggered when theme is changed
     strength_to_icon[NONE] = "network-wireless-signal-none-symbolic";
     strength_to_icon[OFFLINE] = "network-wireless-offline-symbolic";
   }
-  theme_changed = 1;
+	if(wavelan->signal_strength != OFFLINE) // only wavelan_new sets offline
+  xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength]);
 }
 
 static void
-wavelan_update_icon(t_wavelan *wavelan, gint state)
+wavelan_update_icon(t_wavelan *wavelan)
 {
-  if (wavelan->show_icon) {
-     /* set image */
-    int signal_strength_prev = wavelan->signal_strength;
-    if (state > 80) {
-      wavelan->signal_strength = EXCELLENT;
-    } else if (state > 55) {
-       wavelan->signal_strength = GOOD;
-    } else if (state > 30) {
-       wavelan->signal_strength = OK;
-    } else if (state > 5) {
-       wavelan->signal_strength = WEAK;
-    } else {
-       wavelan->signal_strength = NONE;
-    }
-    // if signal_strength is not updated, do not update the icon.
-    // This is because xfce_panel_image_set_from_source causes a momentary flicker.
-  if (signal_strength_prev != wavelan->signal_strength || theme_changed) {
+  if (!(wavelan->show_icon)) {
+		gtk_widget_hide(wavelan->image);
+		return;
+	}
+
+	//set image
+  int signal_strength_prev = wavelan->signal_strength;
+  if (wavelan->state > 80) {
+    wavelan->signal_strength = EXCELLENT;
+  } else if (wavelan->state > 55) {
+     wavelan->signal_strength = GOOD;
+  } else if (wavelan->state > 30) {
+     wavelan->signal_strength = OK;
+  } else if (wavelan->state > 5) {
+     wavelan->signal_strength = WEAK;
+  } else {
+     wavelan->signal_strength = NONE;
+  }
+  // if signal_strength is not updated, do not update the icon.
+  // This is because xfce_panel_image_set_from_source causes a momentary flicker.
+  if (signal_strength_prev != wavelan->signal_strength)
   xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength]);
-  theme_changed = 0; }
-    gtk_widget_show(wavelan->image);}
-  else
-    gtk_widget_hide(wavelan->image);
+  gtk_widget_show(wavelan->image);
 }
 
 static void
@@ -221,7 +221,7 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
   g_free(css);
 #endif
 
-wavelan_update_icon(wavelan, state); // update's wavelan's icon to reflect state
+wavelan_update_icon(wavelan); // update's wavelan's icon to reflect state
 
   /* hide if no network & autohide or if no card found */
   if (wavelan->autohide && state == 0)
@@ -427,10 +427,10 @@ wavelan_new(XfcePanelPlugin *plugin)
       GTK_STYLE_PROVIDER (wavelan->css_provider),
       GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-  settings = gtk_settings_get_default();
-  g_signal_connect(settings, "notify::gtk-icon-theme-name", G_CALLBACK(set_wireless_icons), NULL);
-  set_wireless_icons(); // to initialize strength_to_icon
+  GtkSettings* settings = gtk_settings_get_default();
+  g_signal_connect_swapped(settings, "notify::gtk-icon-theme-name", G_CALLBACK(wavelan_init_icons), wavelan);
   wavelan->signal_strength = OFFLINE;
+  wavelan_init_icons(wavelan); // to initialize strength_to_icon
   wavelan->image = GTK_WIDGET(xfce_panel_image_new_from_source(strength_to_icon[wavelan->signal_strength]));
 
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->image), FALSE, FALSE, 0);
