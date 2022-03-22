@@ -129,15 +129,15 @@ wavelan_update_icon(t_wavelan *wavelan)
   }
 
   /* set image */
-  if wavelan->state > 80 {
+  if (wavelan->state > 80) {
     wavelan->signal_strength = EXCELLENT;
-  } else if wavelan->state > 55 {
+  } else if (wavelan->state > 55) {
      wavelan->signal_strength = GOOD;
-  } else if wavelan->state > 30 {
+  } else if (wavelan->state > 30) {
      wavelan->signal_strength = OK;
-  } else if wavelan->state > 5 {
+  } else if (wavelan->state > 5) {
      wavelan->signal_strength = WEAK;
-  } else if wavelan->state >= 0 {
+  } else if (wavelan->state >= 0) {
      wavelan->signal_strength = NONE;
   } else {
     wavelan->signal_strength = OFFLINE; /* for disconnected interfaces */
