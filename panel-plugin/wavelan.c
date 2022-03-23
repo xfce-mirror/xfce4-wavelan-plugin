@@ -129,19 +129,19 @@ wavelan_update_icon(t_wavelan *wavelan)
   }
 
   /* set image */
-  if (wavelan->state > 80) {
+  if (wavelan->state > 80)
     wavelan->signal_strength = EXCELLENT;
-  } else if (wavelan->state > 55) {
-     wavelan->signal_strength = GOOD;
-  } else if (wavelan->state > 30) {
-     wavelan->signal_strength = OK;
-  } else if (wavelan->state > 5) {
-     wavelan->signal_strength = WEAK;
-  } else if (wavelan->state >= 0) {
-     wavelan->signal_strength = NONE;
-  } else {
+  else if (wavelan->state > 55)
+    wavelan->signal_strength = GOOD;
+  else if (wavelan->state > 30)
+    wavelan->signal_strength = OK;
+  else if (wavelan->state > 5)
+    wavelan->signal_strength = WEAK;
+  else if (wavelan->state >= 0)
+    wavelan->signal_strength = NONE;
+  else
     wavelan->signal_strength = OFFLINE; /* for disconnected interfaces */
-  }
+
   /* if signal_strength is not updated, do not update the icon.
   This is because xfce_panel_image_set_from_source causes a momentary flicker. */
   if (signal_strength_prev != wavelan->signal_strength)
