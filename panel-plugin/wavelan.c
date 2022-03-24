@@ -95,7 +95,8 @@ static void
 wavelan_refresh_icons(t_wavelan *wavelan)
 {
   GtkIconTheme* theme = gtk_icon_theme_get_default();
-  if(gtk_icon_theme_has_icon(theme, "network-wireless-signal-excellent"))
+
+  if (gtk_icon_theme_has_icon(theme, "network-wireless-signal-excellent"))
   {
     strength_to_icon[EXCELLENT] = "network-wireless-signal-excellent";
     strength_to_icon[GOOD] = "network-wireless-signal-good";
@@ -113,22 +114,23 @@ wavelan_refresh_icons(t_wavelan *wavelan)
     strength_to_icon[NONE] = "network-wireless-signal-none-symbolic";
     strength_to_icon[OFFLINE] = "network-wireless-offline-symbolic";
   }
+
   strength_to_icon[INIT] = strength_to_icon[OFFLINE];
-  if(wavelan->signal_strength != INIT) /* only wavelan_new sets INIT */
+
+  if (wavelan->signal_strength != INIT) /* only wavelan_new sets INIT */
     xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength]);
 }
 
 static void
 wavelan_update_icon(t_wavelan *wavelan)
 {
-    int signal_strength_prev = wavelan->signal_strength;
+  int signal_strength_prev = wavelan->signal_strength;
 
-  if (!(wavelan->show_icon)) {
+  if (!wavelan->show_icon) {
     gtk_widget_hide(wavelan->image);
     return;
   }
 
-  /* set image */
   if (wavelan->state > 80)
     wavelan->signal_strength = EXCELLENT;
   else if (wavelan->state > 55)
@@ -140,10 +142,12 @@ wavelan_update_icon(t_wavelan *wavelan)
   else if (wavelan->state >= 0)
     wavelan->signal_strength = NONE;
   else
-    wavelan->signal_strength = OFFLINE; /* for disconnected interfaces */
+    wavelan->signal_strength = OFFLINE; /* also for disconnected interfaces */
 
-  /* if signal_strength is not updated, do not update the icon.
-  This is because xfce_panel_image_set_from_source causes a momentary flicker. */
+  /*
+   * If signal_strength is not updated, do not update the icon.
+   * This is because xfce_panel_image_set_from_source causes a momentary flicker.
+   */
   if (signal_strength_prev != wavelan->signal_strength)
     xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength]);
 
@@ -152,7 +156,7 @@ wavelan_update_icon(t_wavelan *wavelan)
 
 static void
 wavelan_set_state(t_wavelan *wavelan, gint state)
-{
+{  
   GdkRGBA color;
   gchar signal_color_bad[] = "#e00000";
   gchar signal_color_weak[] = "#e05200";
@@ -166,7 +170,7 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
     cssminsizes = "min-width: 0px; min-height: 4px";
 #endif
 #endif
-
+  
   /* state = 0 -> no link, =-1 -> error */
   DBG ("Entered wavelan_set_state, state = %d", state);
 
@@ -227,7 +231,8 @@ wavelan_set_state(t_wavelan *wavelan, gint state)
   g_free(css);
 #endif
 
-wavelan_update_icon(wavelan); /* update's wavelan's icon to reflect state */
+  /* update icon to reflect state */
+  wavelan_update_icon(wavelan);
 
   /* hide if no network & autohide or if no card found */
   if (wavelan->autohide && state == 0)
@@ -246,7 +251,7 @@ wavelan_timer(gpointer data)
   t_wavelan *wavelan = (t_wavelan *)data;
 
   TRACE ("Entered wavelan_timer");
-
+  
   if (wavelan->device != NULL) {
     int result;
 
@@ -301,7 +306,7 @@ static void
 wavelan_reset(t_wavelan *wavelan)
 {
   TRACE ("Entered wavelan_reset");
-
+  
   if (wavelan->timer_id != 0) {
     g_source_remove(wavelan->timer_id);
     wavelan->timer_id = 0;
@@ -356,9 +361,9 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
   char *file;
   XfceRc *rc;
   const char *s;
-
+  
   TRACE ("Entered wavelan_read_config");
-
+  
   if ((file = xfce_panel_plugin_lookup_rc_file (plugin)) != NULL)
   {
     rc = xfce_rc_simple_open (file, TRUE);
@@ -366,11 +371,11 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
 
     if (rc != NULL)
     {
-      if ((s = xfce_rc_read_entry (rc, "Interface", NULL)) != NULL)
+      if ((s = xfce_rc_read_entry (rc, "Interface", NULL)) != NULL) 
       {
         wavelan->interface = g_strdup (s);
-      }
-
+      } 
+      
       wavelan->autohide = xfce_rc_read_bool_entry (rc, "Autohide", FALSE);
       wavelan->autohide_missing = xfce_rc_read_bool_entry(rc, "AutohideMissing", FALSE);
       wavelan->signal_colors = xfce_rc_read_bool_entry(rc, "SignalColors", FALSE);
@@ -383,14 +388,14 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
     wavelan->interface = g_list_first(interfaces)->data;
     g_list_free(interfaces);
   }
-
+  
   wavelan_reset(wavelan);
 }
 
 static gboolean tooltip_cb( GtkWidget *widget, gint x, gint y, gboolean keyboard, GtkTooltip * tooltip, t_wavelan *wavelan)
 {
-  gtk_tooltip_set_custom( tooltip, wavelan->tooltip_text );
-  return TRUE;
+	gtk_tooltip_set_custom( tooltip, wavelan->tooltip_text );
+	return TRUE;
 }
 
 static t_wavelan *
@@ -411,7 +416,7 @@ wavelan_new(XfcePanelPlugin *plugin)
   wavelan->state = -2;
 
   wavelan->plugin = plugin;
-
+  
   wavelan->ebox = gtk_event_box_new();
   gtk_widget_set_has_tooltip(wavelan->ebox, TRUE);
   gtk_event_box_set_visible_window(GTK_EVENT_BOX(wavelan->ebox), FALSE);
@@ -449,7 +454,7 @@ wavelan_new(XfcePanelPlugin *plugin)
   gtk_widget_show_all(wavelan->box);
   gtk_container_add(GTK_CONTAINER(wavelan->ebox), GTK_WIDGET(wavelan->box));
   gtk_widget_show_all(wavelan->ebox);
-
+  
   wavelan_read_config(plugin, wavelan);
 
   wavelan_set_state(wavelan, wavelan->state);
@@ -461,7 +466,7 @@ static void
 wavelan_free(XfcePanelPlugin* plugin, t_wavelan *wavelan)
 {
   TRACE ("Entered wavelan_free");
-
+  
   /* free tooltips */
   g_object_unref(G_OBJECT(wavelan->tooltip_text));
 
@@ -482,16 +487,16 @@ wavelan_write_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
 {
   char *file;
   XfceRc *rc;
-
+  
   TRACE ("Entered wavelan_write_config");
-
+  
   if (!(file = xfce_panel_plugin_save_location (plugin, TRUE)))
   {
     return;
   }
-
+   
   rc = xfce_rc_simple_open (file, FALSE);
-
+  
   g_free (file);
 
   if (!rc)
@@ -507,7 +512,7 @@ wavelan_write_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
   xfce_rc_write_bool_entry (rc, "ShowIcon", wavelan->show_icon);
 
   xfce_rc_close(rc);
-
+  
 }
 
 static void
@@ -563,7 +568,7 @@ wavelan_autohide_changed(GtkToggleButton *button, t_wavelan *wavelan)
 }
 
 /* autohide on missing callback */
-static void
+static void 
 wavelan_autohide_missing_changed(GtkToggleButton *button, t_wavelan *wavelan)
 {
   TRACE ("Entered wavelan_autohide_missing_changed");
@@ -609,7 +614,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   GList     *interfaces, *lp;
 
   TRACE ("Entered wavelan_create_options");
-
+  
   dlg = xfce_titled_dialog_new_with_buttons (_("Wavelan Plugin Options"),
               GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
               GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -624,16 +629,16 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
                     wavelan);
 
   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Properties"));
-
+              
   vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
   gtk_widget_show(vbox);
   gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG (dlg))), vbox,
                       TRUE, TRUE, 0);
-
+  
   hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
   gtk_widget_show(hbox);
-
+  
   label = gtk_label_new(_("Interface"));
   gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
   gtk_widget_show(label);
@@ -664,13 +669,13 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   gtk_widget_show(autohide);
   gtk_box_pack_start(GTK_BOX(hbox), autohide, TRUE, TRUE, 0);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
-
+  
   hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
   gtk_widget_show(hbox);
   autohide_missing = gtk_check_button_new_with_mnemonic(_("Autohide when no _hardware present"));
-  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(autohide_missing),
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(autohide_missing), 
       wavelan->autohide_missing);
-  g_signal_connect(autohide_missing, "toggled",
+  g_signal_connect(autohide_missing, "toggled", 
       G_CALLBACK(wavelan_autohide_missing_changed), wavelan);
   gtk_widget_show(autohide_missing);
   gtk_box_pack_start(GTK_BOX(hbox), autohide_missing, TRUE, TRUE, 0);
@@ -689,9 +694,9 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
   gtk_widget_show(hbox);
   signal_colors = gtk_check_button_new_with_mnemonic(_("Enable sig_nal quality colors"));
-  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(signal_colors),
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(signal_colors), 
       wavelan->signal_colors);
-  g_signal_connect(signal_colors, "toggled",
+  g_signal_connect(signal_colors, "toggled", 
       G_CALLBACK(wavelan_signal_colors_changed), wavelan);
   gtk_widget_show(signal_colors);
   gtk_box_pack_start(GTK_BOX(hbox), signal_colors, TRUE, TRUE, 0);
@@ -700,9 +705,9 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
   gtk_widget_show(hbox);
   show_icon = gtk_check_button_new_with_mnemonic(_("Show _icon"));
-  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(show_icon),
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(show_icon), 
       wavelan->show_icon);
-  g_signal_connect(show_icon, "toggled",
+  g_signal_connect(show_icon, "toggled", 
       G_CALLBACK(wavelan_show_icon_changed), wavelan);
   gtk_widget_show(show_icon);
   gtk_box_pack_start(GTK_BOX(hbox), show_icon, TRUE, TRUE, 0);
@@ -713,7 +718,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   g_list_free (interfaces);
 
   gtk_widget_show (dlg);
-
+  
 }
 
 static void
@@ -750,17 +755,17 @@ wavelan_construct (XfcePanelPlugin *plugin)
 
   g_signal_connect (plugin, "size-changed",
                     G_CALLBACK (wavelan_set_size), wavelan);
-
+ 
   g_signal_connect (plugin, "free-data",
                     G_CALLBACK (wavelan_free), wavelan);
 
   g_signal_connect (plugin, "save",
                     G_CALLBACK (wavelan_write_config), wavelan);
-
+  
   xfce_panel_plugin_menu_show_configure (plugin);
   g_signal_connect (plugin, "configure-plugin",
                     G_CALLBACK (wavelan_create_options), wavelan);
-
+  
   xfce_panel_plugin_menu_show_about(plugin);
   g_signal_connect (plugin, "about", G_CALLBACK (wavelan_show_about), wavelan);
 }
@@ -768,18 +773,18 @@ wavelan_construct (XfcePanelPlugin *plugin)
 #if 0
 int main(int argc, char** argv)
 {
-  struct wi_device *device;
-  struct wi_stats stats;
-  if ((device = wi_open(argv[1])) == NULL)
-    errx(1, "failed to open %s\n", argv[1]);
+	struct wi_device *device;
+	struct wi_stats stats;
+	if ((device = wi_open(argv[1])) == NULL)
+		errx(1, "failed to open %s\n", argv[1]);
 
 
-  if (wi_query(device, &stats) != WI_OK)
-    errx(2, "wi_query failed\n");
+	if (wi_query(device, &stats) != WI_OK)
+		errx(2, "wi_query failed\n");
 
-  printf("NWID:%s, quality:%d%%, rate:%dMb/s\n", stats.ws_netname, stats.ws_quality, stats.ws_rate);
-  wi_close(device);
-  return 0;
+	printf("NWID:%s, quality:%d%%, rate:%dMb/s\n", stats.ws_netname, stats.ws_quality, stats.ws_rate);
+	wi_close(device);
+	return 0;
 }
 #else
 XFCE_PANEL_PLUGIN_REGISTER(wavelan_construct);
