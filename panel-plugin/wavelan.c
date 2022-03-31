@@ -100,8 +100,6 @@ static void wavelan_update_signal(t_wavelan *wavelan);
 static void
 wavelan_refresh_icons(t_wavelan *wavelan)
 {
-  GtkIconTheme* theme = gtk_icon_theme_get_default();
-
   strength_to_icon[EXCELLENT] = "network-wireless-signal-excellent-symbolic";
   strength_to_icon[GOOD] = "network-wireless-signal-good-symbolic";
   strength_to_icon[OK] = "network-wireless-signal-ok-symbolic";
@@ -146,11 +144,6 @@ wavelan_update_icon(t_wavelan *wavelan)
 static void
 wavelan_update_signal(t_wavelan *wavelan)
 {
-  if (!wavelan->show_signal) {
-    gtk_widget_hide(wavelan->signal);
-    return;
-  }
-
   GdkRGBA color;
   gchar signal_color_bad[] = "#e00000";
   gchar signal_color_weak[] = "#e05200";
@@ -164,6 +157,11 @@ wavelan_update_signal(t_wavelan *wavelan)
     cssminsizes = "min-width: 0px; min-height: 4px";
 #endif
 #endif
+
+  if (!wavelan->show_signal) {
+    gtk_widget_hide(wavelan->signal);
+    return;
+  }
 
   if (wavelan->state >= 1)
    gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(wavelan->signal), (gdouble) wavelan->state / 100);
@@ -407,7 +405,7 @@ static gboolean tooltip_cb( GtkWidget *widget, gint x, gint y, gboolean keyboard
 	return TRUE;
 }
 
-void wavelan_icon_clicked(GtkWidget *widget, gpointer data,t_wavelan *wavelan) {
+static void wavelan_icon_clicked(GtkWidget *widget, gpointer data,t_wavelan *wavelan) {
 
   GError    *error = NULL;
   GtkWidget *message_dialog;
