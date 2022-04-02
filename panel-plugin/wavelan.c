@@ -96,16 +96,7 @@ wavelan_refresh_icons(t_wavelan *wavelan)
 {
   GtkIconTheme* theme = gtk_icon_theme_get_default();
 
-  if (gtk_icon_theme_has_icon(theme, "network-wireless-signal-excellent"))
-  {
-    strength_to_icon[EXCELLENT] = "network-wireless-signal-excellent";
-    strength_to_icon[GOOD] = "network-wireless-signal-good";
-    strength_to_icon[OK] = "network-wireless-signal-weak";
-    strength_to_icon[WEAK] = "network-wireless-signal-low";
-    strength_to_icon[NONE] = "network-wireless-signal-none";
-    strength_to_icon[OFFLINE] = "network-wireless-offline";
-  }
-  else /* fallback in case non-symbolic themes aren't present */
+  if (gtk_icon_theme_has_icon(theme, "network-wireless-signal-excellent-symbolic"))
   {
     strength_to_icon[EXCELLENT] = "network-wireless-signal-excellent-symbolic";
     strength_to_icon[GOOD] = "network-wireless-signal-good-symbolic";
@@ -114,11 +105,19 @@ wavelan_refresh_icons(t_wavelan *wavelan)
     strength_to_icon[NONE] = "network-wireless-signal-none-symbolic";
     strength_to_icon[OFFLINE] = "network-wireless-offline-symbolic";
   }
-
+  else /* fallback in case symbolic themes aren't present */
+  {
+    strength_to_icon[EXCELLENT] = "network-wireless-signal-excellent";
+    strength_to_icon[GOOD] = "network-wireless-signal-good";
+    strength_to_icon[OK] = "network-wireless-signal-weak";
+    strength_to_icon[WEAK] = "network-wireless-signal-low";
+    strength_to_icon[NONE] = "network-wireless-signal-none";
+    strength_to_icon[OFFLINE] = "network-wireless-offline";
+  }
   strength_to_icon[INIT] = strength_to_icon[OFFLINE];
 
   if (wavelan->signal_strength != INIT) /* only wavelan_new sets INIT */
-    xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength]);
+    gtk_image_set_from_icon_name(GTK_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength], GTK_ICON_SIZE_BUTTON);
 }
 
 static void
@@ -144,12 +143,8 @@ wavelan_update_icon(t_wavelan *wavelan)
   else
     wavelan->signal_strength = OFFLINE; /* also for disconnected interfaces */
 
-  /*
-   * If signal_strength is not updated, do not update the icon.
-   * This is because xfce_panel_image_set_from_source causes a momentary flicker.
-   */
   if (signal_strength_prev != wavelan->signal_strength)
-    xfce_panel_image_set_from_source(XFCE_PANEL_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength]);
+    gtk_image_set_from_icon_name(GTK_IMAGE(wavelan->image), strength_to_icon[wavelan->signal_strength], GTK_ICON_SIZE_BUTTON);
 
   gtk_widget_show(wavelan->image);
 }
@@ -443,7 +438,8 @@ wavelan_new(XfcePanelPlugin *plugin)
   g_signal_connect_swapped(settings, "notify::gtk-icon-theme-name", G_CALLBACK(wavelan_refresh_icons), wavelan);
   wavelan->signal_strength = INIT;
   wavelan_refresh_icons(wavelan);
-  wavelan->image = GTK_WIDGET(xfce_panel_image_new_from_source(strength_to_icon[wavelan->signal_strength]));
+  wavelan->image = gtk_image_new();
+  gtk_image_set_from_icon_name (GTK_IMAGE (wavelan->image), strength_to_icon[wavelan->signal_strength], GTK_ICON_SIZE_BUTTON);
 
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->image), FALSE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->signal), FALSE, FALSE, 0);
@@ -540,7 +536,7 @@ wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
   border_width = size > 26 ? 2 : 1;
   wavelan->size = size;
   image_size = wavelan->size - (2 * border_width);
-  xfce_panel_image_set_size(XFCE_PANEL_IMAGE(wavelan->image), image_size);
+  gtk_image_set_pixel_size (GTK_IMAGE (wavelan->image), image_size);
   gtk_container_set_border_width(GTK_CONTAINER(wavelan->box), border_width);
   if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
    gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
