@@ -740,7 +740,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
   hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
   gtk_widget_show(hbox);
   signal_colors = gtk_check_button_new_with_mnemonic(_("Enable sig_nal quality colors"));
-  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(signal_colors), 
+  gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(signal_colors),
       wavelan->signal_colors);
   g_signal_connect(signal_colors, "toggled", 
       G_CALLBACK(wavelan_signal_colors_changed), wavelan);
