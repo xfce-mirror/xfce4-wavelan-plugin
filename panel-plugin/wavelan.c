@@ -653,7 +653,6 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
                     wavelan);
 
   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Properties"));
-
   vbox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 6);
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
   gtk_widget_show(vbox);
