@@ -56,6 +56,7 @@ typedef struct
   gboolean signal_colors;
   gboolean show_icon;
   gboolean show_bar;
+  gchar *command;
 
   int size;
   int signal_strength;
@@ -386,12 +387,15 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
       {
         wavelan->interface = g_strdup (s);
       } 
-      
       wavelan->autohide = xfce_rc_read_bool_entry (rc, "Autohide", FALSE);
       wavelan->autohide_missing = xfce_rc_read_bool_entry(rc, "AutohideMissing", FALSE);
       wavelan->signal_colors = xfce_rc_read_bool_entry(rc, "SignalColors", FALSE);
       wavelan->show_icon = xfce_rc_read_bool_entry(rc, "ShowIcon", FALSE);
       wavelan->show_bar = xfce_rc_read_bool_entry(rc, "ShowBar", FALSE);
+      if ((s = xfce_rc_read_entry (rc, "Command", NULL)) != NULL) 
+      {
+        wavelan->command = g_strdup (s);
+      } 
     }
   }
 
@@ -410,6 +414,30 @@ static gboolean tooltip_cb( GtkWidget *widget, gint x, gint y, gboolean keyboard
 	return TRUE;
 }
 
+static void
+wavelan_icon_clicked(GtkWidget *widget, gpointer data,t_wavelan *wavelan)
+{
+  GError    *error = NULL;
+  GtkWidget *message_dialog;
+
+  if (!xfce_spawn_command_line_on_screen (gtk_widget_get_screen (GTK_WIDGET (widget)),
+                                            wavelan->command,
+                                          FALSE, FALSE, &error))
+    {
+      message_dialog = gtk_message_dialog_new_with_markup (NULL,
+                                                           GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                           GTK_MESSAGE_ERROR,
+                                                           GTK_BUTTONS_CLOSE,
+                                                           _("<big><b>Failed to execute command \"%s\".</b></big>\n\n%s"),
+                                                           wavelan->command,
+                                                           error->message);
+      gtk_window_set_title (GTK_WINDOW (message_dialog), _("Error"));
+      gtk_dialog_run (GTK_DIALOG (message_dialog));
+      gtk_widget_destroy (message_dialog);
+      g_error_free (error);
+    }
+}
+
 static t_wavelan *
 wavelan_new(XfcePanelPlugin *plugin)
 {
@@ -426,6 +454,7 @@ wavelan_new(XfcePanelPlugin *plugin)
   wavelan->signal_colors = TRUE;
   wavelan->show_icon = TRUE;
   wavelan->show_bar = TRUE;
+  wavelan->command = g_strdup("nm-connection-editor");
   wavelan->state = -2;
 
   wavelan->plugin = plugin;
@@ -435,6 +464,7 @@ wavelan_new(XfcePanelPlugin *plugin)
   gtk_event_box_set_visible_window(GTK_EVENT_BOX(wavelan->ebox), FALSE);
   gtk_event_box_set_above_child(GTK_EVENT_BOX(wavelan->ebox), TRUE);
   g_signal_connect(wavelan->ebox, "query-tooltip", G_CALLBACK(tooltip_cb), wavelan);
+  g_signal_connect(wavelan->ebox, "button-release-event", G_CALLBACK(wavelan_icon_clicked), wavelan);
   xfce_panel_plugin_add_action_widget(plugin, wavelan->ebox);
   gtk_container_add(GTK_CONTAINER(plugin), wavelan->ebox);
 
@@ -493,6 +523,9 @@ wavelan_free(XfcePanelPlugin* plugin, t_wavelan *wavelan)
   if (wavelan->interface != NULL)
     g_free(wavelan->interface);
 
+  if (wavelan->command != NULL)
+    g_free(wavelan->command);
+
   g_free(wavelan);
 }
 
@@ -525,6 +558,10 @@ wavelan_write_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
   xfce_rc_write_bool_entry (rc, "SignalColors", wavelan->signal_colors);
   xfce_rc_write_bool_entry (rc, "ShowIcon", wavelan->show_icon);
   xfce_rc_write_bool_entry (rc, "ShowBar", wavelan->show_bar);
+  if (wavelan->command)
+  {
+    xfce_rc_write_entry (rc, "Command", wavelan->command);
+  }
 
   xfce_rc_close(rc);
   
@@ -618,6 +655,15 @@ wavelan_signal_colors_changed(GtkToggleButton *button, t_wavelan *wavelan)
   wavelan_set_state(wavelan, wavelan->state);
 }
 
+/* command changed callback */
+static void
+wavelan_command_changed(GtkEntry *entry, t_wavelan *wavelan)
+{
+  if (wavelan->command != NULL)
+    g_free(wavelan->command);
+  wavelan->command = g_strdup(gtk_entry_get_text(entry));
+}
+
 static void
 wavelan_dialog_response (GtkWidget *dlg, int response, t_wavelan *wavelan)
 {
@@ -633,7 +679,7 @@ static void
 wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 {
   GtkWidget *dlg, *hbox, *label, *interface, *vbox, *autohide;
-  GtkWidget *autohide_missing, *warn_label, *signal_colors, *show_icon, *show_bar;
+  GtkWidget *autohide_missing, *warn_label, *signal_colors, *show_icon, *show_bar, *command;
   GtkWidget *combo;
   GList     *interfaces, *lp;
 
@@ -746,6 +792,21 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
       G_CALLBACK(wavelan_signal_colors_changed), wavelan);
   gtk_widget_show(signal_colors);
   gtk_box_pack_start(GTK_BOX(hbox), signal_colors, TRUE, TRUE, 0);
+  gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
+
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
+  gtk_widget_show(hbox);
+  label = gtk_label_new(_("Manage Command"));
+  gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+  gtk_widget_show(label);
+  command = gtk_entry_new();
+  if (wavelan->command != NULL)
+    gtk_entry_set_text(GTK_ENTRY(command), wavelan->command);
+  g_signal_connect(command, "changed", G_CALLBACK(wavelan_command_changed),
+      wavelan);
+  gtk_widget_show(command);
+  gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(hbox), command, TRUE, TRUE, 0);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
 
   for (lp = interfaces; lp != NULL; lp = lp ->next)
