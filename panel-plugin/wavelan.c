@@ -392,10 +392,10 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
       wavelan->signal_colors = xfce_rc_read_bool_entry(rc, "SignalColors", FALSE);
       wavelan->show_icon = xfce_rc_read_bool_entry(rc, "ShowIcon", FALSE);
       wavelan->show_bar = xfce_rc_read_bool_entry(rc, "ShowBar", FALSE);
-      if ((s = xfce_rc_read_entry (rc, "Command", NULL)) != NULL) 
+      if ((s = xfce_rc_read_entry (rc, "Command", NULL)) != NULL)
       {
         wavelan->command = g_strdup (s);
-      } 
+      }
     }
   }
 
