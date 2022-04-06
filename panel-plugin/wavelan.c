@@ -796,7 +796,7 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 
   hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
   gtk_widget_show(hbox);
-  label = gtk_label_new(_("Manage Command"));
+  label = gtk_label_new(_("Wifi Manager Command"));
   gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
   gtk_widget_show(label);
   command = gtk_entry_new();
