@@ -420,6 +420,9 @@ wavelan_icon_clicked(GtkWidget *widget, gpointer data,t_wavelan *wavelan)
   GError    *error = NULL;
   GtkWidget *message_dialog;
 
+  if (wavelan->command == NULL || strlen(wavelan->command) == 0)
+    return;
+
   if (!xfce_spawn_command_line_on_screen (gtk_widget_get_screen (GTK_WIDGET (widget)),
                                             wavelan->command,
                                           FALSE, FALSE, &error))
