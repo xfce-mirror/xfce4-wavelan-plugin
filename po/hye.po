@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2020-05-25 08:13+0000\n"
-"Last-Translator: Arman Harutyunyan <arman.harut468@gmail.com>\n"
+"POT-Creation-Date: 2022-04-08 12:56+0200\n"
+"PO-Revision-Date: 2013-07-03 19:27+0000\n"
+"Last-Translator: Real School <localization@ehayq.am>, 2019\n"
 "Language-Team: Eastern Armenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/hye/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,61 +18,81 @@ msgstr ""
 "Language: hye\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Բռնիչ ազգանշան չկա"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:173
+#: ../panel-plugin/wavelan.c:296
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s ֊ը %dMb/s ֊ընթացքում"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:176
+#: ../panel-plugin/wavelan.c:299
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s ֊ը %dMb/s ֊ի ընթացքում"
 
-#: ../panel-plugin/wavelan.c:180
+#: ../panel-plugin/wavelan.c:303
 msgid "No device configured"
 msgstr "Կազմաձեւուած սարք չկա"
 
-#: ../panel-plugin/wavelan.c:501
+#: ../panel-plugin/wavelan.c:434
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>Չյաջողուեց գործարկել հրաման\"%s\" ֊ը։</b></big>\n\n%s"
+
+#: ../panel-plugin/wavelan.c:437
+msgid "Error"
+msgstr "Սխալ"
+
+#: ../panel-plugin/wavelan.c:691
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan ներդրաւնի ընտրանքներ"
 
-#: ../panel-plugin/wavelan.c:516
+#: ../panel-plugin/wavelan.c:704
 msgid "Properties"
 msgstr "Յատկութիւններ"
 
-#: ../panel-plugin/wavelan.c:527
+#: ../panel-plugin/wavelan.c:715
 msgid "Interface"
 msgstr "Փոխկապակցիչ"
 
-#: ../panel-plugin/wavelan.c:549
+#: ../panel-plugin/wavelan.c:738
 msgid "_Autohide when offline"
 msgstr "Երբ անցանց է, _ինքնուրոյն թաքցնել"
 
-#: ../panel-plugin/wavelan.c:559
+#: ../panel-plugin/wavelan.c:748
 msgid "Autohide when no _hardware present"
 msgstr "Երբ սարքաշարը ներկայ չէ՝ ինքնուրոյն թաքցնել"
 
-#: ../panel-plugin/wavelan.c:570
+#: ../panel-plugin/wavelan.c:760
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Նշում․ Սա կդժուարեցնի ներդրաւնի հեռացումը կամ կազմաձեւումը, եթե սարքը յայտնաբերուած չէ։"
 
-#: ../panel-plugin/wavelan.c:578
-msgid "Enable sig_nal quality colors"
-msgstr "Միացնել ազդ_անշանի տեսակը գոյներով"
-
-#: ../panel-plugin/wavelan.c:589
+#: ../panel-plugin/wavelan.c:769
 msgid "Show _icon"
 msgstr "Ցուցադրել _պատկերակը"
 
-#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:780
+msgid "Show signal _bar"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:791
+msgid "Enable sig_nal quality colors"
+msgstr "Միացնել ազդ_անշանի տեսակը գոյներով"
+
+#: ../panel-plugin/wavelan.c:802
+msgid "Wifi Manager Command"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Դիտել անլար ցանցի վիճակագրութիւնը"
 
@@ -88,7 +108,7 @@ msgstr "Անվաւեր յարաչափ"
 msgid "Unknown error"
 msgstr "Անյայտ սխալ"
 
-#: ../panel-plugin/wi_linux.c:150
+#: ../panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Անյայտ"
 
