@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-05 00:57+0200\n"
+"POT-Creation-Date: 2022-04-08 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Jan Ziak <0xe2.0x9a.0x9b@gmail.com>, 2022\n"
 "Language-Team: Slovak (http://www.transifex.com/xfce/xfce-panel-plugins/language/sk/)\n"
@@ -21,65 +21,81 @@ msgstr ""
 "Language: sk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: ../panel-plugin/wavelan.c:273 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Žiadny signál"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:295
+#: ../panel-plugin/wavelan.c:296
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s na %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:298
+#: ../panel-plugin/wavelan.c:299
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s na %dMb/s"
 
-#: ../panel-plugin/wavelan.c:302
+#: ../panel-plugin/wavelan.c:303
 msgid "No device configured"
 msgstr "Žiadne nastavené zariadenie"
 
-#: ../panel-plugin/wavelan.c:642
+#: ../panel-plugin/wavelan.c:434
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>Zlyhalo vykonanie príkazu \"%s\".</b></big>\n\n%s"
+
+#: ../panel-plugin/wavelan.c:437
+msgid "Error"
+msgstr "Chyba"
+
+#: ../panel-plugin/wavelan.c:691
 msgid "Wavelan Plugin Options"
 msgstr "Možnosti zásuvného modulu Bezdrôtová sieť"
 
-#: ../panel-plugin/wavelan.c:655
+#: ../panel-plugin/wavelan.c:704
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: ../panel-plugin/wavelan.c:666
+#: ../panel-plugin/wavelan.c:715
 msgid "Interface"
 msgstr "Rozhranie"
 
-#: ../panel-plugin/wavelan.c:689
+#: ../panel-plugin/wavelan.c:738
 msgid "_Autohide when offline"
 msgstr "_Automaticky skrývať, ak nie je pripojený"
 
-#: ../panel-plugin/wavelan.c:699
+#: ../panel-plugin/wavelan.c:748
 msgid "Autohide when no _hardware present"
 msgstr "Automaticky skryť, ak neexistuje _hardvér"
 
-#: ../panel-plugin/wavelan.c:711
+#: ../panel-plugin/wavelan.c:760
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Poznámka: Ak nebude nájdené zariadenie, bude problematické odobrať, alebo nastaviť tento zásuvný modul."
 
-#: ../panel-plugin/wavelan.c:720
+#: ../panel-plugin/wavelan.c:769
 msgid "Show _icon"
 msgstr "Zobraziť _ikonu"
 
-#: ../panel-plugin/wavelan.c:731
+#: ../panel-plugin/wavelan.c:780
 msgid "Show signal _bar"
 msgstr "Zobraziť _indikátor signálu"
 
-#: ../panel-plugin/wavelan.c:742
+#: ../panel-plugin/wavelan.c:791
 msgid "Enable sig_nal quality colors"
 msgstr "zapnúť farby kvality sig_nálu"
 
-#: ../panel-plugin/wavelan.c:770 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:802
+msgid "Wifi Manager Command"
+msgstr "Príkaz pre spustenie správcu WiFi"
+
+#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Zobrazuje stav bezdrôtovej siete"
 
