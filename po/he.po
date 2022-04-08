@@ -4,16 +4,16 @@
 # 
 # Translators:
 # Elishai Eliyahu <elishai@mailfence.com>, 2016
-# GenghisKhan <genghiskhan@gmx.ca>, 2014-2015
+# gk <genghiskhan@gmx.ca>, 2014-2015
 # Hebrew speakers the world over, 2013
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2017-09-23 19:03+0000\n"
-"Last-Translator: Elishai Eliyahu <elishai@mailfence.com>\n"
+"POT-Creation-Date: 2022-04-08 12:56+0200\n"
+"PO-Revision-Date: 2013-07-03 19:27+0000\n"
+"Last-Translator: Elishai Eliyahu <elishai@mailfence.com>, 2016\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-panel-plugins/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,61 +21,81 @@ msgstr ""
 "Language: he\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "אין אות נשא"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:173
+#: ../panel-plugin/wavelan.c:296
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s ב- %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:176
+#: ../panel-plugin/wavelan.c:299
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s ב- %dMb/s"
 
-#: ../panel-plugin/wavelan.c:180
+#: ../panel-plugin/wavelan.c:303
 msgid "No device configured"
 msgstr "אין התקן מוגדר"
 
-#: ../panel-plugin/wavelan.c:501
+#: ../panel-plugin/wavelan.c:434
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>נכשל להריץ פקודה \"%s\".</b></big>\n\n%s"
+
+#: ../panel-plugin/wavelan.c:437
+msgid "Error"
+msgstr "שגיאה"
+
+#: ../panel-plugin/wavelan.c:691
 msgid "Wavelan Plugin Options"
 msgstr "אפשרויות תוסף Wavelan"
 
-#: ../panel-plugin/wavelan.c:516
+#: ../panel-plugin/wavelan.c:704
 msgid "Properties"
 msgstr "מאפיינים"
 
-#: ../panel-plugin/wavelan.c:527
+#: ../panel-plugin/wavelan.c:715
 msgid "Interface"
 msgstr "ממשק"
 
-#: ../panel-plugin/wavelan.c:549
+#: ../panel-plugin/wavelan.c:738
 msgid "_Autohide when offline"
 msgstr "הסתר _אוטומטית כאשר לא מקוון"
 
-#: ../panel-plugin/wavelan.c:559
+#: ../panel-plugin/wavelan.c:748
 msgid "Autohide when no _hardware present"
 msgstr "הסתר אוטומטית כאשר אין נוכחות _חומרה"
 
-#: ../panel-plugin/wavelan.c:570
+#: ../panel-plugin/wavelan.c:760
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "הערה: אפשרות זו תקשה על הסרה או הגדרה של התוסף אם אין התקן מאותר."
 
-#: ../panel-plugin/wavelan.c:578
-msgid "Enable sig_nal quality colors"
-msgstr "אפשר _צבעי איכות אות"
-
-#: ../panel-plugin/wavelan.c:589
+#: ../panel-plugin/wavelan.c:769
 msgid "Show _icon"
 msgstr "הצג ס_מל"
 
-#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:780
+msgid "Show signal _bar"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:791
+msgid "Enable sig_nal quality colors"
+msgstr "אפשר _צבעי איכות אות"
+
+#: ../panel-plugin/wavelan.c:802
+msgid "Wifi Manager Command"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "הצגת מצב של רשת אלחוטית"
 
@@ -91,7 +111,7 @@ msgstr "פרמטר לא תקין"
 msgid "Unknown error"
 msgstr "שגיאה לא מוכרת"
 
-#: ../panel-plugin/wi_linux.c:150
+#: ../panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "לא ידוע"
 
