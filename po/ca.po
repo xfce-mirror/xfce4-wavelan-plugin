@@ -6,15 +6,15 @@
 # Harald Servat <redcrash@gmail.com>, 2009
 # Davidmp <medipas@gmail.com>, 2016
 # Pau Ruŀlan Ferragut <paurullan@bulma.net>, 2006
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2017
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2016
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2017-12-30 11:13+0000\n"
-"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
+"POT-Creation-Date: 2022-04-08 12:56+0200\n"
+"PO-Revision-Date: 2013-07-03 19:27+0000\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2017\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,61 +22,81 @@ msgstr ""
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "No hi ha senyal portador"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:173
+#: ../panel-plugin/wavelan.c:296
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s a %d Mb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:176
+#: ../panel-plugin/wavelan.c:299
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s a %d Mb/s"
 
-#: ../panel-plugin/wavelan.c:180
+#: ../panel-plugin/wavelan.c:303
 msgid "No device configured"
 msgstr "No hi ha cap dispositiu configurat"
 
-#: ../panel-plugin/wavelan.c:501
+#: ../panel-plugin/wavelan.c:434
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>Ha fallat l'execució de l'ordre «%s».</b></big>\n\n%s"
+
+#: ../panel-plugin/wavelan.c:437
+msgid "Error"
+msgstr "Error"
+
+#: ../panel-plugin/wavelan.c:691
 msgid "Wavelan Plugin Options"
 msgstr "Opcions del connector Wavelan"
 
-#: ../panel-plugin/wavelan.c:516
+#: ../panel-plugin/wavelan.c:704
 msgid "Properties"
 msgstr "Propietats"
 
-#: ../panel-plugin/wavelan.c:527
+#: ../panel-plugin/wavelan.c:715
 msgid "Interface"
 msgstr "Interfície"
 
-#: ../panel-plugin/wavelan.c:549
+#: ../panel-plugin/wavelan.c:738
 msgid "_Autohide when offline"
 msgstr "Oculta _automàticament quan estigui desconnectat"
 
-#: ../panel-plugin/wavelan.c:559
+#: ../panel-plugin/wavelan.c:748
 msgid "Autohide when no _hardware present"
 msgstr "Oculta automàticament quan no _hi hagi maquinari present"
 
-#: ../panel-plugin/wavelan.c:570
+#: ../panel-plugin/wavelan.c:760
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Nota: això farà més difícil suprimir o configurar el connector si no s'han detectat dispositius."
 
-#: ../panel-plugin/wavelan.c:578
-msgid "Enable sig_nal quality colors"
-msgstr "Habilita els colors per a la qualitat del se_nyal"
-
-#: ../panel-plugin/wavelan.c:589
+#: ../panel-plugin/wavelan.c:769
 msgid "Show _icon"
 msgstr "Mostra la _icona"
 
-#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:780
+msgid "Show signal _bar"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:791
+msgid "Enable sig_nal quality colors"
+msgstr "Habilita els colors per a la qualitat del se_nyal"
+
+#: ../panel-plugin/wavelan.c:802
+msgid "Wifi Manager Command"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Visualitzeu l'estat de la xarxa sense fil"
 
@@ -92,7 +112,7 @@ msgstr "Paràmetre no vàlid"
 msgid "Unknown error"
 msgstr "Error desconegut"
 
-#: ../panel-plugin/wi_linux.c:150
+#: ../panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Desconegut"
 
