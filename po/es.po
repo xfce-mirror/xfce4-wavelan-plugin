@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-05 00:57+0200\n"
+"POT-Creation-Date: 2022-04-08 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2021-2022\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
@@ -23,65 +23,81 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:273 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Sin señal portadora"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:295
+#: ../panel-plugin/wavelan.c:296
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s a %d Mb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:298
+#: ../panel-plugin/wavelan.c:299
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s a %d Mb/s"
 
-#: ../panel-plugin/wavelan.c:302
+#: ../panel-plugin/wavelan.c:303
 msgid "No device configured"
 msgstr "No se ha configurado ningún dispositivo"
 
-#: ../panel-plugin/wavelan.c:642
+#: ../panel-plugin/wavelan.c:434
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>Error al ejecutar la orden «%s».</b></big>\n\n%s"
+
+#: ../panel-plugin/wavelan.c:437
+msgid "Error"
+msgstr "Error"
+
+#: ../panel-plugin/wavelan.c:691
 msgid "Wavelan Plugin Options"
 msgstr "Opciones de Wavelan"
 
-#: ../panel-plugin/wavelan.c:655
+#: ../panel-plugin/wavelan.c:704
 msgid "Properties"
 msgstr "Propiedades"
 
-#: ../panel-plugin/wavelan.c:666
+#: ../panel-plugin/wavelan.c:715
 msgid "Interface"
 msgstr "Interfaz"
 
-#: ../panel-plugin/wavelan.c:689
+#: ../panel-plugin/wavelan.c:738
 msgid "_Autohide when offline"
 msgstr "_Ocultar automáticamente al estar sin conexión"
 
-#: ../panel-plugin/wavelan.c:699
+#: ../panel-plugin/wavelan.c:748
 msgid "Autohide when no _hardware present"
 msgstr "Ocultar automáticamente si no se _detecta ningún dispositivo"
 
-#: ../panel-plugin/wavelan.c:711
+#: ../panel-plugin/wavelan.c:760
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Nota: esta opción dificultará la eliminación o la configuración del complemento si no se detecta ningún dispositivo."
 
-#: ../panel-plugin/wavelan.c:720
+#: ../panel-plugin/wavelan.c:769
 msgid "Show _icon"
 msgstr "_Mostrar el icono"
 
-#: ../panel-plugin/wavelan.c:731
+#: ../panel-plugin/wavelan.c:780
 msgid "Show signal _bar"
 msgstr "Mostrar la _barra de señales"
 
-#: ../panel-plugin/wavelan.c:742
+#: ../panel-plugin/wavelan.c:791
 msgid "Enable sig_nal quality colors"
 msgstr "_Activar colores para la calidad de la señal"
 
-#: ../panel-plugin/wavelan.c:770 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:802
+msgid "Wifi Manager Command"
+msgstr "Orden del gestor de wifi"
+
+#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Muestra el estado de una red inalámbrica"
 
