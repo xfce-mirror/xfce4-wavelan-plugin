@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-05 00:57+0200\n"
+"POT-Creation-Date: 2022-04-08 12:56+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Kiril Kirilov <cybercop_montana@abv.bg>, 2014-2015,2022\n"
 "Language-Team: Bulgarian (http://www.transifex.com/xfce/xfce-panel-plugins/language/bg/)\n"
@@ -19,65 +19,81 @@ msgstr ""
 "Language: bg\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:273 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Липсва сигнал на носителя"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:295
+#: ../panel-plugin/wavelan.c:296
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s при %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:298
+#: ../panel-plugin/wavelan.c:299
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s при %dMb/s"
 
-#: ../panel-plugin/wavelan.c:302
+#: ../panel-plugin/wavelan.c:303
 msgid "No device configured"
 msgstr "Няма конфигурирано устройство"
 
-#: ../panel-plugin/wavelan.c:642
+#: ../panel-plugin/wavelan.c:434
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>Неуспешно изпълнение на команда \"%s\".</b></big>\n\n%s"
+
+#: ../panel-plugin/wavelan.c:437
+msgid "Error"
+msgstr "Грешка"
+
+#: ../panel-plugin/wavelan.c:691
 msgid "Wavelan Plugin Options"
 msgstr "Опции на приставката Wavelan"
 
-#: ../panel-plugin/wavelan.c:655
+#: ../panel-plugin/wavelan.c:704
 msgid "Properties"
 msgstr "Свойства"
 
-#: ../panel-plugin/wavelan.c:666
+#: ../panel-plugin/wavelan.c:715
 msgid "Interface"
 msgstr "Интерфейс"
 
-#: ../panel-plugin/wavelan.c:689
+#: ../panel-plugin/wavelan.c:738
 msgid "_Autohide when offline"
 msgstr "_Автоматично скриване, когато сте извън линия"
 
-#: ../panel-plugin/wavelan.c:699
+#: ../panel-plugin/wavelan.c:748
 msgid "Autohide when no _hardware present"
 msgstr "Автоматично скриване, когато няма наличен хардуер"
 
-#: ../panel-plugin/wavelan.c:711
+#: ../panel-plugin/wavelan.c:760
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Бележка: Това ще направи трудно настройването или премахването на приставката, ако няма намерено устройство."
 
-#: ../panel-plugin/wavelan.c:720
+#: ../panel-plugin/wavelan.c:769
 msgid "Show _icon"
 msgstr "Показване на икона"
 
-#: ../panel-plugin/wavelan.c:731
+#: ../panel-plugin/wavelan.c:780
 msgid "Show signal _bar"
 msgstr "Показване на сигнална лента"
 
-#: ../panel-plugin/wavelan.c:742
+#: ../panel-plugin/wavelan.c:791
 msgid "Enable sig_nal quality colors"
 msgstr "Активиране на цветовото качество на сигнала"
 
-#: ../panel-plugin/wavelan.c:770 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:802
+msgid "Wifi Manager Command"
+msgstr ""
+
+#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Преглед на състоянието на безжичната мрежа"
 
