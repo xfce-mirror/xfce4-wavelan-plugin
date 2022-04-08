@@ -9,14 +9,15 @@
 # 9bd356497422d3b951d73481908ce38a_9594f42 <5107b79d5223bd4fa6f541efbd7ae736_103107>, 2014
 # 9bd356497422d3b951d73481908ce38a_9594f42 <5107b79d5223bd4fa6f541efbd7ae736_103107>, 2014
 # Maximilian Schleiss <maximilian@xfce.org>, 2009
+# Wallon Wallon, 2022
 # Yannick Le Guen <leguen.yannick@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2018-03-17 23:06+0000\n"
-"Last-Translator: Charles Monzat <c.monzat@laposte.net>\n"
+"POT-Creation-Date: 2022-04-08 12:56+0200\n"
+"PO-Revision-Date: 2013-07-03 19:27+0000\n"
+"Last-Translator: Wallon Wallon, 2022\n"
 "Language-Team: French (http://www.transifex.com/xfce/xfce-panel-plugins/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,61 +25,81 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Pas de porteuse"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:173
+#: ../panel-plugin/wavelan.c:296
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s : %d %s à %d Mo/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:176
+#: ../panel-plugin/wavelan.c:299
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d %s à %d Mo/s"
 
-#: ../panel-plugin/wavelan.c:180
+#: ../panel-plugin/wavelan.c:303
 msgid "No device configured"
 msgstr "Aucun périphérique configuré"
 
-#: ../panel-plugin/wavelan.c:501
+#: ../panel-plugin/wavelan.c:434
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>L’exécution de la commande « %s » a échoué.</b></big>\n\n%s"
+
+#: ../panel-plugin/wavelan.c:437
+msgid "Error"
+msgstr "Erreur"
+
+#: ../panel-plugin/wavelan.c:691
 msgid "Wavelan Plugin Options"
 msgstr "Options du greffon Wavelan"
 
-#: ../panel-plugin/wavelan.c:516
+#: ../panel-plugin/wavelan.c:704
 msgid "Properties"
 msgstr "Propriétés"
 
-#: ../panel-plugin/wavelan.c:527
+#: ../panel-plugin/wavelan.c:715
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:549
+#: ../panel-plugin/wavelan.c:738
 msgid "_Autohide when offline"
 msgstr "Masquer _automatiquement hors connexion"
 
-#: ../panel-plugin/wavelan.c:559
+#: ../panel-plugin/wavelan.c:748
 msgid "Autohide when no _hardware present"
 msgstr "Masquer automatiquement en l’absence de _matériel"
 
-#: ../panel-plugin/wavelan.c:570
+#: ../panel-plugin/wavelan.c:760
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Remarque : cette option rend difficile la configuration ou la suppression du greffon en l’absence de périphérique."
 
-#: ../panel-plugin/wavelan.c:578
-msgid "Enable sig_nal quality colors"
-msgstr "Activer les couleurs de qualité de sig_nal"
-
-#: ../panel-plugin/wavelan.c:589
+#: ../panel-plugin/wavelan.c:769
 msgid "Show _icon"
 msgstr "Afficher l’_icône"
 
-#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:780
+msgid "Show signal _bar"
+msgstr "Afficher le signal _bar"
+
+#: ../panel-plugin/wavelan.c:791
+msgid "Enable sig_nal quality colors"
+msgstr "Activer les couleurs de qualité de sig_nal"
+
+#: ../panel-plugin/wavelan.c:802
+msgid "Wifi Manager Command"
+msgstr "Wifi Manager Command"
+
+#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Afficher l’état d’un réseau sans fil"
 
@@ -94,7 +115,7 @@ msgstr "Paramètre non valide"
 msgid "Unknown error"
 msgstr "Erreur inconnue"
 
-#: ../panel-plugin/wi_linux.c:150
+#: ../panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Inconnu"
 
