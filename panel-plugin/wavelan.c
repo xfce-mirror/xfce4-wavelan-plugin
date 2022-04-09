@@ -385,6 +385,8 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
     {
       if ((s = xfce_rc_read_entry (rc, "Interface", NULL)) != NULL) 
       {
+        if (wavelan->interface)
+          g_free (wavelan->interface);
         wavelan->interface = g_strdup (s);
       } 
       wavelan->autohide = xfce_rc_read_bool_entry (rc, "Autohide", FALSE);
@@ -394,8 +396,11 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
       wavelan->show_bar = xfce_rc_read_bool_entry(rc, "ShowBar", FALSE);
       if ((s = xfce_rc_read_entry (rc, "Command", NULL)) != NULL)
       {
+        if (wavelan->command)
+          g_free (wavelan->command);
         wavelan->command = g_strdup (s);
       }
+      xfce_rc_close (rc);
     }
   }
 
@@ -607,10 +612,10 @@ wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
 static void
 wavelan_interface_changed(GtkEntry *entry, t_wavelan *wavelan)
 {
-    if (wavelan->interface != NULL)
-          g_free(wavelan->interface);
-    wavelan->interface = g_strdup(gtk_entry_get_text(entry));
-    wavelan_reset(wavelan);
+  if (wavelan->interface != NULL)
+    g_free(wavelan->interface);
+  wavelan->interface = g_strdup(gtk_entry_get_text(entry));
+  wavelan_reset(wavelan);
 }
 
 /* autohide toggled callback */
