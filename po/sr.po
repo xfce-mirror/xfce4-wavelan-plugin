@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
-msgstr "Нема сигнала достављача услуга"
+msgstr "Нема знака од достављача услуга"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
 #: ../panel-plugin/wavelan.c:296
@@ -78,11 +78,11 @@ msgstr "Примедба: Ово ће отежати уклањање или п�
 
 #: ../panel-plugin/wavelan.c:769
 msgid "Show _icon"
-msgstr "Приказуј _иконицу"
+msgstr "Приказуј _сличицу"
 
 #: ../panel-plugin/wavelan.c:780
 msgid "Show signal _bar"
-msgstr ""
+msgstr "Приказуј траку знакова"
 
 #: ../panel-plugin/wavelan.c:791
 msgid "Enable sig_nal quality colors"
@@ -90,7 +90,7 @@ msgstr "Омогући приказ боја по јачини _пријема"
 
 #: ../panel-plugin/wavelan.c:802
 msgid "Wifi Manager Command"
-msgstr ""
+msgstr "Управник наредби бежичне везе"
 
 #: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
