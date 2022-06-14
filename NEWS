@@ -1,3 +1,23 @@
+0.6.3 (2022-06-14)
+=====
+- Fix intltool lock file bug in make distcheck
+- Fix read_config memory leaks
+- Add option to execute command on icon click (!9)
+- Add option to hide signal bar (!8)
+- Prefer symbolic icons and fix icon color (!7)
+- Icon now shows signal strength(!5)
+- remove bogus close function
+- autoconf: Some updates
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (Canada),
+  Estonian, Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Italian, Japanese, Kazakh, Korean,
+  Lithuanian, Malay, Norwegian Bokmål, Occitan (post 1500), Polish,
+  Portuguese, Portuguese (Brazil), Russian, Serbian, Slovak, Slovenian,
+  Spanish, Swedish, Thai, Turkish, Ukrainian
+
 0.6.2
 ======
 - Fix ISO C90 forbids mixed declarations and code
