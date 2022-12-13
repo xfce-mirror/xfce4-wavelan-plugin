@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Andre Miranda <andre42m@gmail.com>, 2022
 # Andre Miranda <andre42m@gmail.com>, 2014-2015
 # Og Maciel <ogmaciel@gnome.org>, 2008
 # Rafael Fontenelle <rffontenelle@gmail.com>, 2014
@@ -11,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-08 12:56+0200\n"
+"POT-Creation-Date: 2022-11-28 15:08+0100\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
-"Last-Translator: Andre Miranda <andre42m@gmail.com>, 2014-2015\n"
+"Last-Translator: Andre Miranda <andre42m@gmail.com>, 2022\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/xfce/xfce-panel-plugins/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +42,7 @@ msgstr "%d%s a %dMb/s"
 msgid "No device configured"
 msgstr "Nenhum dispositivo configurado"
 
-#: ../panel-plugin/wavelan.c:434
+#: ../panel-plugin/wavelan.c:439
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -49,53 +50,53 @@ msgid ""
 "%s"
 msgstr "<big><b>Falha ao executar comando \"%s\".</b></big>\n\n%s"
 
-#: ../panel-plugin/wavelan.c:437
+#: ../panel-plugin/wavelan.c:442
 msgid "Error"
 msgstr "Erro"
 
-#: ../panel-plugin/wavelan.c:691
+#: ../panel-plugin/wavelan.c:696
 msgid "Wavelan Plugin Options"
 msgstr "Opções do Plug-in Wavelan"
 
-#: ../panel-plugin/wavelan.c:704
+#: ../panel-plugin/wavelan.c:709
 msgid "Properties"
 msgstr "Propriedades"
 
-#: ../panel-plugin/wavelan.c:715
+#: ../panel-plugin/wavelan.c:720
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:738
+#: ../panel-plugin/wavelan.c:743
 msgid "_Autohide when offline"
 msgstr "Ocult_ar automaticamente quando desconectado"
 
-#: ../panel-plugin/wavelan.c:748
+#: ../panel-plugin/wavelan.c:753
 msgid "Autohide when no _hardware present"
 msgstr "Ocultar automaticamente quando nenhuma _hardware estiver presente"
 
-#: ../panel-plugin/wavelan.c:760
+#: ../panel-plugin/wavelan.c:765
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Nota: Isto tornará difícil remover ou configurar o plug-in se nenhum dispositivo for detectado."
 
-#: ../panel-plugin/wavelan.c:769
+#: ../panel-plugin/wavelan.c:774
 msgid "Show _icon"
 msgstr "Mostrar í_cone"
 
-#: ../panel-plugin/wavelan.c:780
+#: ../panel-plugin/wavelan.c:785
 msgid "Show signal _bar"
-msgstr ""
+msgstr "Mostrar _barra de sinal"
 
-#: ../panel-plugin/wavelan.c:791
+#: ../panel-plugin/wavelan.c:796
 msgid "Enable sig_nal quality colors"
 msgstr "Habilitar cores de qualidade de si_nal"
 
-#: ../panel-plugin/wavelan.c:802
+#: ../panel-plugin/wavelan.c:807
 msgid "Wifi Manager Command"
-msgstr ""
+msgstr "Comando do Gerente de Wifi"
 
-#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:839 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Visualizar o status de uma rede sem fios"
 
