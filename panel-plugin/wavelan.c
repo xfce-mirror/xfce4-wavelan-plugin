@@ -40,6 +40,10 @@
 #include <ctype.h>
 #include <sys/types.h>
 #include <sys/socket.h>
+#if defined(AF_LINK) /* BSD */
+#include <net/if.h>
+#include <net/if_types.h>
+#endif
 #include <ifaddrs.h>
 
 #define BORDER 8
@@ -355,7 +359,8 @@ wavelan_query_interfaces (void)
     if (ifa->ifa_addr == NULL)
       continue;
 #if defined(AF_LINK) /* BSD */
-    if (ifa->ifa_addr->sa_family == AF_LINK)
+    if (ifa->ifa_addr->sa_family == AF_LINK &&
+        ((struct if_data *)ifa->ifa_data)->ifi_type == IFT_ETHER)
 #elif defined(AF_PACKET) /* linux */
     if (ifa->ifa_addr->sa_family == AF_PACKET)
 #else
