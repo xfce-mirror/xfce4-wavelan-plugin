@@ -40,6 +40,14 @@
 #include <ctype.h>
 #include <sys/types.h>
 #include <sys/socket.h>
+#if defined(AF_LINK) /* BSD */
+#if defined(__OpenBSD__) || defined(__NetBSD__)
+#include <sys/ioctl.h>
+#include <net/if_media.h>
+#endif
+#include <net/if.h>
+#include <net/if_types.h>
+#endif
 #include <ifaddrs.h>
 
 #define BORDER 8
@@ -355,13 +363,26 @@ wavelan_query_interfaces (void)
     if (ifa->ifa_addr == NULL)
       continue;
 #if defined(AF_LINK) /* BSD */
-    if (ifa->ifa_addr->sa_family == AF_LINK)
+    if (ifa->ifa_addr->sa_family == AF_LINK &&
+        ((struct if_data *)ifa->ifa_data)->ifi_type == IFT_ETHER) {
+#if defined(__OpenBSD__) || defined(__NetBSD__)
+      struct ifmediareq ifmr;
+      int sock;
+
+      bzero(&ifmr, sizeof(ifmr));
+      strlcpy(ifmr.ifm_name, ifa->ifa_name, sizeof(ifmr.ifm_name));
+      sock = socket(AF_INET, SOCK_DGRAM, 0);
+      if (sock < 0 || ioctl(sock, SIOCGIFMEDIA, &ifmr) < 0 ||
+          (ifmr.ifm_active & IFM_IEEE80211) == 0)
+        continue;
+#endif
 #elif defined(AF_PACKET) /* linux */
-    if (ifa->ifa_addr->sa_family == AF_PACKET)
+    if (ifa->ifa_addr->sa_family == AF_PACKET) {
 #else
 #error "couldnt find a way to get address family on your system"
 #endif
       interfaces = g_list_append (interfaces, g_strdup (ifa->ifa_name));
+    }
   }
   freeifaddrs(ifaddr);
   return interfaces;
