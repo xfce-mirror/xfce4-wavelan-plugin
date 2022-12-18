@@ -462,7 +462,9 @@ wavelan_new(XfcePanelPlugin *plugin)
   wavelan->signal_colors = TRUE;
   wavelan->show_icon = TRUE;
   wavelan->show_bar = TRUE;
+#if defined(__linux__)
   wavelan->command = g_strdup("nm-connection-editor");
+#endif
   wavelan->state = -2;
 
   wavelan->plugin = plugin;
