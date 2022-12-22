@@ -62,6 +62,7 @@
 #include <dev/ic/if_wi_ieee.h>
 #include <net80211/ieee80211.h>
 #include <net80211/ieee80211_ioctl.h>
+#include <net/if_media.h>
 #endif
 #endif
 
@@ -207,6 +208,10 @@ _wi_carrier(const struct wi_device *device)
 
 /* OpenBSD uses net80211 API */
 #if defined(__OpenBSD__)
+
+const struct ifmedia_baudrate ifm_baudrate_descriptions[] =
+    IFM_BAUDRATE_DESCRIPTIONS;
+
 static int
 _wi_netname(const struct wi_device *device, char *buffer, size_t len)
 {
@@ -262,32 +267,42 @@ _wi_quality(const struct wi_device *device, int *quality)
   return(WI_OK);
 }
 
+
 static int
 _wi_rate(const struct wi_device *device, int *rate)
 {
+  const struct ifmedia_baudrate *desc;
+  struct ifmediareq ifmr;
+  uint64_t *media_list;
   int result;
-  struct ieee80211_nodereq nr;
-  struct ieee80211_bssid bssid;
 
-  bzero((void *) &bssid, sizeof(bssid));
-  bzero((void *) &nr, sizeof(nr));
+  *rate = 0;
+  (void) memset(&ifmr, 0, sizeof(ifmr));
+  (void) strlcpy(ifmr.ifm_name, device->interface, sizeof(ifmr.ifm_name));
 
-  /* get i_bssid from interface */
-  strlcpy(bssid.i_name, device->interface, sizeof(bssid.i_name));
-  if((result = ioctl(device->socket, SIOCG80211BSSID, (caddr_t) &bssid)) != WI_OK)
+  // get the amount of media types
+  if ((result = ioctl(device->socket, SIOCGIFMEDIA, (caddr_t) & ifmr)) != WI_OK) {
     return (result);
-
-  /* put i_bssid into nr_macaddr to get nr_rssi */
-  bcopy(bssid.i_bssid, &nr.nr_macaddr, sizeof(nr.nr_macaddr));
-  strlcpy(nr.nr_ifname, device->interface, sizeof(nr.nr_ifname));
-  if ((result = ioctl(device->socket, SIOCG80211NODE, (caddr_t) & nr)) != WI_OK)
+  }
+  if (ifmr.ifm_count == 0) {
+    return -1;
+  }
+  media_list = calloc(ifmr.ifm_count, sizeof(*media_list));
+  if (media_list == NULL) {
+    return -1;
+  }
+  ifmr.ifm_ulist = media_list;
+  if ((result = ioctl(device->socket, SIOCGIFMEDIA, (caddr_t) & ifmr)) != WI_OK) {
     return (result);
+  }
 
-  /* stolen from ifconfig.c too, print only higher rate */
-  if (nr.nr_nrates)
-    *rate = (nr.nr_rates[nr.nr_nrates - 1] & IEEE80211_RATE_VAL) / 2;
-  else
-    *rate = 0;
+  for (desc = ifm_baudrate_descriptions; desc->ifmb_word != 0; desc++) {
+    if (IFM_TYPE_MATCH(desc->ifmb_word, ifmr.ifm_active) &&
+        IFM_SUBTYPE(desc->ifmb_word) == IFM_SUBTYPE(ifmr.ifm_active)) {
+      *rate = desc->ifmb_baudrate / 1000000;
+      return(WI_OK);
+    }
+  }
   return(WI_OK);
 }
 #endif
