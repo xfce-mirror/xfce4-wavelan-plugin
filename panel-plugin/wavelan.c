@@ -241,7 +241,6 @@ static void
 wavelan_set_state(t_wavelan *wavelan, gint state)
 {
   /* state = 0 -> no link, =-1 -> error */
-  DBG ("Entered wavelan_set_state, state = %d", state);
 
   if(state > 100)
     state = 100;
@@ -608,7 +607,6 @@ wavelan_write_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
 static void
 wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_wavelan *wavelan)
 {
-  DBG("wavelan_set_orientation(%d)", orientation);
   wavelan->orientation = orientation;
   gtk_orientable_set_orientation(GTK_ORIENTABLE(wavelan->box), orientation);
   gtk_orientable_set_orientation(GTK_ORIENTABLE(wavelan->signal), !orientation);
@@ -624,7 +622,6 @@ static void
 wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
 {
   int border_width, image_size;
-  DBG("wavelan_set_size(%d)", size);
   size /= xfce_panel_plugin_get_nrows(plugin);
   xfce_panel_plugin_set_small (plugin, TRUE);
   border_width = size > 26 ? 2 : 1;
