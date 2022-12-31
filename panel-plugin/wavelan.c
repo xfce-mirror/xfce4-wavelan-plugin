@@ -858,11 +858,9 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 static void
 wavelan_show_about (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 {
-   GdkPixbuf *icon;
    const gchar *auth[] = { "Benedikt Meurer <benny at xfce.org>", "Florian Rivoal <frivoal@xfce.org>", NULL };
-   icon = xfce_panel_pixbuf_from_source("network-wireless", NULL, 32);
    gtk_show_about_dialog(NULL,
-      "logo", icon,
+      "logo-icon-name", "network-wireless",
       "license", xfce_get_license_text (XFCE_LICENSE_TEXT_BSD),
       "version", PACKAGE_VERSION,
       "program-name", PACKAGE_NAME,
@@ -870,9 +868,6 @@ wavelan_show_about (XfcePanelPlugin *plugin, t_wavelan *wavelan)
       "website", "https://docs.xfce.org/panel-plugins/xfce4-wavelan-plugin",
       "copyright", "Copyright (c) 2003-2004 Benedikt Meurer\n",
       "authors", auth, NULL);
-
-   if(icon)
-      g_object_unref(G_OBJECT(icon));
 }
 
 static void
