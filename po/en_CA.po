@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Steve Harris <steve@jbs.ca>, 2020
+# Steve Harris <steve@jbs.ca>, 2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-08 12:56+0200\n"
+"POT-Creation-Date: 2022-11-28 15:08+0100\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
-"Last-Translator: Steve Harris <steve@jbs.ca>, 2020\n"
+"Last-Translator: Steve Harris <steve@jbs.ca>, 2023\n"
 "Language-Team: English (Canada) (http://www.transifex.com/xfce/xfce-panel-plugins/language/en_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +39,7 @@ msgstr "%d%s at %dMb/s"
 msgid "No device configured"
 msgstr "No device configured"
 
-#: ../panel-plugin/wavelan.c:434
+#: ../panel-plugin/wavelan.c:439
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -46,53 +47,53 @@ msgid ""
 "%s"
 msgstr "<big><b>Failed to execute command \"%s\".</b></big>\n\n%s"
 
-#: ../panel-plugin/wavelan.c:437
+#: ../panel-plugin/wavelan.c:442
 msgid "Error"
 msgstr "Error"
 
-#: ../panel-plugin/wavelan.c:691
+#: ../panel-plugin/wavelan.c:696
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan Plugin Options"
 
-#: ../panel-plugin/wavelan.c:704
+#: ../panel-plugin/wavelan.c:709
 msgid "Properties"
 msgstr "Properties"
 
-#: ../panel-plugin/wavelan.c:715
+#: ../panel-plugin/wavelan.c:720
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:738
+#: ../panel-plugin/wavelan.c:743
 msgid "_Autohide when offline"
 msgstr "_Autohide when offline"
 
-#: ../panel-plugin/wavelan.c:748
+#: ../panel-plugin/wavelan.c:753
 msgid "Autohide when no _hardware present"
 msgstr "Autohide when no _hardware present"
 
-#: ../panel-plugin/wavelan.c:760
+#: ../panel-plugin/wavelan.c:765
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
 
-#: ../panel-plugin/wavelan.c:769
+#: ../panel-plugin/wavelan.c:774
 msgid "Show _icon"
 msgstr "Show _icon"
 
-#: ../panel-plugin/wavelan.c:780
+#: ../panel-plugin/wavelan.c:785
 msgid "Show signal _bar"
-msgstr ""
+msgstr "Show signal _bar"
 
-#: ../panel-plugin/wavelan.c:791
+#: ../panel-plugin/wavelan.c:796
 msgid "Enable sig_nal quality colors"
 msgstr "Enable sig_nal quality colours"
 
-#: ../panel-plugin/wavelan.c:802
+#: ../panel-plugin/wavelan.c:807
 msgid "Wifi Manager Command"
-msgstr ""
+msgstr "Wifi Manager Command"
 
-#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:839 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "View the status of a wireless network"
 
