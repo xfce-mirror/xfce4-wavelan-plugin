@@ -3,94 +3,115 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Andi Chandler <andi@gowling.com>, 2023
 # Jeff Bailes <thepizzaking@gmail.com>, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 00:32+0100\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
-"Language-Team: English (United Kingdom) (http://www.transifex.com/xfce/xfce-panel-plugins/language/en_GB/)\n"
+"POT-Creation-Date: 2022-11-28 15:08+0100\n"
+"PO-Revision-Date: 2013-07-03 19:27+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2023\n"
+"Language-Team: English (United Kingdom) (http://app.transifex.com/xfce/xfce-panel-plugins/language/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:159 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "No carrier signal"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:173
+#: ../panel-plugin/wavelan.c:296
 #, c-format
 msgid "%s: %d%s at %dMb/s"
-msgstr ""
+msgstr "%s: %d%s at %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:176
+#: ../panel-plugin/wavelan.c:299
 #, c-format
 msgid "%d%s at %dMb/s"
-msgstr ""
+msgstr "%d%s at %dMb/s"
 
-#: ../panel-plugin/wavelan.c:180
+#: ../panel-plugin/wavelan.c:303
 msgid "No device configured"
 msgstr "No device configured"
 
-#: ../panel-plugin/wavelan.c:501
+#: ../panel-plugin/wavelan.c:439
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>Failed to execute command \"%s\".</b></big>\n\n%s"
+
+#: ../panel-plugin/wavelan.c:442
+msgid "Error"
+msgstr "Error"
+
+#: ../panel-plugin/wavelan.c:696
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan Plugin Options"
 
-#: ../panel-plugin/wavelan.c:516
+#: ../panel-plugin/wavelan.c:709
 msgid "Properties"
 msgstr "Properties"
 
-#: ../panel-plugin/wavelan.c:527
+#: ../panel-plugin/wavelan.c:720
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:549
+#: ../panel-plugin/wavelan.c:743
 msgid "_Autohide when offline"
 msgstr "_Autohide when offline"
 
-#: ../panel-plugin/wavelan.c:559
+#: ../panel-plugin/wavelan.c:753
 msgid "Autohide when no _hardware present"
-msgstr ""
+msgstr "Autohide when no _hardware present"
 
-#: ../panel-plugin/wavelan.c:570
+#: ../panel-plugin/wavelan.c:765
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
 
-#: ../panel-plugin/wavelan.c:578
-msgid "Enable sig_nal quality colors"
-msgstr ""
-
-#: ../panel-plugin/wavelan.c:589
+#: ../panel-plugin/wavelan.c:774
 msgid "Show _icon"
-msgstr ""
+msgstr "Show _icon"
 
-#: ../panel-plugin/wavelan.c:617 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:785
+msgid "Show signal _bar"
+msgstr "Show signal _bar"
+
+#: ../panel-plugin/wavelan.c:796
+msgid "Enable sig_nal quality colors"
+msgstr "Enable sig_nal quality colours"
+
+#: ../panel-plugin/wavelan.c:807
+msgid "Wifi Manager Command"
+msgstr "Wifi Manager Command"
+
+#: ../panel-plugin/wavelan.c:839 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "View the status of a wireless network"
 
 #: ../panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
-msgstr ""
+msgstr "No such WaveLAN device"
 
 #: ../panel-plugin/wi_common.c:41
 msgid "Invalid parameter"
-msgstr ""
+msgstr "Invalid parameter"
 
 #: ../panel-plugin/wi_common.c:44
 msgid "Unknown error"
-msgstr ""
+msgstr "Unknown error"
 
-#: ../panel-plugin/wi_linux.c:150
+#: ../panel-plugin/wi_linux.c:143
 msgid "Unknown"
-msgstr ""
+msgstr "Unknown"
 
 #: ../panel-plugin/wavelan.desktop.in.h:1
 msgid "Wavelan"
