@@ -66,7 +66,6 @@ typedef struct
   gboolean show_bar;
   gchar *command;
 
-  int size;
   int signal_strength;
   GtkOrientation orientation;
 
@@ -613,10 +612,6 @@ wavelan_set_orientation(XfcePanelPlugin* plugin, GtkOrientation orientation, t_w
   gtk_orientable_set_orientation(GTK_ORIENTABLE(wavelan->box), orientation);
   gtk_orientable_set_orientation(GTK_ORIENTABLE(wavelan->signal), !orientation);
   gtk_progress_bar_set_inverted(GTK_PROGRESS_BAR(wavelan->signal), (orientation == GTK_ORIENTATION_HORIZONTAL));
-  if (orientation == GTK_ORIENTATION_HORIZONTAL)
-   gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
-  else
-   gtk_widget_set_size_request(wavelan->ebox, wavelan->size, -1);
   wavelan_set_state(wavelan, wavelan->state);
 }
 
@@ -628,14 +623,9 @@ wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
   size /= xfce_panel_plugin_get_nrows(plugin);
   xfce_panel_plugin_set_small (plugin, TRUE);
   border_width = size > 26 ? 2 : 1;
-  wavelan->size = size;
   image_size = xfce_panel_plugin_get_icon_size (plugin);
   gtk_image_set_pixel_size (GTK_IMAGE (wavelan->image), image_size);
   gtk_container_set_border_width(GTK_CONTAINER(wavelan->box), border_width);
-  if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
-   gtk_widget_set_size_request(wavelan->ebox, -1, wavelan->size);
-  else
-   gtk_widget_set_size_request(wavelan->ebox, wavelan->size, -1);
 }
 
 /* interface changed callback */
