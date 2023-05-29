@@ -531,7 +531,7 @@ wavelan_new(XfcePanelPlugin *plugin)
   gtk_box_pack_start(GTK_BOX(wavelan->box), GTK_WIDGET(wavelan->signal), FALSE, FALSE, 0);
 
 
-  wavelan_set_size(plugin, xfce_panel_plugin_get_size (plugin), wavelan);
+  wavelan_set_size(plugin, xfce_panel_plugin_get_icon_size (plugin), wavelan);
   wavelan_set_orientation(plugin, xfce_panel_plugin_get_orientation (plugin),  wavelan);
   gtk_widget_show_all(wavelan->box);
   gtk_container_add(GTK_CONTAINER(wavelan->ebox), GTK_WIDGET(wavelan->box));
@@ -629,7 +629,7 @@ wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
   xfce_panel_plugin_set_small (plugin, TRUE);
   border_width = size > 26 ? 2 : 1;
   wavelan->size = size;
-  image_size = wavelan->size - (2 * border_width);
+  image_size = xfce_panel_plugin_get_icon_size (plugin);
   gtk_image_set_pixel_size (GTK_IMAGE (wavelan->image), image_size);
   gtk_container_set_border_width(GTK_CONTAINER(wavelan->box), border_width);
   if (wavelan->orientation == GTK_ORIENTATION_HORIZONTAL)
