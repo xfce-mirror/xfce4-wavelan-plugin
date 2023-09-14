@@ -93,7 +93,7 @@ msgstr "Aktivér farver for sig_nalets kvalitet"
 
 #: ../panel-plugin/wavelan.c:827
 msgid "Wifi Manager Command"
-msgstr ""
+msgstr "Kommando til Wifi-håndtering"
 
 #: ../panel-plugin/wavelan.c:857 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
