@@ -6,41 +6,42 @@
 # Balázs Meskó <meskobalazs@mailbox.org>, 2018
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009
 # gyeben <gyonkibendeguz@gmail.com>, 2016
+# Silensys, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-08 12:56+0200\n"
+"POT-Creation-Date: 2023-05-30 00:54+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
-"Last-Translator: Balázs Meskó <meskobalazs@mailbox.org>, 2018\n"
-"Language-Team: Hungarian (http://www.transifex.com/xfce/xfce-panel-plugins/language/hu/)\n"
+"Last-Translator: Silensys, 2024\n"
+"Language-Team: Hungarian (http://app.transifex.com/xfce/xfce-panel-plugins/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:281 ../panel-plugin/wi_common.c:39
 msgid "No carrier signal"
 msgstr "Nincs hordozójel"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:296
+#: ../panel-plugin/wavelan.c:303
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s, %d Mb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:299
+#: ../panel-plugin/wavelan.c:306
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s, %dMb/s"
 
-#: ../panel-plugin/wavelan.c:303
+#: ../panel-plugin/wavelan.c:310
 msgid "No device configured"
 msgstr "Nincs beállítva eszköz"
 
-#: ../panel-plugin/wavelan.c:434
+#: ../panel-plugin/wavelan.c:466
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -48,65 +49,65 @@ msgid ""
 "%s"
 msgstr "<big><b>Nem sikerült a(z) \"%s\" parancs futtatása.</b></big>\n\n%s"
 
-#: ../panel-plugin/wavelan.c:437
+#: ../panel-plugin/wavelan.c:469
 msgid "Error"
 msgstr "Hiba"
 
-#: ../panel-plugin/wavelan.c:691
+#: ../panel-plugin/wavelan.c:716
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan bővítmény beállításai"
 
-#: ../panel-plugin/wavelan.c:704
+#: ../panel-plugin/wavelan.c:729
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: ../panel-plugin/wavelan.c:715
+#: ../panel-plugin/wavelan.c:740
 msgid "Interface"
 msgstr "Felület"
 
-#: ../panel-plugin/wavelan.c:738
+#: ../panel-plugin/wavelan.c:763
 msgid "_Autohide when offline"
 msgstr "_Automatikus elrejtés ha nincs kapcsolat"
 
-#: ../panel-plugin/wavelan.c:748
+#: ../panel-plugin/wavelan.c:773
 msgid "Autohide when no _hardware present"
 msgstr "Automatikus elrejtés ha nem található _hardver"
 
-#: ../panel-plugin/wavelan.c:760
+#: ../panel-plugin/wavelan.c:785
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Megjegyzés: ez megnehezíti a bővítmény eltávolítását vagy beállítását, ha nem található eszköz."
 
-#: ../panel-plugin/wavelan.c:769
+#: ../panel-plugin/wavelan.c:794
 msgid "Show _icon"
 msgstr "_Ikon megjelenítése"
 
-#: ../panel-plugin/wavelan.c:780
+#: ../panel-plugin/wavelan.c:805
 msgid "Show signal _bar"
-msgstr ""
+msgstr "Jelző_sáv megjelenítése"
 
-#: ../panel-plugin/wavelan.c:791
+#: ../panel-plugin/wavelan.c:816
 msgid "Enable sig_nal quality colors"
 msgstr "_Jelminőség színeinek engedélyezése"
 
-#: ../panel-plugin/wavelan.c:802
+#: ../panel-plugin/wavelan.c:827
 msgid "Wifi Manager Command"
-msgstr ""
+msgstr "Wifi Kezelő Parancs"
 
-#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:857 ../panel-plugin/wavelan.desktop.in.h:2
 msgid "View the status of a wireless network"
 msgstr "Vezeték nélküli hálózat állapotának megjelenítése"
 
-#: ../panel-plugin/wi_common.c:38
+#: ../panel-plugin/wi_common.c:42
 msgid "No such WaveLAN device"
 msgstr "Nincs ilyen WaveLAN eszköz"
 
-#: ../panel-plugin/wi_common.c:41
+#: ../panel-plugin/wi_common.c:45
 msgid "Invalid parameter"
 msgstr "Érvénytelen paraméter"
 
-#: ../panel-plugin/wi_common.c:44
+#: ../panel-plugin/wi_common.c:48
 msgid "Unknown error"
 msgstr "Ismeretlen hiba"
 
