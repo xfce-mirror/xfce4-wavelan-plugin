@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 00:54+0200\n"
+"POT-Creation-Date: 2024-04-06 12:55+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: scootergrisen, 2017,2019,2023\n"
 "Language-Team: Danish (http://app.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
@@ -95,7 +95,7 @@ msgstr "Aktivér farver for sig_nalets kvalitet"
 msgid "Wifi Manager Command"
 msgstr "Kommando til Wifi-håndtering"
 
-#: ../panel-plugin/wavelan.c:857 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:857
 msgid "View the status of a wireless network"
 msgstr "Vis statussen af et trådløst netværk"
 
@@ -114,7 +114,3 @@ msgstr "Ukendt fejl"
 #: ../panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Ukendt"
-
-#: ../panel-plugin/wavelan.desktop.in.h:1
-msgid "Wavelan"
-msgstr "Wavelan"
