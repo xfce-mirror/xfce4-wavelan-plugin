@@ -6,14 +6,14 @@
 # Balázs Meskó <meskobalazs@mailbox.org>, 2018
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009
 # gyeben <gyonkibendeguz@gmail.com>, 2016
-# Silensys, 2024
+# Omega <ors0092@gmail.com>, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 00:54+0200\n"
+"POT-Creation-Date: 2024-04-06 12:55+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
-"Last-Translator: Silensys, 2024\n"
+"Last-Translator: Omega <ors0092@gmail.com>, 2024\n"
 "Language-Team: Hungarian (http://app.transifex.com/xfce/xfce-panel-plugins/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -95,7 +95,7 @@ msgstr "_Jelminőség színeinek engedélyezése"
 msgid "Wifi Manager Command"
 msgstr "Wifi Kezelő Parancs"
 
-#: ../panel-plugin/wavelan.c:857 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:857
 msgid "View the status of a wireless network"
 msgstr "Vezeték nélküli hálózat állapotának megjelenítése"
 
@@ -114,7 +114,3 @@ msgstr "Ismeretlen hiba"
 #: ../panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Ismeretlen"
-
-#: ../panel-plugin/wavelan.desktop.in.h:1
-msgid "Wavelan"
-msgstr "Wavelan"
