@@ -10,7 +10,6 @@ stamp*
 configure
 config.*
 configure.in
-intltool*
 m4/
 mkinstalldirs
 missing
@@ -28,8 +27,19 @@ configure.ac
 libtool
 panel-plugin/libwavelan.la
 panel-plugin/xfce4-wavelan-plugin
-po/.intltool-merge-cache*
 po/*.gmo
 po/Makefile.in.in
 po/POTFILES
 
+ABOUT-NLS
+po/Makevars.template
+po/Rules-quot
+po/boldquot.sed
+po/en@boldquot.header
+po/en@quot.header
+po/insert-header.sin
+po/quot.sed
+po/remove-potcdate.sed
+po/remove-potcdate.sin
+po/xfce4-wavelan-plugin.pot
+xfce4-wavelan-plugin-*.tar.bz2

@@ -28,7 +28,6 @@ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 dnl Check for basic programs
 AC_PROG_CC()
 AC_PROG_INSTALL()
-IT_PROG_INTLTOOL([0.35.0])
 
 LT_PREREQ([2.2.6])
 LT_INIT([disable-static])
@@ -43,7 +42,11 @@ LT_LIB_M
 AC_SUBST(LIBM)
 
 dnl Check for i18n support
-XDT_I18N([@LINGUAS@])
+GETTEXT_PACKAGE="$PACKAGE"
+AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [Name of default gettext domain])
+AC_SUBST([GETTEXT_PACKAGE])
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 
 dnl configure the panel plugin
 XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.50.0])

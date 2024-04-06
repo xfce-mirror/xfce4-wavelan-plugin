@@ -1,8 +1,8 @@
 [Xfce Panel]
 Type=X-XFCE-PanelPlugin
 Encoding=UTF-8
-_Name=Wavelan
-_Comment=View the status of a wireless network
+Name=Wavelan
+Comment=View the status of a wireless network
 Icon=network-wireless
 X-XFCE-Internal=FALSE
 X-XFCE-Module=wavelan
