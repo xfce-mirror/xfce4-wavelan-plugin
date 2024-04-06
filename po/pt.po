@@ -10,37 +10,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-08 12:56+0200\n"
+"POT-Creation-Date: 2024-04-06 12:55+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>, 2022\n"
-"Language-Team: Portuguese (http://www.transifex.com/xfce/xfce-panel-plugins/language/pt/)\n"
+"Language-Team: Portuguese (http://app.transifex.com/xfce/xfce-panel-plugins/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:281 ../panel-plugin/wi_common.c:39
 msgid "No carrier signal"
 msgstr "Nenhum sinal de transporte"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:296
+#: ../panel-plugin/wavelan.c:303
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s a %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:299
+#: ../panel-plugin/wavelan.c:306
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s a %dMb/s"
 
-#: ../panel-plugin/wavelan.c:303
+#: ../panel-plugin/wavelan.c:310
 msgid "No device configured"
 msgstr "Nenhum dispositivo configurado"
 
-#: ../panel-plugin/wavelan.c:434
+#: ../panel-plugin/wavelan.c:466
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -48,72 +48,68 @@ msgid ""
 "%s"
 msgstr "<big><b>Falha ao executar o comando \"%s\".</b></big>\n\n%s"
 
-#: ../panel-plugin/wavelan.c:437
+#: ../panel-plugin/wavelan.c:469
 msgid "Error"
 msgstr "Erro"
 
-#: ../panel-plugin/wavelan.c:691
+#: ../panel-plugin/wavelan.c:716
 msgid "Wavelan Plugin Options"
 msgstr "Opções do plugin Wavelan"
 
-#: ../panel-plugin/wavelan.c:704
+#: ../panel-plugin/wavelan.c:729
 msgid "Properties"
 msgstr "Propriedades"
 
-#: ../panel-plugin/wavelan.c:715
+#: ../panel-plugin/wavelan.c:740
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:738
+#: ../panel-plugin/wavelan.c:763
 msgid "_Autohide when offline"
 msgstr "_Ocultar automaticamente quando offline"
 
-#: ../panel-plugin/wavelan.c:748
+#: ../panel-plugin/wavelan.c:773
 msgid "Autohide when no _hardware present"
 msgstr "Ocultar automaticamente quando _hardware ausente"
 
-#: ../panel-plugin/wavelan.c:760
+#: ../panel-plugin/wavelan.c:785
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Nota: isto torna difícil remover ou configurar o plugin, caso nenhum dispositivo seja detetado."
 
-#: ../panel-plugin/wavelan.c:769
+#: ../panel-plugin/wavelan.c:794
 msgid "Show _icon"
 msgstr "Mostrar í_cone"
 
-#: ../panel-plugin/wavelan.c:780
+#: ../panel-plugin/wavelan.c:805
 msgid "Show signal _bar"
 msgstr "Mostrar _barra de sinal"
 
-#: ../panel-plugin/wavelan.c:791
+#: ../panel-plugin/wavelan.c:816
 msgid "Enable sig_nal quality colors"
 msgstr "Ligar cores de qualidade de si_nal"
 
-#: ../panel-plugin/wavelan.c:802
+#: ../panel-plugin/wavelan.c:827
 msgid "Wifi Manager Command"
 msgstr "Comando de Gestor Wifi"
 
-#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:857
 msgid "View the status of a wireless network"
 msgstr "Ver o estado da rede sem fios"
 
-#: ../panel-plugin/wi_common.c:38
+#: ../panel-plugin/wi_common.c:42
 msgid "No such WaveLAN device"
 msgstr "Nenhum dispositivo de rede"
 
-#: ../panel-plugin/wi_common.c:41
+#: ../panel-plugin/wi_common.c:45
 msgid "Invalid parameter"
 msgstr "Parâmetro inválido"
 
-#: ../panel-plugin/wi_common.c:44
+#: ../panel-plugin/wi_common.c:48
 msgid "Unknown error"
 msgstr "Erro desconhecido"
 
 #: ../panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Desconhecido"
-
-#: ../panel-plugin/wavelan.desktop.in.h:1
-msgid "Wavelan"
-msgstr "Wavelan"
