@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 00:54+0200\n"
+"POT-Creation-Date: 2024-04-06 12:55+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Oscar Perez <oscarpc@gmail.com>, 2023\n"
 "Language-Team: Catalan (http://app.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
@@ -97,7 +97,7 @@ msgstr "Habilita els colors per a la qualitat del se_nyal"
 msgid "Wifi Manager Command"
 msgstr "Comanda del gestor Wifi"
 
-#: ../panel-plugin/wavelan.c:857 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:857
 msgid "View the status of a wireless network"
 msgstr "Visualitzeu l'estat de la xarxa sense fil"
 
@@ -116,7 +116,3 @@ msgstr "Error desconegut"
 #: ../panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Desconegut"
-
-#: ../panel-plugin/wavelan.desktop.in.h:1
-msgid "Wavelan"
-msgstr "Wavelan"
