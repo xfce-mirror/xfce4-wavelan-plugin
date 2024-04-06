@@ -9,37 +9,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-08 12:56+0200\n"
+"POT-Creation-Date: 2024-04-06 12:55+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>, 2022\n"
-"Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
+"Language-Team: Slovenian (http://app.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
-#: ../panel-plugin/wavelan.c:274 ../panel-plugin/wi_common.c:35
+#: ../panel-plugin/wavelan.c:281 ../panel-plugin/wi_common.c:39
 msgid "No carrier signal"
 msgstr "Ni nosilnega signala"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:296
+#: ../panel-plugin/wavelan.c:303
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s pri %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:299
+#: ../panel-plugin/wavelan.c:306
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s pri %dMb/s"
 
-#: ../panel-plugin/wavelan.c:303
+#: ../panel-plugin/wavelan.c:310
 msgid "No device configured"
 msgstr "Nobena naprava ni nastavljena"
 
-#: ../panel-plugin/wavelan.c:434
+#: ../panel-plugin/wavelan.c:466
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -47,72 +47,68 @@ msgid ""
 "%s"
 msgstr "<big><b>Ni mogoče zagnati ukaza \"%s\".</b></big>\n\n%s"
 
-#: ../panel-plugin/wavelan.c:437
+#: ../panel-plugin/wavelan.c:469
 msgid "Error"
 msgstr "Napaka"
 
-#: ../panel-plugin/wavelan.c:691
+#: ../panel-plugin/wavelan.c:716
 msgid "Wavelan Plugin Options"
 msgstr "Nastavitve za wavelan vtičnik"
 
-#: ../panel-plugin/wavelan.c:704
+#: ../panel-plugin/wavelan.c:729
 msgid "Properties"
 msgstr "Lastnosti"
 
-#: ../panel-plugin/wavelan.c:715
+#: ../panel-plugin/wavelan.c:740
 msgid "Interface"
 msgstr "k"
 
-#: ../panel-plugin/wavelan.c:738
+#: ../panel-plugin/wavelan.c:763
 msgid "_Autohide when offline"
 msgstr "S_amodejno skrij, ki ni povezave"
 
-#: ../panel-plugin/wavelan.c:748
+#: ../panel-plugin/wavelan.c:773
 msgid "Autohide when no _hardware present"
 msgstr "Samodejno skrij, ko ni s_trojne opreme"
 
-#: ../panel-plugin/wavelan.c:760
+#: ../panel-plugin/wavelan.c:785
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Opomba: To bo otežilo odstranjevanje ali nastavljanje vtičnika, ko naprava ni zaznana."
 
-#: ../panel-plugin/wavelan.c:769
+#: ../panel-plugin/wavelan.c:794
 msgid "Show _icon"
 msgstr "Prikaži _ikono"
 
-#: ../panel-plugin/wavelan.c:780
+#: ../panel-plugin/wavelan.c:805
 msgid "Show signal _bar"
 msgstr "Pokaži si_gnalni stolpec"
 
-#: ../panel-plugin/wavelan.c:791
+#: ../panel-plugin/wavelan.c:816
 msgid "Enable sig_nal quality colors"
 msgstr "Vklopi barv_ni prikaz kakovosti signala"
 
-#: ../panel-plugin/wavelan.c:802
+#: ../panel-plugin/wavelan.c:827
 msgid "Wifi Manager Command"
 msgstr "Ukaz upravitelja Wifi"
 
-#: ../panel-plugin/wavelan.c:834 ../panel-plugin/wavelan.desktop.in.h:2
+#: ../panel-plugin/wavelan.c:857
 msgid "View the status of a wireless network"
 msgstr "Prikaz stanja brezžične povezave"
 
-#: ../panel-plugin/wi_common.c:38
+#: ../panel-plugin/wi_common.c:42
 msgid "No such WaveLAN device"
 msgstr "Ni takšne WaveLAN naprave"
 
-#: ../panel-plugin/wi_common.c:41
+#: ../panel-plugin/wi_common.c:45
 msgid "Invalid parameter"
 msgstr "Napačen parameter"
 
-#: ../panel-plugin/wi_common.c:44
+#: ../panel-plugin/wi_common.c:48
 msgid "Unknown error"
 msgstr "Neznana napaka"
 
 #: ../panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Neznano"
-
-#: ../panel-plugin/wavelan.desktop.in.h:1
-msgid "Wavelan"
-msgstr "Wavelan"
