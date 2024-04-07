@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-wavelan-plugin package.
 # 
 # Translators:
 # Adam Stachowicz <saibamenppl@gmail.com>, 2015
@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 12:55+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-04-07 00:57+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Marek Adamski, 2022,2024\n"
 "Language-Team: Polish (http://app.transifex.com/xfce/xfce-panel-plugins/language/pl/)\n"
@@ -22,27 +22,27 @@ msgstr ""
 "Language: pl\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: ../panel-plugin/wavelan.c:281 ../panel-plugin/wi_common.c:39
+#: panel-plugin/wavelan.c:281 panel-plugin/wi_common.c:39
 msgid "No carrier signal"
 msgstr "Brak sygnału nośnika"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:303
+#: panel-plugin/wavelan.c:303
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s z prędkością %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:306
+#: panel-plugin/wavelan.c:306
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s z prędkością %dMb/s"
 
-#: ../panel-plugin/wavelan.c:310
+#: panel-plugin/wavelan.c:310
 msgid "No device configured"
 msgstr "Brak skonfigurowanego urządzenia"
 
-#: ../panel-plugin/wavelan.c:466
+#: panel-plugin/wavelan.c:466
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -50,68 +50,72 @@ msgid ""
 "%s"
 msgstr "<big><b>Błąd wykonania polecenia \"%s\".</b></big>\n\n%s"
 
-#: ../panel-plugin/wavelan.c:469
+#: panel-plugin/wavelan.c:469
 msgid "Error"
 msgstr "Błąd"
 
-#: ../panel-plugin/wavelan.c:716
+#: panel-plugin/wavelan.c:716
 msgid "Wavelan Plugin Options"
 msgstr "Opcje wtyczki Wavelan"
 
-#: ../panel-plugin/wavelan.c:729
+#: panel-plugin/wavelan.c:729
 msgid "Properties"
 msgstr "Właściwości"
 
-#: ../panel-plugin/wavelan.c:740
+#: panel-plugin/wavelan.c:740
 msgid "Interface"
 msgstr "Interfejs"
 
-#: ../panel-plugin/wavelan.c:763
+#: panel-plugin/wavelan.c:763
 msgid "_Autohide when offline"
 msgstr "_Ukrywanie po rozłączeniu"
 
-#: ../panel-plugin/wavelan.c:773
+#: panel-plugin/wavelan.c:773
 msgid "Autohide when no _hardware present"
 msgstr "Automatyczne _ukrywanie przy nieobecności urządzenia"
 
-#: ../panel-plugin/wavelan.c:785
+#: panel-plugin/wavelan.c:785
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Uwaga: może utrudniać usunięcie lub skonfigurowanie apletu."
 
-#: ../panel-plugin/wavelan.c:794
+#: panel-plugin/wavelan.c:794
 msgid "Show _icon"
 msgstr "Pokaż _ikonę"
 
-#: ../panel-plugin/wavelan.c:805
+#: panel-plugin/wavelan.c:805
 msgid "Show signal _bar"
 msgstr "Pokaż _pasek sygnału"
 
-#: ../panel-plugin/wavelan.c:816
+#: panel-plugin/wavelan.c:816
 msgid "Enable sig_nal quality colors"
 msgstr "Włącz kolory jakości syg_nału"
 
-#: ../panel-plugin/wavelan.c:827
+#: panel-plugin/wavelan.c:827
 msgid "Wifi Manager Command"
 msgstr "Polecenie menedżera Wi-Fi"
 
-#: ../panel-plugin/wavelan.c:857
+#: panel-plugin/wavelan.c:857 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
 msgstr "Dostarcza informacje o stanie sieci bezprzewodowej"
 
-#: ../panel-plugin/wi_common.c:42
+#: panel-plugin/wi_common.c:42
 msgid "No such WaveLAN device"
 msgstr "Nie ma takiego urządzenia WaveLAN"
 
-#: ../panel-plugin/wi_common.c:45
+#: panel-plugin/wi_common.c:45
 msgid "Invalid parameter"
 msgstr "Niepoprawny parametr"
 
-#: ../panel-plugin/wi_common.c:48
+#: panel-plugin/wi_common.c:48
 msgid "Unknown error"
 msgstr "Nieznany błąd"
 
-#: ../panel-plugin/wi_linux.c:143
+#: panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Nieznany"
+
+#: panel-plugin/wavelan.desktop.in:5
+msgid "Wavelan"
+msgstr "Sieć bezprzewodowa"
