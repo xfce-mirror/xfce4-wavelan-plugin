@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-wavelan-plugin package.
 # 
 # Translators:
 # Andi Chandler <andi@gowling.com>, 2023
@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 12:55+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-04-07 00:57+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>, 2023\n"
 "Language-Team: English (United Kingdom) (http://app.transifex.com/xfce/xfce-panel-plugins/language/en_GB/)\n"
@@ -19,27 +19,27 @@ msgstr ""
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:281 ../panel-plugin/wi_common.c:39
+#: panel-plugin/wavelan.c:281 panel-plugin/wi_common.c:39
 msgid "No carrier signal"
 msgstr "No carrier signal"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:303
+#: panel-plugin/wavelan.c:303
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s at %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:306
+#: panel-plugin/wavelan.c:306
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s at %dMb/s"
 
-#: ../panel-plugin/wavelan.c:310
+#: panel-plugin/wavelan.c:310
 msgid "No device configured"
 msgstr "No device configured"
 
-#: ../panel-plugin/wavelan.c:466
+#: panel-plugin/wavelan.c:466
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -47,68 +47,72 @@ msgid ""
 "%s"
 msgstr "<big><b>Failed to execute command \"%s\".</b></big>\n\n%s"
 
-#: ../panel-plugin/wavelan.c:469
+#: panel-plugin/wavelan.c:469
 msgid "Error"
 msgstr "Error"
 
-#: ../panel-plugin/wavelan.c:716
+#: panel-plugin/wavelan.c:716
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan Plugin Options"
 
-#: ../panel-plugin/wavelan.c:729
+#: panel-plugin/wavelan.c:729
 msgid "Properties"
 msgstr "Properties"
 
-#: ../panel-plugin/wavelan.c:740
+#: panel-plugin/wavelan.c:740
 msgid "Interface"
 msgstr "Interface"
 
-#: ../panel-plugin/wavelan.c:763
+#: panel-plugin/wavelan.c:763
 msgid "_Autohide when offline"
 msgstr "_Autohide when offline"
 
-#: ../panel-plugin/wavelan.c:773
+#: panel-plugin/wavelan.c:773
 msgid "Autohide when no _hardware present"
 msgstr "Autohide when no _hardware present"
 
-#: ../panel-plugin/wavelan.c:785
+#: panel-plugin/wavelan.c:785
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Note: This will make it difficult to remove or configure the plugin if there is no device detected."
 
-#: ../panel-plugin/wavelan.c:794
+#: panel-plugin/wavelan.c:794
 msgid "Show _icon"
 msgstr "Show _icon"
 
-#: ../panel-plugin/wavelan.c:805
+#: panel-plugin/wavelan.c:805
 msgid "Show signal _bar"
 msgstr "Show signal _bar"
 
-#: ../panel-plugin/wavelan.c:816
+#: panel-plugin/wavelan.c:816
 msgid "Enable sig_nal quality colors"
 msgstr "Enable sig_nal quality colours"
 
-#: ../panel-plugin/wavelan.c:827
+#: panel-plugin/wavelan.c:827
 msgid "Wifi Manager Command"
 msgstr "Wifi Manager Command"
 
-#: ../panel-plugin/wavelan.c:857
+#: panel-plugin/wavelan.c:857 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
 msgstr "View the status of a wireless network"
 
-#: ../panel-plugin/wi_common.c:42
+#: panel-plugin/wi_common.c:42
 msgid "No such WaveLAN device"
 msgstr "No such WaveLAN device"
 
-#: ../panel-plugin/wi_common.c:45
+#: panel-plugin/wi_common.c:45
 msgid "Invalid parameter"
 msgstr "Invalid parameter"
 
-#: ../panel-plugin/wi_common.c:48
+#: panel-plugin/wi_common.c:48
 msgid "Unknown error"
 msgstr "Unknown error"
 
-#: ../panel-plugin/wi_linux.c:143
+#: panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Unknown"
+
+#: panel-plugin/wavelan.desktop.in:5
+msgid "Wavelan"
+msgstr "Wavelan"
