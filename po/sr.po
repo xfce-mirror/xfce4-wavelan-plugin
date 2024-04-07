@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-wavelan-plugin package.
 # 
 # Translators:
 # Саша Петровић <salepetronije@gmail.com>, 2012,2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 12:55+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-04-07 00:57+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>, 2012,2014-2015\n"
 "Language-Team: Serbian (http://app.transifex.com/xfce/xfce-panel-plugins/language/sr/)\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/wavelan.c:281 ../panel-plugin/wi_common.c:39
+#: panel-plugin/wavelan.c:281 panel-plugin/wi_common.c:39
 msgid "No carrier signal"
 msgstr "Нема знака од достављача услуга"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:303
+#: panel-plugin/wavelan.c:303
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s са %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:306
+#: panel-plugin/wavelan.c:306
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s са %dMb/s"
 
-#: ../panel-plugin/wavelan.c:310
+#: panel-plugin/wavelan.c:310
 msgid "No device configured"
 msgstr "Није подешен ни један уређај"
 
-#: ../panel-plugin/wavelan.c:466
+#: panel-plugin/wavelan.c:466
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -46,68 +46,72 @@ msgid ""
 "%s"
 msgstr "<big><b>Нисам успео да извршим наредбу „%s“.</b></big>\n\n%s"
 
-#: ../panel-plugin/wavelan.c:469
+#: panel-plugin/wavelan.c:469
 msgid "Error"
 msgstr "Грeшкa"
 
-#: ../panel-plugin/wavelan.c:716
+#: panel-plugin/wavelan.c:716
 msgid "Wavelan Plugin Options"
 msgstr "Могућности прикључка Мрежног таласа"
 
-#: ../panel-plugin/wavelan.c:729
+#: panel-plugin/wavelan.c:729
 msgid "Properties"
 msgstr "Особине"
 
-#: ../panel-plugin/wavelan.c:740
+#: panel-plugin/wavelan.c:740
 msgid "Interface"
 msgstr "Сучеље"
 
-#: ../panel-plugin/wavelan.c:763
+#: panel-plugin/wavelan.c:763
 msgid "_Autohide when offline"
 msgstr "_Самостално сакриј кад је ван мреже"
 
-#: ../panel-plugin/wavelan.c:773
+#: panel-plugin/wavelan.c:773
 msgid "Autohide when no _hardware present"
 msgstr "Самостално сакриј када _уређај није присутан"
 
-#: ../panel-plugin/wavelan.c:785
+#: panel-plugin/wavelan.c:785
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Примедба: Ово ће отежати уклањање или подешавање прикључка уколико није препознат ни један уређај."
 
-#: ../panel-plugin/wavelan.c:794
+#: panel-plugin/wavelan.c:794
 msgid "Show _icon"
 msgstr "Приказуј _сличицу"
 
-#: ../panel-plugin/wavelan.c:805
+#: panel-plugin/wavelan.c:805
 msgid "Show signal _bar"
 msgstr "Приказуј траку знакова"
 
-#: ../panel-plugin/wavelan.c:816
+#: panel-plugin/wavelan.c:816
 msgid "Enable sig_nal quality colors"
 msgstr "Омогући приказ боја по јачини _пријема"
 
-#: ../panel-plugin/wavelan.c:827
+#: panel-plugin/wavelan.c:827
 msgid "Wifi Manager Command"
 msgstr "Управник наредби бежичне везе"
 
-#: ../panel-plugin/wavelan.c:857
+#: panel-plugin/wavelan.c:857 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
 msgstr "Преглед стања бежичне мреже"
 
-#: ../panel-plugin/wi_common.c:42
+#: panel-plugin/wi_common.c:42
 msgid "No such WaveLAN device"
 msgstr "Нема таквог бежичног уређаја"
 
-#: ../panel-plugin/wi_common.c:45
+#: panel-plugin/wi_common.c:45
 msgid "Invalid parameter"
 msgstr "Одредница је неисправна"
 
-#: ../panel-plugin/wi_common.c:48
+#: panel-plugin/wi_common.c:48
 msgid "Unknown error"
 msgstr "Непозната грешка"
 
-#: ../panel-plugin/wi_linux.c:143
+#: panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Непознато"
+
+#: panel-plugin/wavelan.desktop.in:5
+msgid "Wavelan"
+msgstr "Мрежни талас"
