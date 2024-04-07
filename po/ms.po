@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-wavelan-plugin package.
 # 
 # Translators:
 # abuyop <abuyop@gmail.com>, 2014-2015,2022
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 12:55+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-04-07 00:57+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>, 2014-2015,2022\n"
 "Language-Team: Malay (http://app.transifex.com/xfce/xfce-panel-plugins/language/ms/)\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Language: ms\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/wavelan.c:281 ../panel-plugin/wi_common.c:39
+#: panel-plugin/wavelan.c:281 panel-plugin/wi_common.c:39
 msgid "No carrier signal"
 msgstr "Tiada isyarat pembawa"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:303
+#: panel-plugin/wavelan.c:303
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s pada %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:306
+#: panel-plugin/wavelan.c:306
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s pada %dMb/s"
 
-#: ../panel-plugin/wavelan.c:310
+#: panel-plugin/wavelan.c:310
 msgid "No device configured"
 msgstr "Tiada peranti dikonfigur"
 
-#: ../panel-plugin/wavelan.c:466
+#: panel-plugin/wavelan.c:466
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -46,68 +46,72 @@ msgid ""
 "%s"
 msgstr "<big><b>Gagal lakukan perintah \"%s\".</b></big>\n\n%s"
 
-#: ../panel-plugin/wavelan.c:469
+#: panel-plugin/wavelan.c:469
 msgid "Error"
 msgstr "Ralat"
 
-#: ../panel-plugin/wavelan.c:716
+#: panel-plugin/wavelan.c:716
 msgid "Wavelan Plugin Options"
 msgstr "Pilihan Pemalam Wavelan"
 
-#: ../panel-plugin/wavelan.c:729
+#: panel-plugin/wavelan.c:729
 msgid "Properties"
 msgstr "Sifat"
 
-#: ../panel-plugin/wavelan.c:740
+#: panel-plugin/wavelan.c:740
 msgid "Interface"
 msgstr "Antaramuka"
 
-#: ../panel-plugin/wavelan.c:763
+#: panel-plugin/wavelan.c:763
 msgid "_Autohide when offline"
 msgstr "Sembunyi sen_diri bila diluar talian"
 
-#: ../panel-plugin/wavelan.c:773
+#: panel-plugin/wavelan.c:773
 msgid "Autohide when no _hardware present"
 msgstr "Sembunyi sendiri bila tiada pe_rkakasan hadir"
 
-#: ../panel-plugin/wavelan.c:785
+#: panel-plugin/wavelan.c:785
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Perhatian: Ini akan menyukarkan proses membuang atau mengkonfigur pemalam jika tiada peranti dikesan."
 
-#: ../panel-plugin/wavelan.c:794
+#: panel-plugin/wavelan.c:794
 msgid "Show _icon"
 msgstr "Tunjuk _ikon"
 
-#: ../panel-plugin/wavelan.c:805
+#: panel-plugin/wavelan.c:805
 msgid "Show signal _bar"
 msgstr "Tunjuk _palang isyarat"
 
-#: ../panel-plugin/wavelan.c:816
+#: panel-plugin/wavelan.c:816
 msgid "Enable sig_nal quality colors"
 msgstr "Benarkan warna kualiti is_yarat"
 
-#: ../panel-plugin/wavelan.c:827
+#: panel-plugin/wavelan.c:827
 msgid "Wifi Manager Command"
 msgstr "Perintah Pengurus Wifi"
 
-#: ../panel-plugin/wavelan.c:857
+#: panel-plugin/wavelan.c:857 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
 msgstr "Lihat status rangkaian tanpa wayar"
 
-#: ../panel-plugin/wi_common.c:42
+#: panel-plugin/wi_common.c:42
 msgid "No such WaveLAN device"
 msgstr "Tiada peranti WaveLAN sebegitu"
 
-#: ../panel-plugin/wi_common.c:45
+#: panel-plugin/wi_common.c:45
 msgid "Invalid parameter"
 msgstr "Parameter tidak sah"
 
-#: ../panel-plugin/wi_common.c:48
+#: panel-plugin/wi_common.c:48
 msgid "Unknown error"
 msgstr "Ralat tidak diketahui"
 
-#: ../panel-plugin/wi_linux.c:143
+#: panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Tidak Diketahui"
+
+#: panel-plugin/wavelan.desktop.in:5
+msgid "Wavelan"
+msgstr "Wavelan"
