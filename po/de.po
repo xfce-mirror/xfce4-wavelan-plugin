@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-wavelan-plugin package.
 # 
 # Translators:
 # Andreas Eitel <github-aneitel@online.de>, 2022
@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 12:55+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-04-07 00:57+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Andreas Eitel <github-aneitel@online.de>, 2022\n"
 "Language-Team: German (http://app.transifex.com/xfce/xfce-panel-plugins/language/de/)\n"
@@ -22,27 +22,27 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/wavelan.c:281 ../panel-plugin/wi_common.c:39
+#: panel-plugin/wavelan.c:281 panel-plugin/wi_common.c:39
 msgid "No carrier signal"
 msgstr "Kein Empfang"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:303
+#: panel-plugin/wavelan.c:303
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s mit %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: ../panel-plugin/wavelan.c:306
+#: panel-plugin/wavelan.c:306
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s mit %dMb/s"
 
-#: ../panel-plugin/wavelan.c:310
+#: panel-plugin/wavelan.c:310
 msgid "No device configured"
 msgstr "Kein Gerät konfiguriert"
 
-#: ../panel-plugin/wavelan.c:466
+#: panel-plugin/wavelan.c:466
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -50,68 +50,72 @@ msgid ""
 "%s"
 msgstr "<big><b>Ausführen von Befehl »%s« ist fehlgeschlagen.</b></big>\n\n%s"
 
-#: ../panel-plugin/wavelan.c:469
+#: panel-plugin/wavelan.c:469
 msgid "Error"
 msgstr "Fehler"
 
-#: ../panel-plugin/wavelan.c:716
+#: panel-plugin/wavelan.c:716
 msgid "Wavelan Plugin Options"
 msgstr "Optionen für die Wavelan-Erweiterung"
 
-#: ../panel-plugin/wavelan.c:729
+#: panel-plugin/wavelan.c:729
 msgid "Properties"
 msgstr "Eigenschaften"
 
-#: ../panel-plugin/wavelan.c:740
+#: panel-plugin/wavelan.c:740
 msgid "Interface"
 msgstr "Schnittstelle"
 
-#: ../panel-plugin/wavelan.c:763
+#: panel-plugin/wavelan.c:763
 msgid "_Autohide when offline"
 msgstr "Automatisch verbergen, wenn vom _Netz getrennt"
 
-#: ../panel-plugin/wavelan.c:773
+#: panel-plugin/wavelan.c:773
 msgid "Autohide when no _hardware present"
 msgstr "Automatisch verbergen, wenn kein _Gerät vorhanden"
 
-#: ../panel-plugin/wavelan.c:785
+#: panel-plugin/wavelan.c:785
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Anmerkung: Das macht es schwierig, die Erweiterung zu entfernen oder zu konfigurieren, wenn kein Gerät erkannt wird."
 
-#: ../panel-plugin/wavelan.c:794
+#: panel-plugin/wavelan.c:794
 msgid "Show _icon"
 msgstr "_Symbol anzeigen"
 
-#: ../panel-plugin/wavelan.c:805
+#: panel-plugin/wavelan.c:805
 msgid "Show signal _bar"
 msgstr "Signal_balken anzeigen"
 
-#: ../panel-plugin/wavelan.c:816
+#: panel-plugin/wavelan.c:816
 msgid "Enable sig_nal quality colors"
 msgstr "_Signalqualitätsfarben aktivieren"
 
-#: ../panel-plugin/wavelan.c:827
+#: panel-plugin/wavelan.c:827
 msgid "Wifi Manager Command"
 msgstr "Wifi Manager-Befehl"
 
-#: ../panel-plugin/wavelan.c:857
+#: panel-plugin/wavelan.c:857 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
 msgstr "Status des Drahtlosnetzwerks anzeigen"
 
-#: ../panel-plugin/wi_common.c:42
+#: panel-plugin/wi_common.c:42
 msgid "No such WaveLAN device"
 msgstr "Keine WaveLAN-Gerät"
 
-#: ../panel-plugin/wi_common.c:45
+#: panel-plugin/wi_common.c:45
 msgid "Invalid parameter"
 msgstr "Ungültiger Parameter"
 
-#: ../panel-plugin/wi_common.c:48
+#: panel-plugin/wi_common.c:48
 msgid "Unknown error"
 msgstr "Unbekannter Fehler"
 
-#: ../panel-plugin/wi_linux.c:143
+#: panel-plugin/wi_linux.c:143
 msgid "Unknown"
 msgstr "Unbekannt"
+
+#: panel-plugin/wavelan.desktop.in:5
+msgid "Wavelan"
+msgstr "Wavelan"
