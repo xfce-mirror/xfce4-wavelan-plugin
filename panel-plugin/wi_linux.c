@@ -94,7 +94,6 @@ wi_get_max_quality(struct wi_device *device)
   double max_qual = 92.0;
   char range_buf[sizeof(struct iw_range) * 2]; // wireless tools says it is
                                               // large enough.
-  int result;
 
   /* Set interface name */
   strncpy(wreq.ifr_name, device->interface, IFNAMSIZ);
@@ -104,7 +103,7 @@ wi_get_max_quality(struct wi_device *device)
   wreq.u.data.pointer = (caddr_t) range_buf;
   wreq.u.data.length = sizeof(range_buf);
   wreq.u.data.flags = 0;
-  if ((result = ioctl(device->socket, SIOCGIWRANGE, &wreq)) < 0) {
+  if (ioctl(device->socket, SIOCGIWRANGE, &wreq) < 0) {
     TRACE ("Couldn't get range information, taking default.");
   } else {
     struct iw_range *range = (struct iw_range *) range_buf;
@@ -125,10 +124,11 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   char buffer[1024];
   char *bp;
   FILE *fp;
+#else
+  int result;
 #endif
   double link;
   long level;
-  int result;
   double max_qual = 92.0;
 
   struct iwreq wreq;
@@ -149,7 +149,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   wreq.u.essid.pointer = (caddr_t) essid;
   wreq.u.essid.length = IW_ESSID_MAX_SIZE + 1;
   wreq.u.essid.flags = 0;
-  if ((result = ioctl(device->socket, SIOCGIWESSID, &wreq)) < 0) {
+  if (ioctl(device->socket, SIOCGIWESSID, &wreq) < 0) {
     TRACE ("Couldn't get ESSID");
     g_strlcpy(stats->ws_netname, "", WI_MAXSTRLEN);
   } else {
@@ -160,7 +160,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   }
 
   /* Get bit rate */
-  if ((result = ioctl(device->socket, SIOCGIWRATE, &wreq)) < 0) {
+  if (ioctl(device->socket, SIOCGIWRATE, &wreq) < 0) {
     TRACE ("Couldn't get bit-rate");
     stats->ws_rate = 0;
   } else {
