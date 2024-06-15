@@ -1,3 +1,4 @@
+*~
 *Makefile
 *Makefile.in
 stamp*
@@ -23,7 +24,6 @@ autom4te.cache
 ChangeLog
 INSTALL
 \[config.h\].in
-configure.ac
 libtool
 panel-plugin/libwavelan.la
 panel-plugin/xfce4-wavelan-plugin
