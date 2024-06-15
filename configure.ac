@@ -3,19 +3,14 @@ dnl Copyright (c) 2010 Florian Rivoal <frivoal@xfce.org>
 dnl
 
 dnl Version information
-m4_define([xwp_version_major], [0])
-m4_define([xwp_version_minor], [6])
-m4_define([xwp_version_micro], [3])
-m4_define([xwp_version_tag], [git])
-m4_define([xwp_version], [xwp_version_major().xwp_version_minor().xwp_version_micro()])
-
-m4_define([xwp_debug_default], [ifelse(xwp_version_tag(), [git], [yes], [minimum])])
+XDT_VERSION_INIT([0.6.3], [git])
 
 dnl Initial autoconf
 AC_COPYRIGHT([Copyright (c) 2003-2006 Benedikt Meurer <benny@xfce.org>
 Copyright (c) 2010 Florian Rivoal <frivoal@xfce.org>
 2010-2023 The Xfce development team. All rights reserved.])
-AC_INIT([xfce4-wavelan-plugin], [xwp_version], [https://gitlab.xfce.org/panel-plugins/xfce4-wavelan-plugin])
+AC_INIT([xfce4-wavelan-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-wavelan-plugin])
+AC_REVISION([xdt_version_build])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
 
@@ -55,7 +50,7 @@ XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-2.0], [4.14.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.12.0])
 
 dnl Check for debugging support
-XDT_FEATURE_DEBUG([xwp_debug_default])
+XDT_FEATURE_DEBUG([xdt_debug_default])
 
 AC_CONFIG_FILES([
 Makefile
