@@ -48,7 +48,7 @@ msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
 "\n"
 "%s"
-msgstr "<big><b>Błąd wykonania polecenia \"%s\".</b></big>\n\n%s"
+msgstr "<big><b>Błąd wykonania polecenia „%s”.</b></big>\n\n%s"
 
 #: panel-plugin/wavelan.c:469
 msgid "Error"
