@@ -82,7 +82,7 @@ msgstr "แสดงไ_อคอน"
 
 #: panel-plugin/wavelan.c:805
 msgid "Show signal _bar"
-msgstr ""
+msgstr "แสดงแ_ถบระดับสัญญาณ"
 
 #: panel-plugin/wavelan.c:816
 msgid "Enable sig_nal quality colors"
@@ -90,7 +90,7 @@ msgstr "เปิดใช้_สีบ่งบอกคุณภาพสั�
 
 #: panel-plugin/wavelan.c:827
 msgid "Wifi Manager Command"
-msgstr ""
+msgstr "คำสั่งจัดการ Wi-Fi"
 
 #: panel-plugin/wavelan.c:857 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
