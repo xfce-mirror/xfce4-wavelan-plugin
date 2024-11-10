@@ -15,8 +15,8 @@ libwavelan_la_SOURCES =							\
 	wavelan.c							\
 	wi.h								\
 	wi_bsd.c							\
-	wi_darwin.c							\
 	wi_common.c							\
+	wi_darwin.c							\
 	wi_linux.c
 
 libwavelan_la_CFLAGS =							\
