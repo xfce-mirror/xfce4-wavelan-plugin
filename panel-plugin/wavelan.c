@@ -74,9 +74,7 @@ typedef struct
   GtkWidget *image;
   GtkWidget *signal;
   GtkWidget *tooltip_text;
-#if GTK_CHECK_VERSION (3, 16, 0)
   GtkCssProvider *css_provider;
-#endif
 
   XfcePanelPlugin *plugin;
 
@@ -167,14 +165,10 @@ wavelan_update_signal(t_wavelan *wavelan)
   gchar signal_color_weak[] = "#e05200";
   gchar signal_color_good[] = "#e6ff00";
   gchar signal_color_strong[] = "#06c500";
-#if GTK_CHECK_VERSION (3, 16, 0)
   gchar *css, *color_str;
-#if GTK_CHECK_VERSION (3, 20, 0)
   gchar * cssminsizes = "min-width: 4px; min-height: 0px";
   if(gtk_orientable_get_orientation(GTK_ORIENTABLE(wavelan->signal)) == GTK_ORIENTATION_HORIZONTAL)
     cssminsizes = "min-width: 0px; min-height: 4px";
-#endif
-#endif
 
   if (!wavelan->show_bar) {
     gtk_widget_hide(wavelan->signal);
@@ -197,41 +191,21 @@ wavelan_update_signal(t_wavelan *wavelan)
    else
     gdk_rgba_parse(&color, signal_color_bad);
 
-#if GTK_CHECK_VERSION (3, 16, 0)
      color_str = gdk_rgba_to_string(&color);
-#if GTK_CHECK_VERSION (3, 20, 0)
      css = g_strdup_printf("progressbar trough { %s } \
                             progressbar progress { %s ; background-color: %s; background-image: none; }",
                            cssminsizes, cssminsizes,
-#else
-     css = g_strdup_printf(".progressbar { background-color: %s; background-image: none; }",
-#endif
                            color_str);
      g_free(color_str);
-#else
-     gtk_widget_override_background_color(GTK_WIDGET(wavelan->signal),
-                             GTK_STATE_PRELIGHT,
-                             &color);
-     gtk_widget_override_background_color(GTK_WIDGET(wavelan->signal),
-                             GTK_STATE_SELECTED,
-                             &color);
-     gtk_widget_override_color(GTK_WIDGET(wavelan->signal),
-                             GTK_STATE_SELECTED,
-                             &color);
-#endif
   } else {
-#if GTK_CHECK_VERSION (3, 20, 0)
      /* only set size... */
      css = g_strdup_printf("progressbar trough { %s } \
                             progressbar progress { %s }",
                            cssminsizes, cssminsizes);
-#endif
   }
 
-#if GTK_CHECK_VERSION (3, 16, 0)
   gtk_css_provider_load_from_data (wavelan->css_provider, css, strlen(css), NULL);
   g_free(css);
-#endif
 
   gtk_widget_show(wavelan->signal);
 }
@@ -455,9 +429,9 @@ wavelan_icon_clicked(GtkWidget *widget, gpointer data,t_wavelan *wavelan)
   if (wavelan->command == NULL || strlen(wavelan->command) == 0)
     return;
 
-  if (!xfce_spawn_command_line_on_screen (gtk_widget_get_screen (GTK_WIDGET (widget)),
-                                            wavelan->command,
-                                          FALSE, FALSE, &error))
+  if (!xfce_spawn_command_line (gtk_widget_get_screen (GTK_WIDGET (widget)),
+                                wavelan->command,
+                                FALSE, FALSE, TRUE, &error))
     {
       message_dialog = gtk_message_dialog_new_with_markup (NULL,
                                                            GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -713,11 +687,10 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 
   TRACE ("Entered wavelan_create_options");
   
-  dlg = xfce_titled_dialog_new_with_buttons (_("Wavelan Plugin Options"),
+  dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Wavelan Plugin Options"),
               GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
               GTK_DIALOG_DESTROY_WITH_PARENT,
-              "gtk-close",
-              GTK_RESPONSE_OK,
+              "window-close-symbolic", _("_Close"), GTK_RESPONSE_OK,
               NULL);
 
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
