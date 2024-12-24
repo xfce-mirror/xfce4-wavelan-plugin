@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-04-07 00:57+0200\n"
+"POT-Creation-Date: 2024-12-24 00:54+0100\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: b83946de5835331df42b9ffcc43e6a33_05e65cd <73a30e0a984b2291d4915f37112ad292_814039>, 2022\n"
 "Language-Team: Turkish (http://app.transifex.com/xfce/xfce-panel-plugins/language/tr/)\n"
@@ -21,27 +21,27 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: panel-plugin/wavelan.c:281 panel-plugin/wi_common.c:39
+#: panel-plugin/wavelan.c:255 panel-plugin/wi_common.c:39
 msgid "No carrier signal"
 msgstr "Taşıyıcı sinyal bulunamadı"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: panel-plugin/wavelan.c:303
+#: panel-plugin/wavelan.c:277
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%s: %d%s %dMb/s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: panel-plugin/wavelan.c:306
+#: panel-plugin/wavelan.c:280
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%d%s %dMb/s"
 
-#: panel-plugin/wavelan.c:310
+#: panel-plugin/wavelan.c:284
 msgid "No device configured"
 msgstr "Ayarlanmış aygıt bulunamadı"
 
-#: panel-plugin/wavelan.c:466
+#: panel-plugin/wavelan.c:440
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -49,53 +49,57 @@ msgid ""
 "%s"
 msgstr "<big><b>\"%s\" komutu çalıştırılamadı.</b></big>\n\n%s"
 
-#: panel-plugin/wavelan.c:469
+#: panel-plugin/wavelan.c:443
 msgid "Error"
 msgstr "Hata"
 
-#: panel-plugin/wavelan.c:716
+#: panel-plugin/wavelan.c:690
 msgid "Wavelan Plugin Options"
 msgstr "Wavelan Eklentisi Seçenekleri"
 
-#: panel-plugin/wavelan.c:729
+#: panel-plugin/wavelan.c:693
+msgid "_Close"
+msgstr "_Kapat"
+
+#: panel-plugin/wavelan.c:702
 msgid "Properties"
 msgstr "Özellikler"
 
-#: panel-plugin/wavelan.c:740
+#: panel-plugin/wavelan.c:713
 msgid "Interface"
 msgstr "Arayüz"
 
-#: panel-plugin/wavelan.c:763
+#: panel-plugin/wavelan.c:736
 msgid "_Autohide when offline"
 msgstr "Çevri_m dışıyken gizle"
 
-#: panel-plugin/wavelan.c:773
+#: panel-plugin/wavelan.c:746
 msgid "Autohide when no _hardware present"
 msgstr "Kullanılabilir _aygıt olmadığı zaman kendiliğinden gizle"
 
-#: panel-plugin/wavelan.c:785
+#: panel-plugin/wavelan.c:758
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "Uyarı: Eğer aygıt yok ise bu eklentiyi panelden kaldırmanız veya yapılandırmanız zor olabilir."
 
-#: panel-plugin/wavelan.c:794
+#: panel-plugin/wavelan.c:767
 msgid "Show _icon"
 msgstr "Simgeyi _göster"
 
-#: panel-plugin/wavelan.c:805
+#: panel-plugin/wavelan.c:778
 msgid "Show signal _bar"
 msgstr "_Sinyal çubuğunu göster"
 
-#: panel-plugin/wavelan.c:816
+#: panel-plugin/wavelan.c:789
 msgid "Enable sig_nal quality colors"
 msgstr "Sin_yal kalitesi renklerini etkinleştir"
 
-#: panel-plugin/wavelan.c:827
+#: panel-plugin/wavelan.c:800
 msgid "Wifi Manager Command"
 msgstr "Wifi Yönetici Komutu"
 
-#: panel-plugin/wavelan.c:857 panel-plugin/wavelan.desktop.in:6
+#: panel-plugin/wavelan.c:830 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
 msgstr "Kablosuz ağ durumunu görüntüle"
 
