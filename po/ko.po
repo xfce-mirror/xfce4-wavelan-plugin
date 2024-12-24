@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-04-07 00:57+0200\n"
+"POT-Creation-Date: 2024-12-24 00:54+0100\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>, 2014-2015,2022\n"
 "Language-Team: Korean (http://app.transifex.com/xfce/xfce-panel-plugins/language/ko/)\n"
@@ -20,27 +20,27 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: panel-plugin/wavelan.c:281 panel-plugin/wi_common.c:39
+#: panel-plugin/wavelan.c:255 panel-plugin/wi_common.c:39
 msgid "No carrier signal"
 msgstr "캐리어 신호 없음"
 
 #. Translators: net_name: quality quality_unit at rate Mb/s
-#: panel-plugin/wavelan.c:303
+#: panel-plugin/wavelan.c:277
 #, c-format
 msgid "%s: %d%s at %dMb/s"
 msgstr "%1$s: %4$dMb/s, %2$d%3$s"
 
 #. Translators: quality quality_unit at rate Mb/s
-#: panel-plugin/wavelan.c:306
+#: panel-plugin/wavelan.c:280
 #, c-format
 msgid "%d%s at %dMb/s"
 msgstr "%3$dMb/s, %1$d%2$s"
 
-#: panel-plugin/wavelan.c:310
+#: panel-plugin/wavelan.c:284
 msgid "No device configured"
 msgstr "설정한 장치 없음"
 
-#: panel-plugin/wavelan.c:466
+#: panel-plugin/wavelan.c:440
 #, c-format
 msgid ""
 "<big><b>Failed to execute command \"%s\".</b></big>\n"
@@ -48,53 +48,57 @@ msgid ""
 "%s"
 msgstr "<big><b>\"%s\" 명령 실행에 실패했습니다.</b></big>\n\n%s"
 
-#: panel-plugin/wavelan.c:469
+#: panel-plugin/wavelan.c:443
 msgid "Error"
 msgstr "오류"
 
-#: panel-plugin/wavelan.c:716
+#: panel-plugin/wavelan.c:690
 msgid "Wavelan Plugin Options"
 msgstr "무선랜 플러그인 옵션"
 
-#: panel-plugin/wavelan.c:729
+#: panel-plugin/wavelan.c:693
+msgid "_Close"
+msgstr "닫기(_C)"
+
+#: panel-plugin/wavelan.c:702
 msgid "Properties"
 msgstr "속성"
 
-#: panel-plugin/wavelan.c:740
+#: panel-plugin/wavelan.c:713
 msgid "Interface"
 msgstr "장치"
 
-#: panel-plugin/wavelan.c:763
+#: panel-plugin/wavelan.c:736
 msgid "_Autohide when offline"
 msgstr "연결이 없으면 자동으로 숨기기(_A)"
 
-#: panel-plugin/wavelan.c:773
+#: panel-plugin/wavelan.c:746
 msgid "Autohide when no _hardware present"
 msgstr "장치가 없으면 자동 숨김(_H)"
 
-#: panel-plugin/wavelan.c:785
+#: panel-plugin/wavelan.c:758
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
 msgstr "참고: 장치를 감지하지 못한 경우에는 플러그인 제거나 설정이 어려워질 수 있습니다."
 
-#: panel-plugin/wavelan.c:794
+#: panel-plugin/wavelan.c:767
 msgid "Show _icon"
 msgstr "아이콘 표시(_I)"
 
-#: panel-plugin/wavelan.c:805
+#: panel-plugin/wavelan.c:778
 msgid "Show signal _bar"
 msgstr "신호 표시줄 보이기(_B)"
 
-#: panel-plugin/wavelan.c:816
+#: panel-plugin/wavelan.c:789
 msgid "Enable sig_nal quality colors"
 msgstr "신호 품질 색 활성화(_N)"
 
-#: panel-plugin/wavelan.c:827
+#: panel-plugin/wavelan.c:800
 msgid "Wifi Manager Command"
 msgstr "WiFi 관리자 명령"
 
-#: panel-plugin/wavelan.c:857 panel-plugin/wavelan.desktop.in:6
+#: panel-plugin/wavelan.c:830 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
 msgstr "무선 네트워크 상태를 봅니다"
 
