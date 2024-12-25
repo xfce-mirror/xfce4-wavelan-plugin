@@ -1,3 +1,35 @@
+0.6.4 (2024-12-25)
+=====
+- Introduce Darwin support
+- Update copyright year
+- build: Bump dependency versions and fix deprecation warnings
+- I18n: Update po/LINGUAS list
+- I18n: Update po/LINGUAS list
+- build: Use XDT_VERSION_INIT and get rid of configure.ac.in
+- scan-build: Fix deadcode.DeadStores
+- I18n: Update po/LINGUAS list
+- build: Get rid of intltool
+- Remove useless size request (Fixes #15)
+- Fix plugin icon size
+- Update copyright year and bug report address
+- build: Add GLib requirement
+- Use "logo-icon-name" instead of "logo" in about dialog
+- OpenBSD: rewrite rate calculation to use IFM_BAUDRATE_DESCRIPTIONS
+- Default "Wifi Manager Command" to NetWorkManager only on Linux
+- Limit list of interfaces to IEEE 802.11 on OpenBSD and NetBSD
+- Limit list of interfaces to Ethernet on BSD
+- Translation Updates:
+  Albanian, Arabic, Armenian (Armenia), Basque, Belarusian, Bulgarian,
+  Catalan, Chinese (China), Chinese (Taiwan), Croatian, Czech, Danish,
+  Dutch, Eastern Armenian, English (Australia), English (Canada),
+  English (United Kingdom), Estonian, Finnish, French, Galician,
+  German, Greek, Hebrew, Hungarian, Icelandic, Indonesian, Interlingue,
+  Irish, Italian, Japanese, Kazakh, Korean, Latvian, Lithuanian, Malay,
+  Norwegian Bokmål, Occitan (post 1500), Polish, Portuguese,
+  Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian,
+  Spanish, Swedish, Thai, Turkish, Ukrainian, Urdu, Urdu (Pakistan),
+  Uyghur
+
 0.6.3 (2022-06-14)
 =====
 - Fix intltool lock file bug in make distcheck

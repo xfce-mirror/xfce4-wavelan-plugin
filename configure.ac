@@ -3,7 +3,7 @@ dnl Copyright (c) 2010 Florian Rivoal <frivoal@xfce.org>
 dnl
 
 dnl Version information
-XDT_VERSION_INIT([0.6.3], [git])
+XDT_VERSION_INIT([0.6.4])
 
 dnl Initial autoconf
 AC_COPYRIGHT([Copyright (c) 2003-2006 Benedikt Meurer <benny@xfce.org>
