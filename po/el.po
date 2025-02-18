@@ -4,8 +4,10 @@
 # 
 # Translators:
 # Ápo. <apostolos.papadimitriu@gmail.com>, 2016
+# Ápo. <apostolos.papadimitriu@gmail.com>, 2016
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2015
 # Efstathios Iosifidis <iosifidis@opensuse.org>, 2012
+# Ioannis LM, 2021
 # Ioannis LM, 2021
 msgid ""
 msgstr ""
@@ -71,17 +73,17 @@ msgstr "Διασύνδεση"
 
 #: panel-plugin/wavelan.c:736
 msgid "_Autohide when offline"
-msgstr "_Αυτόματη απόκρυψη όταν δεν υπάρχει σύνδεση"
+msgstr "Αυτόματη απόκρυψη όταν δεν υπάρχει _σύνδεση"
 
 #: panel-plugin/wavelan.c:746
 msgid "Autohide when no _hardware present"
-msgstr "Αυτόματη απόκρυψη όταν δεν βρίσκεται υλικό"
+msgstr "Αυτόματη απόκρυψη όταν δεν βρίσκεται _υλικό"
 
 #: panel-plugin/wavelan.c:758
 msgid ""
 "Note: This will make it difficult to remove or configure the plugin if there"
 " is no device detected."
-msgstr "Σημείωση: Αυτό θα καταστήσει δύσκολο να αφαιρεθεί ή να ρυθμιστεί το πρόσθετο αν δεν έχει βρεθεί κάποια συσκευή."
+msgstr "Σημείωση: Αυτό θα δυσκολέψει την αφαίρεση ή τη ρύθμιση του πρόσθετου αν δεν έχει βρεθεί κάποια συσκευή."
 
 #: panel-plugin/wavelan.c:767
 msgid "Show _icon"
@@ -89,15 +91,15 @@ msgstr "Εμφάνιση _εικονιδίου"
 
 #: panel-plugin/wavelan.c:778
 msgid "Show signal _bar"
-msgstr ""
+msgstr "Εμφάνιση _μπάρας σήματος"
 
 #: panel-plugin/wavelan.c:789
 msgid "Enable sig_nal quality colors"
-msgstr "Ενεργοποίηση χρωμάτων ποιότητας σήματος"
+msgstr "Ενεργοποίηση _χρωμάτων ποιότητας του σήματος"
 
 #: panel-plugin/wavelan.c:800
 msgid "Wifi Manager Command"
-msgstr ""
+msgstr "Εντολή διαχείρισης Wifi"
 
 #: panel-plugin/wavelan.c:830 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
@@ -105,7 +107,7 @@ msgstr "Προβολή της κατάστασης ενός ασύρματου �
 
 #: panel-plugin/wi_common.c:42
 msgid "No such WaveLAN device"
-msgstr "Καμία τέτοια συσκευή WaveLAN"
+msgstr "Δεν υπάρχει συσκευή WaveLAN"
 
 #: panel-plugin/wi_common.c:45
 msgid "Invalid parameter"
