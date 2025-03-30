@@ -3,16 +3,21 @@ dnl Copyright (c) 2010 Florian Rivoal <frivoal@xfce.org>
 dnl
 
 dnl Version information
+m4_define([copyright_year], [2025])
 XDT_VERSION_INIT([0.6.4], [git])
 
 dnl Initial autoconf
 AC_COPYRIGHT([Copyright (c) 2003-2006 Benedikt Meurer <benny@xfce.org>
 Copyright (c) 2010 Florian Rivoal <frivoal@xfce.org>
-2010-2024 The Xfce development team. All rights reserved.])
+2010-copyright_year() The Xfce development team. All rights reserved.])
 AC_INIT([xfce4-wavelan-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-wavelan-plugin])
 AC_REVISION([xdt_version_build])
 AC_PREREQ([2.69])
 AC_CONFIG_MACRO_DIRS([m4])
+AC_DEFINE([VERSION_FULL], [PACKAGE_VERSION], [Alias for VERSION and PACKAGE_VERSION for meson compatibility])
+COPYRIGHT_YEAR=copyright_year()
+AC_DEFINE_UNQUOTED([COPYRIGHT_YEAR], ["$COPYRIGHT_YEAR"], [Copyright year])
+AC_SUBST([COPYRIGHT_YEAR])
 
 dnl Initial automake
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
@@ -48,6 +53,7 @@ XDT_CHECK_PACKAGE([GLIB], [glib-2.0], [2.50.0])
 XDT_CHECK_PACKAGE([GTK], [gtk+-3.0], [3.22.0])
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-2.0], [4.16.0])
 XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.16.0])
+XDT_CHECK_PACKAGE([LIBXFCE4UTIL], [libxfce4util-1.0], [4.16.0])
 
 dnl Check for debugging support
 XDT_FEATURE_DEBUG([xdt_debug_default])

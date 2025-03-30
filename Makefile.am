@@ -26,6 +26,9 @@ EXTRA_DIST =								\
 	COPYING								\
 	NEWS								\
 	README.md							\
+	meson.build							\
+	po/meson.build							\
+	xfce-revision.h.in						\
 	$(NULL)
 
 # vi:set ts=8 sw=8 noet ai nocindent:
