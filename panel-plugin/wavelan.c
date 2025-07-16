@@ -77,7 +77,7 @@ typedef struct
   GtkCssProvider *css_provider;
 
   XfcePanelPlugin *plugin;
-
+  GtkWidget *settings_dialog;
 } t_wavelan;
 
 enum icon_values {
@@ -672,7 +672,6 @@ wavelan_dialog_response (GtkWidget *dlg, int response, t_wavelan *wavelan)
     g_object_set_data (G_OBJECT (wavelan->plugin), "dialog", NULL);
 
     gtk_widget_destroy (dlg);
-/*    xfce_panel_plugin_unblock_menu (wavelan->plugin); */
     wavelan_write_config (wavelan->plugin, wavelan);
 }
 
@@ -687,11 +686,18 @@ wavelan_create_options (XfcePanelPlugin *plugin, t_wavelan *wavelan)
 
   TRACE ("Entered wavelan_create_options");
   
-  dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Wavelan Plugin Options"),
+  if (wavelan->settings_dialog != NULL)
+  {
+    gtk_window_present (GTK_WINDOW (wavelan->settings_dialog));
+    return;
+  }
+
+  wavelan->settings_dialog = dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Wavelan Plugin Options"),
               GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (plugin))),
               GTK_DIALOG_DESTROY_WITH_PARENT,
               "window-close-symbolic", _("_Close"), GTK_RESPONSE_OK,
               NULL);
+  g_object_add_weak_pointer (G_OBJECT (wavelan->settings_dialog), (gpointer *) &wavelan->settings_dialog);
 
   gtk_window_set_position (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
   gtk_window_set_icon_name (GTK_WINDOW (dlg), "network-wireless");
