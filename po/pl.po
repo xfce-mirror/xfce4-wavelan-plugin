@@ -102,7 +102,7 @@ msgstr "Polecenie menedżera Wi-Fi"
 
 #: panel-plugin/wavelan.c:836 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
-msgstr "Dostarcza informacje o stanie sieci bezprzewodowej"
+msgstr "Wyświetlanie stanu sieci bezprzewodowej."
 
 #: panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
