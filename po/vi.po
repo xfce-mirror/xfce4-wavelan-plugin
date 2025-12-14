@@ -1,72 +1,122 @@
-# Vietnamese translations for xfce4-wavelan-plugin package.
-# This file is distributed under the same license as
-#  the xfce4-wavelan-plugin package.
-# Copyright (C) 2003-2005 Benedikt Meurer.
-# Phan Vĩnh Thịnh <teppi@vnlinux.org>, 2006.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-wavelan-plugin package.
+# 
+# Translators:
+# Loc Huynh <https://github.com/hthienloc>, 2025
+# Phan Vĩnh Thịnh <teppi@vnlinux.org>, 2006
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-wavelan-plugin 0.4.3svn\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-09 23:00+0200\n"
-"PO-Revision-Date: 2006-02-19 22:52+0300\n"
-"Last-Translator: Phan Vĩnh Thịnh <teppi@vnlinux.org>\n"
-"Language-Team: Vietnamese <none@li.org>\n"
-"Language: vi\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:08+0200\n"
+"PO-Revision-Date: 2013-07-03 19:27+0000\n"
+"Last-Translator: Phan Vĩnh Thịnh <teppi@vnlinux.org>, 2006\n"
+"Language-Team: Vietnamese (http://app.transifex.com/xfce/xfce-panel-plugins/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/wavelan.c:153
+#: panel-plugin/wavelan.c:255 panel-plugin/wi_common.c:35
 msgid "No carrier signal"
 msgstr "Không có tín hiệu đưa"
 
-#: ../panel-plugin/wavelan.c:172
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: panel-plugin/wavelan.c:277
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr "%s: %d%s tại %dMb/giây"
+
+#. Translators: quality quality_unit at rate Mb/s
+#: panel-plugin/wavelan.c:280
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr "%d%s tại %dMb/giây"
+
+#: panel-plugin/wavelan.c:284
 msgid "No device configured"
 msgstr "Chưa có thiết bị được cấu hình"
 
-#: ../panel-plugin/wavelan.c:521
+#: panel-plugin/wavelan.c:440
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>Gặp lỗi khi chạy lệnh \"%s\".</b></big>\n\n%s"
+
+#: panel-plugin/wavelan.c:443
+msgid "Error"
+msgstr "Lỗi"
+
+#: panel-plugin/wavelan.c:695
 msgid "Wavelan Plugin Options"
-msgstr ""
+msgstr "Tùy chọn Plugin Wavelan"
 
-#: ../panel-plugin/wavelan.c:536
+#: panel-plugin/wavelan.c:698
+msgid "_Close"
+msgstr "Đó_ng"
+
+#: panel-plugin/wavelan.c:708
 msgid "Properties"
-msgstr ""
+msgstr "Thuộc tính"
 
-#: ../panel-plugin/wavelan.c:547
+#: panel-plugin/wavelan.c:719
 msgid "Interface"
 msgstr "Giao diện"
 
-#: ../panel-plugin/wavelan.c:568
+#: panel-plugin/wavelan.c:742
 msgid "_Autohide when offline"
 msgstr "_Tự động ẩn khi ngoài mạng"
 
-#: ../panel-plugin/wavelan.c:578
-msgid "Autohide when no hardware present"
-msgstr ""
+#: panel-plugin/wavelan.c:752
+msgid "Autohide when no _hardware present"
+msgstr "Tự động ẩn k_hi không phần cứng"
 
-#: ../panel-plugin/wavelan.c:589
+#: panel-plugin/wavelan.c:764
 msgid ""
-"Note: This will make it difficult to remove or configure the plugin if there "
-"is no device detected."
-msgstr ""
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "Lưu ý: Điều này sẽ gây khó khăn cho việc gỡ bỏ hoặc định cấu hình plugin nếu không phát hiện thấy thiết bị nào."
 
-#: ../panel-plugin/wavelan.c:597
-msgid "Enable signal quality colors"
-msgstr ""
+#: panel-plugin/wavelan.c:773
+msgid "Show _icon"
+msgstr "H_iển thị biểu tượng"
 
-#: ../panel-plugin/wavelan.c:608
-msgid "Show icon"
-msgstr ""
+#: panel-plugin/wavelan.c:784
+msgid "Show signal _bar"
+msgstr "_Hiển thị thanh tín hiệu"
 
-#: ../panel-plugin/wavelan.c:671 ../panel-plugin/wavelan.desktop.in.h:2
+#: panel-plugin/wavelan.c:795
+msgid "Enable sig_nal quality colors"
+msgstr "Bật màu chất lượ_ng tín hiệu"
+
+#: panel-plugin/wavelan.c:806
+msgid "Wifi Manager Command"
+msgstr "Lệnh quản lý Wifi"
+
+#: panel-plugin/wavelan.c:836 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
-msgstr ""
+msgstr "Xem trạng thái của mạng không dây"
 
-#: ../panel-plugin/wavelan.desktop.in.h:1
+#: panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr "Không thiết bị WaveLAN như vậy"
+
+#: panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr "Tham số không hợp lệ"
+
+#: panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "Lỗi không xác định"
+
+#: panel-plugin/wi_linux.c:139
+msgid "Unknown"
+msgstr "Không xác định"
+
+#: panel-plugin/wavelan.desktop.in:5
 msgid "Wavelan"
-msgstr ""
-
-#~ msgid "WaveLAN plugin"
-#~ msgstr "Plugin WaveLAN"
+msgstr "Wavelan"
