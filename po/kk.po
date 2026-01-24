@@ -26,13 +26,13 @@ msgstr "Сигналдың тасушысы жоқ"
 #: panel-plugin/wavelan.c:277
 #, c-format
 msgid "%s: %d%s at %dMb/s"
-msgstr ""
+msgstr "%s: %d%s, %dМб/с"
 
 #. Translators: quality quality_unit at rate Mb/s
 #: panel-plugin/wavelan.c:280
 #, c-format
 msgid "%d%s at %dMb/s"
-msgstr ""
+msgstr "%d%s, %dМб/с"
 
 #: panel-plugin/wavelan.c:284
 msgid "No device configured"
@@ -72,7 +72,7 @@ msgstr "Желі ж_оқ кезде автожасыру"
 
 #: panel-plugin/wavelan.c:752
 msgid "Autohide when no _hardware present"
-msgstr ""
+msgstr "Құр_ылғылар жоқ кезде автожасыру"
 
 #: panel-plugin/wavelan.c:764
 msgid ""
@@ -82,19 +82,19 @@ msgstr "Ескерту: Құрылғылар жоқ кезде плагинді 
 
 #: panel-plugin/wavelan.c:773
 msgid "Show _icon"
-msgstr ""
+msgstr "_Таңбашаны көрсету"
 
 #: panel-plugin/wavelan.c:784
 msgid "Show signal _bar"
-msgstr ""
+msgstr "Сигнал _бағанын көрсету"
 
 #: panel-plugin/wavelan.c:795
 msgid "Enable sig_nal quality colors"
-msgstr ""
+msgstr "Сиг_нал сапасының түстерін іске қосу"
 
 #: panel-plugin/wavelan.c:806
 msgid "Wifi Manager Command"
-msgstr ""
+msgstr "Wifi басқарушысының командасы"
 
 #: panel-plugin/wavelan.c:836 panel-plugin/wavelan.desktop.in:6
 msgid "View the status of a wireless network"
@@ -102,19 +102,19 @@ msgstr "Сымсыз желінің қалып-күйін қарау"
 
 #: panel-plugin/wi_common.c:38
 msgid "No such WaveLAN device"
-msgstr ""
+msgstr "Мұндай WaveLAN құрылғысы жоқ"
 
 #: panel-plugin/wi_common.c:41
 msgid "Invalid parameter"
-msgstr ""
+msgstr "Параметр жарамсыз"
 
 #: panel-plugin/wi_common.c:44
 msgid "Unknown error"
-msgstr ""
+msgstr "Белгісіз қате"
 
 #: panel-plugin/wi_linux.c:139
 msgid "Unknown"
-msgstr ""
+msgstr "Белгісіз"
 
 #: panel-plugin/wavelan.desktop.in:5
 msgid "Wavelan"
