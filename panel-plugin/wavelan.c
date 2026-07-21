@@ -299,16 +299,10 @@ static void
 wavelan_reset(t_wavelan *wavelan)
 {
   TRACE ("Entered wavelan_reset");
-  
-  if (wavelan->timer_id != 0) {
-    g_source_remove(wavelan->timer_id);
-    wavelan->timer_id = 0;
-  }
 
-  if (wavelan->device != NULL) {
-    wi_close(wavelan->device);
-    wavelan->device = NULL;
-  }
+  g_clear_handle_id(&wavelan->timer_id, g_source_remove);
+  g_clear_pointer(&wavelan->device, wi_close);
+
   TRACE ("Using interface %s", wavelan->interface);
   if (wavelan->interface != NULL) {
     /* open the WaveLAN device */
@@ -386,8 +380,7 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
     {
       if ((s = xfce_rc_read_entry (rc, "Interface", NULL)) != NULL) 
       {
-        if (wavelan->interface)
-          g_free (wavelan->interface);
+        g_free (wavelan->interface);
         wavelan->interface = g_strdup (s);
       } 
       wavelan->autohide = xfce_rc_read_bool_entry (rc, "Autohide", FALSE);
@@ -397,8 +390,7 @@ wavelan_read_config(XfcePanelPlugin *plugin, t_wavelan *wavelan)
       wavelan->show_bar = xfce_rc_read_bool_entry(rc, "ShowBar", FALSE);
       if ((s = xfce_rc_read_entry (rc, "Command", NULL)) != NULL)
       {
-        if (wavelan->command)
-          g_free (wavelan->command);
+        g_free (wavelan->command);
         wavelan->command = g_strdup (s);
       }
       xfce_rc_close (rc);
@@ -531,12 +523,8 @@ wavelan_free(XfcePanelPlugin* plugin, t_wavelan *wavelan)
   if (wavelan->device != NULL)
     wi_close(wavelan->device);
 
-  if (wavelan->interface != NULL)
-    g_free(wavelan->interface);
-
-  if (wavelan->command != NULL)
-    g_free(wavelan->command);
-
+  g_free(wavelan->interface);
+  g_free(wavelan->command);
   g_free(wavelan);
 }
 
@@ -606,8 +594,7 @@ wavelan_set_size(XfcePanelPlugin* plugin, int size, t_wavelan *wavelan)
 static void
 wavelan_interface_changed(GtkEntry *entry, t_wavelan *wavelan)
 {
-  if (wavelan->interface != NULL)
-    g_free(wavelan->interface);
+  g_free(wavelan->interface);
   wavelan->interface = g_strdup(gtk_entry_get_text(entry));
   wavelan_reset(wavelan);
 }
@@ -661,8 +648,7 @@ wavelan_signal_colors_changed(GtkToggleButton *button, t_wavelan *wavelan)
 static void
 wavelan_command_changed(GtkEntry *entry, t_wavelan *wavelan)
 {
-  if (wavelan->command != NULL)
-    g_free(wavelan->command);
+  g_free(wavelan->command);
   wavelan->command = g_strdup(gtk_entry_get_text(entry));
 }
 

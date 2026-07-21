@@ -117,8 +117,7 @@ wi_open(const char *interface)
       strlcpy(device->interface, interface, WI_MAXSTRLEN);
 
       if ((device->socket = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
-        free(device);
-        device = NULL;
+        g_clear_pointer(&device, free);
       }
     }
   }
@@ -217,7 +216,7 @@ _wi_netname(const struct wi_device *device, char *buffer, size_t len)
 {
   int result;
   struct ifreq ifr;
-  struct ieee80211_nwid nwid;
+  struct ieee80211_nwid nwid = { 0 };
 
   bzero((void *) &ifr, sizeof(ifr));
   ifr.ifr_data = (caddr_t) & nwid;
@@ -323,7 +322,7 @@ _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
     * Dirty hack to split the device name into name and number
     */
    strncpy(dev_name, device->interface, WI_MAXSTRLEN);
-   while(!isdigit(*c)) c++;
+   while(!g_ascii_isdigit(*c)) c++;
    dev_number = (int)strtol(c, NULL, 10);
    *c = '\0';
 
@@ -338,7 +337,7 @@ _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
          return (WI_NOSUCHDEV);
 
       c = dev_name;
-      while(!isdigit(*c)) c++;
+      while(!g_ascii_isdigit(*c)) c++;
       dev_number = (int)strtol(c, NULL, 10);
       *c = '\0';
       len = WI_MAXSTRLEN;
@@ -355,9 +354,7 @@ static int
 _wi_getval(const struct wi_device *device, struct ieee80211req_scan_result *scan)
 {
    char buffer[24 * 1024];
-   const uint8_t *bp;
    struct ieee80211req ireq;
-   size_t len;
    bzero(&ireq, sizeof(ireq));
    strlcpy(ireq.i_name, device->interface, sizeof(ireq.i_name));
 
