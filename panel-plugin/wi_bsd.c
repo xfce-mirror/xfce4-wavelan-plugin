@@ -354,9 +354,7 @@ static int
 _wi_getval(const struct wi_device *device, struct ieee80211req_scan_result *scan)
 {
    char buffer[24 * 1024];
-   const uint8_t *bp;
    struct ieee80211req ireq;
-   size_t len;
    bzero(&ireq, sizeof(ireq));
    strlcpy(ireq.i_name, device->interface, sizeof(ireq.i_name));
 

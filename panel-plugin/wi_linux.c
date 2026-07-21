@@ -122,13 +122,13 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
   FILE *fp;
 #else
   int result;
+  struct iw_statistics wstats;
 #endif
   double link;
   long level;
   double max_qual = 92.0;
 
   struct iwreq wreq;
-  struct iw_statistics wstats;
   char essid[IW_ESSID_MAX_SIZE + 1];
 
   g_return_val_if_fail(device != NULL, WI_INVAL);
