@@ -79,8 +79,7 @@ struct wi_device* wi_open(const char* interface) {
       strlcpy(device->interface, interface, WI_MAXSTRLEN);
 
       if ((device->socket = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
-        free(device);
-        device = NULL;
+        g_clear_pointer(&device, free);
       }
     }
   }

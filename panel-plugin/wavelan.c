@@ -299,16 +299,10 @@ static void
 wavelan_reset(t_wavelan *wavelan)
 {
   TRACE ("Entered wavelan_reset");
-  
-  if (wavelan->timer_id != 0) {
-    g_source_remove(wavelan->timer_id);
-    wavelan->timer_id = 0;
-  }
 
-  if (wavelan->device != NULL) {
-    wi_close(wavelan->device);
-    wavelan->device = NULL;
-  }
+  g_clear_handle_id(&wavelan->timer_id, g_source_remove);
+  g_clear_pointer(&wavelan->device, wi_close);
+
   TRACE ("Using interface %s", wavelan->interface);
   if (wavelan->interface != NULL) {
     /* open the WaveLAN device */
