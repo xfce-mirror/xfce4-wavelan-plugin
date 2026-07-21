@@ -323,7 +323,7 @@ _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
     * Dirty hack to split the device name into name and number
     */
    strncpy(dev_name, device->interface, WI_MAXSTRLEN);
-   while(!isdigit(*c)) c++;
+   while(!g_ascii_isdigit(*c)) c++;
    dev_number = (int)strtol(c, NULL, 10);
    *c = '\0';
 
@@ -338,7 +338,7 @@ _wi_vendor(const struct wi_device *device, char *buffer, size_t len)
          return (WI_NOSUCHDEV);
 
       c = dev_name;
-      while(!isdigit(*c)) c++;
+      while(!g_ascii_isdigit(*c)) c++;
       dev_number = (int)strtol(c, NULL, 10);
       *c = '\0';
       len = WI_MAXSTRLEN;

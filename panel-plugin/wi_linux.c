@@ -191,7 +191,7 @@ wi_query(struct wi_device *device, struct wi_stats *stats)
 
     if (buffer[6] == ':') {
       buffer[6] = '\0';
-      for (bp = buffer; isspace(*bp); ++bp);
+      for (bp = buffer; g_ascii_isspace(*bp); ++bp);
 
       if (strcmp(bp, device->interface) != 0)
         continue;
