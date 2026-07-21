@@ -216,7 +216,7 @@ _wi_netname(const struct wi_device *device, char *buffer, size_t len)
 {
   int result;
   struct ifreq ifr;
-  struct ieee80211_nwid nwid;
+  struct ieee80211_nwid nwid = { 0 };
 
   bzero((void *) &ifr, sizeof(ifr));
   ifr.ifr_data = (caddr_t) & nwid;
