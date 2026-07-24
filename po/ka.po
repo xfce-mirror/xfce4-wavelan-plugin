@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-wavelan-plugin package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:08+0200\n"
+"PO-Revision-Date: 2013-07-03 19:27+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Georgian (http://app.transifex.com/xfce/xfce-panel-plugins/language/ka/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: panel-plugin/wavelan.c:255 panel-plugin/wi_common.c:35
+msgid "No carrier signal"
+msgstr "ოპერატორის სიგნალის გარეშე"
+
+#. Translators: net_name: quality quality_unit at rate Mb/s
+#: panel-plugin/wavelan.c:277
+#, c-format
+msgid "%s: %d%s at %dMb/s"
+msgstr "%s: %d%s სიჩქარით %dმბ/წმ"
+
+#. Translators: quality quality_unit at rate Mb/s
+#: panel-plugin/wavelan.c:280
+#, c-format
+msgid "%d%s at %dMb/s"
+msgstr "%d%s სიჩქარით %dმბ/წმ"
+
+#: panel-plugin/wavelan.c:284
+msgid "No device configured"
+msgstr "მოწყობილობები მორგებული არაა"
+
+#: panel-plugin/wavelan.c:440
+#, c-format
+msgid ""
+"<big><b>Failed to execute command \"%s\".</b></big>\n"
+"\n"
+"%s"
+msgstr "<big><b>შესრულების შეცდომა ბრძანებისთვის \"%s\".</b></big>\n\n%s"
+
+#: panel-plugin/wavelan.c:443
+msgid "Error"
+msgstr "შეცდომა"
+
+#: panel-plugin/wavelan.c:695
+msgid "Wavelan Plugin Options"
+msgstr "Wavelan-ის დამატების მორგება"
+
+#: panel-plugin/wavelan.c:698
+msgid "_Close"
+msgstr "და_ხურვა"
+
+#: panel-plugin/wavelan.c:708
+msgid "Properties"
+msgstr "თვისებები"
+
+#: panel-plugin/wavelan.c:719
+msgid "Interface"
+msgstr "ინტერფეისი"
+
+#: panel-plugin/wavelan.c:742
+msgid "_Autohide when offline"
+msgstr "_ავტოდამალვა, როცა გათიშულია"
+
+#: panel-plugin/wavelan.c:752
+msgid "Autohide when no _hardware present"
+msgstr "ავტოდამალვა, როცა ა_პარატურა მიერთებული არაა"
+
+#: panel-plugin/wavelan.c:764
+msgid ""
+"Note: This will make it difficult to remove or configure the plugin if there"
+" is no device detected."
+msgstr "შენიშვნა: თუ მოწყობილობა აღმოჩენილი არაა, დამატების წაშლა, ან მორგება უფრო რთული იქნება."
+
+#: panel-plugin/wavelan.c:773
+msgid "Show _icon"
+msgstr "_ხატულას ჩვენება"
+
+#: panel-plugin/wavelan.c:784
+msgid "Show signal _bar"
+msgstr "სიგნალის პანელის ჩვენე_ბა"
+
+#: panel-plugin/wavelan.c:795
+msgid "Enable sig_nal quality colors"
+msgstr "სიგ_ნალის ხარისხის ფერების ჩართვა"
+
+#: panel-plugin/wavelan.c:806
+msgid "Wifi Manager Command"
+msgstr "Wifi-ის მმართველის ბრძანება"
+
+#: panel-plugin/wavelan.c:836 panel-plugin/wavelan.desktop.in:6
+msgid "View the status of a wireless network"
+msgstr "უსადენო ქსელის სტატუსის ნახვა"
+
+#: panel-plugin/wi_common.c:38
+msgid "No such WaveLAN device"
+msgstr "ასეტი Wavelan მოწყობილობა აღმოჩენილი არაა"
+
+#: panel-plugin/wi_common.c:41
+msgid "Invalid parameter"
+msgstr "არასწორი პარამეტრი"
+
+#: panel-plugin/wi_common.c:44
+msgid "Unknown error"
+msgstr "უცნობი შეცდომა"
+
+#: panel-plugin/wi_linux.c:139
+msgid "Unknown"
+msgstr "უცნობი"
+
+#: panel-plugin/wavelan.desktop.in:5
+msgid "Wavelan"
+msgstr "Wavelan"
