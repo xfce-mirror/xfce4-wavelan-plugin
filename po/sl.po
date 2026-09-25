@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the xfce-panel-plugins.xfce4-wavelan-plugin package.
 # 
 # Translators:
+# Dejweed, 2026
 # Arnold Marko <arnold.marko@gmail.com>, 2019
 # Martin Srebotnjak <miles@filmsi.net>, 2022
 msgid ""
@@ -11,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-07-18 11:08+0200\n"
 "PO-Revision-Date: 2013-07-03 19:27+0000\n"
-"Last-Translator: Martin Srebotnjak <miles@filmsi.net>, 2022\n"
+"Last-Translator: Dejweed, 2026\n"
 "Language-Team: Slovenian (http://app.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,11 +66,11 @@ msgstr "Lastnosti"
 
 #: panel-plugin/wavelan.c:719
 msgid "Interface"
-msgstr "k"
+msgstr "Vmesnik"
 
 #: panel-plugin/wavelan.c:742
 msgid "_Autohide when offline"
-msgstr "S_amodejno skrij, ki ni povezave"
+msgstr "S_amodejno skrij, ko ni povezave"
 
 #: panel-plugin/wavelan.c:752
 msgid "Autohide when no _hardware present"
